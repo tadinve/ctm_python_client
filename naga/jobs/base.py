@@ -1,4 +1,4 @@
-class CmBaseJob:
+class BaseJob:
     """
     Abstract class to be derived for jobs. Jobs are processing items with state
     and duration that aren't task instances. For instance a CommandJob is
@@ -59,12 +59,3 @@ class CmBaseJob:
             self.job_json["When"]["FromTime"] = from_time
         if to_time is not None:
             self.job_json["When"]["ToTime"] = to_time
-
-class CmDummyJob(CmBaseJob):
-    def __init__(self, folder, job_name):
-        CmBaseJob.__init__(self, folder, job_name)
-
-    def get_json(self):
-        job_json = CmBaseJob.get_json(self)
-        job_json["Type"] = "Job:Dummy"
-        return job_json
