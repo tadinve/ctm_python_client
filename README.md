@@ -28,7 +28,6 @@ Use Naga to author workflows as directed acyclic graphs (DAGs) of tasks. The BMC
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of contents**
 
-- [Naga](#naga)
   - [Project Focus](#project-focus)
   - [Principles](#principles)
   - [Requirements](#requirements)
