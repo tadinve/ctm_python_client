@@ -16,7 +16,7 @@
  specific language governing permissions and limitations
  under the License.
 -->
-
+# Naga
 
 [BMC Control-M Naga] (or simply Naga) is a library to programmatically author and schedule workflows in Control-M.
 
@@ -28,25 +28,26 @@ Use Naga to author workflows as directed acyclic graphs (DAGs) of tasks. The BMC
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of contents**
 
-- [Project Focus](#project-focus)
-- [Principles](#principles)
-- [Requirements](#requirements)
-- [Getting started](#getting-started)
-- [Installing from PyPI](#installing-from-pypi)
-- [Official source code](#official-source-code)
-- [Convenience packages](#convenience-packages)
-- [User Interface](#user-interface)
-- [Semantic versioning](#semantic-versioning)
-- [Version Life Cycle](#version-life-cycle)
-- [Support for Python and Kubernetes versions](#support-for-python-and-kubernetes-versions)
-  - [Additional notes on Python version requirements](#additional-notes-on-python-version-requirements)
-- [Contributing](#contributing)
-- [Who uses Apache Airflow?](#who-uses-apache-airflow)
-- [Who Maintains Apache Airflow?](#who-maintains-apache-airflow)
-- [Can I use the Apache Airflow logo in my presentation?](#can-i-use-the-apache-airflow-logo-in-my-presentation)
-- [Airflow merchandise](#airflow-merchandise)
-- [Links](#links)
-- [Sponsors](#sponsors)
+- [Naga](#naga)
+  - [Project Focus](#project-focus)
+  - [Principles](#principles)
+  - [Requirements](#requirements)
+  - [Getting started](#getting-started)
+  - [Installing from PyPI](#installing-from-pypi)
+  - [Official source code](#official-source-code)
+  - [Convenience packages](#convenience-packages)
+  - [User Interface](#user-interface)
+  - [Semantic versioning](#semantic-versioning)
+  - [Version Life Cycle](#version-life-cycle)
+  - [Support for Python and Kubernetes versions](#support-for-python-and-kubernetes-versions)
+    - [Additional notes on Python version requirements](#additional-notes-on-python-version-requirements)
+  - [Contributing](#contributing)
+  - [Who uses Apache Airflow?](#who-uses-apache-airflow)
+  - [Who Maintains Apache Airflow?](#who-maintains-apache-airflow)
+  - [Can I use the Apache Airflow logo in my presentation?](#can-i-use-the-apache-airflow-logo-in-my-presentation)
+  - [Airflow merchandise](#airflow-merchandise)
+  - [Links](#links)
+  - [Sponsors](#sponsors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
