@@ -33,7 +33,7 @@ from graphviz import Digraph
 JOBS_FILE = "jobs.json"
 
 
-class CmJobFlow:
+class JobFlow:
 
     # Constructor and setting some default values
     def __init__(self, application, sub_application, description=None, order_method=None):
