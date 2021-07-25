@@ -8,6 +8,6 @@ setup(
     author='Venkatesh Tadinada @ BMC Innovations Lab',
     license='Apache 2.0',
     install_requires=[
-          'graphviz',
+          'graphviz', 'requests','json'
     ],
 )
