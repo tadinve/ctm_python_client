@@ -1,4 +1,4 @@
-from CmBaseJob import CmBaseJob
+from naga.jobs.CmBaseJob import CmBaseJob
 
 
 class CmCommandJob(CmBaseJob):
