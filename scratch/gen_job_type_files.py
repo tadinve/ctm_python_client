@@ -20,6 +20,8 @@ def gen_name(n):
     n = n.replace("a_d_f","adf")
     n = n.replace("s_l_a","sla")
     n = n.replace("a_i_","ai_")
+    n = n.replace("s_s_i_s","ssis_")
+    n = n.replace("h_d_f_s","hdfs_")
 
     return n
 
@@ -84,3 +86,15 @@ for file in files[:]:
     f = open(file) 
     mj = json.load(f) 
     json_to_job(mj)
+
+
+fn = "/__init__.py"
+root_dir = '../naga/newjobs'
+open(root_dir+fn, 'a').close()
+
+for dirname, dirnames, filenames in os.walk(root_dir):
+    # print path to all subdirectories first.
+
+    for subdirname in dirnames:
+        dn = os.path.join(dirname, subdirname)
+        open(dn+fn, 'a').close()
