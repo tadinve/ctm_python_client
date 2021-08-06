@@ -5,7 +5,7 @@ class OozieJob(BaseJob):
 				connection_profile,
 				job_properties_file,
 				oozie_options,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.job_properties_file = job_properties_file

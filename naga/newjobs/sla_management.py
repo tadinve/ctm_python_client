@@ -9,7 +9,7 @@ class SLAManagementJob(BaseJob):
 				complete_in,
 				events_to_wait_for,
 				events_to_delete,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.service_name = service_name
 		self.service_priority = service_priority

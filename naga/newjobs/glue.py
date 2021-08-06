@@ -7,7 +7,7 @@ class GLUEJob(BaseJob):
 				aiglue_job_arguments,
 				aiarguments,
 				aistatus_polling_frequency,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.aiglue_job_name = aiglue_job_name

@@ -6,7 +6,7 @@ class ScriptJob(BaseJob):
 				file_path,
 				pre_command,
 				post_command,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.file_name = file_name
 		self.file_path = file_path

@@ -8,7 +8,7 @@ class AIMonitorRemoteJob(BaseJob):
 				aiuser_name,
 				aipassword,
 				airemote_jobto_monitor,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.aihost = aihost

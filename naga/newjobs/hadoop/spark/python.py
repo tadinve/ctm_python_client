@@ -4,7 +4,7 @@ class PythonJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				spark_script,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.spark_script = spark_script

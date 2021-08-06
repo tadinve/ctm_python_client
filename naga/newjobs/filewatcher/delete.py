@@ -7,7 +7,7 @@ class DeleteJob(BaseJob):
 				time_limit,
 				start_time,
 				stop_time,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.path = path
 		self.search_interval = search_interval

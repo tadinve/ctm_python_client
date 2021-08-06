@@ -10,7 +10,7 @@ class ProcessChainJob(BaseJob):
 				consider_only_overall_chain_status,
 				retrieve_log,
 				detect_spawned_job,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.process_chain_description = process_chain_description

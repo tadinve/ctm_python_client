@@ -71,7 +71,7 @@ def json_to_job(j):
                 f.write("\t\t\t\t{},\n".format(params[k]))
 
         # Write default Params for all files
-        f.write("\t\t\thost=None, run_as=None, description=None):\n")
+        f.write("\t\t\t\thost=None, run_as=None, description=None):\n")
         
         #Super class init
         f.write("\t\tBaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)\n")

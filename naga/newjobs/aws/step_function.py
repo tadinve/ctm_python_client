@@ -7,7 +7,7 @@ class StepFunctionJob(BaseJob):
 				execution_name,
 				input,
 				append_log_to_output,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.state_machine = state_machine

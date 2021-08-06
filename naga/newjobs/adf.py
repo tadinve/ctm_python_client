@@ -8,7 +8,7 @@ class ADFJob(BaseJob):
 				aipipeline_name,
 				aiparameters,
 				aistatus_polling_frequency,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.airesource_group_name = airesource_group_name

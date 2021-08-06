@@ -16,7 +16,7 @@ class COPYJob(BaseJob):
 				copy_from_step,
 				post_job_action,
 				detect_spawned_job,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.sap_job_name = sap_job_name

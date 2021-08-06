@@ -16,7 +16,7 @@ class BatchJob(BaseJob):
 				job_attempts,
 				execution_timeout,
 				append_log_to_output,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.job_name = job_name

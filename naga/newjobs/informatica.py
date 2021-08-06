@@ -12,7 +12,7 @@ class InformaticaJob(BaseJob):
 				workflow_restart_mode,
 				restart_from_task,
 				workflow_parameters_file,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.repository_folder = repository_folder

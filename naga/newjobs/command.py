@@ -5,7 +5,7 @@ class CommandJob(BaseJob):
 				created_by,
 				command,
 				events_to_add,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.created_by = created_by
 		self.command = command

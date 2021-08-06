@@ -8,7 +8,7 @@ class MapredStreamingJob(BaseJob):
 				mapper_command,
 				reducer_command,
 				general_options,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.input_path = input_path

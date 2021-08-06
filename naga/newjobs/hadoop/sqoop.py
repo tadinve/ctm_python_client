@@ -9,7 +9,7 @@ class SqoopJob(BaseJob):
 				sqoop_files,
 				pre_commands,
 				post_commands,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.sqoop_command = sqoop_command

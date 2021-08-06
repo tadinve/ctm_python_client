@@ -9,7 +9,7 @@ class EmbeddedQueryJob(BaseJob):
 				output_execution_log,
 				output_sql_output,
 				sql_output_format,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.query = query

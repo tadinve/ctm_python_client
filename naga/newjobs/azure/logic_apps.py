@@ -6,7 +6,7 @@ class LogicAppsJob(BaseJob):
 				logic_app_name,
 				request_body,
 				append_log,
-			host=None, run_as=None, description=None):
+				host=None, run_as=None, description=None):
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.logic_app_name = logic_app_name
