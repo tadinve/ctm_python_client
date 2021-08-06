@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class c_o_p_yJob(BaseJob):
+class C_o_p_yJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				sap_job_name,

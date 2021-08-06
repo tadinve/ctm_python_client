@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class hiveJob(BaseJob):
+class HiveJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				hive_script,

@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class scala_javaJob(BaseJob):
+class Scala_javaJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				program_jar,

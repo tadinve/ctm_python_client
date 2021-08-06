@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class pythonJob(BaseJob):
+class PythonJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				spark_script,

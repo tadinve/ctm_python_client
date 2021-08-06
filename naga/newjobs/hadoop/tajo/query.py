@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class queryJob(BaseJob):
+class QueryJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				open_query,

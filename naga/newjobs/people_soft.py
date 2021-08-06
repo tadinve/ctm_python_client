@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class people_softJob(BaseJob):
+class People_softJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				user,

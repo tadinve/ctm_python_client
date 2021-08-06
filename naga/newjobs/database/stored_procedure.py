@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class stored_procedureJob(BaseJob):
+class Stored_procedureJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				stored_procedure,
 				parameters,

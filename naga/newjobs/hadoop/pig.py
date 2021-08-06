@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class pigJob(BaseJob):
+class PigJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				pig_script,

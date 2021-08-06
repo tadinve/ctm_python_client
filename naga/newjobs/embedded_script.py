@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class embedded_scriptJob(BaseJob):
+class Embedded_scriptJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				script,
 				file_name,

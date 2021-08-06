@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class step_functionJob(BaseJob):
+class Step_functionJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				state_machine,

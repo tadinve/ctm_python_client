@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class lambdaJob(BaseJob):
+class LambdaJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				function_name,

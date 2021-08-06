@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class sqoopJob(BaseJob):
+class SqoopJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				sqoop_command,

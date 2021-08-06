@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class commandJob(BaseJob):
+class CommandJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				created_by,
 				command,

@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class dist_cpJob(BaseJob):
+class Dist_cpJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				target_path,

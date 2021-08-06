@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class batch_accountJob(BaseJob):
+class Batch_accountJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				job_id,

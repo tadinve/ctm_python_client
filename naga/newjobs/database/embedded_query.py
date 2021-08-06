@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class embedded_queryJob(BaseJob):
+class Embedded_queryJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				query,

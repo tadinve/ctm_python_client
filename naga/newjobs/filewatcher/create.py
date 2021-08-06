@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class createJob(BaseJob):
+class CreateJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				path,
 				search_interval,

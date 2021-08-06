@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class input_fileJob(BaseJob):
+class Input_fileJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				full_file_path,

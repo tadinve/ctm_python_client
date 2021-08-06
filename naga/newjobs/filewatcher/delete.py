@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class deleteJob(BaseJob):
+class DeleteJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				path,
 				search_interval,

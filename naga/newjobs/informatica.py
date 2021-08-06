@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class informaticaJob(BaseJob):
+class InformaticaJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				repository_folder,
