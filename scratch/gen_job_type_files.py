@@ -51,6 +51,7 @@ def json_to_job(j):
         params = {}
         f.write("from naga.jobs.base import BaseJob\n")
         f.write("\n")
+        job_name = job_name[0].upper() + job_name[1:]
         f.write("class {}(BaseJob):\n".format(job_name))
         f.write("\tdef __init__(self, folder, job_name, \n")
         for k in j.keys():
