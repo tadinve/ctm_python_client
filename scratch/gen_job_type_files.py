@@ -19,9 +19,9 @@ def gen_name(n):
     n = n.replace("g_l_u_e","glue")
     n = n.replace("a_d_f","adf")
     n = n.replace("s_l_a","sla")
-    n = n.replace("a_i_","ai_")
-    n = n.replace("s_s_i_s","ssis_")
-    n = n.replace("h_d_f_s","hdfs_")
+    n = n.replace("a_i_","ai")
+    n = n.replace("s_s_i_s","ssis")
+    n = n.replace("h_d_f_s","hdfs")
 
     return n
 
