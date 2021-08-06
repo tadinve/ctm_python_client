@@ -1,0 +1,23 @@
+{
+    "Type": "Job:AWS:Batch",
+    "ConnectionProfile": "AWS_CONNECTION",
+    "JobName": "batchjob1",
+    "JobDefinition": "jobDef1",
+    "JobDefinitionRevision": "3",
+    "JobQueue": "queue1",
+    "AWSJobType": "Array",
+    "ArraySize": "100",
+    "DependsOn": {
+        "DependencyType": "Standard",
+        "JobDependsOn": "job5"
+    },
+    "Command": [
+        "ffmpeg",
+        "-i"
+    ],
+    "Memory": "10",
+    "vCPUs": "2",
+    "JobAttempts": "5",
+    "ExecutionTimeout": "60",
+    "AppendLogToOutput": false
+}

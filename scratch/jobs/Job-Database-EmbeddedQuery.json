@@ -1,0 +1,16 @@
+{
+    "Type": "Job:Database:EmbeddedQuery",
+    "ConnectionProfile": "POSTGRESQL_CONNECTION_PROFILE",
+    "Query": "SELECT %%firstParamName AS VAR1 n FROM DUMMY n ORDER BY  VAR1 DESC",
+    "Host": "${agentName}",
+    "RunAs": "PostgressCP",
+    "Variables": [
+        {
+            "firstParamName": "firstParamValue"
+        }
+    ],
+    "Autocommit": "N",
+    "OutputExecutionLog": "Y",
+    "OutputSQLOutput": "Y",
+    "SQLOutputFormat": "XML"
+}

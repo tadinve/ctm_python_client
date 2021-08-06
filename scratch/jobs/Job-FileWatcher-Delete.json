@@ -1,0 +1,9 @@
+{
+    "Type": "Job:FileWatcher:Delete",
+    "RunAs": "controlm",
+    "Path": "C:/path.txt",
+    "SearchInterval": "45",
+    "TimeLimit": "22",
+    "StartTime": "201805041535",
+    "StopTime": "201905041535"
+}

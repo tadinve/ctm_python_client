@@ -1,0 +1,8 @@
+{
+    "Type": "Job:Hadoop:HDFSFileWatcher",
+    "Host": "edgenode",
+    "ConnectionProfile": "DEV_CLUSTER",
+    "HdfsFilePath": "/inputs/filename",
+    "MinDetecedSize": "1",
+    "MaxWaitTime": "2"
+}

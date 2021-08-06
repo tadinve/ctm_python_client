@@ -1,0 +1,15 @@
+{
+    "Type": "Job:Azure:Function",
+    "ConnectionProfile": "AZURE_CONNECTION",
+    "AppendLog": false,
+    "Function": "AzureFunction",
+    "FunctionApp": "AzureFunctionApp",
+    "Parameters": [
+        {
+            "firstParamName": "firstParamValue"
+        },
+        {
+            "secondParamName": "secondParamValue"
+        }
+    ]
+}

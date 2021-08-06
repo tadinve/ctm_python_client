@@ -1,0 +1,19 @@
+{
+    "Type": "Job:Database:MSSQL:SSIS",
+    "ConnectionProfile": "MSSQL-CP-NAME",
+    "Host": "agentHost",
+    "PackageSource": "SSIS Package Store",
+    "PackageName": "\\Data Collector\\SqlTraceCollect",
+    "ConfigFiles": [
+        "C:\\Users\\dbauser\\Desktop\\test.dtsConfig",
+        "C:\\Users\\dbauser\\Desktop\\test2.dtsConfig"
+    ],
+    "Properties": [
+        {
+            "PropertyName": "PropertyValue"
+        },
+        {
+            "PropertyName2": "PropertyValue2"
+        }
+    ]
+}

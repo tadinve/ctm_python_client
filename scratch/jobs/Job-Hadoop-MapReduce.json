@@ -1,0 +1,30 @@
+{
+    "Type": "Job:Hadoop:MapReduce",
+    "Host": "edgenode",
+    "ConnectionProfile": "DEV_CLUSTER",
+    "ProgramJar": "/home/user1/hadoop-jobs/hadoop-mapreduce-examples.jar",
+    "MainClass": "pi",
+    "Arguments": [
+        "1",
+        "2"
+    ],
+    "PreCommands": {
+        "FailJobOnCommandFailure": false,
+        "Commands": [
+            {
+                "get": "hdfs://nn.example.com/user/hadoop/file localfile"
+            },
+            {
+                "rm": "hdfs://nn.example.com/file /user/hadoop/emptydir"
+            }
+        ]
+    },
+    "PostCommands": {
+        "FailJobOnCommandFailure": true,
+        "Commands": [
+            {
+                "put": "localfile hdfs://nn.example.com/user/hadoop/file"
+            }
+        ]
+    }
+}

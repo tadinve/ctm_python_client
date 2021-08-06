@@ -1,0 +1,1 @@
+{"storeFolder": {"Type": "Folder", "jobStoredProcedure": {"Type": "Job:Database:StoredProcedure", "Host": "myhost.mycomp.com", "StoredProcedure": "myProcedure", "Parameters": ["value1", "variable1", ["value2", "variable2"]], "ReturnValue": "RV", "Schema": "public", "ConnectionProfile": "DB-PG-CON"}}}

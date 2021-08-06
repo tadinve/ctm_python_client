@@ -1,0 +1,1 @@
+{"AwsGlueJob": {"Type": "Job:GLUE", "ConnectionProfile": "GLUECONNECTION", "AI-Glue Job Name": "AwsGlueJobName", "AI-Glue Job Arguments": "checked", "AI-Arguments": {"--myArg1": "myVal1", "--myArg2": "myVal2"}, "AI-Status Polling Frequency": "20"}}

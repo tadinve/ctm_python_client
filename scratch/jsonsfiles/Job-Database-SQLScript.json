@@ -1,0 +1,1 @@
+{"OracleDBFolder": {"Type": "Folder", "testOracle": {"Type": "Job:Database:SQLScript", "Host": "AgentHost", "SQLScript": "/home/controlm/sqlscripts/selectOrclParm.sql", "ConnectionProfile": "ORACLE_CONNECTION_PROFILE", "Parameters": [{"firstParamName": "firstParamValue"}, {"secondParamName": "secondParamValue"}]}}}

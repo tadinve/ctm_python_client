@@ -1,0 +1,1 @@
+{"ProcessData": {"Type": "Job:Hadoop:Spark:ScalaJava", "Host": "edgenode", "ConnectionProfile": "DEV_CLUSTER", "ProgramJar": "/home/user/ScalaProgram.jar", "MainClass": "com.mycomp.sparkScalaProgramName.mainClassName"}}

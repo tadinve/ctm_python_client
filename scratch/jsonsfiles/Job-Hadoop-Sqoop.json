@@ -1,0 +1,1 @@
+{"LoadDataSqoop": {"Type": "Job:Hadoop:Sqoop", "Host": "edgenode", "ConnectionProfile": "SQOOP_CONNECTION_PROFILE", "SqoopCommand": "import --table foo --target-dir /dest_dir"}}

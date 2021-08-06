@@ -1,0 +1,1 @@
+{"SAPR3_external_command": {"Type": "Job:SAP:R3:CREATE", "ConnectionProfile": "SAPCP", "SapJobName": "SAP_job", "CreatedBy": "user1", "Steps": [{"StepType": "ExternalCommand", "UserName": "user01", "TargetHost": "host01", "ProgramName": "PING"}], "SpoolListRecipient": {"ReciptNoForwarding": false}}}

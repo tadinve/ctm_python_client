@@ -1,0 +1,19 @@
+{
+    "Type": "Job:Azure:BatchAccount",
+    "ConnectionProfile": "AZURE_CONNECTION",
+    "JobId": "AzureJob1",
+    "CommandLine": "echo Hello",
+    "AppendLog": false,
+    "Wallclock": {
+        "Time": "770",
+        "Unit": "Minutes"
+    },
+    "MaxTries": {
+        "Count": "6",
+        "Option": "Custom"
+    },
+    "Retention": {
+        "Time": "1",
+        "Unit": "Hours"
+    }
+}

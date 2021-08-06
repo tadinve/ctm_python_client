@@ -1,0 +1,10 @@
+{
+    "Type": "Job:ApplicationIntegrator:AI Monitor Remote Job",
+    "ConnectionProfile": "AI_CONNECTION_PROFILE",
+    "AI-Host": "Host1",
+    "AI-Port": "5180",
+    "AI-User Name": "admin",
+    "AI-Password": "*******",
+    "AI-Remote Job to Monitor": "remoteJob5",
+    "RunAs": "controlm"
+}

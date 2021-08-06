@@ -1,0 +1,1 @@
+{"ProcessHive": {"Type": "Job:Hadoop:Hive", "Host": "edgenode", "ConnectionProfile": "HIVE_CONNECTION_PROFILE", "HiveScript": "/home/user1/hive.script"}}

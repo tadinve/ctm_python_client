@@ -1,0 +1,14 @@
+{
+    "Type": "Job:Hadoop:Tajo:InputFile",
+    "ConnectionProfile": "TAJO_CONNECTION_PROFILE",
+    "Host": "edgenode",
+    "FullFilePath": "/home/user/tajo_command.sh",
+    "Parameters": [
+        {
+            "amount": "1000"
+        },
+        {
+            "volume": "120"
+        }
+    ]
+}

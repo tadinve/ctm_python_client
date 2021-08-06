@@ -1,0 +1,15 @@
+{
+    "Type": "Job:PeopleSoft",
+    "ConnectionProfile": "PS_CONNECT",
+    "User": "PS_User3",
+    "ControlId": "ControlId",
+    "ServerName": "ServerName",
+    "ProcessType": "ProcessType",
+    "ProcessName": "ProcessName",
+    "AppendToOutput": false,
+    "BindVariables": [
+        "value1",
+        "value2"
+    ],
+    "RunAs": "controlm"
+}

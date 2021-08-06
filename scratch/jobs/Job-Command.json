@@ -1,0 +1,14 @@
+{
+    "Type": "Job:Command",
+    "CreatedBy": "emuser",
+    "RunAs": "controlm",
+    "Command": "echo Hello",
+    "eventsToAdd": {
+        "Type": "AddEvents",
+        "Events": [
+            {
+                "Event": "Hello-TO-SLA_Job_for_SLA-GOOD"
+            }
+        ]
+    }
+}
