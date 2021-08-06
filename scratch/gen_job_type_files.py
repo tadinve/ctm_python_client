@@ -41,31 +41,47 @@ def json_to_job(j):
     file_name = folder_name + "/" + gen_name(job_name)[:-4] + ".py"
     file_name = file_name.replace("Job","").lower()
     print(job_type, file_name, job_name)
+
+    #Create directory if it does not exist
     try:
         os.makedirs(folder_name)
         with open(folder_name+"/__init__.py","w") as f:
             f.write("")
-
     except FileExistsError:
         # directory already exists
         pass
+
+    #create the file 
     with open(file_name,"w") as f:
-        params = {}
+
+        #begin file
         f.write("from naga.jobs.base import BaseJob\n")
         f.write("\n")
         job_name = job_name[0].upper() + job_name[1:]
+        
+        #Begin class def
         f.write("class {}(BaseJob):\n".format(job_name))
         f.write("\tdef __init__(self, folder, job_name, \n")
+
+        #write Params 
+        params = {}
         for k in j.keys():
             if k not in ["Type","RunAs","Host"]:
-                params[k] = gen_name(k)
+                params[k] = gen_name(k) #store params
                 f.write("\t\t\t\t{},\n".format(params[k]))
+
+        # Write default Params for all files
         f.write("\t\t\thost=None, run_as=None, description=None):\n")
-        f.write("\t\tBaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)\n")
-        for k in params:
-            f.write("\t\tself.{} = {}\n".format(params[k],params[k]))      
         
+        #Super class init
+        f.write("\t\tBaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)\n")
+        
+        #Init and store all params
+        for k in params:
+            f.write("\t\tself.{} = {}\n".format(params[k],params[k]))              
         f.write("\n")
+
+        #begin get_json method
         f.write("\tdef get_json(self):\n")
         f.write("\t\tjob_json = BaseJob.get_json(self)\n")
         f.write("\t\tjob_json['Type'] = '{}'\n".format(job_type))
