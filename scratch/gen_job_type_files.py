@@ -32,7 +32,7 @@ def json_to_job(j):
         job_name = get_job_name(job_type) + "Job"
     else:
         job_name = get_job_name(job_type)
-    job_name = job_name.replace(" ","_")
+    job_name = job_name.replace(" ","")
     folder_name = job_type.replace(":","/").split("/")[:-1]
     folder_name = "../naga/new" + "/".join(folder_name).lower() 
     folder_name = folder_name.replace("job","jobs")
