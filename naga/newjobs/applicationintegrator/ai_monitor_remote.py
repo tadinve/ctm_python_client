@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class Ai_monitor_remote_job(BaseJob):
+class AIMonitorRemoteJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				ai_host,

@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class GlueJob(BaseJob):
+class GLUEJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				ai_glue_job_name,

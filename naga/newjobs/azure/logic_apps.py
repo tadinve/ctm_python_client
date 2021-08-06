@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class Logic_appsJob(BaseJob):
+class LogicAppsJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				logic_app_name,

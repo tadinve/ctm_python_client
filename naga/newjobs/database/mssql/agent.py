@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class Agent_job(BaseJob):
+class AgentJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				job_name,

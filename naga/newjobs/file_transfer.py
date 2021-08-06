@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class File_transferJob(BaseJob):
+class FileTransferJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile_src,
 				connection_profile_dest,

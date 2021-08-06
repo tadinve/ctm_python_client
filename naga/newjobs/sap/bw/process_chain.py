@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class Process_chainJob(BaseJob):
+class ProcessChainJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				process_chain_description,

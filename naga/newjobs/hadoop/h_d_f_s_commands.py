@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class H_d_f_s_commandsJob(BaseJob):
+class HDFSCommandsJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				commands,

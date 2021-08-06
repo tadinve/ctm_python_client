@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class AdfJob(BaseJob):
+class ADFJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				ai_resource_group_name,

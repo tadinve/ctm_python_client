@@ -25,7 +25,7 @@ def gen_name(n):
 
 def get_job_name(s):
     s =  s.split(":")[-1]
-    return gen_name(s)
+    return "".join(s)
 def json_to_job(j):
     job_type = j["Type"]
     if job_type[-3:] != "Job":
@@ -36,7 +36,7 @@ def json_to_job(j):
     folder_name = job_type.replace(":","/").split("/")[:-1]
     folder_name = "../naga/new" + "/".join(folder_name).lower() 
     folder_name = folder_name.replace("job","jobs")
-    file_name = folder_name + "/" + job_name + ".py"
+    file_name = folder_name + "/" + gen_name(job_name)[:-4] + ".py"
     file_name = file_name.replace("Job","").lower()
     print(job_type, file_name, job_name)
     try:

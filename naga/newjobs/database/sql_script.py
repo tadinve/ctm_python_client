@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class Sql_scriptJob(BaseJob):
+class SQLScriptJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				sql_script,
 				connection_profile,
