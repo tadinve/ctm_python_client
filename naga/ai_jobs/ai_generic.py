@@ -1,4 +1,4 @@
-from naga.jobs.base import BaseJob
+from naga.core.base import BaseJob
 
 class AiGenericJob(BaseJob):
     def __init__(
