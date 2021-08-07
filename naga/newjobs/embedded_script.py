@@ -4,8 +4,8 @@ class EmbeddedScriptJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				script,
 				file_name,
-				pre_command,
-				post_command,
+				pre_command = None,
+				post_command = None,
 				host=None, run_as=None, description=None):
 
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)

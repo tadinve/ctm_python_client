@@ -4,7 +4,7 @@ class SQLScriptJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				sql_script,
 				connection_profile,
-				parameters,
+				parameters = None,
 				host=None, run_as=None, description=None):
 
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
