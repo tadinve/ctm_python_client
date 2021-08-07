@@ -1,0 +1,3 @@
+job,col1,col2,col3,col4
+EmbeddedQueryJob,Autocommit,OutputExecutionLog,OutputSQLOutput,SQLOutputFormat
+FileWatcherJob,TimeLimit,Wildcard,MinimalAge,MaximalAge

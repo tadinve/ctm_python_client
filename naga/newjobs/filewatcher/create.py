@@ -11,7 +11,9 @@ class CreateJob(BaseJob):
 				wild_card,
 				minimal_age,
 				maximal_age,
-				host=None, run_as=None, description=None):
+				type = None,
+				run_as = None,
+				host = None,
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.path = path
 		self.search_interval = search_interval
@@ -22,6 +24,9 @@ class CreateJob(BaseJob):
 		self.wild_card = wild_card
 		self.minimal_age = minimal_age
 		self.maximal_age = maximal_age
+		self.type = type
+		self.run_as = run_as
+		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -44,4 +49,10 @@ class CreateJob(BaseJob):
 			job_json['MinimalAge'] = self.minimal_age
 		if self.maximal_age != None:
 			job_json['MaximalAge'] = self.maximal_age
+		if self.type != None:
+			job_json['Type'] = self.type
+		if self.run_as != None:
+			job_json['RunAs'] = self.run_as
+		if self.host != None:
+			job_json['Host'] = self.host
 		return job_json

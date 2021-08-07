@@ -3,6 +3,8 @@ import pprint
 pp = pprint.PrettyPrinter(indent=4)  
 import glob 
 import os
+import pandas as pd
+
 
 def gen_name(n):
     import re
@@ -28,13 +30,25 @@ def gen_name(n):
 def get_job_name(s):
     s =  s.split(":")[-1]
     return "".join(s)
+
 def json_to_job(j):
+
+    df = pd.read_csv("jobs/none_params.csv",sep=",",index_col=0)
+    jt = list(df.index.values)
+    print("jt=",jt)
     job_type = j["Type"]
     if job_type[-3:] != "Job":
         job_name = get_job_name(job_type) + "Job"
     else:
         job_name = get_job_name(job_type)
     job_name = job_name.replace(" ","")
+    print("JobName =",job_name)
+
+    none_params_list = []
+    if job_name in jt:
+        none_params_list = df.loc[job_name].values.tolist()
+        print(none_params_list)
+
     folder_name = job_type.replace(":","/").split("/")[:-1]
     folder_name = "../naga/new" + "/".join(folder_name).lower() 
     folder_name = folder_name.replace("job","jobs")
@@ -65,16 +79,21 @@ def json_to_job(j):
 
         #write Params 
         params = {}
+        none_params_list_all = ["Type","RunAs","Host"] + none_params_list
         for k in j.keys():
-            if k not in ["Type","RunAs","Host"]:
+            if k not in none_params_list_all:
                 params[k] = gen_name(k) #store params
                 f.write("\t\t\t\t{},\n".format(params[k]))
+
+        for k in none_params_list:
+            params[k] = gen_name(k) #store params
+            f.write("\t\t\t\t{} = None,\n".format(params[k]))
 
         # Write default Params for all files
         f.write("\t\t\t\thost=None, run_as=None, description=None):\n")
         
         #Super class init
-        f.write("\t\tBaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)\n")
+        f.write("\n\t\tBaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)\n")
         
         #Init and store all params
         for k in params:
@@ -98,11 +117,15 @@ def json_to_job(j):
 
 
 files = glob.glob("jobs/*.json")  
-for file in files[:]: 
-    f = open(file) 
+# for file in files[:]: 
+#     f = open(file) 
+#     mj = json.load(f) 
+#     json_to_job(mj)
+
+for file in files[:1]: 
+    f = open("jobs/Job-Database-EmbeddedQuery.json") 
     mj = json.load(f) 
     json_to_job(mj)
-
 
 fn = "/__init__.py"
 root_dir = '../naga/newjobs'

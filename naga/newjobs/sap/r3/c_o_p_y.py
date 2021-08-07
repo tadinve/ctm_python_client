@@ -16,7 +16,9 @@ class COPYJob(BaseJob):
 				copy_from_step,
 				post_job_action,
 				detect_spawned_job,
-				host=None, run_as=None, description=None):
+				type = None,
+				run_as = None,
+				host = None,
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.sap_job_name = sap_job_name
@@ -32,6 +34,9 @@ class COPYJob(BaseJob):
 		self.copy_from_step = copy_from_step
 		self.post_job_action = post_job_action
 		self.detect_spawned_job = detect_spawned_job
+		self.type = type
+		self.run_as = run_as
+		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -64,4 +69,10 @@ class COPYJob(BaseJob):
 			job_json['PostJobAction'] = self.post_job_action
 		if self.detect_spawned_job != None:
 			job_json['DetectSpawnedJob'] = self.detect_spawned_job
+		if self.type != None:
+			job_json['Type'] = self.type
+		if self.run_as != None:
+			job_json['RunAs'] = self.run_as
+		if self.host != None:
+			job_json['Host'] = self.host
 		return job_json

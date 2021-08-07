@@ -12,7 +12,9 @@ class InformaticaJob(BaseJob):
 				workflow_restart_mode,
 				restart_from_task,
 				workflow_parameters_file,
-				host=None, run_as=None, description=None):
+				type = None,
+				run_as = None,
+				host = None,
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.repository_folder = repository_folder
@@ -24,6 +26,9 @@ class InformaticaJob(BaseJob):
 		self.workflow_restart_mode = workflow_restart_mode
 		self.restart_from_task = restart_from_task
 		self.workflow_parameters_file = workflow_parameters_file
+		self.type = type
+		self.run_as = run_as
+		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -48,4 +53,10 @@ class InformaticaJob(BaseJob):
 			job_json['RestartFromTask'] = self.restart_from_task
 		if self.workflow_parameters_file != None:
 			job_json['WorkflowParametersFile'] = self.workflow_parameters_file
+		if self.type != None:
+			job_json['Type'] = self.type
+		if self.run_as != None:
+			job_json['RunAs'] = self.run_as
+		if self.host != None:
+			job_json['Host'] = self.host
 		return job_json

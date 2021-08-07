@@ -5,11 +5,16 @@ class DistCpJob(BaseJob):
 				connection_profile,
 				target_path,
 				source_paths,
-				host=None, run_as=None, description=None):
+				type = None,
+				run_as = None,
+				host = None,
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.target_path = target_path
 		self.source_paths = source_paths
+		self.type = type
+		self.run_as = run_as
+		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -20,4 +25,10 @@ class DistCpJob(BaseJob):
 			job_json['TargetPath'] = self.target_path
 		if self.source_paths != None:
 			job_json['SourcePaths'] = self.source_paths
+		if self.type != None:
+			job_json['Type'] = self.type
+		if self.run_as != None:
+			job_json['RunAs'] = self.run_as
+		if self.host != None:
+			job_json['Host'] = self.host
 		return job_json
