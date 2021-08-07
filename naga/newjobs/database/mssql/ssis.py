@@ -7,18 +7,14 @@ class SSISJob(BaseJob):
 				package_name,
 				config_files,
 				properties,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.package_source = package_source
 		self.package_name = package_name
 		self.config_files = config_files
 		self.properties = properties
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -33,10 +29,4 @@ class SSISJob(BaseJob):
 			job_json['ConfigFiles'] = self.config_files
 		if self.properties != None:
 			job_json['Properties'] = self.properties
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json

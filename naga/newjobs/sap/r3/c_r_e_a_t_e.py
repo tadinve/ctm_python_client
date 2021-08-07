@@ -11,9 +11,8 @@ class CREATEJob(BaseJob):
 				steps,
 				post_job_action,
 				spool_list_recipient,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.sap_job_name = sap_job_name
@@ -24,9 +23,6 @@ class CREATEJob(BaseJob):
 		self.steps = steps
 		self.post_job_action = post_job_action
 		self.spool_list_recipient = spool_list_recipient
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -49,10 +45,4 @@ class CREATEJob(BaseJob):
 			job_json['PostJobAction'] = self.post_job_action
 		if self.spool_list_recipient != None:
 			job_json['SpoolListRecipient'] = self.spool_list_recipient
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json

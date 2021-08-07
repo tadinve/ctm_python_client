@@ -10,9 +10,8 @@ class ProcessChainJob(BaseJob):
 				consider_only_overall_chain_status,
 				retrieve_log,
 				detect_spawned_job,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.process_chain_description = process_chain_description
@@ -22,9 +21,6 @@ class ProcessChainJob(BaseJob):
 		self.consider_only_overall_chain_status = consider_only_overall_chain_status
 		self.retrieve_log = retrieve_log
 		self.detect_spawned_job = detect_spawned_job
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -45,10 +41,4 @@ class ProcessChainJob(BaseJob):
 			job_json['RetrieveLog'] = self.retrieve_log
 		if self.detect_spawned_job != None:
 			job_json['DetectSpawnedJob'] = self.detect_spawned_job
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json

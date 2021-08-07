@@ -8,9 +8,8 @@ class MapredStreamingJob(BaseJob):
 				mapper_command,
 				reducer_command,
 				general_options,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.input_path = input_path
@@ -18,9 +17,6 @@ class MapredStreamingJob(BaseJob):
 		self.mapper_command = mapper_command
 		self.reducer_command = reducer_command
 		self.general_options = general_options
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -37,10 +33,4 @@ class MapredStreamingJob(BaseJob):
 			job_json['ReducerCommand'] = self.reducer_command
 		if self.general_options != None:
 			job_json['GeneralOptions'] = self.general_options
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json

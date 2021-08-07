@@ -117,15 +117,15 @@ def json_to_job(j):
 
 
 files = glob.glob("jobs/*.json")  
-# for file in files[:]: 
-#     f = open(file) 
-#     mj = json.load(f) 
-#     json_to_job(mj)
-
-for file in files[:1]: 
-    f = open("jobs/Job-Database-EmbeddedQuery.json") 
+for file in files[:]: 
+    f = open(file) 
     mj = json.load(f) 
     json_to_job(mj)
+
+# for file in files[:1]: 
+#     f = open("jobs/Job-Database-EmbeddedQuery.json") 
+#     mj = json.load(f) 
+#     json_to_job(mj)
 
 fn = "/__init__.py"
 root_dir = '../naga/newjobs'

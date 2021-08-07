@@ -9,9 +9,8 @@ class SLAManagementJob(BaseJob):
 				complete_in,
 				events_to_wait_for,
 				events_to_delete,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.service_name = service_name
 		self.service_priority = service_priority
@@ -20,9 +19,6 @@ class SLAManagementJob(BaseJob):
 		self.complete_in = complete_in
 		self.events_to_wait_for = events_to_wait_for
 		self.events_to_delete = events_to_delete
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -41,10 +37,4 @@ class SLAManagementJob(BaseJob):
 			job_json['eventsToWaitFor'] = self.events_to_wait_for
 		if self.events_to_delete != None:
 			job_json['eventsToDelete'] = self.events_to_delete
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json

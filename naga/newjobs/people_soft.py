@@ -10,9 +10,8 @@ class PeopleSoftJob(BaseJob):
 				process_name,
 				append_to_output,
 				bind_variables,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.user = user
@@ -22,9 +21,6 @@ class PeopleSoftJob(BaseJob):
 		self.process_name = process_name
 		self.append_to_output = append_to_output
 		self.bind_variables = bind_variables
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -45,10 +41,4 @@ class PeopleSoftJob(BaseJob):
 			job_json['AppendToOutput'] = self.append_to_output
 		if self.bind_variables != None:
 			job_json['BindVariables'] = self.bind_variables
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json

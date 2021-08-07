@@ -7,18 +7,14 @@ class LambdaJob(BaseJob):
 				version,
 				payload,
 				append_log_to_output,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.connection_profile = connection_profile
 		self.function_name = function_name
 		self.version = version
 		self.payload = payload
 		self.append_log_to_output = append_log_to_output
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -33,10 +29,4 @@ class LambdaJob(BaseJob):
 			job_json['Payload'] = self.payload
 		if self.append_log_to_output != None:
 			job_json['AppendLogToOutput'] = self.append_log_to_output
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json

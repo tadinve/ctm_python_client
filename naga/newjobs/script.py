@@ -6,17 +6,13 @@ class ScriptJob(BaseJob):
 				file_path,
 				pre_command,
 				post_command,
-				type = None,
-				run_as = None,
-				host = None,
+				host=None, run_as=None, description=None):
+
 		BaseJob.__init__(self, folder, job_name, description=description, host=host, run_as=run_as)
 		self.file_name = file_name
 		self.file_path = file_path
 		self.pre_command = pre_command
 		self.post_command = post_command
-		self.type = type
-		self.run_as = run_as
-		self.host = host
 
 	def get_json(self):
 		job_json = BaseJob.get_json(self)
@@ -29,10 +25,4 @@ class ScriptJob(BaseJob):
 			job_json['PreCommand'] = self.pre_command
 		if self.post_command != None:
 			job_json['PostCommand'] = self.post_command
-		if self.type != None:
-			job_json['Type'] = self.type
-		if self.run_as != None:
-			job_json['RunAs'] = self.run_as
-		if self.host != None:
-			job_json['Host'] = self.host
 		return job_json
