@@ -1,7 +1,7 @@
-from naga.jobs.application_integrator.generic_ai import GenericAiJob
+from naga.ai_jobs.ai_generic import AiGenericJob
 
 
-class AIBlobStorageJob(GenericAiJob):
+class AIBlobStorageJob(AiGenericJob):
     def __init__(
         self,
         folder,
@@ -24,7 +24,7 @@ class AIBlobStorageJob(GenericAiJob):
             "AI-Public Access" : ai_public_access
         }
 
-        GenericAiJob.__init__(self, folder=folder, job_name=job_name, 
+        AiGenericJob.__init__(self, folder=folder, job_name=job_name, 
             connection_profile=connection_profile,
             ai_name="AI Blob Storage", host=host, run_as=run_as, 
             description=description, **params_dict)

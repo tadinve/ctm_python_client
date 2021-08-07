@@ -1,6 +1,6 @@
 from naga.jobs.base import BaseJob
 
-class GenericAiJob(BaseJob):
+class AiGenericJob(BaseJob):
     def __init__(
         self, folder, job_name, connection_profile, ai_name, 
         host=None, run_as=None, description=None, **kwargs
