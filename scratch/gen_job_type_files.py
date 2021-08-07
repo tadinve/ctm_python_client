@@ -72,7 +72,7 @@ def json_to_job(j):
     with open(file_name,"w") as f:
 
         #begin file
-        f.write("from naga.jobs.base import BaseJob\n")
+        f.write("from naga.core.base import BaseJob\n")
         f.write("\n")
         job_name = job_name[0].upper() + job_name[1:]
         

@@ -1,4 +1,4 @@
-from naga.jobs.base import BaseJob
+from naga.core.base import BaseJob
 
 class MapredStreamingJob(BaseJob):
 	def __init__(self, folder, job_name, 
