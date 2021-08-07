@@ -5,6 +5,8 @@ import glob
 import os
 import pandas as pd
 
+def Intersection(lst1, lst2):
+    return list(set(lst1).intersection(lst2))
 
 def gen_name(n):
     import re
@@ -47,6 +49,7 @@ def json_to_job(j):
     none_params_list = []
     if job_name in jt:
         none_params_list = df.loc[job_name].values.tolist()
+        none_params_list = Intersection(none_params_list, j.keys())
         print(none_params_list)
 
     folder_name = job_type.replace(":","/").split("/")[:-1]
