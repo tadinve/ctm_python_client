@@ -4,7 +4,7 @@ class EmbeddedQueryJob(BaseJob):
 	def __init__(self, folder, job_name, 
 				connection_profile,
 				query,
-				variables,
+				variables = None,
 				autocommit = None,
 				output_execution_log = None,
 				output_sql_output = None,
