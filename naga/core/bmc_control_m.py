@@ -175,9 +175,10 @@ class CmJobFlow:
     def run(self):
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
-
+        
+        #curl -H "Authorization: Bearer $token" -X POST  -F "jobDefinitionsFile=@examples/AutomationAPISampleFlow.json" -F "deployDescriptorFile=@examples/deployDescriptor.json" "$endpoint/run"
         with open(JOBS_FILE, "rb") as fo_jobs:
-            uploaded_files = [("definitionsFile", (JOBS_FILE, fo_jobs, "application/json"))]
+            uploaded_files = [("jobDefinitionsFile", (JOBS_FILE, fo_jobs, "application/json"))]
             r_submit = requests.post(
                 self.uri + "/automation-api/run",
                 files=uploaded_files,
