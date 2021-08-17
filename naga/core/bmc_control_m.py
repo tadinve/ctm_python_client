@@ -196,10 +196,10 @@ class CmJobFlow:
             for msg in j["errors"]:
                 print(msg)
         if r_submit.status_code != requests.codes.ok:
-            print("Failure Submitting")
+            print("Failure Running")
             return r_submit.status_code
 
-        print("Successfully submitted to Control-M")
+        print("Successfully Ran job in Control-M")
         print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
         return r_submit.status_code
 
