@@ -142,7 +142,7 @@ class CmJobFlow:
     def __str__(self):
         return json.dumps(self.json, indent=4)
 
-    def submit(self):
+    def deploy(self):
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
 
