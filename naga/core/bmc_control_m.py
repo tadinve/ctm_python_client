@@ -291,7 +291,7 @@ class CmJobFlow:
     def add_job(self, folder, job):
         job_name = job.get_job_name()
         self.json[folder][job_name] = job.get_json()
-        return self._create_node(job_name, shape="Msquare")
+        return self._create_node(job_name)
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
     def chain_jobs(self, folder, links):
