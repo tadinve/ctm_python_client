@@ -27,7 +27,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import os
 import json
 import requests
-from graphviz import Digraph
+#from graphviz import Digraph
 
 
 JOBS_FILE = "jobs.json"
@@ -45,9 +45,9 @@ class CmJobFlow:
         self.schedule_set = False
         self.failure_notification = False
 
-        self.graph = Digraph("G", filename=application + ".gv")
+        # self.graph = Digraph("G", filename=application + ".gv")
         # self.g.attr(rankdir='LR', size='8,5',  shape='rectangle')
-        self.graph.attr(shape="ellipse")
+        # self.graph.attr(shape="ellipse")
 
         self.flowcount = 0
         self.variables = []
@@ -97,16 +97,15 @@ class CmJobFlow:
         self.token = r_login.json()["token"]
         print("Token =", self.token)
         return r_login.status_code
-        # this is a private functions defined to create nodes in the graph
-
-    def _create_node(self, name, shape="box"):
+    
+    # this is a private functions defined to create nodes in the graph
+    def _create_node(self, name):
         self.jobs.append(name)
         node_id = str(len(self.jobs) - 1)
-        self.graph.node(node_id, label=name, shape=shape)
+        #self.graph.node(node_id, label=name, shape=shape)
         return node_id
 
-        # sets up the default user to run the jobs (can be overridden at the job level)
-
+    # sets up the default user to run the jobs (can be overridden at the job level)
     def set_run_as(self, username, host, ctm_server=None, site_standard=None):
         self.run_as_set = True
         self.username = username
@@ -249,7 +248,7 @@ class CmJobFlow:
         if self.failure_notification:
             print("\n On Failure notify {0} with Subject {1}".format(self.mail_to, self.mail_subject))
 
-        return self.graph
+        return True #self.graph
 
     def display_json(self):
         str = json.dumps(self.json, indent=4)
@@ -305,7 +304,7 @@ class CmJobFlow:
             self.jobs[int(links[0])],
         ]
         for j in links[1:]:
-            self.graph.edge(from_job, j)
+            #self.graph.edge(from_job, j)
             from_job = j
             seq.append(self.jobs[int(j)])
         self.json[folder]["Flow" + str(self.flowcount)] = {"Type": "Flow", "Sequence": seq}
