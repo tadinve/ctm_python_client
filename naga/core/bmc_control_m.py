@@ -308,7 +308,7 @@ class CmJobFlow:
             self.jobs[int(links[0])],
         ]
         for j in links[1:]:
-            self.edges.append((from_job, j))
+            self.edges.append((self.jobs[from_job], self.jobs[j]))
             from_job = j
             seq.append(self.jobs[int(j)])
         self.json[folder]["Flow" + str(self.flowcount)] = {"Type": "Flow", "Sequence": seq}
