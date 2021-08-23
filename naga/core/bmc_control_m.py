@@ -45,6 +45,10 @@ class CmJobFlow:
         self.schedule_set = False
         self.failure_notification = False
 
+        #network graph
+        self.nodes = []
+        self.edges = []
+
         # self.graph = Digraph("G", filename=application + ".gv")
         # self.g.attr(rankdir='LR', size='8,5',  shape='rectangle')
         # self.graph.attr(shape="ellipse")
@@ -304,7 +308,13 @@ class CmJobFlow:
             self.jobs[int(links[0])],
         ]
         for j in links[1:]:
-            #self.graph.edge(from_job, j)
+            self.edges.append((from_job, j))
             from_job = j
             seq.append(self.jobs[int(j)])
         self.json[folder]["Flow" + str(self.flowcount)] = {"Type": "Flow", "Sequence": seq}
+
+    
+    #return nodes and edges. can be used by graphviz or matplotlib for display
+    def get_nodes_and_edges(self):
+        return self.jobs, self.edges
+
