@@ -9,7 +9,7 @@ class DisplayDAG:
     
 	def display_graphviz(self):
 
-		nodes, edges = t1_flow.get_nodes_and_edges()
+		nodes, edges = self.flow.get_nodes_and_edges()
 
 		graph = Digraph("G", filename="temp.gv")
 		#self.g.attr(rankdir='LR', size='8,5',  shape='rectangle')
