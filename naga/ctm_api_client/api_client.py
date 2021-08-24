@@ -24,7 +24,7 @@ import six
 from six.moves.urllib.parse import quote
 
 from naga.ctm_api_client.configuration import Configuration
-import naga.ctm_api_client.models
+import naga.ctm_api_client as ctm_api_client
 from naga.ctm_api_client import rest
 
 
