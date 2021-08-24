@@ -21,7 +21,7 @@ Retrieves a report by name in the desired format (CSV,PDF ,EXCEL). If the report
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -77,7 +77,7 @@ Retrieves report filters
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -131,7 +131,7 @@ Retrieves status information for a report generation request based on the report
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -185,7 +185,7 @@ Sends a request to generate a report asynchronously and returns the request stat
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 

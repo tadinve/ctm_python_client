@@ -20,7 +20,7 @@ Get job log by unique job key
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -76,7 +76,7 @@ Get job output by unique job key
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -132,7 +132,7 @@ Get all the Control-M Archiving jobs that match the search criterias
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 

@@ -20,7 +20,7 @@ Authenticate the user with the specified password and return a token that can be
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -68,7 +68,7 @@ Disconnects the user session specified by the request authentication token, and 
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -118,7 +118,7 @@ Change my password
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 

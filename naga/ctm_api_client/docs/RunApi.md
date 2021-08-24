@@ -53,7 +53,7 @@ Activate a workload policy, supports wildcard in names
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -111,7 +111,7 @@ Add a new  event. date may be of format MMDD, ODAT to set current controlm date,
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -167,7 +167,7 @@ Add a new pool resource.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -223,7 +223,7 @@ Add workload policies from json definitions file to Control-M
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -277,7 +277,7 @@ confirm a job that waits for confirmation
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -331,7 +331,7 @@ Deactivate a workload policy, supports wildcard in names
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -389,7 +389,7 @@ Delete a  event.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -447,7 +447,7 @@ mark delete as deleted
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -501,7 +501,7 @@ Delete a pool resource.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -557,7 +557,7 @@ Delete workloadpolicy
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -611,7 +611,7 @@ free the job
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -665,7 +665,7 @@ get the active job's data by job's order ID
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -719,7 +719,7 @@ Get all SLA active services
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -769,7 +769,7 @@ get full workLoad policies data as json code that match the requested search cri
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -823,7 +823,7 @@ Get all events records for specific search.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -885,7 +885,7 @@ Get the job execution log.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -939,7 +939,7 @@ Get the output returned from a job.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -995,7 +995,7 @@ Get the statistics from a job.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1049,7 +1049,7 @@ Get the job status.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1103,7 +1103,7 @@ Run status of jobs started with the Run service.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1159,7 +1159,7 @@ Get status of jobs that match the requested search criteria.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1279,7 +1279,7 @@ Get all resources records matching search.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1337,7 +1337,7 @@ get the reason why the job is in waiting status
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1391,7 +1391,7 @@ Get all the workload policies.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1445,7 +1445,7 @@ hold the job
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1499,7 +1499,7 @@ Abort job execution.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1553,7 +1553,7 @@ Modify active job, specified by order id according to given definitions file (JS
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1609,7 +1609,7 @@ Run jobs from selected folder according to given filter
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1663,7 +1663,7 @@ Run an already executed job (again).
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1719,7 +1719,7 @@ Run jobs according to given definitions file (JSON or zip).
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1777,7 +1777,7 @@ start a job immediately
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1831,7 +1831,7 @@ set job status to OK, post processing action
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1885,7 +1885,7 @@ recover a mark for deletion job
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1939,7 +1939,7 @@ Update alert.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -1993,7 +1993,7 @@ Update alert status.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -2047,7 +2047,7 @@ Update a pool resource.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 

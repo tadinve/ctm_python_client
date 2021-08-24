@@ -28,7 +28,7 @@ Cancel upgrade activity
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -82,7 +82,7 @@ Delete upgrade activity status for specific upgrade id.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -136,7 +136,7 @@ Get all upgrade activities status.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -204,7 +204,7 @@ Get available versions for upgrade
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -254,7 +254,7 @@ Get eligible agents for upgrade that match the requested search criteria from Co
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -310,7 +310,7 @@ Get a list of the images in the system for the requested OS.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -366,7 +366,7 @@ Returns log of upgrade activity
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -420,7 +420,7 @@ Get upgrade activity status for specific upgrade id.
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -474,7 +474,7 @@ Retry upgrade activity
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -528,7 +528,7 @@ Transfer and install a product on an agent
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
@@ -582,7 +582,7 @@ Uninstall a product from an agent
 ```python
 from __future__ import print_function
 import time
-import ctm_api_client
+import naga.ctm_api_client
 from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
