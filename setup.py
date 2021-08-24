@@ -9,5 +9,5 @@ setup(
     license='Apache 2.0',
     install_requires=['graphviz>=0.10', 
                         'requests>=2.23.0',
-                        'urlib3'],
+                        'urllib3'],
 )
