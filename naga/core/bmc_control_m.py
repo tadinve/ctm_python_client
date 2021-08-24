@@ -27,9 +27,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import os
 import json
 import requests
-from session import Session
-import ctm_api_client
-#from graphviz import Digraph
+from naga.session.session import Session
+import naga.ctm_api_client as ctm_api_client
+ #from graphviz import Digraph
 
 
 JOBS_FILE = "jobs.json"
