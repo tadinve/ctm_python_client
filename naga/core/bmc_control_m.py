@@ -50,9 +50,8 @@ class CmJobFlow:
 
         #session variables
         self.session = session
-        self.deployApi = ctm_api_client.DeployApi(ctm_api_client.ApiClient(self.session.configuration))
-        self.buildApi = ctm_api_client.BuildApi(ctm_api_client.ApiClient(self.session.configuration))
-        self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
+        #self.buildApi = ctm_api_client.BuildApi(ctm_api_client.ApiClient(self.session.configuration))
+        #self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
 
         #network graph
         self.nodes = []
@@ -156,6 +155,7 @@ class CmJobFlow:
 
     def deploy(self):
 
+        self.deployApi = ctm_api_client.DeployApi(ctm_api_client.ApiClient(self.session.configuration))
         self.token = self.session.get_token()
 
         with open(JOBS_FILE, "w") as outfile:
