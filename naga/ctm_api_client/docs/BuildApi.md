@@ -19,7 +19,7 @@ Compile the provided definition file (JSON or zip) to verify it is valid for Con
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

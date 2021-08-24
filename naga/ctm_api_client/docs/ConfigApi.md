@@ -120,7 +120,7 @@ Add an agent to Server. This command does not install or configure the agent. It
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -176,7 +176,7 @@ Add a new Workload Archiving rule
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -230,7 +230,7 @@ Add and external user for b2b
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -284,7 +284,7 @@ Add external user user groups to virtual folder external users list.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -340,7 +340,7 @@ add gateway.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -394,7 +394,7 @@ Add an agent to hostgroup. Create the the hostgroup if it does not exist.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -452,7 +452,7 @@ add hub to cluster.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -506,7 +506,7 @@ Add virtual folder
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -560,7 +560,7 @@ Add user group.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -614,7 +614,7 @@ Add PGP Template
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -674,7 +674,7 @@ Add a remote host to Server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -730,7 +730,7 @@ Add Authorization Role
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -784,7 +784,7 @@ Add a role to LDAP group so any user belong to the LDAP group will get all permi
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -840,7 +840,7 @@ Add a role to user so that user will inherit role authorization
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -896,7 +896,7 @@ Add a new secret to the secrets vault.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -950,7 +950,7 @@ Add a Server. This command setting up new server in the system
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1004,7 +1004,7 @@ Add user
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1058,7 +1058,7 @@ Add z/OS Template
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1118,7 +1118,7 @@ Authorize SSH Cluster
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1178,7 +1178,7 @@ Authorize SSH Host for SFTP account
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1238,7 +1238,7 @@ Authorized known ssh remote host.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1294,7 +1294,7 @@ Change user password
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1350,7 +1350,7 @@ Create certificate signing request (CSR) on SSL configured Agent.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1408,7 +1408,7 @@ Add a new Run-as user to server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1464,7 +1464,7 @@ Delete an agent from a Server. This will not shut the agent down. It only discon
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1520,7 +1520,7 @@ Deletes Workload Archiving rule by name. It is required to send deleteRuleData f
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1576,7 +1576,7 @@ Delete Authorization Role
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1630,7 +1630,7 @@ Delete an existing external user in MFT
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1684,7 +1684,7 @@ Remove an external user or user group from an existing virtual folder in MFT.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1740,7 +1740,7 @@ Delete an agent from the specified hostgroup. If the group is empty it will also
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1798,7 +1798,7 @@ delete host group
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1854,7 +1854,7 @@ Delete an existing virtual folder in MFT.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1908,7 +1908,7 @@ Delete user group.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1962,7 +1962,7 @@ Delete PGP Template
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2020,7 +2020,7 @@ Delete a remote host from a Server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2076,7 +2076,7 @@ Delete a role from LDAP group
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2132,7 +2132,7 @@ Delete Run-as user from server
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2190,7 +2190,7 @@ Delete an existing secret from the secrets vault.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2244,7 +2244,7 @@ Delete user
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2298,7 +2298,7 @@ Delete z/OS Template
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2356,7 +2356,7 @@ Deploy certificate (CRT) on SSL configured Agent.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2416,7 +2416,7 @@ Disable an Agent.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2472,7 +2472,7 @@ Enable an Agent. This command does not install or configure the agent. It only e
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2528,7 +2528,7 @@ Perform Manual Failover on a specified Server
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2582,7 +2582,7 @@ Generate RSA SSH Key pair for SFTP account authentication
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2640,7 +2640,7 @@ Get the certificate expiration date of SSL configured Agent.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2696,7 +2696,7 @@ Get all the parameters of the specified Agent.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2754,7 +2754,7 @@ Get all the agents of the specified Server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2810,7 +2810,7 @@ Get all the Archiving rules
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2860,7 +2860,7 @@ Get Authorization Roles
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2916,7 +2916,7 @@ Get All organization groups
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2970,7 +2970,7 @@ Get Authorization Roles associated with an organization group
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3026,7 +3026,7 @@ Get users
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3084,7 +3084,7 @@ Get list of statistical information for each Archiving rule and total informatio
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3134,7 +3134,7 @@ Get MFT external user authorized folders
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3188,7 +3188,7 @@ Get MFT external users that match the search criteria.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3250,7 +3250,7 @@ Get File Transfer Server (FTS) configuration data.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3306,7 +3306,7 @@ Get all the hostgroups of the specified Server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3360,7 +3360,7 @@ Get the agents that compose the specified hostgroup
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3416,7 +3416,7 @@ Get hub status.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3470,7 +3470,7 @@ Get MFT Configuration
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3526,7 +3526,7 @@ Get MFT virtual folders that match the search criteria.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3580,7 +3580,7 @@ Get MFT gateways
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3630,7 +3630,7 @@ Get all user groups that match the search criteria.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3688,7 +3688,7 @@ Get PGP Templates
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3746,7 +3746,7 @@ Get the remote host configuration properties from the Server
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3802,7 +3802,7 @@ Get all the remote hosts of the specified Server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3856,7 +3856,7 @@ Get Authorization Role
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3910,7 +3910,7 @@ Get all authorization entities associated with role
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3964,7 +3964,7 @@ Get Run-as user details from server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4022,7 +4022,7 @@ Get Run-as user list that match the requested search criteria from server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4080,7 +4080,7 @@ Get all the parameters of the specified Server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4134,7 +4134,7 @@ Get the names and hostnames of all Servers in the system.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4184,7 +4184,7 @@ Get user
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4238,7 +4238,7 @@ Get user real effective authorizations by all his roles
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4288,7 +4288,7 @@ get Workflow Insights status - topology and system parameters
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4338,7 +4338,7 @@ Get z/OS Templates
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4396,7 +4396,7 @@ Get the list of names of all the secrets in the vault
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4446,7 +4446,7 @@ Ping an Agent.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4504,7 +4504,7 @@ Recycle an item
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4558,7 +4558,7 @@ Delete Server
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4612,7 +4612,7 @@ remove gateway.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4666,7 +4666,7 @@ remove hub from cluster.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4720,7 +4720,7 @@ Remove a role from a user
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4776,7 +4776,7 @@ Deletes data (jobs including outputs and logs) by search criteria from the Workl
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4860,7 +4860,7 @@ Set the value of the specified parameter in the specified agent.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4920,7 +4920,7 @@ Set value of an enterprise management system parameter
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4976,7 +4976,7 @@ Set secondary server as Primary on a specified Server
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5030,7 +5030,7 @@ Test existing Run-as user in server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5090,7 +5090,7 @@ Edit Workload Archiving rule details
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5146,7 +5146,7 @@ Update an external user for b2b
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5202,7 +5202,7 @@ Update File Transfer Server (FTS) configuration data.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5260,7 +5260,7 @@ update agents in hostgroup.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5318,7 +5318,7 @@ Update MFT Configuration
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5376,7 +5376,7 @@ Update an existing virtual folder in MFT.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5432,7 +5432,7 @@ Update user group.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5488,7 +5488,7 @@ Update PGP Template
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5548,7 +5548,7 @@ Update Authorization Role
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5604,7 +5604,7 @@ Update Run-as user details in server.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5664,7 +5664,7 @@ Update an existing secret in the secrets vault.
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5720,7 +5720,7 @@ Update user
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5776,7 +5776,7 @@ Update z/OS Template
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

@@ -21,7 +21,7 @@ Authenticate the user with the specified password and return a token that can be
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
@@ -69,7 +69,7 @@ Disconnects the user session specified by the request authentication token, and 
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -119,7 +119,7 @@ Change my password
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

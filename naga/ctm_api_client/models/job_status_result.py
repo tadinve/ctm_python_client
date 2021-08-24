@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from ctm_api_client.configuration import Configuration
+from naga.ctm_api_client.configuration import Configuration
 
 
 class JobStatusResult(object):

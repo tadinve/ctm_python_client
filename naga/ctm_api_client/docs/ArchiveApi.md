@@ -21,7 +21,7 @@ Get job log by unique job key
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -77,7 +77,7 @@ Get job output by unique job key
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -133,7 +133,7 @@ Get all the Control-M Archiving jobs that match the search criterias
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

@@ -48,7 +48,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 from __future__ import print_function
 import time
 import ctm_api_client
-from ctm_api_client.rest import ApiException
+from naga.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

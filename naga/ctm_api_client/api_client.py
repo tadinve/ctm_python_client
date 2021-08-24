@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from ctm_api_client.configuration import Configuration
+from naga.ctm_api_client.configuration import Configuration
 import ctm_api_client.models
-from ctm_api_client import rest
+from naga.ctm_api_client import rest
 
 
 class ApiClient(object):
