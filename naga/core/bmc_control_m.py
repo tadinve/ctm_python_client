@@ -73,7 +73,7 @@ class CmJobFlow:
 
         # Attributes used in methods
         self.uri = None
-        self.token = session.get_token()
+        self.token = None
         self.https = None
         self.username = None
         self.password = None
@@ -156,6 +156,7 @@ class CmJobFlow:
 
     def deploy(self):
 
+        self.token = self.session.get_token()
 
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
@@ -195,6 +196,10 @@ class CmJobFlow:
         return True
 
     def run(self):
+
+        self.token = self.session.get_token()
+
+
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
 
