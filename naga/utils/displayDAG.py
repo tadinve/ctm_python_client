@@ -11,7 +11,7 @@ class DisplayDAG:
 		print("=========== Jobflow Details ===================")
 		print("Application: ", self.flow.application)
 		print("Sub Application: ", self.flow.sub_application)
-		print("Folder Name {0} \n\n\n".format(self.flow.folder[0]))
+		print("Folder Name {0} \n\n\n".format(self.flow.folders[0][0]))
 
 		nodes, edges = self.flow.get_nodes_and_edges()
 
