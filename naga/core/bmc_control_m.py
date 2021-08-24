@@ -27,6 +27,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import os
 import json
 import requests
+from session import Session
+import ctm_api_client
 #from graphviz import Digraph
 
 
@@ -36,7 +38,8 @@ JOBS_FILE = "jobs.json"
 class CmJobFlow:
 
     # Constructor and setting some default values
-    def __init__(self, application, sub_application, description=None, order_method=None):
+    def __init__(self, application, sub_application, description=None, order_method=None, 
+                session=None):
         self.application = application
         self.sub_application = sub_application
         self.folders = []
@@ -44,6 +47,12 @@ class CmJobFlow:
         self.run_as_set = False
         self.schedule_set = False
         self.failure_notification = False
+
+        #session variables
+        self.session = session
+        self.deployApi = ctm_api_client.DeployApi(ctm_api_client.ApiClient(self.session.configuration))
+        self.buildApi = ctm_api_client.BuildApi(ctm_api_client.ApiClient(self.session.configuration))
+        self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
 
         #network graph
         self.nodes = []
@@ -64,7 +73,7 @@ class CmJobFlow:
 
         # Attributes used in methods
         self.uri = None
-        self.token = None
+        self.token = session.get_token()
         self.https = None
         self.username = None
         self.password = None
@@ -146,34 +155,44 @@ class CmJobFlow:
         return json.dumps(self.json, indent=4)
 
     def deploy(self):
+
+
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
 
-        with open(JOBS_FILE, "rb") as fo_jobs:
-            uploaded_files = [("definitionsFile", (JOBS_FILE, fo_jobs, "application/json"))]
-            r_submit = requests.post(
-                self.uri + "/automation-api/deploy",
-                files=uploaded_files,
-                headers={"Authorization": "Bearer " + self.token},
-                verify=self.https,
-            )
-            print(r_submit.content)
+        try:
+            result = self.deployApi.deploy_file(JOBS_FILE)
+            print(result)
+        except Exception as e:
+            print("Error deploying job, look for more details below")
+            print(e)
+            return
+
+        # with open(JOBS_FILE, "rb") as fo_jobs:
+        #     uploaded_files = [("definitionsFile", (JOBS_FILE, fo_jobs, "application/json"))]
+        #     r_submit = requests.post(
+        #         self.uri + "/automation-api/deploy",
+        #         files=uploaded_files,
+        #         headers={"Authorization": "Bearer " + self.token},
+        #         verify=self.https,
+        #     )
+        #     print(r_submit.content)
 
         # Remove temporary file
         os.remove(JOBS_FILE)
 
-        print(r_submit.status_code)
-        j = json.loads(r_submit.content)
-        if "errors" in j:
-            for msg in j["errors"]:
-                print(msg)
-        if r_submit.status_code != requests.codes.ok:
-            print("Failure Submitting")
-            return r_submit.status_code
+        # print(r_submit.status_code)
+        # j = json.loads(r_submit.content)
+        # if "errors" in j:
+        #     for msg in j["errors"]:
+        #         print(msg)
+        # if r_submit.status_code != requests.codes.ok:
+        #     print("Failure Submitting")
+        #     return r_submit.status_code
 
         print("Successfully submitted to Control-M")
         print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
-        return r_submit.status_code
+        return True
 
     def run(self):
         with open(JOBS_FILE, "w") as outfile:
