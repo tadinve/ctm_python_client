@@ -197,6 +197,8 @@ class CmJobFlow:
 
     def run(self):
 
+        self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
+
         self.token = self.session.get_token()
 
 
