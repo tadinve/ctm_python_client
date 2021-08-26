@@ -13,7 +13,8 @@ from ctm_python_client.session.session import Session
 class TestCompleteFlow(unittest.TestCase):
     def test_completeFlow(self):
         # Read secrets file to get URI, Username and Password
-        with open(".secrets", "r") as fp:
+        BASE_PATH = os.path.abspath(os.path.dirname(__file__))
+        with open(BASE_PATH +"/.secrets", "r") as fp:
             ctm_uri = fp.readline().strip()
             ctm_user = fp.readline().strip()
             ctm_pwd = fp.readline().strip()
@@ -98,6 +99,9 @@ class TestCompleteFlow(unittest.TestCase):
 
 
         deploy_return = t1_flow.deploy()
-        self.assertEqual("1","1")
+        res = """{'deployed_calendars': None,\n 'deployed_connection_profiles': None,\n 'deployed_drivers': None,\n 'deployed_folders': ['WeatherForecast'],\n 'deployed_jobs': None,\n 'deployment_file': 'jobs.json',\n 'errors': None,\n 'is_deploy_descriptor_valid': False,\n 'successful_calendars_count': None,\n 'successful_connection_profiles_count': 0,\n 'successful_drivers_count': 0,\n 'successful_folders_count': 0,\n 'successful_jobs_count': 7,\n 'successful_smart_folders_count': 1,\n 'successful_sub_folders_count': 0,\n 'warnings': None}"""
+
+
+        self.assertEqual(str(deploy_return[0]),res)
 
 
