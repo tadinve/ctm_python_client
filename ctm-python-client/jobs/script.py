@@ -1,4 +1,4 @@
-from naga.core.base import BaseJob
+from ctm-python-client.core.base import BaseJob
 
 class ScriptJob(BaseJob):
 	def __init__(self, folder, job_name, 

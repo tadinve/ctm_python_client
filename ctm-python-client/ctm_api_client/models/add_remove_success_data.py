@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from naga.ctm_api_client.configuration import Configuration
+from ctm-python-client.ctm_api_client.configuration import Configuration
 
 
 class AddRemoveSuccessData(object):

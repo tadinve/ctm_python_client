@@ -1,10 +1,10 @@
 import unittest,json
-from naga.core import bmc_control_m as naga
-from naga.jobs.sap.r3.copy import COPYJob
+from ctm-python-client.core import bmc_control_m as ctm-python-client
+from ctm-python-client.jobs.sap.r3.copy import COPYJob
 
 class TestCOPYJob(unittest.TestCase):
 	def test_COPYJob(self):
-		flow = naga.CmJobFlow(application='',sub_application='')
+		flow = ctm-python-client.CmJobFlow(application='',sub_application='')
 		folder = flow.create_folder('test_folder')
 		j = COPYJob(folder=folder,job_name='test_job',
 				connection_profile='connection_profile',

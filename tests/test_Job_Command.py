@@ -1,10 +1,10 @@
 import unittest,json
-from naga.core import bmc_control_m as naga
-from naga.jobs.command import CommandJob
+from ctm-python-client.core import bmc_control_m as ctm-python-client
+from ctm-python-client.jobs.command import CommandJob
 
 class TestCommandJob(unittest.TestCase):
 	def test_CommandJob(self):
-		flow = naga.CmJobFlow(application='',sub_application='')
+		flow = ctm-python-client.CmJobFlow(application='',sub_application='')
 		folder = flow.create_folder('test_folder')
 		j = CommandJob(folder=folder,job_name='test_job',
 				command='command',

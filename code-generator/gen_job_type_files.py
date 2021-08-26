@@ -53,7 +53,7 @@ def json_to_job(j):
         print(none_params_list)
 
     folder_name = job_type.replace(":","/").split("/")[:-1]
-    folder_name = "../naga/new" + "/".join(folder_name).lower() 
+    folder_name = "../ctm-python-client/new" + "/".join(folder_name).lower() 
     folder_name = folder_name.replace("job","jobs")
     file_name = folder_name + "/" + gen_name(job_name)[:-4] + ".py"
     file_name = file_name.replace("Job","").lower()
@@ -72,7 +72,7 @@ def json_to_job(j):
     with open(file_name,"w") as f:
 
         #begin file
-        f.write("from naga.core.base import BaseJob\n")
+        f.write("from ctm-python-client.core.base import BaseJob\n")
         f.write("\n")
         job_name = job_name[0].upper() + job_name[1:]
         
@@ -131,7 +131,7 @@ for file in files[:]:
 #     json_to_job(mj)
 
 fn = "/__init__.py"
-root_dir = '../naga/newjobs'
+root_dir = '../ctm-python-client/newjobs'
 open(root_dir+fn, 'a').close()
 
 for dirname, dirnames, filenames in os.walk(root_dir):

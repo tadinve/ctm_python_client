@@ -3,14 +3,14 @@ import unittest
 import json
 import requests_mock
 
-from naga.core import bmc_control_m as naga
-from naga.core.base import BaseJob
+from ctm-python-client.core import bmc_control_m as ctm-python-client
+from ctm-python-client.core.base import BaseJob
 
 
 class TestCmJobFlow(unittest.TestCase):
     @staticmethod
     def get_default_job_flow():
-        job = naga.CmJobFlow(application="application",
+        job = ctm-python-client.CmJobFlow(application="application",
                              sub_application="sub_application",
                              order_method="order_method",
                              description="description")

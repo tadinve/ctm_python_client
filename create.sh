@@ -6,8 +6,8 @@ touch   LICENSE.txt
 touch    MANIFEST.in
 touch    README.txt
 touch   setup.py
-mkdir    naga
-cd naga
+mkdir    ctm-python-client
+cd ctm-python-client
 touch           __init__.py
 touch          module1.py
 touch          module2.py

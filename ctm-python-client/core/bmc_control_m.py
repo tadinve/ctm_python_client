@@ -27,8 +27,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import os
 import json
 import requests
-from naga.session.session import Session
-import naga.ctm_api_client as ctm_api_client
+from ctm-python-client.session.session import Session
+import ctm-python-client.ctm_api_client as ctm_api_client
  #from graphviz import Digraph
 
 

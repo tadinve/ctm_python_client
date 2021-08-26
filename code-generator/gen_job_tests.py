@@ -55,7 +55,7 @@ def json_to_job(j):
         print(none_params_list)
 
     folder_name = job_type.replace(":","/").split("/")[:-1]
-    folder_name = "../naga/new" + "/".join(folder_name).lower() 
+    folder_name = "../ctm-python-client/new" + "/".join(folder_name).lower() 
     folder_name = folder_name.replace("job","jobs")
     
     #gen file name
@@ -67,8 +67,8 @@ def json_to_job(j):
 
         #begin file
         f.write("import unittest,json\n")
-        f.write("from naga.core import bmc_control_m as naga\n")
-        f.write("from naga." + job_type.replace(":",".").lower().replace("job","jobs") + 
+        f.write("from ctm-python-client.core import bmc_control_m as ctm-python-client\n")
+        f.write("from ctm-python-client." + job_type.replace(":",".").lower().replace("job","jobs") + 
                 " import " + job_name + "\n")
         f.write("\n")
         job_name = job_name[0].upper() + job_name[1:]
@@ -77,7 +77,7 @@ def json_to_job(j):
         f.write("class Test{}(unittest.TestCase):\n".format(job_name))
 
         f.write("\tdef test_{}(self):\n".format(job_name))
-        f.write("\t\tflow = naga.CmJobFlow(application='',sub_application='')\n")
+        f.write("\t\tflow = ctm-python-client.CmJobFlow(application='',sub_application='')\n")
         f.write("\t\tfolder = flow.create_folder('test_folder')\n")
         f.write("\t\tj = {}(folder=folder,job_name='test_job',\n".format(job_name))
 

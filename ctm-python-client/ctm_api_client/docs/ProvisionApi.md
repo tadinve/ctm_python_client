@@ -28,8 +28,8 @@ Cancel upgrade activity
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -82,8 +82,8 @@ Delete upgrade activity status for specific upgrade id.
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -136,8 +136,8 @@ Get all upgrade activities status.
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -204,8 +204,8 @@ Get available versions for upgrade
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -254,8 +254,8 @@ Get eligible agents for upgrade that match the requested search criteria from Co
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -310,8 +310,8 @@ Get a list of the images in the system for the requested OS.
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -366,8 +366,8 @@ Returns log of upgrade activity
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -420,8 +420,8 @@ Get upgrade activity status for specific upgrade id.
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -474,8 +474,8 @@ Retry upgrade activity
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -528,8 +528,8 @@ Transfer and install a product on an agent
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -582,8 +582,8 @@ Uninstall a product from an agent
 ```python
 from __future__ import print_function
 import time
-import naga.ctm_api_client
-from naga.ctm_api_client.rest import ApiException
+import ctm-python-client.ctm_api_client
+from ctm-python-client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
