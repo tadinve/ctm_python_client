@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from ctm-python-client.ctm_api_client.configuration import Configuration
-import ctm-python-client.ctm_api_client as ctm_api_client
-from ctm-python-client.ctm_api_client import rest
+from ctm_python_client.ctm_api_client.configuration import Configuration
+import ctm_python_client.ctm_api_client as ctm_api_client
+from ctm_python_client.ctm_api_client import rest
 
 
 class ApiClient(object):

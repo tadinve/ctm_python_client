@@ -1,6 +1,6 @@
 from __future__ import print_function
-import ctm-python-client.ctm_api_client as ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client as ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 import urllib3

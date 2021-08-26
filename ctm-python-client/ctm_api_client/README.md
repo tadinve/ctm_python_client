@@ -23,7 +23,7 @@ pip install git+https://github.com//.git
 
 Then import the package:
 ```python
-import ctm-python-client.ctm_api_client 
+import ctm_python_client.ctm_api_client 
 ```
 
 ### Setuptools
@@ -37,7 +37,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import ctm-python-client.ctm_api_client
+import ctm_python_client.ctm_api_client
 ```
 
 ## Getting Started
@@ -47,8 +47,8 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

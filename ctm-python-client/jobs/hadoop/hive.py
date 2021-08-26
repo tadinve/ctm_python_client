@@ -1,4 +1,4 @@
-from ctm-python-client.core.base import BaseJob
+from ctm_python_client.core.base import BaseJob
 
 class HiveJob(BaseJob):
 	def __init__(self, folder, job_name, 

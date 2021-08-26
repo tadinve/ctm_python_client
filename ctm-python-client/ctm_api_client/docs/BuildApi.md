@@ -18,8 +18,8 @@ Compile the provided definition file (JSON or zip) to verify it is valid for Con
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

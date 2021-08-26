@@ -1,4 +1,4 @@
-from ctm-python-client.core.bmc_control_m import CmJobFlow
+from ctm_python_client.core.bmc_control_m import CmJobFlow
 from graphviz import Digraph
 
 class DisplayDAG:

@@ -37,8 +37,8 @@ Delete a calendar
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -93,8 +93,8 @@ Delete Local Connection Profile.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -153,8 +153,8 @@ Delete a folder
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -209,8 +209,8 @@ Delete Local Connection Profile
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -269,8 +269,8 @@ Delete centralized Connection Profile
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -325,8 +325,8 @@ Deploy an exsiting Application Integrator job type to agent in order to allow it
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -383,8 +383,8 @@ Deploy the provided definition file (JSON, XML or zip) to Control-M
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -441,8 +441,8 @@ Deploy the provided jobtype to AI server, EM server, and Agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -501,8 +501,8 @@ Get currently deployed connection profiles deployment status according to the se
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -557,8 +557,8 @@ Get deployed Application Integrator job types that match the requested search cr
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -613,8 +613,8 @@ Get definition of calendars as json code that match the requested search criteri
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -673,8 +673,8 @@ Get currently local deployed connection profiles according to the search query a
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -733,8 +733,8 @@ Get currently deployed connection profiles status according to the search query 
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -791,8 +791,8 @@ Get definition of jobs and folders (in the desired format - JSON or XML) that ma
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -851,8 +851,8 @@ Get currently local deployed connection profiles according to the search query a
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -911,8 +911,8 @@ Get currently centralized deployed connection profiles according to the search q
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -967,8 +967,8 @@ Get the allowed values for the specified field in the specified site standard.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1023,8 +1023,8 @@ Replace the allowed values for the specified field in the specified site standar
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1081,8 +1081,8 @@ Test connection profile on agent
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1139,8 +1139,8 @@ Transform the provided definitions file (JSON) according to the provided Deploy 
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='ctm-python-client',
+    name='ctm_python_client',
     packages=find_packages(),
     version='0.1.0',
     description='Python Workflows for Control-M',

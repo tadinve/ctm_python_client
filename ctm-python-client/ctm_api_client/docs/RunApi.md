@@ -53,8 +53,8 @@ Activate a workload policy, supports wildcard in names
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -111,8 +111,8 @@ Add a new  event. date may be of format MMDD, ODAT to set current controlm date,
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -167,8 +167,8 @@ Add a new pool resource.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -223,8 +223,8 @@ Add workload policies from json definitions file to Control-M
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -277,8 +277,8 @@ confirm a job that waits for confirmation
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -331,8 +331,8 @@ Deactivate a workload policy, supports wildcard in names
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -389,8 +389,8 @@ Delete a  event.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -447,8 +447,8 @@ mark delete as deleted
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -501,8 +501,8 @@ Delete a pool resource.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -557,8 +557,8 @@ Delete workloadpolicy
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -611,8 +611,8 @@ free the job
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -665,8 +665,8 @@ get the active job's data by job's order ID
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -719,8 +719,8 @@ Get all SLA active services
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -769,8 +769,8 @@ get full workLoad policies data as json code that match the requested search cri
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -823,8 +823,8 @@ Get all events records for specific search.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -885,8 +885,8 @@ Get the job execution log.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -939,8 +939,8 @@ Get the output returned from a job.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -995,8 +995,8 @@ Get the statistics from a job.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1049,8 +1049,8 @@ Get the job status.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1103,8 +1103,8 @@ Run status of jobs started with the Run service.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1159,8 +1159,8 @@ Get status of jobs that match the requested search criteria.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1279,8 +1279,8 @@ Get all resources records matching search.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1337,8 +1337,8 @@ get the reason why the job is in waiting status
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1391,8 +1391,8 @@ Get all the workload policies.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1445,8 +1445,8 @@ hold the job
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1499,8 +1499,8 @@ Abort job execution.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1553,8 +1553,8 @@ Modify active job, specified by order id according to given definitions file (JS
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1609,8 +1609,8 @@ Run jobs from selected folder according to given filter
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1663,8 +1663,8 @@ Run an already executed job (again).
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1719,8 +1719,8 @@ Run jobs according to given definitions file (JSON or zip).
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1777,8 +1777,8 @@ start a job immediately
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1831,8 +1831,8 @@ set job status to OK, post processing action
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1885,8 +1885,8 @@ recover a mark for deletion job
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1939,8 +1939,8 @@ Update alert.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1993,8 +1993,8 @@ Update alert status.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2047,8 +2047,8 @@ Update a pool resource.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

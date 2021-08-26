@@ -1,4 +1,4 @@
-from ctm-python-client.ai_jobs.ai_generic import AiGenericJob
+from ctm_python_client.ai_jobs.ai_generic import AiGenericJob
 
 
 class AIBlobStorageJob(AiGenericJob):

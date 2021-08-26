@@ -18,7 +18,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from ctm-python-client.ctm_api_client.api_client import ApiClient
+from ctm_python_client.ctm_api_client.api_client import ApiClient
 
 
 class ProvisionApi(object):

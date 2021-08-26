@@ -119,8 +119,8 @@ Add an agent to Server. This command does not install or configure the agent. It
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -175,8 +175,8 @@ Add a new Workload Archiving rule
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -229,8 +229,8 @@ Add and external user for b2b
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -283,8 +283,8 @@ Add external user user groups to virtual folder external users list.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -339,8 +339,8 @@ add gateway.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -393,8 +393,8 @@ Add an agent to hostgroup. Create the the hostgroup if it does not exist.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -451,8 +451,8 @@ add hub to cluster.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -505,8 +505,8 @@ Add virtual folder
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -559,8 +559,8 @@ Add user group.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -613,8 +613,8 @@ Add PGP Template
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -673,8 +673,8 @@ Add a remote host to Server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -729,8 +729,8 @@ Add Authorization Role
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -783,8 +783,8 @@ Add a role to LDAP group so any user belong to the LDAP group will get all permi
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -839,8 +839,8 @@ Add a role to user so that user will inherit role authorization
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -895,8 +895,8 @@ Add a new secret to the secrets vault.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -949,8 +949,8 @@ Add a Server. This command setting up new server in the system
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1003,8 +1003,8 @@ Add user
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1057,8 +1057,8 @@ Add z/OS Template
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1117,8 +1117,8 @@ Authorize SSH Cluster
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1177,8 +1177,8 @@ Authorize SSH Host for SFTP account
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1237,8 +1237,8 @@ Authorized known ssh remote host.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1293,8 +1293,8 @@ Change user password
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1349,8 +1349,8 @@ Create certificate signing request (CSR) on SSL configured Agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1407,8 +1407,8 @@ Add a new Run-as user to server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1463,8 +1463,8 @@ Delete an agent from a Server. This will not shut the agent down. It only discon
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1519,8 +1519,8 @@ Deletes Workload Archiving rule by name. It is required to send deleteRuleData f
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1575,8 +1575,8 @@ Delete Authorization Role
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1629,8 +1629,8 @@ Delete an existing external user in MFT
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1683,8 +1683,8 @@ Remove an external user or user group from an existing virtual folder in MFT.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1739,8 +1739,8 @@ Delete an agent from the specified hostgroup. If the group is empty it will also
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1797,8 +1797,8 @@ delete host group
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1853,8 +1853,8 @@ Delete an existing virtual folder in MFT.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1907,8 +1907,8 @@ Delete user group.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -1961,8 +1961,8 @@ Delete PGP Template
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2019,8 +2019,8 @@ Delete a remote host from a Server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2075,8 +2075,8 @@ Delete a role from LDAP group
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2131,8 +2131,8 @@ Delete Run-as user from server
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2189,8 +2189,8 @@ Delete an existing secret from the secrets vault.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2243,8 +2243,8 @@ Delete user
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2297,8 +2297,8 @@ Delete z/OS Template
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2355,8 +2355,8 @@ Deploy certificate (CRT) on SSL configured Agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2415,8 +2415,8 @@ Disable an Agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2471,8 +2471,8 @@ Enable an Agent. This command does not install or configure the agent. It only e
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2527,8 +2527,8 @@ Perform Manual Failover on a specified Server
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2581,8 +2581,8 @@ Generate RSA SSH Key pair for SFTP account authentication
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2639,8 +2639,8 @@ Get the certificate expiration date of SSL configured Agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2695,8 +2695,8 @@ Get all the parameters of the specified Agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2753,8 +2753,8 @@ Get all the agents of the specified Server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2809,8 +2809,8 @@ Get all the Archiving rules
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2859,8 +2859,8 @@ Get Authorization Roles
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2915,8 +2915,8 @@ Get All organization groups
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -2969,8 +2969,8 @@ Get Authorization Roles associated with an organization group
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3025,8 +3025,8 @@ Get users
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3083,8 +3083,8 @@ Get list of statistical information for each Archiving rule and total informatio
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3133,8 +3133,8 @@ Get MFT external user authorized folders
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3187,8 +3187,8 @@ Get MFT external users that match the search criteria.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3249,8 +3249,8 @@ Get File Transfer Server (FTS) configuration data.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3305,8 +3305,8 @@ Get all the hostgroups of the specified Server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3359,8 +3359,8 @@ Get the agents that compose the specified hostgroup
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3415,8 +3415,8 @@ Get hub status.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3469,8 +3469,8 @@ Get MFT Configuration
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3525,8 +3525,8 @@ Get MFT virtual folders that match the search criteria.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3579,8 +3579,8 @@ Get MFT gateways
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3629,8 +3629,8 @@ Get all user groups that match the search criteria.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3687,8 +3687,8 @@ Get PGP Templates
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3745,8 +3745,8 @@ Get the remote host configuration properties from the Server
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3801,8 +3801,8 @@ Get all the remote hosts of the specified Server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3855,8 +3855,8 @@ Get Authorization Role
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3909,8 +3909,8 @@ Get all authorization entities associated with role
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -3963,8 +3963,8 @@ Get Run-as user details from server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4021,8 +4021,8 @@ Get Run-as user list that match the requested search criteria from server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4079,8 +4079,8 @@ Get all the parameters of the specified Server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4133,8 +4133,8 @@ Get the names and hostnames of all Servers in the system.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4183,8 +4183,8 @@ Get user
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4237,8 +4237,8 @@ Get user real effective authorizations by all his roles
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4287,8 +4287,8 @@ get Workflow Insights status - topology and system parameters
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4337,8 +4337,8 @@ Get z/OS Templates
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4395,8 +4395,8 @@ Get the list of names of all the secrets in the vault
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4445,8 +4445,8 @@ Ping an Agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4503,8 +4503,8 @@ Recycle an item
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4557,8 +4557,8 @@ Delete Server
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4611,8 +4611,8 @@ remove gateway.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4665,8 +4665,8 @@ remove hub from cluster.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4719,8 +4719,8 @@ Remove a role from a user
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4775,8 +4775,8 @@ Deletes data (jobs including outputs and logs) by search criteria from the Workl
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4859,8 +4859,8 @@ Set the value of the specified parameter in the specified agent.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4919,8 +4919,8 @@ Set value of an enterprise management system parameter
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -4975,8 +4975,8 @@ Set secondary server as Primary on a specified Server
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5029,8 +5029,8 @@ Test existing Run-as user in server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5089,8 +5089,8 @@ Edit Workload Archiving rule details
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5145,8 +5145,8 @@ Update an external user for b2b
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5201,8 +5201,8 @@ Update File Transfer Server (FTS) configuration data.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5259,8 +5259,8 @@ update agents in hostgroup.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5317,8 +5317,8 @@ Update MFT Configuration
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5375,8 +5375,8 @@ Update an existing virtual folder in MFT.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5431,8 +5431,8 @@ Update user group.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5487,8 +5487,8 @@ Update PGP Template
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5547,8 +5547,8 @@ Update Authorization Role
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5603,8 +5603,8 @@ Update Run-as user details in server.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5663,8 +5663,8 @@ Update an existing secret in the secrets vault.
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5719,8 +5719,8 @@ Update user
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
@@ -5775,8 +5775,8 @@ Update z/OS Template
 ```python
 from __future__ import print_function
 import time
-import ctm-python-client.ctm_api_client
-from ctm-python-client.ctm_api_client.rest import ApiException
+import ctm_python_client.ctm_api_client
+from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer

@@ -6,8 +6,8 @@ touch   LICENSE.txt
 touch    MANIFEST.in
 touch    README.txt
 touch   setup.py
-mkdir    ctm-python-client
-cd ctm-python-client
+mkdir    ctm_python_client
+cd ctm_python_client
 touch           __init__.py
 touch          module1.py
 touch          module2.py
