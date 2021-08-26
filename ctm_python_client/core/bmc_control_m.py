@@ -253,26 +253,8 @@ class CmJobFlow:
 
     def get_json_for_folder(self, folder_name):
 
-        r_submit = requests.get(
-            self.uri + "/automation-api/deploy/jobs?ctm=*&folder=" + folder_name,
-            headers={"Authorization": "Bearer " + self.token},
-            verify=self.https,
-        )
-
-        print(r_submit.status_code)
-        j = json.loads(r_submit.content)
-        if "errors" in j:
-            for msg in j["errors"]:
-                print(msg)
-
-        if r_submit.status_code != requests.codes.ok:
-            print("Failure Submitting")
-            return r_submit.status_code
-
-        print(r_submit.content)
-        print("Successfully extracted JSON format for folder {} to Control-M".format(folder_name))
-
-        return j
+        res = self.deployApi.get_deployed_folders_new(server="*", folder=folder_name)
+        return json.loads(res.replace("'",'"'))
 
     # Jobs can be grouped together as folders, this creates the folder
     def create_folder(self, name, server=None):
