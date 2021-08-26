@@ -1,5 +1,5 @@
 import unittest,json
-
+import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.jobs.dummy import DummyJob
 from ctm_python_client.jobs.command import CommandJob
@@ -12,13 +12,11 @@ from ctm_python_client.session.session import Session
 
 class TestCompleteFlow(unittest.TestCase):
     def test_completeFlow(self):
-        return
         # Read secrets file to get URI, Username and Password
         with open(".secrets", "r") as fp:
-            ctm_uri = fp.readline()
-            ctm_user = fp.readline()
-            ctm_pwd = fp.readline()
-
+            ctm_uri = fp.readline().strip()
+            ctm_user = fp.readline().strip()
+            ctm_pwd = fp.readline().strip()
 
         # Create CTM Session
         session = Session( endpoint=ctm_uri,username=ctm_user,password=ctm_pwd)
@@ -100,5 +98,6 @@ class TestCompleteFlow(unittest.TestCase):
 
 
         deploy_return = t1_flow.deploy()
+        self.assertEqual("1","1")
 
 
