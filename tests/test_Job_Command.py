@@ -16,3 +16,4 @@ class TestCommandJob(unittest.TestCase):
 		test_params = set(jobs_json.keys())
 		print(test_params)
 		self.assertEqual(jobs_params,test_params)
+		self.assertEqual(1,2)
