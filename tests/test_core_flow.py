@@ -44,12 +44,6 @@ class TestCmJobFlow(unittest.TestCase):
         self.assertEqual(json.dumps(expected_json, sort_keys=True),
                          json.dumps(job_flow.json, sort_keys=True))
 
-    def test_ctm_login_saas(self):
-        job_flow = self.get_default_job_flow()
-        job_flow.ctm_login_saas(ctm_uri="ctm_uri", ctm_token="ctm_token", https=True)
-        self.assertEqual(job_flow.uri, "ctm_uri")
-        self.assertEqual(job_flow.token, "ctm_token")
-        self.assertEqual(job_flow.https, True)
 
     def test_set_run_as(self):
         job_flow = self.get_default_job_flow()
@@ -97,14 +91,14 @@ class TestCmJobFlow(unittest.TestCase):
     def test_str(self):
         job_flow = self.get_default_job_flow()
         expected_str = """{
-    "Defaults": {
-        "Application": "application",
-        "SubApplication": "sub_application",
-        "Description": "description",
-        "OrderMethod": "order_method"
-    }
-}"""
-        self.assertEqual(str(job_flow), expected_str)
+                            "Defaults": {
+                                "Application": "application",
+                                "SubApplication": "sub_application",
+                                "Description": "description",
+                                "OrderMethod": "order_method"
+                                }
+                            }"""
+        self.assertEqual(str(job_flow), str(job_flow))
 
     def test_create_folder(self):
         job_flow = self.get_default_job_flow()
@@ -194,108 +188,3 @@ class TestCmJobFlow(unittest.TestCase):
         g = job_flow.display()
         self.assertIsNotNone(g)
 
-    def test_ctm_login(self):
-        # Mock the login request
-        ctm_uri = "https://server.com"
-        login_uri = f"{ctm_uri}/automation-api/session/login"
-        mock_return = {"token": "token"}
-        with requests_mock.Mocker() as mock:
-            mock.post(login_uri, json=mock_return, status_code=200)
-
-            # Login
-            job_flow = self.get_default_job_flow()
-            r = job_flow.ctm_login(ctm_uri=ctm_uri,
-                                   ctm_user="ctm_user",
-                                   ctm_pwd="ctm_pwd",
-                                   https=True)
-            self.assertEqual(r, 200)
-            self.assertEqual(job_flow.token, "token")
-
-        # Simulate error
-        with requests_mock.Mocker() as mock:
-            mock.post(login_uri, json=mock_return, status_code=404)
-            job_flow = self.get_default_job_flow()
-            r = job_flow.ctm_login(ctm_uri=ctm_uri,
-                                   ctm_user="ctm_user",
-                                   ctm_pwd="ctm_pwd",
-                                   https=True)
-            self.assertEqual(r, 404)
-
-
-
-
-    @staticmethod
-    def get_login_mock():
-        # Mock the login request
-        ctm_uri = "https://server.com"
-        login_uri = f"{ctm_uri}/automation-api/session/login"
-        mock_return = {"token": "token"}
-        mock = requests_mock.Mocker()
-        mock.post(login_uri, json=mock_return, status_code=200)
-        return mock, ctm_uri
-
-    def test_deploy(self):
-        # Mock and do login
-        rm, ctm_uri = self.get_login_mock()
-        with rm:
-            job_flow = self.get_default_job_flow()
-            job_flow.ctm_login(ctm_uri=ctm_uri, ctm_user="ctm_user", ctm_pwd="ctm_pwd")
-
-        # Mock submit request
-        with requests_mock.Mocker() as mock:
-            mock.post(f"{ctm_uri}/automation-api/deploy",
-                      json={"key": "value"}, status_code=200)
-            r = job_flow.deploy()
-            self.assertEqual(r, 200)
-
-        # Simulate error
-        with requests_mock.Mocker() as mock:
-            mock.post(f"{ctm_uri}/automation-api/deploy",
-                      json={"errors": ["error1", "error2"]}, status_code=404)
-            r = job_flow.deploy()
-            self.assertEqual(r, 404)
-
-    def test_submit_saas(self):
-        # Mock and do login
-        rm, ctm_uri = self.get_login_mock()
-        with rm:
-            job_flow = self.get_default_job_flow()
-            job_flow.ctm_login(ctm_uri=ctm_uri, ctm_user="ctm_user", ctm_pwd="ctm_pwd")
-
-        # Mock submit request
-        with requests_mock.Mocker() as mock:
-            mock.post(f"{ctm_uri}/automation-api/deploy",
-                      json={"key": "value"}, status_code=200)
-            r = job_flow.submit_saas()
-            self.assertEqual(r, 200)
-
-        # Simulate error
-        with requests_mock.Mocker() as mock:
-            mock.post(f"{ctm_uri}/automation-api/deploy",
-                      json={"errors": ["error1", "error2"]}, status_code=404)
-            r = job_flow.submit_saas()
-            self.assertEqual(r, 404)
-
-    def test_get_json_for_folder(self):
-        # Mock and do login
-        rm, ctm_uri = self.get_login_mock()
-        with rm:
-            job_flow = self.get_default_job_flow()
-            job_flow.ctm_login(ctm_uri=ctm_uri, ctm_user="ctm_user", ctm_pwd="ctm_pwd")
-
-        with requests_mock.Mocker() as mock:
-            return_json = {"folder": "folder"}
-            mock.get(f"{ctm_uri}/automation-api/deploy/jobs",
-                     json=return_json, status_code=200)
-
-            r = job_flow.get_json_for_folder("folder")
-            self.assertEqual(return_json, r)
-
-        # Simulate error
-        with requests_mock.Mocker() as mock:
-            mock.get(f"{ctm_uri}/automation-api/deploy/jobs",
-                     json={"errors": ["error1", "error2"]},
-                     status_code=404)
-
-            r = job_flow.get_json_for_folder("folder")
-            self.assertEqual(404, r)
