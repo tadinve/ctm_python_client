@@ -26,7 +26,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 import os
 import json
-import requests
 from ctm_python_client.session.session import Session
 import ctm_python_client.ctm_api_client as ctm_api_client
  #from graphviz import Digraph
@@ -169,31 +168,13 @@ class CmJobFlow:
             print(e)
             return
 
-        # with open(JOBS_FILE, "rb") as fo_jobs:
-        #     uploaded_files = [("definitionsFile", (JOBS_FILE, fo_jobs, "application/json"))]
-        #     r_submit = requests.post(
-        #         self.uri + "/automation-api/deploy",
-        #         files=uploaded_files,
-        #         headers={"Authorization": "Bearer " + self.token},
-        #         verify=self.https,
-        #     )
-        #     print(r_submit.content)
-
+ 
         # Remove temporary file
         os.remove(JOBS_FILE)
 
-        # print(r_submit.status_code)
-        # j = json.loads(r_submit.content)
-        # if "errors" in j:
-        #     for msg in j["errors"]:
-        #         print(msg)
-        # if r_submit.status_code != requests.codes.ok:
-        #     print("Failure Submitting")
-        #     return r_submit.status_code
-
         print("Successfully submitted to Control-M")
         print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
-        return True
+        return result
 
     def run(self):
 
