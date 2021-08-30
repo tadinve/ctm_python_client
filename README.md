@@ -3,7 +3,7 @@
 -->
 # ctm_python_client
 
-[BMC Control-M ctm_python_client] (or simply ctm_python_client) is a library to programmatically author and schedule workflows in Control-M.
+[BMC ctm_python_client] (or simply ctm_python_client) is a library to programmatically author and schedule workflows in Control-M.
 
 When workflows are defined as code, they become more maintainable, versionable, testable, and collaborative.
 
@@ -44,7 +44,7 @@ Visit the official ctm_python_client website documentation (latest **stable** re
 
 ## Installing from PyPI
 
-We publish Control-M ctm_python_client as `Control-M-ctm_python_client` package in PyPI. Installing it as simple at "pip install Control-M-ctm_python_client"
+We publish ctm_python_client as `ctm_python_client` package in PyPI. Installing it as simple at "pip install ctm_python_client"
 
 > Note: Only `pip` installation is currently officially supported. While they are some successes with using other tools like [poetry](https://python-poetry.org) or
 [pip-tools](https://pypi.org/project/pip-tools), they do not share the same workflow as
@@ -55,22 +55,23 @@ them to appropriate format and workflow that your tool requires.
 
 
 ```bash
-pip install Control-M-ctm_python_client
+pip install ctm_python_client
 ```
 
 
 ## Official source code
 
-Control-M ctm_python_client is an [Open Software Foundation](https://www.apache.org) (ASF) project,
-and our official source code releases:
+ctm_python_client is an Open Souce project and our official source code releases will be available through git-hub at https://github.com/controlm/ctm_python_client:
 
-- Follow the [ASF Release Policy](https://www.Control-M.org/legal/release-policy.html)
-- Can be downloaded from [the ASF Distribution Directory](https://downloads.Control-M.org/ctm_python_client)
-- Are cryptographically signed by the release manager
-- Are officially voted on by the PMC members during the
- [Release Approval Process](https://www.Control-M.org/legal/release-policy.html#release-approval)
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-Following the ASF rules, the source packages released must be sufficient for a user to build and test the release provided they have access to the appropriate platform and tools.
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## User Interface
 
@@ -110,25 +111,19 @@ They are based on the official release schedule of Python and Kubernetes, nicely
 
 ## Contributing
 
-Want to help build Control-M ctm_python_client? Check out our [contributing documentation](https://github.com/Control-M/ctm_python_client/blob/main/CONTRIBUTING.rst).
+Want to help build ctm_python_client? Check out our [contributing documentation](https://github.com/Control-M/ctm_python_client/CONTRIBUTING.rst).
 
-Official Docker (container) images for Control-M ctm_python_client are described in [IMAGES.rst](https://github.com/Control-M/ctm_python_client/blob/main/IMAGES.rst).
+## Who uses ctm_python_client?
 
-## Who uses Control-M ctm_python_client?
-
-More than 150 organizations are using Control-M ctm_python_client
-[in the wild](https://github.com/Control-M/ctm_python_client/blob/main/INTHEWILD.md).
+More than 150 organizations are using ctm_python_client
 
 ## Who Maintains Control-M ctm_python_client?
 
 ctm_python_client is the work of the Control-M user community. BMC ctm_python_client Review Commitee are respnsible for maintaining and administering this library. They are are responsible for reviewing and merging PRs as well as steering conversation around new feature requests.
-If you would like to become a maintainer, please review the Control-M ctm_python_client
-[committer requirements](https://github.com/Control-M/ctm_python_client/blob/main/COMMITTERS.rst#guidelines-to-become-an-ctm_python_client-committer).
-
+If you would like to become a maintainer, please contact the BMC team.
 ## Links
 
-- [Documentation](https://ctm_python_client.Control-M.org/docs/Control-M-ctm_python_client/stable/)
-- [Chat](https://s.Control-M.org/ctm_python_client-slack)
+- [Documentation](Link here)
 
 ## Sponsors
 
