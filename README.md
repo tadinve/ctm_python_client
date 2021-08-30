@@ -10,28 +10,6 @@ When workflows are defined as code, they become more maintainable, versionable, 
 Use ctm_python_client to author workflows as directed acyclic graphs (DAGs) of tasks. The BMC Control-M scheduler executes your tasks on an array of agents while following the specified dependencies. Control-M's user interface makes it easy to visualize pipelines running in production, monitor progress, and troubleshoot issues when needed.
 
 
-**Table of contents**
-
-  - [Project Focus](#project-focus)
-  - [Principles](#principles)
-  - [Requirements](#requirements)
-  - [Getting started](#getting-started)
-  - [Installing from PyPI](#installing-from-pypi)
-  - [Official source code](#official-source-code)
-  - [Convenience packages](#convenience-packages)
-  - [User Interface](#user-interface)
-  - [Semantic versioning](#semantic-versioning)
-  - [Version Life Cycle](#version-life-cycle)
-  - [Support for Python and Kubernetes versions](#support-for-python-and-kubernetes-versions)
-    - [Additional notes on Python version requirements](#additional-notes-on-python-version-requirements)
-  - [Contributing](#contributing)
-  - [Who uses Control-M ctm_python_client?](#who-uses-Control-M-ctm_python_client)
-  - [Who Maintains Control-M ctm_python_client?](#who-maintains-Control-M-ctm_python_client)
-  - [Can I use the Control-M ctm_python_client logo in my presentation?](#can-i-use-the-Control-M-ctm_python_client-logo-in-my-presentation)
-  - [ctm_python_client merchandise](#ctm_python_client-merchandise)
-  - [Links](#links)
-  - [Sponsors](#sponsors)
-
 
 ## Project Focus
 
