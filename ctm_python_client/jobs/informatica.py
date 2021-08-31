@@ -1,6 +1,6 @@
 from ctm_python_client.core.base import BaseJob
 
-class CmInformaticaJob(BaseJob):
+class InformaticaJob(BaseJob):
     def __init__(self, folder, job_name, connection_profile, repository_folder, workflow, 
                 workflow_execution_mode, workflow_restart_mode, enable_output, enable_error_details,
                 priority, host=None, run_as=None, description=None):
