@@ -110,8 +110,8 @@ class CmJobFlow:
         return r_login.status_code
     
     # this is a private functions defined to create nodes in the graph
-    def _create_node(self, name):
-        self.jobs.append(name)
+    def _create_node(self, name,job):
+        self.jobs.append((name,job))
         node_id = str(len(self.jobs) - 1)
         #self.graph.node(node_id, label=name, shape=shape)
         return node_id
@@ -270,7 +270,7 @@ class CmJobFlow:
     def add_job(self, folder, job):
         job_name = job.get_job_name()
         self.json[folder][job_name] = job.get_json()
-        return self._create_node(job_name)
+        return self._create_node(job_name,job)
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
     def chain_jobs(self, folder, links):
@@ -280,14 +280,13 @@ class CmJobFlow:
 
         from_job = links[0]
         seq = [
-            self.jobs[int(links[0])],
+            self.jobs[int(links[0])][0],
         ]
         for j in links[1:]:
-            self.edges.append((self.jobs[int(from_job)], self.jobs[int(j)]))
+            self.edges.append((self.jobs[int(from_job)][0], self.jobs[int(j)][0]))
             from_job = j
-            seq.append(self.jobs[int(j)])
+            seq.append(self.jobs[int(j)][0])
         self.json[folder]["Flow" + str(self.flowcount)] = {"Type": "Flow", "Sequence": seq}
-
     
     #return nodes and edges. can be used by graphviz or matplotlib for display
     def get_nodes_and_edges(self):
