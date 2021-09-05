@@ -61,9 +61,9 @@ class BaseJob:
             self.job_json["When"]["ToTime"] = to_time
 
     def event_to_add(self, job_to_name):
-        if "eventsToAdd" not in self.jobs_json:
-            self.jobs_json["eventsToAdd"] = {"Type": "AddEvents","Events": [{}]}
-        self.jobs_json["eventsToAdd"]["Events"].append({"Event":self.job_name+"-To-"+job_to_name})
+        if "eventsToAdd" not in self.job_json:
+            self.job_json["eventsToAdd"] = {"Type": "AddEvents","Events": [{}]}
+        self.job_json["eventsToAdd"]["Events"].append({"Event":self.job_name+"-To-"+job_to_name})
 
     def wait_for_jobs(self, job1, job2=None, condition=None):
         jobs_json = self.job_json

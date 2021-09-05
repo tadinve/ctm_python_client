@@ -284,8 +284,11 @@ class CmJobFlow:
         ]
         for j in links[1:]:
             self.edges.append((self.jobs[int(from_job)][0], self.jobs[int(j)][0]))
-            from_job = j
             seq.append(self.jobs[int(j)][0])
+            fj = self.jobs[int(from_job)][1]
+            fj.event_to_add(self.jobs[int(j)][0])
+            from_job = j
+            
         self.json[folder]["Flow" + str(self.flowcount)] = {"Type": "Flow", "Sequence": seq}
     
     #return nodes and edges. can be used by graphviz or matplotlib for display
