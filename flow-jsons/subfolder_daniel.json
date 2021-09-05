@@ -1,0 +1,158 @@
+{
+  "Subfolder_Daniel": {
+    "Type": "Folder",
+    "ControlmServer": "ctm20r",
+    "ActiveRetentionPolicy": "CleanEndedOK",
+    "CreatedBy": "emuser",
+    "When": {
+      "RuleBasedCalendars": {
+        "Included": [
+          "EVERYDAY"
+        ],
+        "EVERYDAY": {
+          "Type": "Calendar:RuleBased",
+          "When": {
+            "DaysRelation": "OR",
+            "WeekDays": [
+              "NONE"
+            ],
+            "MonthDays": [
+              "ALL"
+            ]
+          }
+        }
+      }
+    },
+    "Dummy_Job#6": {
+      "Type": "Job:Dummy",
+      "CreatedBy": "emuser",
+      "RunAs": "DUMMYUSR",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "ALL"
+        ],
+        "DaysRelation": "OR"
+      },
+      "eventsToWaitFor": {
+        "Type": "WaitForEvents",
+        "Events": [
+          {
+            "Event": "Folder#3-TO-Dummy_Job#6"
+          }
+        ]
+      },
+      "eventsToDelete": {
+        "Type": "DeleteEvents",
+        "Events": [
+          {
+            "Event": "Folder#3-TO-Dummy_Job#6"
+          }
+        ]
+      }
+    },
+    "Dummy_Job#2": {
+      "Type": "Job:Dummy",
+      "CreatedBy": "emuser",
+      "RunAs": "DUMMYUSR",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "ALL"
+        ],
+        "DaysRelation": "OR"
+      },
+      "eventsToAdd": {
+        "Type": "AddEvents",
+        "Events": [
+          {
+            "Event": "Dummy_Job#2-TO-Dummy_Job#5"
+          }
+        ]
+      }
+    },
+    "Folder#3": {
+      "Type": "SubFolder",
+      "AdjustEvents": false,
+      "CreatedBy": "emuser",
+      "When": {
+        "DaysRelation": "OR",
+        "RuleBasedCalendars": {
+          "Included": [
+            "USE PARENT"
+          ]
+        }
+      },
+      "Dummy_Job#4": {
+        "Type": "Job:Dummy",
+        "CreatedBy": "emuser",
+        "RunAs": "DUMMYUSR",
+        "When": {
+          "WeekDays": [
+            "NONE"
+          ],
+          "MonthDays": [
+            "ALL"
+          ],
+          "DaysRelation": "OR"
+        },
+        "eventsToAdd": {
+          "Type": "AddEvents",
+          "Events": [
+            {
+              "Event": "Dummy_Job#4-TO-Dummy_Job#5-381"
+            }
+          ]
+        }
+      },
+      "Dummy_Job#5": {
+        "Type": "Job:Dummy",
+        "CreatedBy": "emuser",
+        "RunAs": "DUMMYUSR",
+        "When": {
+          "WeekDays": [
+            "NONE"
+          ],
+          "MonthDays": [
+            "ALL"
+          ],
+          "DaysRelation": "OR"
+        },
+        "eventsToWaitFor": {
+          "Type": "WaitForEvents",
+          "Events": [
+            {
+              "Event": "Dummy_Job#4-TO-Dummy_Job#5-381"
+            },
+            {
+              "Event": "Dummy_Job#2-TO-Dummy_Job#5"
+            }
+          ]
+        },
+        "eventsToDelete": {
+          "Type": "DeleteEvents",
+          "Events": [
+            {
+              "Event": "Dummy_Job#4-TO-Dummy_Job#5-381"
+            },
+            {
+              "Event": "Dummy_Job#2-TO-Dummy_Job#5"
+            }
+          ]
+        }
+      },
+      "eventsToAdd": {
+        "Type": "AddEvents",
+        "Events": [
+          {
+            "Event": "Folder#3-TO-Dummy_Job#6"
+          }
+        ]
+      }
+    }
+  }
+}
