@@ -62,13 +62,40 @@ class BaseJob:
 
     def event_to_add(self, job_to_name):
         if "eventsToAdd" not in self.job_json:
-            self.job_json["eventsToAdd"] = {"Type": "AddEvents","Events": [{}]}
+            self.job_json["eventsToAdd"] = {"Type": "AddEvents","Events": []}
         self.job_json["eventsToAdd"]["Events"].append({"Event":self.job_name+"-To-"+job_to_name})
+    
+    def add_if_output(self, if_name, code, event ):
+        self.job_json[if_name] = {"Type": "If:Output",
+                                    "Code": code,
+                                    "Event:Add_0": {
+                                    "Type": "Event:Add",
+                                    "Event": event
+                                    }
+                                } 
 
-    def wait_for_jobs(self, job1, job2=None, condition=None):
+    def wait_for_jobs(self, job1, job2=None, condition="OR"):
         jobs_json = self.job_json
         if "eventsToWaitFor" not in jobs_json:
-            jobs_json["eventsToWaitFor"] = {"Type": "WaitForEvents"}
+            jobs_json["eventsToWaitFor"] = {"Type": "WaitForEvents","Events": [] }
         
-        
+        if job2 == None:
+            jobs_json["eventsToWaitFor"]["Events"].append(
+                                                            {
+                                                                "Event": self.get_job_name() + "-To-" + job1
+                                                            }
+                                                        )
+        else:
+            jobs_json["eventsToWaitFor"]["Events"].append( {
+                                                                "Event": self.get_job_name() + "-To-" + job1
+                                                            },
+                                                                condition,
+                                                            {
+                                                                "Event": job1 + "-To-" + job2
+                                                            }
+                                                        )   
+
+
+                                                        
+
 
