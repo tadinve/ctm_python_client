@@ -1,7 +1,7 @@
 {
     "Defaults": {
-        "Application": "Naga0.2_Demo",
-        "SubApplication": "Demo-02",
+        "Application": "Naga0.3_Examples",
+        "SubApplication": "Demo-OR_JOB",
         "RunAs": "ctmuser",
         "Host": "acb-rhctmv20",
         "When": {
@@ -24,22 +24,37 @@
             "ToTime": "2100"
         }
     },
-    "HelloWorld": {
+    "OR-JOB": {
         "Type": "Folder",
         "Start-Flow": {
             "Type": "Job:Dummy"
         },
-        "End-Flow": {
+        "Job-1": {
             "Type": "Job:Dummy"
         },
-        "Hello-World": {
+        "Job-2": {
+            "Type": "Job:Dummy"
+        },
+        "Job-3": {
+            "Type": "Job:Dummy"
+        },
+        "Job-4": {
+            "Type": "Job:Dummy"
+        },
+        "End-Flow": {
             "Type": "Job:Dummy"
         },
         "Flow1": {
             "Type": "Flow",
             "Sequence": [
                 "Start-Flow",
-                "Hello-World",
+                "Job-1"
+            ]
+        },
+        "Flow2": {
+            "Type": "Flow",
+            "Sequence": [
+                "Job-4",
                 "End-Flow"
             ]
         }
