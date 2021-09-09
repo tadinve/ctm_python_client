@@ -73,7 +73,7 @@ class BaseJob:
                                     "Event": self.job_name+"-TO-"+ job2.get_job_name()
                                     }
                                 } 
-        job2.wait_for_jobs(self)
+        job2.wait_for_jobs(self.job_name)
 
     def wait_for_jobs(self, job1, job2=None, condition="OR"):
         jobs_json = self.job_json
