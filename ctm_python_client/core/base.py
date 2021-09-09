@@ -81,18 +81,12 @@ class BaseJob:
         
         if job2 == None:
             jobs_json["eventsToWaitFor"]["Events"].append(
-                                                            {
-                                                                "Event": self.get_job_name() + "-To-" + job1
-                                                            }
+                                '{ "Event":' + job1 + "-To-" + self.get_job_name() + '}'
                                                         )
         else:
-            jobs_json["eventsToWaitFor"]["Events"].append( {
-                                                                "Event": self.get_job_name() + "-To-" + job1
-                                                            },
-                                                                condition,
-                                                            {
-                                                                "Event": job1 + "-To-" + job2
-                                                            }
+            event = '{ "Event":' + job1 + "-To-" + self.get_job_name() + '},' + condition +\
+                    '{ "Event":' + job2 + "-To-" + self.get_job_name() + '}'     
+            jobs_json["eventsToWaitFor"]["Events"].append( event
                                                         )   
 
 

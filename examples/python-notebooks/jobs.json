@@ -27,19 +27,51 @@
     "OR-JOB": {
         "Type": "Folder",
         "Start-Flow": {
+            "Type": "Job:Dummy",
+            "eventsToAdd": {
+                "Type": "AddEvents",
+                "Events": [
+                    {
+                        "Event": "Start-Flow-To-Job1"
+                    }
+                ]
+            }
+        },
+        "Job1": {
+            "Type": "Job:Dummy",
+            "if-true": {
+                "Type": "If:Output",
+                "Code": "*true*",
+                "Event:Add_0": {
+                    "Type": "Event:Add",
+                    "Event": "Job1-TO-Job2"
+                }
+            },
+            "if-flase": {
+                "Type": "If:Output",
+                "Code": "*false*",
+                "Event:Add_0": {
+                    "Type": "Event:Add",
+                    "Event": "Job1-TO-Job3"
+                }
+            }
+        },
+        "Job2": {
             "Type": "Job:Dummy"
         },
-        "Job-1": {
+        "Job3": {
             "Type": "Job:Dummy"
         },
-        "Job-2": {
-            "Type": "Job:Dummy"
-        },
-        "Job-3": {
-            "Type": "Job:Dummy"
-        },
-        "Job-4": {
-            "Type": "Job:Dummy"
+        "Job4": {
+            "Type": "Job:Dummy",
+            "eventsToAdd": {
+                "Type": "AddEvents",
+                "Events": [
+                    {
+                        "Event": "Job4-To-End-Flow"
+                    }
+                ]
+            }
         },
         "End-Flow": {
             "Type": "Job:Dummy"
@@ -48,13 +80,13 @@
             "Type": "Flow",
             "Sequence": [
                 "Start-Flow",
-                "Job-1"
+                "Job1"
             ]
         },
         "Flow2": {
             "Type": "Flow",
             "Sequence": [
-                "Job-4",
+                "Job4",
                 "End-Flow"
             ]
         }
