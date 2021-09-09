@@ -75,7 +75,13 @@
             "eventsToWaitFor": {
                 "Type": "WaitForEvents",
                 "Events": [
-                    "{ \"Event\":1-To-Job4},OR{ \"Event\":3-To-Job4}"
+                    {
+                        "Event": "Job1-To-Job4"
+                    },
+                    "OR",
+                    {
+                        "Event": "Job3-To-Job4"
+                    }
                 ]
             },
             "eventsToAdd": {

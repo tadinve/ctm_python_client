@@ -63,7 +63,7 @@ class BaseJob:
     def event_to_add(self, job_to_name):
         if "eventsToAdd" not in self.job_json:
             self.job_json["eventsToAdd"] = {"Type": "AddEvents","Events": []}
-        self.job_json["eventsToAdd"]["Events"].append({"Event":self.job_name+"-To-"+job_to_name})
+        self.job_json["eventsToAdd"]["Events"].append({"Event":self.job_name+"-TO-"+job_to_name})
     
     def add_if_output(self, if_name, code, event  ):
         self.job_json[if_name] = {"Type": "If:Output",
@@ -81,15 +81,15 @@ class BaseJob:
         
         if job2 == None:
             jobs_json["eventsToWaitFor"]["Events"].append(
-                                                { "Event": job1 + "-To-" + self.get_job_name() }    
+                                                { "Event": job1 + "-TO-" + self.get_job_name() }    
                                                         )
         else:
-            event = { "Event": job1 + "-To-" + self.get_job_name() }    
+            event = { "Event": job1 + "-TO-" + self.get_job_name() }    
             jobs_json["eventsToWaitFor"]["Events"].append( event ) 
 
             jobs_json["eventsToWaitFor"]["Events"].append( condition )
             
-            event = { "Event": job2 + "-To-" + self.get_job_name() }    
+            event = { "Event": job2 + "-TO-" + self.get_job_name() }    
             jobs_json["eventsToWaitFor"]["Events"].append( event )  
 
 
