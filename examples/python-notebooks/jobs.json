@@ -57,13 +57,27 @@
             }
         },
         "Job2": {
-            "Type": "Job:Dummy"
+            "Type": "Job:Dummy",
+            "eventsToAdd": {
+                "Type": "AddEvents",
+                "Events": [
+                    {
+                        "Event": "Job2-To-Job3"
+                    }
+                ]
+            }
         },
         "Job3": {
             "Type": "Job:Dummy"
         },
         "Job4": {
             "Type": "Job:Dummy",
+            "eventsToWaitFor": {
+                "Type": "WaitForEvents",
+                "Events": [
+                    "{ \"Event\":1-To-Job4},OR{ \"Event\":3-To-Job4}"
+                ]
+            },
             "eventsToAdd": {
                 "Type": "AddEvents",
                 "Events": [
@@ -84,6 +98,13 @@
             ]
         },
         "Flow2": {
+            "Type": "Flow",
+            "Sequence": [
+                "Job2",
+                "Job3"
+            ]
+        },
+        "Flow3": {
             "Type": "Flow",
             "Sequence": [
                 "Job4",
