@@ -65,14 +65,15 @@ class BaseJob:
             self.job_json["eventsToAdd"] = {"Type": "AddEvents","Events": []}
         self.job_json["eventsToAdd"]["Events"].append({"Event":self.job_name+"-TO-"+job_to_name})
     
-    def add_if_output(self, if_name, code, event  ):
+    def add_if_output(self, if_name, code, job2  ):
         self.job_json[if_name] = {"Type": "If:Output",
                                     "Code": code,
                                     "Event:Add_0": {
                                     "Type": "Event:Add",
-                                    "Event": event
+                                    "Event": self.job_name+"-TO-"+ job2.get_job_name()
                                     }
                                 } 
+        job2.wait_for_jobs(self)
 
     def wait_for_jobs(self, job1, job2=None, condition="OR"):
         jobs_json = self.job_json
