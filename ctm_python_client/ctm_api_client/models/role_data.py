@@ -33,62 +33,90 @@ class RoleData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'description': 'str',
-        'organization_groups': 'list[str]',
-        'organization_users': 'list[str]',
-        'allowed_jobs': 'AllowedJobs',
-        'allowed_job_actions': 'AllowedJobActions',
-        'privileges': 'Privileges',
-        'folders': 'list[FolderAuth]',
-        'calendars': 'list[PrivilegeNameControlm]',
-        'runas_users': 'list[RunasUserAuth]',
-        'workload_policies': 'list[PrivilegeName]',
-        'site_standard': 'list[PrivilegeName]',
-        'site_customization': 'list[PrivilegeName]',
-        'services': 'list[ServiceAuth]',
-        'events': 'list[PrivilegeNameControlm]',
-        'mutexes': 'list[PrivilegeNameControlm]',
-        'locks': 'list[PrivilegeNameControlm]',
-        'semaphores': 'list[PrivilegeNameControlm]',
-        'pools': 'list[PrivilegeNameControlm]',
-        'variables': 'list[PrivilegeNameControlm]',
-        'global_events': 'list[PrivilegeName]',
-        'agent_management': 'list[AgentMngAuth]',
-        'plugin_management': 'list[PluginMngAuth]',
-        'connection_profile_management': 'list[CPMngAuth]',
-        'runas_definition_management': 'list[RunasDefinitionAuth]'
+        "name": "str",
+        "description": "str",
+        "organization_groups": "list[str]",
+        "organization_users": "list[str]",
+        "allowed_jobs": "AllowedJobs",
+        "allowed_job_actions": "AllowedJobActions",
+        "privileges": "Privileges",
+        "folders": "list[FolderAuth]",
+        "calendars": "list[PrivilegeNameControlm]",
+        "runas_users": "list[RunasUserAuth]",
+        "workload_policies": "list[PrivilegeName]",
+        "site_standard": "list[PrivilegeName]",
+        "site_customization": "list[PrivilegeName]",
+        "services": "list[ServiceAuth]",
+        "events": "list[PrivilegeNameControlm]",
+        "mutexes": "list[PrivilegeNameControlm]",
+        "locks": "list[PrivilegeNameControlm]",
+        "semaphores": "list[PrivilegeNameControlm]",
+        "pools": "list[PrivilegeNameControlm]",
+        "variables": "list[PrivilegeNameControlm]",
+        "global_events": "list[PrivilegeName]",
+        "agent_management": "list[AgentMngAuth]",
+        "plugin_management": "list[PluginMngAuth]",
+        "connection_profile_management": "list[CPMngAuth]",
+        "runas_definition_management": "list[RunasDefinitionAuth]",
     }
 
     attribute_map = {
-        'name': 'Name',
-        'description': 'Description',
-        'organization_groups': 'OrganizationGroups',
-        'organization_users': 'OrganizationUsers',
-        'allowed_jobs': 'AllowedJobs',
-        'allowed_job_actions': 'AllowedJobActions',
-        'privileges': 'Privileges',
-        'folders': 'Folders',
-        'calendars': 'Calendars',
-        'runas_users': 'RunasUsers',
-        'workload_policies': 'WorkloadPolicies',
-        'site_standard': 'SiteStandard',
-        'site_customization': 'SiteCustomization',
-        'services': 'Services',
-        'events': 'Events',
-        'mutexes': 'Mutexes',
-        'locks': 'Locks',
-        'semaphores': 'Semaphores',
-        'pools': 'Pools',
-        'variables': 'Variables',
-        'global_events': 'GlobalEvents',
-        'agent_management': 'AgentManagement',
-        'plugin_management': 'PluginManagement',
-        'connection_profile_management': 'ConnectionProfileManagement',
-        'runas_definition_management': 'RunasDefinitionManagement'
+        "name": "Name",
+        "description": "Description",
+        "organization_groups": "OrganizationGroups",
+        "organization_users": "OrganizationUsers",
+        "allowed_jobs": "AllowedJobs",
+        "allowed_job_actions": "AllowedJobActions",
+        "privileges": "Privileges",
+        "folders": "Folders",
+        "calendars": "Calendars",
+        "runas_users": "RunasUsers",
+        "workload_policies": "WorkloadPolicies",
+        "site_standard": "SiteStandard",
+        "site_customization": "SiteCustomization",
+        "services": "Services",
+        "events": "Events",
+        "mutexes": "Mutexes",
+        "locks": "Locks",
+        "semaphores": "Semaphores",
+        "pools": "Pools",
+        "variables": "Variables",
+        "global_events": "GlobalEvents",
+        "agent_management": "AgentManagement",
+        "plugin_management": "PluginManagement",
+        "connection_profile_management": "ConnectionProfileManagement",
+        "runas_definition_management": "RunasDefinitionManagement",
     }
 
-    def __init__(self, name=None, description=None, organization_groups=None, organization_users=None, allowed_jobs=None, allowed_job_actions=None, privileges=None, folders=None, calendars=None, runas_users=None, workload_policies=None, site_standard=None, site_customization=None, services=None, events=None, mutexes=None, locks=None, semaphores=None, pools=None, variables=None, global_events=None, agent_management=None, plugin_management=None, connection_profile_management=None, runas_definition_management=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        description=None,
+        organization_groups=None,
+        organization_users=None,
+        allowed_jobs=None,
+        allowed_job_actions=None,
+        privileges=None,
+        folders=None,
+        calendars=None,
+        runas_users=None,
+        workload_policies=None,
+        site_standard=None,
+        site_customization=None,
+        services=None,
+        events=None,
+        mutexes=None,
+        locks=None,
+        semaphores=None,
+        pools=None,
+        variables=None,
+        global_events=None,
+        agent_management=None,
+        plugin_management=None,
+        connection_profile_management=None,
+        runas_definition_management=None,
+        _configuration=None,
+    ):  # noqa: E501
         """RoleData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -712,18 +740,20 @@ class RoleData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(RoleData, dict):

@@ -33,22 +33,30 @@ class FoldersUsersSettingsAndMetadataPropertiesFromB2B(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'folders': 'list[FolderProperties]',
-        'settings': 'list[SettingProperties]',
-        'settings_metadata': 'SettingsMetadataProperties',
-        'users': 'list[UserAllowedFoldersProperties]',
-        'groups': 'list[GroupsAllowedFoldersProperties]'
+        "folders": "list[FolderProperties]",
+        "settings": "list[SettingProperties]",
+        "settings_metadata": "SettingsMetadataProperties",
+        "users": "list[UserAllowedFoldersProperties]",
+        "groups": "list[GroupsAllowedFoldersProperties]",
     }
 
     attribute_map = {
-        'folders': 'folders',
-        'settings': 'settings',
-        'settings_metadata': 'settingsMetadata',
-        'users': 'users',
-        'groups': 'groups'
+        "folders": "folders",
+        "settings": "settings",
+        "settings_metadata": "settingsMetadata",
+        "users": "users",
+        "groups": "groups",
     }
 
-    def __init__(self, folders=None, settings=None, settings_metadata=None, users=None, groups=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        folders=None,
+        settings=None,
+        settings_metadata=None,
+        users=None,
+        groups=None,
+        _configuration=None,
+    ):  # noqa: E501
         """FoldersUsersSettingsAndMetadataPropertiesFromB2B - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -184,18 +192,20 @@ class FoldersUsersSettingsAndMetadataPropertiesFromB2B(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(FoldersUsersSettingsAndMetadataPropertiesFromB2B, dict):

@@ -33,28 +33,39 @@ class ConnectionProfileStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'type': 'str',
-        'description': 'str',
-        'time_modified': 'str',
-        'time_created': 'str',
-        'creator_name': 'str',
-        'modifier_name': 'str',
-        'sync_status': 'str'
+        "name": "str",
+        "type": "str",
+        "description": "str",
+        "time_modified": "str",
+        "time_created": "str",
+        "creator_name": "str",
+        "modifier_name": "str",
+        "sync_status": "str",
     }
 
     attribute_map = {
-        'name': 'name',
-        'type': 'type',
-        'description': 'description',
-        'time_modified': 'timeModified',
-        'time_created': 'timeCreated',
-        'creator_name': 'creatorName',
-        'modifier_name': 'modifierName',
-        'sync_status': 'syncStatus'
+        "name": "name",
+        "type": "type",
+        "description": "description",
+        "time_modified": "timeModified",
+        "time_created": "timeCreated",
+        "creator_name": "creatorName",
+        "modifier_name": "modifierName",
+        "sync_status": "syncStatus",
     }
 
-    def __init__(self, name=None, type=None, description=None, time_modified=None, time_created=None, creator_name=None, modifier_name=None, sync_status=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        type=None,
+        description=None,
+        time_modified=None,
+        time_created=None,
+        creator_name=None,
+        modifier_name=None,
+        sync_status=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ConnectionProfileStatus - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -278,18 +289,20 @@ class ConnectionProfileStatus(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ConnectionProfileStatus, dict):

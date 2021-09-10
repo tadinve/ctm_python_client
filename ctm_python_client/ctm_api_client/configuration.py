@@ -61,7 +61,7 @@ class Configuration(object):
         self.logger["package_logger"] = logging.getLogger("ctm_api_client")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         # Log format
-        self.logger_format = '%(asctime)s %(levelname)s %(message)s'
+        self.logger_format = "%(asctime)s %(levelname)s %(message)s"
         # Log stream handler
         self.logger_stream_handler = None
         # Log file handler
@@ -94,7 +94,7 @@ class Configuration(object):
         # Proxy URL
         self.proxy = None
         # Safe chars for path_param
-        self.safe_chars_for_path_param = ''
+        self.safe_chars_for_path_param = ""
 
         # Disable client side validation
         self.client_side_validation = True
@@ -223,8 +223,8 @@ class Configuration(object):
         :return: The token for basic HTTP authentication.
         """
         return urllib3.util.make_headers(
-            basic_auth=self.username + ':' + self.password
-        ).get('authorization')
+            basic_auth=self.username + ":" + self.password
+        ).get("authorization")
 
     def auth_settings(self):
         """Gets Auth Settings dict for api client.
@@ -232,21 +232,18 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         return {
-            'Bearer':
-                {
-                    'type': 'api_key',
-                    'in': 'header',
-                    'key': 'Authorization',
-                    'value': self.get_api_key_with_prefix('Authorization')
-                },
-            'ApiKeyAuth':
-                {
-                    'type': 'api_key',
-                    'in': 'header',
-                    'key': 'x-api-key',
-                    'value': self.get_api_key_with_prefix('x-api-key')
-                }
-
+            "Bearer": {
+                "type": "api_key",
+                "in": "header",
+                "key": "Authorization",
+                "value": self.get_api_key_with_prefix("Authorization"),
+            },
+            "ApiKeyAuth": {
+                "type": "api_key",
+                "in": "header",
+                "key": "x-api-key",
+                "value": self.get_api_key_with_prefix("x-api-key"),
+            },
         }
 
     def to_debug_report(self):
@@ -254,9 +251,10 @@ class Configuration(object):
 
         :return: The report for debugging.
         """
-        return "Python SDK Debug Report:\n"\
-               "OS: {env}\n"\
-               "Python Version: {pyversion}\n"\
-               "Version of the API: 9.20.215\n"\
-               "SDK Package Version: 1.0.0".\
-               format(env=sys.platform, pyversion=sys.version)
+        return (
+            "Python SDK Debug Report:\n"
+            "OS: {env}\n"
+            "Python Version: {pyversion}\n"
+            "Version of the API: 9.20.215\n"
+            "SDK Package Version: 1.0.0".format(env=sys.platform, pyversion=sys.version)
+        )

@@ -33,46 +33,66 @@ class MftConfigurationData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'connection_timeout_in_seconds': 'int',
-        'connection_retries': 'int',
-        'connection_time_between_retries_in_seconds': 'int',
-        'debug_level': 'int',
-        'pgp_temp_dir': 'str',
-        'ssl_debug_trace': 'bool',
-        'pam_authentication': 'bool',
-        'proxy_is_in_use': 'bool',
-        'proxy_host': 'str',
-        'proxy_port': 'int',
-        'proxy_user': 'str',
-        'proxy_password': 'str',
-        'file_watcher_search_interval': 'int',
-        'file_watcher_static_iterations': 'int',
-        'file_watcher_check_file_is_in_use': 'bool',
-        'file_actions_retries_interval_in_seconds': 'int',
-        'file_actions_retries_num': 'int'
+        "connection_timeout_in_seconds": "int",
+        "connection_retries": "int",
+        "connection_time_between_retries_in_seconds": "int",
+        "debug_level": "int",
+        "pgp_temp_dir": "str",
+        "ssl_debug_trace": "bool",
+        "pam_authentication": "bool",
+        "proxy_is_in_use": "bool",
+        "proxy_host": "str",
+        "proxy_port": "int",
+        "proxy_user": "str",
+        "proxy_password": "str",
+        "file_watcher_search_interval": "int",
+        "file_watcher_static_iterations": "int",
+        "file_watcher_check_file_is_in_use": "bool",
+        "file_actions_retries_interval_in_seconds": "int",
+        "file_actions_retries_num": "int",
     }
 
     attribute_map = {
-        'connection_timeout_in_seconds': 'connectionTimeoutInSeconds',
-        'connection_retries': 'connectionRetries',
-        'connection_time_between_retries_in_seconds': 'connectionTimeBetweenRetriesInSeconds',
-        'debug_level': 'debugLevel',
-        'pgp_temp_dir': 'pgpTempDir',
-        'ssl_debug_trace': 'sslDebugTrace',
-        'pam_authentication': 'pamAuthentication',
-        'proxy_is_in_use': 'proxyIsInUse',
-        'proxy_host': 'proxyHost',
-        'proxy_port': 'proxyPort',
-        'proxy_user': 'proxyUser',
-        'proxy_password': 'proxyPassword',
-        'file_watcher_search_interval': 'fileWatcherSearchInterval',
-        'file_watcher_static_iterations': 'fileWatcherStaticIterations',
-        'file_watcher_check_file_is_in_use': 'fileWatcherCheckFileIsInUse',
-        'file_actions_retries_interval_in_seconds': 'fileActionsRetriesIntervalInSeconds',
-        'file_actions_retries_num': 'fileActionsRetriesNum'
+        "connection_timeout_in_seconds": "connectionTimeoutInSeconds",
+        "connection_retries": "connectionRetries",
+        "connection_time_between_retries_in_seconds": "connectionTimeBetweenRetriesInSeconds",
+        "debug_level": "debugLevel",
+        "pgp_temp_dir": "pgpTempDir",
+        "ssl_debug_trace": "sslDebugTrace",
+        "pam_authentication": "pamAuthentication",
+        "proxy_is_in_use": "proxyIsInUse",
+        "proxy_host": "proxyHost",
+        "proxy_port": "proxyPort",
+        "proxy_user": "proxyUser",
+        "proxy_password": "proxyPassword",
+        "file_watcher_search_interval": "fileWatcherSearchInterval",
+        "file_watcher_static_iterations": "fileWatcherStaticIterations",
+        "file_watcher_check_file_is_in_use": "fileWatcherCheckFileIsInUse",
+        "file_actions_retries_interval_in_seconds": "fileActionsRetriesIntervalInSeconds",
+        "file_actions_retries_num": "fileActionsRetriesNum",
     }
 
-    def __init__(self, connection_timeout_in_seconds=None, connection_retries=None, connection_time_between_retries_in_seconds=None, debug_level=None, pgp_temp_dir=None, ssl_debug_trace=None, pam_authentication=None, proxy_is_in_use=None, proxy_host=None, proxy_port=None, proxy_user=None, proxy_password=None, file_watcher_search_interval=None, file_watcher_static_iterations=None, file_watcher_check_file_is_in_use=None, file_actions_retries_interval_in_seconds=None, file_actions_retries_num=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        connection_timeout_in_seconds=None,
+        connection_retries=None,
+        connection_time_between_retries_in_seconds=None,
+        debug_level=None,
+        pgp_temp_dir=None,
+        ssl_debug_trace=None,
+        pam_authentication=None,
+        proxy_is_in_use=None,
+        proxy_host=None,
+        proxy_port=None,
+        proxy_user=None,
+        proxy_password=None,
+        file_watcher_search_interval=None,
+        file_watcher_static_iterations=None,
+        file_watcher_check_file_is_in_use=None,
+        file_actions_retries_interval_in_seconds=None,
+        file_actions_retries_num=None,
+        _configuration=None,
+    ):  # noqa: E501
         """MftConfigurationData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -102,7 +122,9 @@ class MftConfigurationData(object):
         if connection_retries is not None:
             self.connection_retries = connection_retries
         if connection_time_between_retries_in_seconds is not None:
-            self.connection_time_between_retries_in_seconds = connection_time_between_retries_in_seconds
+            self.connection_time_between_retries_in_seconds = (
+                connection_time_between_retries_in_seconds
+            )
         if debug_level is not None:
             self.debug_level = debug_level
         if pgp_temp_dir is not None:
@@ -128,7 +150,9 @@ class MftConfigurationData(object):
         if file_watcher_check_file_is_in_use is not None:
             self.file_watcher_check_file_is_in_use = file_watcher_check_file_is_in_use
         if file_actions_retries_interval_in_seconds is not None:
-            self.file_actions_retries_interval_in_seconds = file_actions_retries_interval_in_seconds
+            self.file_actions_retries_interval_in_seconds = (
+                file_actions_retries_interval_in_seconds
+            )
         if file_actions_retries_num is not None:
             self.file_actions_retries_num = file_actions_retries_num
 
@@ -190,7 +214,9 @@ class MftConfigurationData(object):
         return self._connection_time_between_retries_in_seconds
 
     @connection_time_between_retries_in_seconds.setter
-    def connection_time_between_retries_in_seconds(self, connection_time_between_retries_in_seconds):
+    def connection_time_between_retries_in_seconds(
+        self, connection_time_between_retries_in_seconds
+    ):
         """Sets the connection_time_between_retries_in_seconds of this MftConfigurationData.
 
         Time between connection retries (seconds) HIDDEN  # noqa: E501
@@ -199,7 +225,9 @@ class MftConfigurationData(object):
         :type: int
         """
 
-        self._connection_time_between_retries_in_seconds = connection_time_between_retries_in_seconds
+        self._connection_time_between_retries_in_seconds = (
+            connection_time_between_retries_in_seconds
+        )
 
     @property
     def debug_level(self):
@@ -489,7 +517,9 @@ class MftConfigurationData(object):
         return self._file_actions_retries_interval_in_seconds
 
     @file_actions_retries_interval_in_seconds.setter
-    def file_actions_retries_interval_in_seconds(self, file_actions_retries_interval_in_seconds):
+    def file_actions_retries_interval_in_seconds(
+        self, file_actions_retries_interval_in_seconds
+    ):
         """Sets the file_actions_retries_interval_in_seconds of this MftConfigurationData.
 
         File action retry interval (seconds) HIDDEN  # noqa: E501
@@ -498,7 +528,9 @@ class MftConfigurationData(object):
         :type: int
         """
 
-        self._file_actions_retries_interval_in_seconds = file_actions_retries_interval_in_seconds
+        self._file_actions_retries_interval_in_seconds = (
+            file_actions_retries_interval_in_seconds
+        )
 
     @property
     def file_actions_retries_num(self):
@@ -530,18 +562,20 @@ class MftConfigurationData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(MftConfigurationData, dict):

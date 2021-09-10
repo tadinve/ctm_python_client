@@ -33,24 +33,33 @@ class Privileges(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'client_access': 'ClientAccessPrivilegeCategory',
-        'configuration_manager': 'ConfigurationManagerPrivilegeCategory',
-        'monitoring': 'MonitoringPrivilegeCategory',
-        'planning': 'PlanningPrivilegeCategory',
-        'tools': 'ToolsPrivilegeCategory',
-        'viewpoint_manager': 'ViewpointManagerPrivilegeCategory'
+        "client_access": "ClientAccessPrivilegeCategory",
+        "configuration_manager": "ConfigurationManagerPrivilegeCategory",
+        "monitoring": "MonitoringPrivilegeCategory",
+        "planning": "PlanningPrivilegeCategory",
+        "tools": "ToolsPrivilegeCategory",
+        "viewpoint_manager": "ViewpointManagerPrivilegeCategory",
     }
 
     attribute_map = {
-        'client_access': 'ClientAccess',
-        'configuration_manager': 'ConfigurationManager',
-        'monitoring': 'Monitoring',
-        'planning': 'Planning',
-        'tools': 'Tools',
-        'viewpoint_manager': 'ViewpointManager'
+        "client_access": "ClientAccess",
+        "configuration_manager": "ConfigurationManager",
+        "monitoring": "Monitoring",
+        "planning": "Planning",
+        "tools": "Tools",
+        "viewpoint_manager": "ViewpointManager",
     }
 
-    def __init__(self, client_access=None, configuration_manager=None, monitoring=None, planning=None, tools=None, viewpoint_manager=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        client_access=None,
+        configuration_manager=None,
+        monitoring=None,
+        planning=None,
+        tools=None,
+        viewpoint_manager=None,
+        _configuration=None,
+    ):  # noqa: E501
         """Privileges - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -210,18 +219,20 @@ class Privileges(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(Privileges, dict):

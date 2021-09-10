@@ -33,30 +33,42 @@ class OrderParameters(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'create_duplicate': 'bool',
-        'hold': 'bool',
-        'ignore_criteria': 'bool',
-        'independent_flow': 'bool',
-        'order_date': 'str',
-        'order_into_folder': 'str',
-        'order_into_folder_order_id': 'str',
-        'variables': 'list[NameValueAttribute]',
-        'wait_for_order_date': 'bool'
+        "create_duplicate": "bool",
+        "hold": "bool",
+        "ignore_criteria": "bool",
+        "independent_flow": "bool",
+        "order_date": "str",
+        "order_into_folder": "str",
+        "order_into_folder_order_id": "str",
+        "variables": "list[NameValueAttribute]",
+        "wait_for_order_date": "bool",
     }
 
     attribute_map = {
-        'create_duplicate': 'create_duplicate',
-        'hold': 'hold',
-        'ignore_criteria': 'ignore_criteria',
-        'independent_flow': 'independent_flow',
-        'order_date': 'order_date',
-        'order_into_folder': 'order_into_folder',
-        'order_into_folder_order_id': 'order_into_folder_order_id',
-        'variables': 'variables',
-        'wait_for_order_date': 'wait_for_order_date'
+        "create_duplicate": "create_duplicate",
+        "hold": "hold",
+        "ignore_criteria": "ignore_criteria",
+        "independent_flow": "independent_flow",
+        "order_date": "order_date",
+        "order_into_folder": "order_into_folder",
+        "order_into_folder_order_id": "order_into_folder_order_id",
+        "variables": "variables",
+        "wait_for_order_date": "wait_for_order_date",
     }
 
-    def __init__(self, create_duplicate=None, hold=None, ignore_criteria=None, independent_flow=None, order_date=None, order_into_folder=None, order_into_folder_order_id=None, variables=None, wait_for_order_date=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        create_duplicate=None,
+        hold=None,
+        ignore_criteria=None,
+        independent_flow=None,
+        order_date=None,
+        order_into_folder=None,
+        order_into_folder_order_id=None,
+        variables=None,
+        wait_for_order_date=None,
+        _configuration=None,
+    ):  # noqa: E501
         """OrderParameters - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -215,12 +227,21 @@ class OrderParameters(object):
         :param order_into_folder: The order_into_folder of this OrderParameters.  # noqa: E501
         :type: str
         """
-        allowed_values = ["New", "Recent", "OrderId", "Alone", "UNRECOGNIZED"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                order_into_folder not in allowed_values):
+        allowed_values = [
+            "New",
+            "Recent",
+            "OrderId",
+            "Alone",
+            "UNRECOGNIZED",
+        ]  # noqa: E501
+        if (
+            self._configuration.client_side_validation
+            and order_into_folder not in allowed_values
+        ):
             raise ValueError(
-                "Invalid value for `order_into_folder` ({0}), must be one of {1}"  # noqa: E501
-                .format(order_into_folder, allowed_values)
+                "Invalid value for `order_into_folder` ({0}), must be one of {1}".format(  # noqa: E501
+                    order_into_folder, allowed_values
+                )
             )
 
         self._order_into_folder = order_into_folder
@@ -295,18 +316,20 @@ class OrderParameters(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(OrderParameters, dict):

@@ -32,15 +32,9 @@ class ManifestGroupItemObject(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'name': 'str',
-        'icon_base64': 'str'
-    }
+    swagger_types = {"name": "str", "icon_base64": "str"}
 
-    attribute_map = {
-        'name': 'name',
-        'icon_base64': 'iconBase64'
-    }
+    attribute_map = {"name": "name", "icon_base64": "iconBase64"}
 
     def __init__(self, name=None, icon_base64=None, _configuration=None):  # noqa: E501
         """ManifestGroupItemObject - a model defined in Swagger"""  # noqa: E501
@@ -106,18 +100,20 @@ class ManifestGroupItemObject(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ManifestGroupItemObject, dict):

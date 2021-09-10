@@ -49,8 +49,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_agent_with_http_info(server, body, **kwargs)  # noqa: E501
         else:
             (data) = self.add_agent_with_http_info(server, body, **kwargs)  # noqa: E501
@@ -73,35 +73,41 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "body"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_agent" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `add_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `add_agent`"
+            )  # noqa: E501
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in params or
-                                                       params['body'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `body` when calling `add_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in params or params["body"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `body` when calling `add_agent`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -111,30 +117,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
+        if "body" in params:
+            body_params = params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent', 'POST',
+            "/config/server/{server}/agent",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_archive_rule(self, archive_rule, **kwargs):  # noqa: E501
         """Add Workload Archiving rule  # noqa: E501
@@ -151,11 +160,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_archive_rule_with_http_info(archive_rule, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_archive_rule_with_http_info(
+                archive_rule, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_archive_rule_with_http_info(archive_rule, **kwargs)  # noqa: E501
+            (data) = self.add_archive_rule_with_http_info(
+                archive_rule, **kwargs
+            )  # noqa: E501
             return data
 
     def add_archive_rule_with_http_info(self, archive_rule, **kwargs):  # noqa: E501
@@ -174,25 +187,28 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['archive_rule']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["archive_rule"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_archive_rule" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'archive_rule' is set
-        if self.api_client.client_side_validation and ('archive_rule' not in params or
-                                                       params['archive_rule'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `archive_rule` when calling `add_archive_rule`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "archive_rule" not in params or params["archive_rule"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `archive_rule` when calling `add_archive_rule`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -206,30 +222,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'archive_rule' in params:
-            body_params = params['archive_rule']
+        if "archive_rule" in params:
+            body_params = params["archive_rule"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/archive/rule', 'POST',
+            "/config/archive/rule",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_external_user(self, external_user_data, **kwargs):  # noqa: E501
         """Add and external user  # noqa: E501
@@ -246,14 +265,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_external_user_with_http_info(external_user_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_external_user_with_http_info(
+                external_user_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_external_user_with_http_info(external_user_data, **kwargs)  # noqa: E501
+            (data) = self.add_external_user_with_http_info(
+                external_user_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_external_user_with_http_info(self, external_user_data, **kwargs):  # noqa: E501
+    def add_external_user_with_http_info(
+        self, external_user_data, **kwargs
+    ):  # noqa: E501
         """Add and external user  # noqa: E501
 
         Add and external user for b2b  # noqa: E501
@@ -269,25 +294,28 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['external_user_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["external_user_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_external_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'external_user_data' is set
-        if self.api_client.client_side_validation and ('external_user_data' not in params or
-                                                       params['external_user_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `external_user_data` when calling `add_external_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "external_user_data" not in params or params["external_user_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `external_user_data` when calling `add_external_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -301,32 +329,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'external_user_data' in params:
-            body_params = params['external_user_data']
+        if "external_user_data" in params:
+            body_params = params["external_user_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/externaluser', 'POST',
+            "/config/mft/externaluser",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def add_external_user_or_user_group_to_mft_folder(self, folder_name, user_or_group, **kwargs):  # noqa: E501
+    def add_external_user_or_user_group_to_mft_folder(
+        self, folder_name, user_or_group, **kwargs
+    ):  # noqa: E501
         """Add external user or user groups to virtual folder external users list.  # noqa: E501
 
         Add external user user groups to virtual folder external users list.  # noqa: E501
@@ -342,14 +375,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_external_user_or_user_group_to_mft_folder_with_http_info(folder_name, user_or_group, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_external_user_or_user_group_to_mft_folder_with_http_info(
+                folder_name, user_or_group, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_external_user_or_user_group_to_mft_folder_with_http_info(folder_name, user_or_group, **kwargs)  # noqa: E501
+            (data) = self.add_external_user_or_user_group_to_mft_folder_with_http_info(
+                folder_name, user_or_group, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_external_user_or_user_group_to_mft_folder_with_http_info(self, folder_name, user_or_group, **kwargs):  # noqa: E501
+    def add_external_user_or_user_group_to_mft_folder_with_http_info(
+        self, folder_name, user_or_group, **kwargs
+    ):  # noqa: E501
         """Add external user or user groups to virtual folder external users list.  # noqa: E501
 
         Add external user user groups to virtual folder external users list.  # noqa: E501
@@ -366,37 +405,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['folder_name', 'user_or_group']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["folder_name", "user_or_group"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_external_user_or_user_group_to_mft_folder" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'folder_name' is set
-        if self.api_client.client_side_validation and ('folder_name' not in params or
-                                                       params['folder_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `folder_name` when calling `add_external_user_or_user_group_to_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "folder_name" not in params or params["folder_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `folder_name` when calling `add_external_user_or_user_group_to_mft_folder`"
+            )  # noqa: E501
         # verify the required parameter 'user_or_group' is set
-        if self.api_client.client_side_validation and ('user_or_group' not in params or
-                                                       params['user_or_group'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_or_group` when calling `add_external_user_or_user_group_to_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user_or_group" not in params or params["user_or_group"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user_or_group` when calling `add_external_user_or_user_group_to_mft_folder`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'folder_name' in params:
-            path_params['folderName'] = params['folder_name']  # noqa: E501
-        if 'user_or_group' in params:
-            path_params['userOrGroup'] = params['user_or_group']  # noqa: E501
+        if "folder_name" in params:
+            path_params["folderName"] = params["folder_name"]  # noqa: E501
+        if "user_or_group" in params:
+            path_params["userOrGroup"] = params["user_or_group"]  # noqa: E501
 
         query_params = []
 
@@ -407,27 +452,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/virtualfolder/{folderName}/user/{userOrGroup}', 'POST',
+            "/config/mft/virtualfolder/{folderName}/user/{userOrGroup}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_gateway(self, gateway_data, **kwargs):  # noqa: E501
         """add gateway.  # noqa: E501
@@ -444,11 +492,13 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_gateway_with_http_info(gateway_data, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_gateway_with_http_info(gateway_data, **kwargs)  # noqa: E501
+            (data) = self.add_gateway_with_http_info(
+                gateway_data, **kwargs
+            )  # noqa: E501
             return data
 
     def add_gateway_with_http_info(self, gateway_data, **kwargs):  # noqa: E501
@@ -467,25 +517,28 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['gateway_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["gateway_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_gateway" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'gateway_data' is set
-        if self.api_client.client_side_validation and ('gateway_data' not in params or
-                                                       params['gateway_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `gateway_data` when calling `add_gateway`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "gateway_data" not in params or params["gateway_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `gateway_data` when calling `add_gateway`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -499,30 +552,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'gateway_data' in params:
-            body_params = params['gateway_data']
+        if "gateway_data" in params:
+            body_params = params["gateway_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/gateway', 'POST',
+            "/config/mft/gateway",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_host_to_hostgroup(self, server, hostgroup, agent, **kwargs):  # noqa: E501
         """add agent to hostgroup  # noqa: E501
@@ -541,14 +597,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_host_to_hostgroup_with_http_info(server, hostgroup, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_host_to_hostgroup_with_http_info(
+                server, hostgroup, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_host_to_hostgroup_with_http_info(server, hostgroup, agent, **kwargs)  # noqa: E501
+            (data) = self.add_host_to_hostgroup_with_http_info(
+                server, hostgroup, agent, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_host_to_hostgroup_with_http_info(self, server, hostgroup, agent, **kwargs):  # noqa: E501
+    def add_host_to_hostgroup_with_http_info(
+        self, server, hostgroup, agent, **kwargs
+    ):  # noqa: E501
         """add agent to hostgroup  # noqa: E501
 
         Add an agent to hostgroup. Create the the hostgroup if it does not exist.  # noqa: E501
@@ -566,41 +628,50 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'hostgroup', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "hostgroup", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_host_to_hostgroup" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `add_host_to_hostgroup`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `add_host_to_hostgroup`"
+            )  # noqa: E501
         # verify the required parameter 'hostgroup' is set
-        if self.api_client.client_side_validation and ('hostgroup' not in params or
-                                                       params['hostgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `hostgroup` when calling `add_host_to_hostgroup`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostgroup" not in params or params["hostgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `hostgroup` when calling `add_host_to_hostgroup`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `add_host_to_hostgroup`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `add_host_to_hostgroup`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'hostgroup' in params:
-            path_params['hostgroup'] = params['hostgroup']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "hostgroup" in params:
+            path_params["hostgroup"] = params["hostgroup"]  # noqa: E501
 
         query_params = []
 
@@ -610,30 +681,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'agent' in params:
-            body_params = params['agent']
+        if "agent" in params:
+            body_params = params["agent"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/hostgroup/{hostgroup}/agent', 'POST',
+            "/config/server/{server}/hostgroup/{hostgroup}/agent",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentsInGroupSuccessData',  # noqa: E501
+            response_type="AgentsInGroupSuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_hub_to_cluster(self, agentname, **kwargs):  # noqa: E501
         """add hub to cluster.  # noqa: E501
@@ -650,11 +724,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_hub_to_cluster_with_http_info(agentname, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_hub_to_cluster_with_http_info(
+                agentname, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_hub_to_cluster_with_http_info(agentname, **kwargs)  # noqa: E501
+            (data) = self.add_hub_to_cluster_with_http_info(
+                agentname, **kwargs
+            )  # noqa: E501
             return data
 
     def add_hub_to_cluster_with_http_info(self, agentname, **kwargs):  # noqa: E501
@@ -673,31 +751,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['agentname']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["agentname"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_hub_to_cluster" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'agentname' is set
-        if self.api_client.client_side_validation and ('agentname' not in params or
-                                                       params['agentname'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agentname` when calling `add_hub_to_cluster`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agentname" not in params or params["agentname"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agentname` when calling `add_hub_to_cluster`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'agentname' in params:
-            path_params['agentname'] = params['agentname']  # noqa: E501
+        if "agentname" in params:
+            path_params["agentname"] = params["agentname"]  # noqa: E501
 
         query_params = []
 
@@ -708,27 +789,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/cluster/hub/{agentname}', 'POST',
+            "/config/mft/cluster/hub/{agentname}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_mft_folder(self, folder_properties_data, **kwargs):  # noqa: E501
         """Add virtual folder  # noqa: E501
@@ -745,14 +829,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_mft_folder_with_http_info(folder_properties_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_mft_folder_with_http_info(
+                folder_properties_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_mft_folder_with_http_info(folder_properties_data, **kwargs)  # noqa: E501
+            (data) = self.add_mft_folder_with_http_info(
+                folder_properties_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_mft_folder_with_http_info(self, folder_properties_data, **kwargs):  # noqa: E501
+    def add_mft_folder_with_http_info(
+        self, folder_properties_data, **kwargs
+    ):  # noqa: E501
         """Add virtual folder  # noqa: E501
 
         Add virtual folder  # noqa: E501
@@ -768,25 +858,29 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['folder_properties_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["folder_properties_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_mft_folder" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'folder_properties_data' is set
-        if self.api_client.client_side_validation and ('folder_properties_data' not in params or
-                                                       params['folder_properties_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `folder_properties_data` when calling `add_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "folder_properties_data" not in params
+            or params["folder_properties_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `folder_properties_data` when calling `add_mft_folder`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -800,30 +894,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'folder_properties_data' in params:
-            body_params = params['folder_properties_data']
+        if "folder_properties_data" in params:
+            body_params = params["folder_properties_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/virtualfolder', 'POST',
+            "/config/mft/virtualfolder",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_mft_user_group(self, user_group_properties_data, **kwargs):  # noqa: E501
         """Add user group.  # noqa: E501
@@ -840,14 +937,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_mft_user_group_with_http_info(user_group_properties_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_mft_user_group_with_http_info(
+                user_group_properties_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_mft_user_group_with_http_info(user_group_properties_data, **kwargs)  # noqa: E501
+            (data) = self.add_mft_user_group_with_http_info(
+                user_group_properties_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_mft_user_group_with_http_info(self, user_group_properties_data, **kwargs):  # noqa: E501
+    def add_mft_user_group_with_http_info(
+        self, user_group_properties_data, **kwargs
+    ):  # noqa: E501
         """Add user group.  # noqa: E501
 
         Add user group.  # noqa: E501
@@ -863,25 +966,29 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user_group_properties_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user_group_properties_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_mft_user_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user_group_properties_data' is set
-        if self.api_client.client_side_validation and ('user_group_properties_data' not in params or
-                                                       params['user_group_properties_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_group_properties_data` when calling `add_mft_user_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user_group_properties_data" not in params
+            or params["user_group_properties_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user_group_properties_data` when calling `add_mft_user_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -895,32 +1002,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'user_group_properties_data' in params:
-            body_params = params['user_group_properties_data']
+        if "user_group_properties_data" in params:
+            body_params = params["user_group_properties_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/usergroup', 'POST',
+            "/config/mft/usergroup",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def add_pgp_template(self, server, agent, template_name, pgp_template_data, **kwargs):  # noqa: E501
+    def add_pgp_template(
+        self, server, agent, template_name, pgp_template_data, **kwargs
+    ):  # noqa: E501
         """Add PGP Template  # noqa: E501
 
         Add PGP Template  # noqa: E501
@@ -938,14 +1050,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_pgp_template_with_http_info(server, agent, template_name, pgp_template_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_pgp_template_with_http_info(
+                server, agent, template_name, pgp_template_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_pgp_template_with_http_info(server, agent, template_name, pgp_template_data, **kwargs)  # noqa: E501
+            (data) = self.add_pgp_template_with_http_info(
+                server, agent, template_name, pgp_template_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_pgp_template_with_http_info(self, server, agent, template_name, pgp_template_data, **kwargs):  # noqa: E501
+    def add_pgp_template_with_http_info(
+        self, server, agent, template_name, pgp_template_data, **kwargs
+    ):  # noqa: E501
         """Add PGP Template  # noqa: E501
 
         Add PGP Template  # noqa: E501
@@ -964,47 +1082,64 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'template_name', 'pgp_template_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "agent",
+            "template_name",
+            "pgp_template_data",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_pgp_template" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `add_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `add_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `add_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `add_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'template_name' is set
-        if self.api_client.client_side_validation and ('template_name' not in params or
-                                                       params['template_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `template_name` when calling `add_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "template_name" not in params or params["template_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `template_name` when calling `add_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'pgp_template_data' is set
-        if self.api_client.client_side_validation and ('pgp_template_data' not in params or
-                                                       params['pgp_template_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `pgp_template_data` when calling `add_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "pgp_template_data" not in params or params["pgp_template_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `pgp_template_data` when calling `add_pgp_template`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'template_name' in params:
-            path_params['templateName'] = params['template_name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "template_name" in params:
+            path_params["templateName"] = params["template_name"]  # noqa: E501
 
         query_params = []
 
@@ -1014,30 +1149,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'pgp_template_data' in params:
-            body_params = params['pgp_template_data']
+        if "pgp_template_data" in params:
+            body_params = params["pgp_template_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/pgptemplate/{templateName}', 'POST',
+            "/config/server/{server}/agent/{agent}/mft/pgptemplate/{templateName}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_remote_host(self, server, **kwargs):  # noqa: E501
         """add remote host to Server  # noqa: E501
@@ -1055,8 +1193,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_remote_host_with_http_info(server, **kwargs)  # noqa: E501
         else:
             (data) = self.add_remote_host_with_http_info(server, **kwargs)  # noqa: E501
@@ -1079,31 +1217,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_remote_host" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `add_remote_host`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `add_remote_host`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -1113,30 +1254,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'data' in params:
-            body_params = params['data']
+        if "data" in params:
+            body_params = params["data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/remotehost', 'POST',
+            "/config/server/{server}/remotehost",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_role(self, role_file, **kwargs):  # noqa: E501
         """Add Authorization Role  # noqa: E501
@@ -1153,8 +1297,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_role_with_http_info(role_file, **kwargs)  # noqa: E501
         else:
             (data) = self.add_role_with_http_info(role_file, **kwargs)  # noqa: E501
@@ -1176,25 +1320,28 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['role_file']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["role_file"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_role" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'role_file' is set
-        if self.api_client.client_side_validation and ('role_file' not in params or
-                                                       params['role_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role_file` when calling `add_role`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role_file" not in params or params["role_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role_file` when calling `add_role`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1206,36 +1353,42 @@ class ConfigApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'role_file' in params:
-            local_var_files['roleFile'] = params['role_file']  # noqa: E501
+        if "role_file" in params:
+            local_var_files["roleFile"] = params["role_file"]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/role', 'POST',
+            "/config/authorization/role",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_role_to_ldap_group(self, ldapgroup, role, **kwargs):  # noqa: E501
         """Add a role to LDAP group  # noqa: E501
@@ -1253,14 +1406,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_role_to_ldap_group_with_http_info(ldapgroup, role, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_role_to_ldap_group_with_http_info(
+                ldapgroup, role, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_role_to_ldap_group_with_http_info(ldapgroup, role, **kwargs)  # noqa: E501
+            (data) = self.add_role_to_ldap_group_with_http_info(
+                ldapgroup, role, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_role_to_ldap_group_with_http_info(self, ldapgroup, role, **kwargs):  # noqa: E501
+    def add_role_to_ldap_group_with_http_info(
+        self, ldapgroup, role, **kwargs
+    ):  # noqa: E501
         """Add a role to LDAP group  # noqa: E501
 
         Add a role to LDAP group so any user belong to the LDAP group will get all permissions defined in the role  # noqa: E501
@@ -1277,37 +1436,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ldapgroup', 'role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["ldapgroup", "role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_role_to_ldap_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'ldapgroup' is set
-        if self.api_client.client_side_validation and ('ldapgroup' not in params or
-                                                       params['ldapgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ldapgroup` when calling `add_role_to_ldap_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "ldapgroup" not in params or params["ldapgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `ldapgroup` when calling `add_role_to_ldap_group`"
+            )  # noqa: E501
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `add_role_to_ldap_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `add_role_to_ldap_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'ldapgroup' in params:
-            path_params['ldapgroup'] = params['ldapgroup']  # noqa: E501
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "ldapgroup" in params:
+            path_params["ldapgroup"] = params["ldapgroup"]  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -1318,27 +1483,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/ldap/{ldapgroup}/role/{role}', 'POST',
+            "/config/authorization/ldap/{ldapgroup}/role/{role}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_role_to_user(self, user, role, **kwargs):  # noqa: E501
         """Add a role to user  # noqa: E501
@@ -1356,11 +1524,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_role_to_user_with_http_info(user, role, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_role_to_user_with_http_info(
+                user, role, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_role_to_user_with_http_info(user, role, **kwargs)  # noqa: E501
+            (data) = self.add_role_to_user_with_http_info(
+                user, role, **kwargs
+            )  # noqa: E501
             return data
 
     def add_role_to_user_with_http_info(self, user, role, **kwargs):  # noqa: E501
@@ -1380,37 +1552,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user', 'role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user", "role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_role_to_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `add_role_to_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `add_role_to_user`"
+            )  # noqa: E501
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `add_role_to_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `add_role_to_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -1421,27 +1599,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/user/{user}/role/{role}', 'POST',
+            "/config/authorization/user/{user}/role/{role}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_secret(self, name_value, **kwargs):  # noqa: E501
         """Add a new secret  # noqa: E501
@@ -1458,8 +1639,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_secret_with_http_info(name_value, **kwargs)  # noqa: E501
         else:
             (data) = self.add_secret_with_http_info(name_value, **kwargs)  # noqa: E501
@@ -1481,25 +1662,28 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name_value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name_value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_secret" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name_value' is set
-        if self.api_client.client_side_validation and ('name_value' not in params or
-                                                       params['name_value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name_value` when calling `add_secret`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name_value" not in params or params["name_value"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name_value` when calling `add_secret`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1513,30 +1697,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'name_value' in params:
-            body_params = params['name_value']
+        if "name_value" in params:
+            body_params = params["name_value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/secret', 'POST',
+            "/config/secret",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_server(self, body, **kwargs):  # noqa: E501
         """add server to the system  # noqa: E501
@@ -1553,8 +1740,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_server_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.add_server_with_http_info(body, **kwargs)  # noqa: E501
@@ -1576,25 +1763,28 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["body"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_server" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in params or
-                                                       params['body'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `body` when calling `add_server`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in params or params["body"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `body` when calling `add_server`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1608,30 +1798,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
+        if "body" in params:
+            body_params = params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server', 'POST',
+            "/config/server",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_user(self, user_file, **kwargs):  # noqa: E501
         """Add user  # noqa: E501
@@ -1648,8 +1841,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_user_with_http_info(user_file, **kwargs)  # noqa: E501
         else:
             (data) = self.add_user_with_http_info(user_file, **kwargs)  # noqa: E501
@@ -1671,25 +1864,28 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user_file']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user_file"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user_file' is set
-        if self.api_client.client_side_validation and ('user_file' not in params or
-                                                       params['user_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_file` when calling `add_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user_file" not in params or params["user_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user_file` when calling `add_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1701,38 +1897,46 @@ class ConfigApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'user_file' in params:
-            local_var_files['userFile'] = params['user_file']  # noqa: E501
+        if "user_file" in params:
+            local_var_files["userFile"] = params["user_file"]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/user', 'POST',
+            "/config/authorization/user",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def add_zos_template(self, server, agent, template_name, zos_template_data, **kwargs):  # noqa: E501
+    def add_zos_template(
+        self, server, agent, template_name, zos_template_data, **kwargs
+    ):  # noqa: E501
         """Add z/OS Template  # noqa: E501
 
         Add z/OS Template  # noqa: E501
@@ -1750,14 +1954,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_zos_template_with_http_info(server, agent, template_name, zos_template_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_zos_template_with_http_info(
+                server, agent, template_name, zos_template_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_zos_template_with_http_info(server, agent, template_name, zos_template_data, **kwargs)  # noqa: E501
+            (data) = self.add_zos_template_with_http_info(
+                server, agent, template_name, zos_template_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_zos_template_with_http_info(self, server, agent, template_name, zos_template_data, **kwargs):  # noqa: E501
+    def add_zos_template_with_http_info(
+        self, server, agent, template_name, zos_template_data, **kwargs
+    ):  # noqa: E501
         """Add z/OS Template  # noqa: E501
 
         Add z/OS Template  # noqa: E501
@@ -1776,47 +1986,64 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'template_name', 'zos_template_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "agent",
+            "template_name",
+            "zos_template_data",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_zos_template" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `add_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `add_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `add_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `add_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'template_name' is set
-        if self.api_client.client_side_validation and ('template_name' not in params or
-                                                       params['template_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `template_name` when calling `add_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "template_name" not in params or params["template_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `template_name` when calling `add_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'zos_template_data' is set
-        if self.api_client.client_side_validation and ('zos_template_data' not in params or
-                                                       params['zos_template_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `zos_template_data` when calling `add_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "zos_template_data" not in params or params["zos_template_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `zos_template_data` when calling `add_zos_template`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'template_name' in params:
-            path_params['templateName'] = params['template_name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "template_name" in params:
+            path_params["templateName"] = params["template_name"]  # noqa: E501
 
         query_params = []
 
@@ -1826,32 +2053,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'zos_template_data' in params:
-            body_params = params['zos_template_data']
+        if "zos_template_data" in params:
+            body_params = params["zos_template_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/zostemplate/{templateName}', 'POST',
+            "/config/server/{server}/agent/{agent}/mft/zostemplate/{templateName}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def authorize_mft_ssh_cluster(self, server, agent, cluster_name, hostname_port_list, **kwargs):  # noqa: E501
+    def authorize_mft_ssh_cluster(
+        self, server, agent, cluster_name, hostname_port_list, **kwargs
+    ):  # noqa: E501
         """Authorize SSH Cluster  # noqa: E501
 
         Authorize SSH Cluster  # noqa: E501
@@ -1869,14 +2101,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.authorize_mft_ssh_cluster_with_http_info(server, agent, cluster_name, hostname_port_list, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.authorize_mft_ssh_cluster_with_http_info(
+                server, agent, cluster_name, hostname_port_list, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.authorize_mft_ssh_cluster_with_http_info(server, agent, cluster_name, hostname_port_list, **kwargs)  # noqa: E501
+            (data) = self.authorize_mft_ssh_cluster_with_http_info(
+                server, agent, cluster_name, hostname_port_list, **kwargs
+            )  # noqa: E501
             return data
 
-    def authorize_mft_ssh_cluster_with_http_info(self, server, agent, cluster_name, hostname_port_list, **kwargs):  # noqa: E501
+    def authorize_mft_ssh_cluster_with_http_info(
+        self, server, agent, cluster_name, hostname_port_list, **kwargs
+    ):  # noqa: E501
         """Authorize SSH Cluster  # noqa: E501
 
         Authorize SSH Cluster  # noqa: E501
@@ -1895,47 +2133,64 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'cluster_name', 'hostname_port_list']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "agent",
+            "cluster_name",
+            "hostname_port_list",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method authorize_mft_ssh_cluster" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `authorize_mft_ssh_cluster`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `authorize_mft_ssh_cluster`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `authorize_mft_ssh_cluster`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `authorize_mft_ssh_cluster`"
+            )  # noqa: E501
         # verify the required parameter 'cluster_name' is set
-        if self.api_client.client_side_validation and ('cluster_name' not in params or
-                                                       params['cluster_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `cluster_name` when calling `authorize_mft_ssh_cluster`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "cluster_name" not in params or params["cluster_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `cluster_name` when calling `authorize_mft_ssh_cluster`"
+            )  # noqa: E501
         # verify the required parameter 'hostname_port_list' is set
-        if self.api_client.client_side_validation and ('hostname_port_list' not in params or
-                                                       params['hostname_port_list'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `hostname_port_list` when calling `authorize_mft_ssh_cluster`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostname_port_list" not in params or params["hostname_port_list"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `hostname_port_list` when calling `authorize_mft_ssh_cluster`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'cluster_name' in params:
-            path_params['clusterName'] = params['cluster_name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "cluster_name" in params:
+            path_params["clusterName"] = params["cluster_name"]  # noqa: E501
 
         query_params = []
 
@@ -1945,30 +2200,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'hostname_port_list' in params:
-            body_params = params['hostname_port_list']
+        if "hostname_port_list" in params:
+            body_params = params["hostname_port_list"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/ssh/cluster/{clusterName}', 'POST',
+            "/config/server/{server}/agent/{agent}/mft/ssh/cluster/{clusterName}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def authorize_mft_ssh_host(self, server, agent, hostname, **kwargs):  # noqa: E501
         """Authorize SSH Host  # noqa: E501
@@ -1988,14 +2246,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.authorize_mft_ssh_host_with_http_info(server, agent, hostname, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.authorize_mft_ssh_host_with_http_info(
+                server, agent, hostname, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.authorize_mft_ssh_host_with_http_info(server, agent, hostname, **kwargs)  # noqa: E501
+            (data) = self.authorize_mft_ssh_host_with_http_info(
+                server, agent, hostname, **kwargs
+            )  # noqa: E501
             return data
 
-    def authorize_mft_ssh_host_with_http_info(self, server, agent, hostname, **kwargs):  # noqa: E501
+    def authorize_mft_ssh_host_with_http_info(
+        self, server, agent, hostname, **kwargs
+    ):  # noqa: E501
         """Authorize SSH Host  # noqa: E501
 
         Authorize SSH Host for SFTP account  # noqa: E501
@@ -2014,47 +2278,56 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'hostname', 'port']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "hostname", "port"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method authorize_mft_ssh_host" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `authorize_mft_ssh_host`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `authorize_mft_ssh_host`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `authorize_mft_ssh_host`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `authorize_mft_ssh_host`"
+            )  # noqa: E501
         # verify the required parameter 'hostname' is set
-        if self.api_client.client_side_validation and ('hostname' not in params or
-                                                       params['hostname'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `hostname` when calling `authorize_mft_ssh_host`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostname" not in params or params["hostname"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `hostname` when calling `authorize_mft_ssh_host`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'hostname' in params:
-            path_params['hostname'] = params['hostname']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "hostname" in params:
+            path_params["hostname"] = params["hostname"]  # noqa: E501
 
         query_params = []
-        if 'port' in params:
-            query_params.append(('port', params['port']))  # noqa: E501
+        if "port" in params:
+            query_params.append(("port", params["port"]))  # noqa: E501
 
         header_params = {}
 
@@ -2063,29 +2336,34 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/ssh/host/{hostname}', 'POST',
+            "/config/server/{server}/agent/{agent}/mft/ssh/host/{hostname}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def authorize_ssh_known_remotehost(self, server, remotehost, **kwargs):  # noqa: E501
+    def authorize_ssh_known_remotehost(
+        self, server, remotehost, **kwargs
+    ):  # noqa: E501
         """Authorize  # noqa: E501
 
         Authorized known ssh remote host.  # noqa: E501
@@ -2101,14 +2379,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.authorize_ssh_known_remotehost_with_http_info(server, remotehost, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.authorize_ssh_known_remotehost_with_http_info(
+                server, remotehost, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.authorize_ssh_known_remotehost_with_http_info(server, remotehost, **kwargs)  # noqa: E501
+            (data) = self.authorize_ssh_known_remotehost_with_http_info(
+                server, remotehost, **kwargs
+            )  # noqa: E501
             return data
 
-    def authorize_ssh_known_remotehost_with_http_info(self, server, remotehost, **kwargs):  # noqa: E501
+    def authorize_ssh_known_remotehost_with_http_info(
+        self, server, remotehost, **kwargs
+    ):  # noqa: E501
         """Authorize  # noqa: E501
 
         Authorized known ssh remote host.  # noqa: E501
@@ -2125,37 +2409,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'remotehost']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "remotehost"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method authorize_ssh_known_remotehost" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `authorize_ssh_known_remotehost`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `authorize_ssh_known_remotehost`"
+            )  # noqa: E501
         # verify the required parameter 'remotehost' is set
-        if self.api_client.client_side_validation and ('remotehost' not in params or
-                                                       params['remotehost'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `remotehost` when calling `authorize_ssh_known_remotehost`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "remotehost" not in params or params["remotehost"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `remotehost` when calling `authorize_ssh_known_remotehost`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'remotehost' in params:
-            path_params['remotehost'] = params['remotehost']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "remotehost" in params:
+            path_params["remotehost"] = params["remotehost"]  # noqa: E501
 
         query_params = []
 
@@ -2166,27 +2456,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/remotehost/{remotehost}/authorize', 'POST',
+            "/config/server/{server}/remotehost/{remotehost}/authorize",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def change_user_password(self, user, **kwargs):  # noqa: E501
         """Change user password  # noqa: E501
@@ -2204,11 +2497,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.change_user_password_with_http_info(user, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.change_user_password_with_http_info(
+                user, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.change_user_password_with_http_info(user, **kwargs)  # noqa: E501
+            (data) = self.change_user_password_with_http_info(
+                user, **kwargs
+            )  # noqa: E501
             return data
 
     def change_user_password_with_http_info(self, user, **kwargs):  # noqa: E501
@@ -2228,31 +2525,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user', 'password']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user", "password"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method change_user_password" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `change_user_password`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `change_user_password`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -2262,32 +2562,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'password' in params:
-            body_params = params['password']
+        if "password" in params:
+            body_params = params["password"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/user/{user}/password/adminUpdate', 'POST',
+            "/config/user/{user}/password/adminUpdate",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def create_agent_certificate_signing_request(self, server, agent, csr_data, **kwargs):  # noqa: E501
+    def create_agent_certificate_signing_request(
+        self, server, agent, csr_data, **kwargs
+    ):  # noqa: E501
         """Create certificate signing request (CSR).  # noqa: E501
 
         Create certificate signing request (CSR) on SSL configured Agent.  # noqa: E501
@@ -2304,14 +2609,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_agent_certificate_signing_request_with_http_info(server, agent, csr_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.create_agent_certificate_signing_request_with_http_info(
+                server, agent, csr_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.create_agent_certificate_signing_request_with_http_info(server, agent, csr_data, **kwargs)  # noqa: E501
+            (data) = self.create_agent_certificate_signing_request_with_http_info(
+                server, agent, csr_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def create_agent_certificate_signing_request_with_http_info(self, server, agent, csr_data, **kwargs):  # noqa: E501
+    def create_agent_certificate_signing_request_with_http_info(
+        self, server, agent, csr_data, **kwargs
+    ):  # noqa: E501
         """Create certificate signing request (CSR).  # noqa: E501
 
         Create certificate signing request (CSR) on SSL configured Agent.  # noqa: E501
@@ -2329,41 +2640,50 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'csr_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "csr_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method create_agent_certificate_signing_request" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `create_agent_certificate_signing_request`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `create_agent_certificate_signing_request`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `create_agent_certificate_signing_request`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `create_agent_certificate_signing_request`"
+            )  # noqa: E501
         # verify the required parameter 'csr_data' is set
-        if self.api_client.client_side_validation and ('csr_data' not in params or
-                                                       params['csr_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `csr_data` when calling `create_agent_certificate_signing_request`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "csr_data" not in params or params["csr_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `csr_data` when calling `create_agent_certificate_signing_request`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -2373,30 +2693,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'csr_data' in params:
-            body_params = params['csr_data']
+        if "csr_data" in params:
+            body_params = params["csr_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/plain'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/csr', 'POST',
+            "/config/server/{server}/agent/{agent}/csr",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def create_run_as_user(self, server, run_as_user_data, **kwargs):  # noqa: E501
         """Add a new Run-as user  # noqa: E501
@@ -2414,14 +2737,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_run_as_user_with_http_info(server, run_as_user_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.create_run_as_user_with_http_info(
+                server, run_as_user_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.create_run_as_user_with_http_info(server, run_as_user_data, **kwargs)  # noqa: E501
+            (data) = self.create_run_as_user_with_http_info(
+                server, run_as_user_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def create_run_as_user_with_http_info(self, server, run_as_user_data, **kwargs):  # noqa: E501
+    def create_run_as_user_with_http_info(
+        self, server, run_as_user_data, **kwargs
+    ):  # noqa: E501
         """Add a new Run-as user  # noqa: E501
 
         Add a new Run-as user to server.  # noqa: E501
@@ -2438,35 +2767,41 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'run_as_user_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "run_as_user_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method create_run_as_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `create_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `create_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'run_as_user_data' is set
-        if self.api_client.client_side_validation and ('run_as_user_data' not in params or
-                                                       params['run_as_user_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `run_as_user_data` when calling `create_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "run_as_user_data" not in params or params["run_as_user_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `run_as_user_data` when calling `create_run_as_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -2476,30 +2811,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'run_as_user_data' in params:
-            body_params = params['run_as_user_data']
+        if "run_as_user_data" in params:
+            body_params = params["run_as_user_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/runasuser', 'POST',
+            "/config/server/{server}/runasuser",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_agent(self, server, agent, **kwargs):  # noqa: E501
         """delete an agent from Server  # noqa: E501
@@ -2517,11 +2855,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_agent_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.delete_agent_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
     def delete_agent_with_http_info(self, server, agent, **kwargs):  # noqa: E501
@@ -2541,37 +2883,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_agent" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_agent`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `delete_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `delete_agent`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -2582,29 +2930,34 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}', 'DELETE',
+            "/config/server/{server}/agent/{agent}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def delete_archive_rule(self, rule_name, delete_rule_data_flag, **kwargs):  # noqa: E501
+    def delete_archive_rule(
+        self, rule_name, delete_rule_data_flag, **kwargs
+    ):  # noqa: E501
         """Delete Workload Archiving rule  # noqa: E501
 
         Deletes Workload Archiving rule by name. It is required to send deleteRuleData flag to specify if rule need to be deleted with all the collected data or deleteRuleWithoutData otherwise.  # noqa: E501
@@ -2620,14 +2973,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_archive_rule_with_http_info(rule_name, delete_rule_data_flag, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_archive_rule_with_http_info(
+                rule_name, delete_rule_data_flag, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_archive_rule_with_http_info(rule_name, delete_rule_data_flag, **kwargs)  # noqa: E501
+            (data) = self.delete_archive_rule_with_http_info(
+                rule_name, delete_rule_data_flag, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_archive_rule_with_http_info(self, rule_name, delete_rule_data_flag, **kwargs):  # noqa: E501
+    def delete_archive_rule_with_http_info(
+        self, rule_name, delete_rule_data_flag, **kwargs
+    ):  # noqa: E501
         """Delete Workload Archiving rule  # noqa: E501
 
         Deletes Workload Archiving rule by name. It is required to send deleteRuleData flag to specify if rule need to be deleted with all the collected data or deleteRuleWithoutData otherwise.  # noqa: E501
@@ -2644,39 +3003,48 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['rule_name', 'delete_rule_data_flag']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["rule_name", "delete_rule_data_flag"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_archive_rule" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'rule_name' is set
-        if self.api_client.client_side_validation and ('rule_name' not in params or
-                                                       params['rule_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `rule_name` when calling `delete_archive_rule`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "rule_name" not in params or params["rule_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `rule_name` when calling `delete_archive_rule`"
+            )  # noqa: E501
         # verify the required parameter 'delete_rule_data_flag' is set
-        if self.api_client.client_side_validation and ('delete_rule_data_flag' not in params or
-                                                       params['delete_rule_data_flag'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `delete_rule_data_flag` when calling `delete_archive_rule`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "delete_rule_data_flag" not in params
+            or params["delete_rule_data_flag"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `delete_rule_data_flag` when calling `delete_archive_rule`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'rule_name' in params:
-            path_params['ruleName'] = params['rule_name']  # noqa: E501
+        if "rule_name" in params:
+            path_params["ruleName"] = params["rule_name"]  # noqa: E501
 
         query_params = []
-        if 'delete_rule_data_flag' in params:
-            query_params.append(('deleteRuleDataFlag', params['delete_rule_data_flag']))  # noqa: E501
+        if "delete_rule_data_flag" in params:
+            query_params.append(
+                ("deleteRuleDataFlag", params["delete_rule_data_flag"])
+            )  # noqa: E501
 
         header_params = {}
 
@@ -2685,27 +3053,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/archive/rule/{ruleName}', 'DELETE',
+            "/config/archive/rule/{ruleName}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_authorization_role(self, role, **kwargs):  # noqa: E501
         """Delete Authorization Role  # noqa: E501
@@ -2722,11 +3093,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_authorization_role_with_http_info(role, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_authorization_role_with_http_info(
+                role, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_authorization_role_with_http_info(role, **kwargs)  # noqa: E501
+            (data) = self.delete_authorization_role_with_http_info(
+                role, **kwargs
+            )  # noqa: E501
             return data
 
     def delete_authorization_role_with_http_info(self, role, **kwargs):  # noqa: E501
@@ -2745,31 +3120,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_authorization_role" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `delete_authorization_role`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `delete_authorization_role`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -2780,27 +3158,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/role/{role}', 'DELETE',
+            "/config/authorization/role/{role}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_external_user(self, username, **kwargs):  # noqa: E501
         """Delete an external user  # noqa: E501
@@ -2817,11 +3198,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_external_user_with_http_info(username, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_external_user_with_http_info(
+                username, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_external_user_with_http_info(username, **kwargs)  # noqa: E501
+            (data) = self.delete_external_user_with_http_info(
+                username, **kwargs
+            )  # noqa: E501
             return data
 
     def delete_external_user_with_http_info(self, username, **kwargs):  # noqa: E501
@@ -2840,31 +3225,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['username']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["username"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_external_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'username' is set
-        if self.api_client.client_side_validation and ('username' not in params or
-                                                       params['username'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `username` when calling `delete_external_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "username" not in params or params["username"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `username` when calling `delete_external_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'username' in params:
-            path_params['username'] = params['username']  # noqa: E501
+        if "username" in params:
+            path_params["username"] = params["username"]  # noqa: E501
 
         query_params = []
 
@@ -2875,29 +3263,34 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/externaluser/{username}', 'DELETE',
+            "/config/mft/externaluser/{username}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def delete_external_user_or_user_group_from_mft_folder(self, folder_name, user_or_group, **kwargs):  # noqa: E501
+    def delete_external_user_or_user_group_from_mft_folder(
+        self, folder_name, user_or_group, **kwargs
+    ):  # noqa: E501
         """Remove an external user or user group from an existing virtual folder in MFT.  # noqa: E501
 
         Remove an external user or user group from an existing virtual folder in MFT.  # noqa: E501
@@ -2913,14 +3306,24 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_external_user_or_user_group_from_mft_folder_with_http_info(folder_name, user_or_group, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return (
+                self.delete_external_user_or_user_group_from_mft_folder_with_http_info(
+                    folder_name, user_or_group, **kwargs
+                )
+            )  # noqa: E501
         else:
-            (data) = self.delete_external_user_or_user_group_from_mft_folder_with_http_info(folder_name, user_or_group, **kwargs)  # noqa: E501
+            (
+                data
+            ) = self.delete_external_user_or_user_group_from_mft_folder_with_http_info(
+                folder_name, user_or_group, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_external_user_or_user_group_from_mft_folder_with_http_info(self, folder_name, user_or_group, **kwargs):  # noqa: E501
+    def delete_external_user_or_user_group_from_mft_folder_with_http_info(
+        self, folder_name, user_or_group, **kwargs
+    ):  # noqa: E501
         """Remove an external user or user group from an existing virtual folder in MFT.  # noqa: E501
 
         Remove an external user or user group from an existing virtual folder in MFT.  # noqa: E501
@@ -2937,37 +3340,44 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['folder_name', 'user_or_group']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["folder_name", "user_or_group"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_external_user_or_user_group_from_mft_folder" % key
+                    " to method delete_external_user_or_user_group_from_mft_folder"
+                    % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'folder_name' is set
-        if self.api_client.client_side_validation and ('folder_name' not in params or
-                                                       params['folder_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `folder_name` when calling `delete_external_user_or_user_group_from_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "folder_name" not in params or params["folder_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `folder_name` when calling `delete_external_user_or_user_group_from_mft_folder`"
+            )  # noqa: E501
         # verify the required parameter 'user_or_group' is set
-        if self.api_client.client_side_validation and ('user_or_group' not in params or
-                                                       params['user_or_group'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_or_group` when calling `delete_external_user_or_user_group_from_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user_or_group" not in params or params["user_or_group"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user_or_group` when calling `delete_external_user_or_user_group_from_mft_folder`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'folder_name' in params:
-            path_params['folderName'] = params['folder_name']  # noqa: E501
-        if 'user_or_group' in params:
-            path_params['userOrGroup'] = params['user_or_group']  # noqa: E501
+        if "folder_name" in params:
+            path_params["folderName"] = params["folder_name"]  # noqa: E501
+        if "user_or_group" in params:
+            path_params["userOrGroup"] = params["user_or_group"]  # noqa: E501
 
         query_params = []
 
@@ -2978,27 +3388,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/virtualfolder/{folderName}/user/{userOrGroup}', 'DELETE',
+            "/config/mft/virtualfolder/{folderName}/user/{userOrGroup}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_host_from_group(self, server, hostgroup, host, **kwargs):  # noqa: E501
         """delete an agent from a hostgroup  # noqa: E501
@@ -3017,14 +3430,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_host_from_group_with_http_info(server, hostgroup, host, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_host_from_group_with_http_info(
+                server, hostgroup, host, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_host_from_group_with_http_info(server, hostgroup, host, **kwargs)  # noqa: E501
+            (data) = self.delete_host_from_group_with_http_info(
+                server, hostgroup, host, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_host_from_group_with_http_info(self, server, hostgroup, host, **kwargs):  # noqa: E501
+    def delete_host_from_group_with_http_info(
+        self, server, hostgroup, host, **kwargs
+    ):  # noqa: E501
         """delete an agent from a hostgroup  # noqa: E501
 
         Delete an agent from the specified hostgroup. If the group is empty it will also be deleted.  # noqa: E501
@@ -3042,43 +3461,52 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'hostgroup', 'host']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "hostgroup", "host"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_host_from_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_host_from_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_host_from_group`"
+            )  # noqa: E501
         # verify the required parameter 'hostgroup' is set
-        if self.api_client.client_side_validation and ('hostgroup' not in params or
-                                                       params['hostgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `hostgroup` when calling `delete_host_from_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostgroup" not in params or params["hostgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `hostgroup` when calling `delete_host_from_group`"
+            )  # noqa: E501
         # verify the required parameter 'host' is set
-        if self.api_client.client_side_validation and ('host' not in params or
-                                                       params['host'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `host` when calling `delete_host_from_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "host" not in params or params["host"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `host` when calling `delete_host_from_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'hostgroup' in params:
-            path_params['hostgroup'] = params['hostgroup']  # noqa: E501
-        if 'host' in params:
-            path_params['host'] = params['host']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "hostgroup" in params:
+            path_params["hostgroup"] = params["hostgroup"]  # noqa: E501
+        if "host" in params:
+            path_params["host"] = params["host"]  # noqa: E501
 
         query_params = []
 
@@ -3089,27 +3517,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/hostgroup/{hostgroup}/agent/{host}', 'DELETE',
+            "/config/server/{server}/hostgroup/{hostgroup}/agent/{host}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentsInGroupSuccessData',  # noqa: E501
+            response_type="AgentsInGroupSuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_host_group(self, server, hostgroup, **kwargs):  # noqa: E501
         """delete host group  # noqa: E501
@@ -3127,14 +3558,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_host_group_with_http_info(server, hostgroup, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_host_group_with_http_info(
+                server, hostgroup, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_host_group_with_http_info(server, hostgroup, **kwargs)  # noqa: E501
+            (data) = self.delete_host_group_with_http_info(
+                server, hostgroup, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_host_group_with_http_info(self, server, hostgroup, **kwargs):  # noqa: E501
+    def delete_host_group_with_http_info(
+        self, server, hostgroup, **kwargs
+    ):  # noqa: E501
         """delete host group  # noqa: E501
 
         delete host group  # noqa: E501
@@ -3151,37 +3588,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'hostgroup']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "hostgroup"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_host_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_host_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_host_group`"
+            )  # noqa: E501
         # verify the required parameter 'hostgroup' is set
-        if self.api_client.client_side_validation and ('hostgroup' not in params or
-                                                       params['hostgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `hostgroup` when calling `delete_host_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostgroup" not in params or params["hostgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `hostgroup` when calling `delete_host_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'hostgroup' in params:
-            path_params['hostgroup'] = params['hostgroup']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "hostgroup" in params:
+            path_params["hostgroup"] = params["hostgroup"]  # noqa: E501
 
         query_params = []
 
@@ -3192,27 +3635,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/hostgroup/{hostgroup}', 'DELETE',
+            "/config/server/{server}/hostgroup/{hostgroup}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_mft_folder(self, folder_name, **kwargs):  # noqa: E501
         """Delete a virtual folder.  # noqa: E501
@@ -3229,11 +3675,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_mft_folder_with_http_info(folder_name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_mft_folder_with_http_info(
+                folder_name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_mft_folder_with_http_info(folder_name, **kwargs)  # noqa: E501
+            (data) = self.delete_mft_folder_with_http_info(
+                folder_name, **kwargs
+            )  # noqa: E501
             return data
 
     def delete_mft_folder_with_http_info(self, folder_name, **kwargs):  # noqa: E501
@@ -3252,31 +3702,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['folder_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["folder_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_mft_folder" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'folder_name' is set
-        if self.api_client.client_side_validation and ('folder_name' not in params or
-                                                       params['folder_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `folder_name` when calling `delete_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "folder_name" not in params or params["folder_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `folder_name` when calling `delete_mft_folder`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'folder_name' in params:
-            path_params['folderName'] = params['folder_name']  # noqa: E501
+        if "folder_name" in params:
+            path_params["folderName"] = params["folder_name"]  # noqa: E501
 
         query_params = []
 
@@ -3287,27 +3740,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/virtualfolder/{folderName}', 'DELETE',
+            "/config/mft/virtualfolder/{folderName}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_mft_user_group(self, name, **kwargs):  # noqa: E501
         """Delete user group.  # noqa: E501
@@ -3324,11 +3780,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_mft_user_group_with_http_info(name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_mft_user_group_with_http_info(
+                name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_mft_user_group_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.delete_mft_user_group_with_http_info(
+                name, **kwargs
+            )  # noqa: E501
             return data
 
     def delete_mft_user_group_with_http_info(self, name, **kwargs):  # noqa: E501
@@ -3347,31 +3807,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_mft_user_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `delete_mft_user_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `delete_mft_user_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -3382,27 +3845,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/usergroup/{name}', 'DELETE',
+            "/config/mft/usergroup/{name}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_pgp_template(self, server, agent, template_name, **kwargs):  # noqa: E501
         """Delete PGP Template  # noqa: E501
@@ -3421,14 +3887,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_pgp_template_with_http_info(server, agent, template_name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_pgp_template_with_http_info(
+                server, agent, template_name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_pgp_template_with_http_info(server, agent, template_name, **kwargs)  # noqa: E501
+            (data) = self.delete_pgp_template_with_http_info(
+                server, agent, template_name, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_pgp_template_with_http_info(self, server, agent, template_name, **kwargs):  # noqa: E501
+    def delete_pgp_template_with_http_info(
+        self, server, agent, template_name, **kwargs
+    ):  # noqa: E501
         """Delete PGP Template  # noqa: E501
 
         Delete PGP Template  # noqa: E501
@@ -3446,43 +3918,52 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'template_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "template_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_pgp_template" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `delete_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `delete_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'template_name' is set
-        if self.api_client.client_side_validation and ('template_name' not in params or
-                                                       params['template_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `template_name` when calling `delete_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "template_name" not in params or params["template_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `template_name` when calling `delete_pgp_template`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'template_name' in params:
-            path_params['templateName'] = params['template_name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "template_name" in params:
+            path_params["templateName"] = params["template_name"]  # noqa: E501
 
         query_params = []
 
@@ -3493,27 +3974,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/pgptemplate/{templateName}', 'DELETE',
+            "/config/server/{server}/agent/{agent}/mft/pgptemplate/{templateName}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_remote_host(self, server, remotehost, **kwargs):  # noqa: E501
         """delete a remote host from Server  # noqa: E501
@@ -3531,14 +4015,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_remote_host_with_http_info(server, remotehost, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_remote_host_with_http_info(
+                server, remotehost, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_remote_host_with_http_info(server, remotehost, **kwargs)  # noqa: E501
+            (data) = self.delete_remote_host_with_http_info(
+                server, remotehost, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_remote_host_with_http_info(self, server, remotehost, **kwargs):  # noqa: E501
+    def delete_remote_host_with_http_info(
+        self, server, remotehost, **kwargs
+    ):  # noqa: E501
         """delete a remote host from Server  # noqa: E501
 
         Delete a remote host from a Server.  # noqa: E501
@@ -3555,37 +4045,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'remotehost']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "remotehost"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_remote_host" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_remote_host`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_remote_host`"
+            )  # noqa: E501
         # verify the required parameter 'remotehost' is set
-        if self.api_client.client_side_validation and ('remotehost' not in params or
-                                                       params['remotehost'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `remotehost` when calling `delete_remote_host`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "remotehost" not in params or params["remotehost"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `remotehost` when calling `delete_remote_host`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'remotehost' in params:
-            path_params['remotehost'] = params['remotehost']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "remotehost" in params:
+            path_params["remotehost"] = params["remotehost"]  # noqa: E501
 
         query_params = []
 
@@ -3596,27 +4092,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/remotehost/{remotehost}', 'DELETE',
+            "/config/server/{server}/remotehost/{remotehost}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_role_from_ldap_group(self, ldapgroup, role, **kwargs):  # noqa: E501
         """Delete a role from LDAP group  # noqa: E501
@@ -3634,14 +4133,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_role_from_ldap_group_with_http_info(ldapgroup, role, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_role_from_ldap_group_with_http_info(
+                ldapgroup, role, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_role_from_ldap_group_with_http_info(ldapgroup, role, **kwargs)  # noqa: E501
+            (data) = self.delete_role_from_ldap_group_with_http_info(
+                ldapgroup, role, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_role_from_ldap_group_with_http_info(self, ldapgroup, role, **kwargs):  # noqa: E501
+    def delete_role_from_ldap_group_with_http_info(
+        self, ldapgroup, role, **kwargs
+    ):  # noqa: E501
         """Delete a role from LDAP group  # noqa: E501
 
         Delete a role from LDAP group  # noqa: E501
@@ -3658,37 +4163,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ldapgroup', 'role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["ldapgroup", "role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_role_from_ldap_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'ldapgroup' is set
-        if self.api_client.client_side_validation and ('ldapgroup' not in params or
-                                                       params['ldapgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ldapgroup` when calling `delete_role_from_ldap_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "ldapgroup" not in params or params["ldapgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `ldapgroup` when calling `delete_role_from_ldap_group`"
+            )  # noqa: E501
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `delete_role_from_ldap_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `delete_role_from_ldap_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'ldapgroup' in params:
-            path_params['ldapgroup'] = params['ldapgroup']  # noqa: E501
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "ldapgroup" in params:
+            path_params["ldapgroup"] = params["ldapgroup"]  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -3699,27 +4210,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/ldap/{ldapgroup}/role/{role}', 'DELETE',
+            "/config/authorization/ldap/{ldapgroup}/role/{role}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_run_as_user(self, server, agent, user, **kwargs):  # noqa: E501
         """delete Run-as user  # noqa: E501
@@ -3738,14 +4252,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_run_as_user_with_http_info(server, agent, user, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_run_as_user_with_http_info(
+                server, agent, user, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_run_as_user_with_http_info(server, agent, user, **kwargs)  # noqa: E501
+            (data) = self.delete_run_as_user_with_http_info(
+                server, agent, user, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_run_as_user_with_http_info(self, server, agent, user, **kwargs):  # noqa: E501
+    def delete_run_as_user_with_http_info(
+        self, server, agent, user, **kwargs
+    ):  # noqa: E501
         """delete Run-as user  # noqa: E501
 
         Delete Run-as user from server  # noqa: E501
@@ -3763,43 +4283,52 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'user']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "user"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_run_as_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `delete_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `delete_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `delete_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `delete_run_as_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -3810,27 +4339,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/runasuser/{agent}/{user}', 'DELETE',
+            "/config/server/{server}/runasuser/{agent}/{user}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_secret(self, name, **kwargs):  # noqa: E501
         """Delete an existing secret  # noqa: E501
@@ -3847,8 +4379,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.delete_secret_with_http_info(name, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_secret_with_http_info(name, **kwargs)  # noqa: E501
@@ -3870,31 +4402,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_secret" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `delete_secret`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `delete_secret`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -3905,27 +4440,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/secret/{name}', 'DELETE',
+            "/config/secret/{name}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_user(self, user, **kwargs):  # noqa: E501
         """Delete user  # noqa: E501
@@ -3942,8 +4480,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.delete_user_with_http_info(user, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_user_with_http_info(user, **kwargs)  # noqa: E501
@@ -3965,31 +4503,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `delete_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `delete_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -4000,27 +4541,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/user/{user}', 'DELETE',
+            "/config/authorization/user/{user}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_zos_template(self, server, agent, template_name, **kwargs):  # noqa: E501
         """Delete z/OS Template  # noqa: E501
@@ -4039,14 +4583,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_zos_template_with_http_info(server, agent, template_name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_zos_template_with_http_info(
+                server, agent, template_name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_zos_template_with_http_info(server, agent, template_name, **kwargs)  # noqa: E501
+            (data) = self.delete_zos_template_with_http_info(
+                server, agent, template_name, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_zos_template_with_http_info(self, server, agent, template_name, **kwargs):  # noqa: E501
+    def delete_zos_template_with_http_info(
+        self, server, agent, template_name, **kwargs
+    ):  # noqa: E501
         """Delete z/OS Template  # noqa: E501
 
         Delete z/OS Template  # noqa: E501
@@ -4064,43 +4614,52 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'template_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "template_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_zos_template" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `delete_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `delete_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'template_name' is set
-        if self.api_client.client_side_validation and ('template_name' not in params or
-                                                       params['template_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `template_name` when calling `delete_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "template_name" not in params or params["template_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `template_name` when calling `delete_zos_template`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'template_name' in params:
-            path_params['templateName'] = params['template_name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "template_name" in params:
+            path_params["templateName"] = params["template_name"]  # noqa: E501
 
         query_params = []
 
@@ -4111,29 +4670,34 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/zostemplate/{templateName}', 'DELETE',
+            "/config/server/{server}/agent/{agent}/mft/zostemplate/{templateName}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def deploy_agent_certificate(self, server, agent, crt_file, ca_chain_file, **kwargs):  # noqa: E501
+    def deploy_agent_certificate(
+        self, server, agent, crt_file, ca_chain_file, **kwargs
+    ):  # noqa: E501
         """Deploy certificate (CRT).  # noqa: E501
 
         Deploy certificate (CRT) on SSL configured Agent.  # noqa: E501
@@ -4151,14 +4715,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.deploy_agent_certificate_with_http_info(server, agent, crt_file, ca_chain_file, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.deploy_agent_certificate_with_http_info(
+                server, agent, crt_file, ca_chain_file, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.deploy_agent_certificate_with_http_info(server, agent, crt_file, ca_chain_file, **kwargs)  # noqa: E501
+            (data) = self.deploy_agent_certificate_with_http_info(
+                server, agent, crt_file, ca_chain_file, **kwargs
+            )  # noqa: E501
             return data
 
-    def deploy_agent_certificate_with_http_info(self, server, agent, crt_file, ca_chain_file, **kwargs):  # noqa: E501
+    def deploy_agent_certificate_with_http_info(
+        self, server, agent, crt_file, ca_chain_file, **kwargs
+    ):  # noqa: E501
         """Deploy certificate (CRT).  # noqa: E501
 
         Deploy certificate (CRT) on SSL configured Agent.  # noqa: E501
@@ -4177,45 +4747,57 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'crt_file', 'ca_chain_file']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "crt_file", "ca_chain_file"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method deploy_agent_certificate" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `deploy_agent_certificate`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `deploy_agent_certificate`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `deploy_agent_certificate`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `deploy_agent_certificate`"
+            )  # noqa: E501
         # verify the required parameter 'crt_file' is set
-        if self.api_client.client_side_validation and ('crt_file' not in params or
-                                                       params['crt_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `crt_file` when calling `deploy_agent_certificate`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "crt_file" not in params or params["crt_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `crt_file` when calling `deploy_agent_certificate`"
+            )  # noqa: E501
         # verify the required parameter 'ca_chain_file' is set
-        if self.api_client.client_side_validation and ('ca_chain_file' not in params or
-                                                       params['ca_chain_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ca_chain_file` when calling `deploy_agent_certificate`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "ca_chain_file" not in params or params["ca_chain_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `ca_chain_file` when calling `deploy_agent_certificate`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -4223,38 +4805,44 @@ class ConfigApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'crt_file' in params:
-            local_var_files['crtFile'] = params['crt_file']  # noqa: E501
-        if 'ca_chain_file' in params:
-            local_var_files['caChainFile'] = params['ca_chain_file']  # noqa: E501
+        if "crt_file" in params:
+            local_var_files["crtFile"] = params["crt_file"]  # noqa: E501
+        if "ca_chain_file" in params:
+            local_var_files["caChainFile"] = params["ca_chain_file"]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/crt', 'POST',
+            "/config/server/{server}/agent/{agent}/crt",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def disable_agent(self, server, agent, **kwargs):  # noqa: E501
         """disable agent from the Server  # noqa: E501
@@ -4272,11 +4860,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.disable_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.disable_agent_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.disable_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.disable_agent_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
     def disable_agent_with_http_info(self, server, agent, **kwargs):  # noqa: E501
@@ -4296,37 +4888,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method disable_agent" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `disable_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `disable_agent`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `disable_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `disable_agent`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -4337,27 +4935,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/disable', 'POST',
+            "/config/server/{server}/agent/{agent}/disable",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def enable_agent(self, server, agent, **kwargs):  # noqa: E501
         """enable agent from the Server  # noqa: E501
@@ -4375,11 +4976,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.enable_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.enable_agent_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.enable_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.enable_agent_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
     def enable_agent_with_http_info(self, server, agent, **kwargs):  # noqa: E501
@@ -4399,37 +5004,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method enable_agent" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `enable_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `enable_agent`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `enable_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `enable_agent`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -4440,27 +5051,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/enable', 'POST',
+            "/config/server/{server}/agent/{agent}/enable",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def failover(self, server, **kwargs):  # noqa: E501
         """Perform Manual Failover on a specified Server  # noqa: E501
@@ -4477,8 +5091,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.failover_with_http_info(server, **kwargs)  # noqa: E501
         else:
             (data) = self.failover_with_http_info(server, **kwargs)  # noqa: E501
@@ -4500,31 +5114,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method failover" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `failover`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `failover`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -4535,29 +5152,34 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/failover', 'PUT',
+            "/config/server/{server}/failover",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def generate_mft_rsa_ssh_key(self, server, agent, ssh_key_properties, **kwargs):  # noqa: E501
+    def generate_mft_rsa_ssh_key(
+        self, server, agent, ssh_key_properties, **kwargs
+    ):  # noqa: E501
         """Generate RSA SSH Key  # noqa: E501
 
         Generate RSA SSH Key pair for SFTP account authentication  # noqa: E501
@@ -4574,14 +5196,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.generate_mft_rsa_ssh_key_with_http_info(server, agent, ssh_key_properties, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.generate_mft_rsa_ssh_key_with_http_info(
+                server, agent, ssh_key_properties, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.generate_mft_rsa_ssh_key_with_http_info(server, agent, ssh_key_properties, **kwargs)  # noqa: E501
+            (data) = self.generate_mft_rsa_ssh_key_with_http_info(
+                server, agent, ssh_key_properties, **kwargs
+            )  # noqa: E501
             return data
 
-    def generate_mft_rsa_ssh_key_with_http_info(self, server, agent, ssh_key_properties, **kwargs):  # noqa: E501
+    def generate_mft_rsa_ssh_key_with_http_info(
+        self, server, agent, ssh_key_properties, **kwargs
+    ):  # noqa: E501
         """Generate RSA SSH Key  # noqa: E501
 
         Generate RSA SSH Key pair for SFTP account authentication  # noqa: E501
@@ -4599,41 +5227,50 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'ssh_key_properties']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "ssh_key_properties"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method generate_mft_rsa_ssh_key" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `generate_mft_rsa_ssh_key`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `generate_mft_rsa_ssh_key`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `generate_mft_rsa_ssh_key`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `generate_mft_rsa_ssh_key`"
+            )  # noqa: E501
         # verify the required parameter 'ssh_key_properties' is set
-        if self.api_client.client_side_validation and ('ssh_key_properties' not in params or
-                                                       params['ssh_key_properties'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ssh_key_properties` when calling `generate_mft_rsa_ssh_key`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "ssh_key_properties" not in params or params["ssh_key_properties"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `ssh_key_properties` when calling `generate_mft_rsa_ssh_key`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -4643,32 +5280,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'ssh_key_properties' in params:
-            body_params = params['ssh_key_properties']
+        if "ssh_key_properties" in params:
+            body_params = params["ssh_key_properties"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/ssh/key', 'POST',
+            "/config/server/{server}/agent/{agent}/mft/ssh/key",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def get_agent_certificate_expiration_date(self, server, agent, **kwargs):  # noqa: E501
+    def get_agent_certificate_expiration_date(
+        self, server, agent, **kwargs
+    ):  # noqa: E501
         """Get certificate expiration date.  # noqa: E501
 
         Get the certificate expiration date of SSL configured Agent.  # noqa: E501
@@ -4684,14 +5326,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_agent_certificate_expiration_date_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_agent_certificate_expiration_date_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_agent_certificate_expiration_date_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.get_agent_certificate_expiration_date_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_agent_certificate_expiration_date_with_http_info(self, server, agent, **kwargs):  # noqa: E501
+    def get_agent_certificate_expiration_date_with_http_info(
+        self, server, agent, **kwargs
+    ):  # noqa: E501
         """Get certificate expiration date.  # noqa: E501
 
         Get the certificate expiration date of SSL configured Agent.  # noqa: E501
@@ -4708,37 +5356,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_agent_certificate_expiration_date" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_agent_certificate_expiration_date`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_agent_certificate_expiration_date`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `get_agent_certificate_expiration_date`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `get_agent_certificate_expiration_date`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -4749,27 +5403,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/crt/expiration', 'GET',
+            "/config/server/{server}/agent/{agent}/crt/expiration",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentCertificateExpirationData',  # noqa: E501
+            response_type="AgentCertificateExpirationData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_agent_parameters(self, server, agent, **kwargs):  # noqa: E501
         """get agent parameters  # noqa: E501
@@ -4788,14 +5445,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_agent_parameters_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_agent_parameters_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_agent_parameters_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.get_agent_parameters_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_agent_parameters_with_http_info(self, server, agent, **kwargs):  # noqa: E501
+    def get_agent_parameters_with_http_info(
+        self, server, agent, **kwargs
+    ):  # noqa: E501
         """get agent parameters  # noqa: E501
 
         Get all the parameters of the specified Agent.  # noqa: E501
@@ -4813,41 +5476,47 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'extended_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "extended_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_agent_parameters" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_agent_parameters`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_agent_parameters`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `get_agent_parameters`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `get_agent_parameters`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
-        if 'extended_data' in params:
-            query_params.append(('extendedData', params['extended_data']))  # noqa: E501
+        if "extended_data" in params:
+            query_params.append(("extendedData", params["extended_data"]))  # noqa: E501
 
         header_params = {}
 
@@ -4856,27 +5525,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/params', 'GET',
+            "/config/server/{server}/agent/{agent}/params",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='KeyValueListResult',  # noqa: E501
+            response_type="KeyValueListResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_agents(self, server, **kwargs):  # noqa: E501
         """get Server agents  # noqa: E501
@@ -4894,8 +5566,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_agents_with_http_info(server, **kwargs)  # noqa: E501
         else:
             (data) = self.get_agents_with_http_info(server, **kwargs)  # noqa: E501
@@ -4918,35 +5590,38 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_agents" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_agents`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_agents`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
-        if 'agent' in params:
-            query_params.append(('agent', params['agent']))  # noqa: E501
+        if "agent" in params:
+            query_params.append(("agent", params["agent"]))  # noqa: E501
 
         header_params = {}
 
@@ -4955,27 +5630,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agents', 'GET',
+            "/config/server/{server}/agents",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentDetailsList',  # noqa: E501
+            response_type="AgentDetailsList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_all_archive_rules(self, **kwargs):  # noqa: E501
         """Get all Workload Archiving rules  # noqa: E501
@@ -4991,8 +5669,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_all_archive_rules_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_all_archive_rules_with_http_info(**kwargs)  # noqa: E501
@@ -5014,20 +5692,20 @@ class ConfigApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_all_archive_rules" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -5042,27 +5720,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/archive/rules', 'GET',
+            "/config/archive/rules",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ArchiveRulesList',  # noqa: E501
+            response_type="ArchiveRulesList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_all_authorization_roles(self, **kwargs):  # noqa: E501
         """Get Authorization Roles  # noqa: E501
@@ -5080,11 +5761,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_authorization_roles_with_http_info(**kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_all_authorization_roles_with_http_info(
+                **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_all_authorization_roles_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_authorization_roles_with_http_info(
+                **kwargs
+            )  # noqa: E501
             return data
 
     def get_all_authorization_roles_with_http_info(self, **kwargs):  # noqa: E501
@@ -5104,31 +5789,31 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['role', 'description']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["role", "description"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_all_authorization_roles" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'role' in params:
-            query_params.append(('role', params['role']))  # noqa: E501
-        if 'description' in params:
-            query_params.append(('description', params['description']))  # noqa: E501
+        if "role" in params:
+            query_params.append(("role", params["role"]))  # noqa: E501
+        if "description" in params:
+            query_params.append(("description", params["description"]))  # noqa: E501
 
         header_params = {}
 
@@ -5137,27 +5822,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/roles', 'GET',
+            "/config/authorization/roles",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RoleHeaderList',  # noqa: E501
+            response_type="RoleHeaderList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_all_organization_groups(self, **kwargs):  # noqa: E501
         """Get All organization groups  # noqa: E501
@@ -5174,11 +5862,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_organization_groups_with_http_info(**kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_all_organization_groups_with_http_info(
+                **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_all_organization_groups_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_organization_groups_with_http_info(
+                **kwargs
+            )  # noqa: E501
             return data
 
     def get_all_organization_groups_with_http_info(self, **kwargs):  # noqa: E501
@@ -5197,29 +5889,31 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['organizationgroup']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["organizationgroup"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_all_organization_groups" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'organizationgroup' in params:
-            query_params.append(('organizationgroup', params['organizationgroup']))  # noqa: E501
+        if "organizationgroup" in params:
+            query_params.append(
+                ("organizationgroup", params["organizationgroup"])
+            )  # noqa: E501
 
         header_params = {}
 
@@ -5228,29 +5922,34 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/organizationgroups', 'GET',
+            "/config/authorization/organizationgroups",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
+            response_type="list[str]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def get_all_roles_associated_with_organization_group(self, organizationgroup, **kwargs):  # noqa: E501
+    def get_all_roles_associated_with_organization_group(
+        self, organizationgroup, **kwargs
+    ):  # noqa: E501
         """Get Authorization Roles associated with an organization group  # noqa: E501
 
         Get Authorization Roles associated with an organization group  # noqa: E501
@@ -5266,14 +5965,22 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_roles_associated_with_organization_group_with_http_info(organizationgroup, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_all_roles_associated_with_organization_group_with_http_info(
+                organizationgroup, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_all_roles_associated_with_organization_group_with_http_info(organizationgroup, **kwargs)  # noqa: E501
+            (
+                data
+            ) = self.get_all_roles_associated_with_organization_group_with_http_info(
+                organizationgroup, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_all_roles_associated_with_organization_group_with_http_info(self, organizationgroup, **kwargs):  # noqa: E501
+    def get_all_roles_associated_with_organization_group_with_http_info(
+        self, organizationgroup, **kwargs
+    ):  # noqa: E501
         """Get Authorization Roles associated with an organization group  # noqa: E501
 
         Get Authorization Roles associated with an organization group  # noqa: E501
@@ -5290,35 +5997,38 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['organizationgroup', 'role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["organizationgroup", "role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_all_roles_associated_with_organization_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'organizationgroup' is set
-        if self.api_client.client_side_validation and ('organizationgroup' not in params or
-                                                       params['organizationgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `organizationgroup` when calling `get_all_roles_associated_with_organization_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "organizationgroup" not in params or params["organizationgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `organizationgroup` when calling `get_all_roles_associated_with_organization_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'organizationgroup' in params:
-            path_params['organizationgroup'] = params['organizationgroup']  # noqa: E501
+        if "organizationgroup" in params:
+            path_params["organizationgroup"] = params["organizationgroup"]  # noqa: E501
 
         query_params = []
-        if 'role' in params:
-            query_params.append(('role', params['role']))  # noqa: E501
+        if "role" in params:
+            query_params.append(("role", params["role"]))  # noqa: E501
 
         header_params = {}
 
@@ -5327,27 +6037,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/organizationgroup/{organizationgroup}/roles', 'GET',
+            "/config/authorization/organizationgroup/{organizationgroup}/roles",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
+            response_type="list[str]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_all_users(self, **kwargs):  # noqa: E501
         """Get users  # noqa: E501
@@ -5366,8 +6079,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_all_users_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_all_users_with_http_info(**kwargs)  # noqa: E501
@@ -5391,33 +6104,33 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'full_name', 'description']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name", "full_name", "description"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_all_users" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
-        if 'full_name' in params:
-            query_params.append(('fullName', params['full_name']))  # noqa: E501
-        if 'description' in params:
-            query_params.append(('description', params['description']))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
+        if "full_name" in params:
+            query_params.append(("fullName", params["full_name"]))  # noqa: E501
+        if "description" in params:
+            query_params.append(("description", params["description"]))  # noqa: E501
 
         header_params = {}
 
@@ -5426,27 +6139,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/users', 'GET',
+            "/config/authorization/users",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[UserHeader]',  # noqa: E501
+            response_type="list[UserHeader]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_archive_statistics(self, **kwargs):  # noqa: E501
         """Get Workload Archiving statistics  # noqa: E501
@@ -5462,8 +6178,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_archive_statistics_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_archive_statistics_with_http_info(**kwargs)  # noqa: E501
@@ -5485,20 +6201,20 @@ class ConfigApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_archive_statistics" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -5513,27 +6229,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/archive/statistics', 'GET',
+            "/config/archive/statistics",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RulesStatisticListSummary',  # noqa: E501
+            response_type="RulesStatisticListSummary",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_external_user_authorized_folders(self, name, **kwargs):  # noqa: E501
         """Get MFT external user authorized folders  # noqa: E501
@@ -5550,14 +6269,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_external_user_authorized_folders_with_http_info(name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_external_user_authorized_folders_with_http_info(
+                name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_external_user_authorized_folders_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.get_external_user_authorized_folders_with_http_info(
+                name, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_external_user_authorized_folders_with_http_info(self, name, **kwargs):  # noqa: E501
+    def get_external_user_authorized_folders_with_http_info(
+        self, name, **kwargs
+    ):  # noqa: E501
         """Get MFT external user authorized folders  # noqa: E501
 
         Get MFT external user authorized folders  # noqa: E501
@@ -5573,31 +6298,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_external_user_authorized_folders" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `get_external_user_authorized_folders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `get_external_user_authorized_folders`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -5608,27 +6336,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/externaluser/{name}/virtualfolders', 'GET',
+            "/config/mft/externaluser/{name}/virtualfolders",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
+            response_type="list[str]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_external_users(self, **kwargs):  # noqa: E501
         """Get MFT external users that match the search criteria.  # noqa: E501
@@ -5649,8 +6380,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_external_users_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_external_users_with_http_info(**kwargs)  # noqa: E501
@@ -5676,37 +6407,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'email', 'description', 'company', 'phone_number']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "name",
+            "email",
+            "description",
+            "company",
+            "phone_number",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_external_users" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
-        if 'email' in params:
-            query_params.append(('email', params['email']))  # noqa: E501
-        if 'description' in params:
-            query_params.append(('description', params['description']))  # noqa: E501
-        if 'company' in params:
-            query_params.append(('company', params['company']))  # noqa: E501
-        if 'phone_number' in params:
-            query_params.append(('phoneNumber', params['phone_number']))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
+        if "email" in params:
+            query_params.append(("email", params["email"]))  # noqa: E501
+        if "description" in params:
+            query_params.append(("description", params["description"]))  # noqa: E501
+        if "company" in params:
+            query_params.append(("company", params["company"]))  # noqa: E501
+        if "phone_number" in params:
+            query_params.append(("phoneNumber", params["phone_number"]))  # noqa: E501
 
         header_params = {}
 
@@ -5715,27 +6452,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/externalusers', 'GET',
+            "/config/mft/externalusers",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ExternalUserData]',  # noqa: E501
+            response_type="list[ExternalUserData]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_fts_settings(self, server, agent, **kwargs):  # noqa: E501
         """Get File Transfer Server (FTS) configuration data.  # noqa: E501
@@ -5753,11 +6493,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_fts_settings_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_fts_settings_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_fts_settings_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.get_fts_settings_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
     def get_fts_settings_with_http_info(self, server, agent, **kwargs):  # noqa: E501
@@ -5777,37 +6521,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_fts_settings" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_fts_settings`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_fts_settings`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `get_fts_settings`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `get_fts_settings`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -5818,27 +6568,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/fts/settings', 'GET',
+            "/config/server/{server}/agent/{agent}/mft/fts/settings",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='FtsSettingsData',  # noqa: E501
+            response_type="FtsSettingsData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_hostgroups(self, server, **kwargs):  # noqa: E501
         """get Server hostgroups  # noqa: E501
@@ -5855,8 +6608,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_hostgroups_with_http_info(server, **kwargs)  # noqa: E501
         else:
             (data) = self.get_hostgroups_with_http_info(server, **kwargs)  # noqa: E501
@@ -5878,31 +6631,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_hostgroups" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_hostgroups`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_hostgroups`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -5913,27 +6669,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/hostgroups', 'GET',
+            "/config/server/{server}/hostgroups",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='StringListResult',  # noqa: E501
+            response_type="StringListResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_hosts_in_group(self, server, hostgroup, **kwargs):  # noqa: E501
         """get hostgroup agents  # noqa: E501
@@ -5951,14 +6710,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_hosts_in_group_with_http_info(server, hostgroup, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_hosts_in_group_with_http_info(
+                server, hostgroup, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_hosts_in_group_with_http_info(server, hostgroup, **kwargs)  # noqa: E501
+            (data) = self.get_hosts_in_group_with_http_info(
+                server, hostgroup, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_hosts_in_group_with_http_info(self, server, hostgroup, **kwargs):  # noqa: E501
+    def get_hosts_in_group_with_http_info(
+        self, server, hostgroup, **kwargs
+    ):  # noqa: E501
         """get hostgroup agents  # noqa: E501
 
         Get the agents that compose the specified hostgroup  # noqa: E501
@@ -5975,37 +6740,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'hostgroup']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "hostgroup"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_hosts_in_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_hosts_in_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_hosts_in_group`"
+            )  # noqa: E501
         # verify the required parameter 'hostgroup' is set
-        if self.api_client.client_side_validation and ('hostgroup' not in params or
-                                                       params['hostgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `hostgroup` when calling `get_hosts_in_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostgroup" not in params or params["hostgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `hostgroup` when calling `get_hosts_in_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'hostgroup' in params:
-            path_params['hostgroup'] = params['hostgroup']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "hostgroup" in params:
+            path_params["hostgroup"] = params["hostgroup"]  # noqa: E501
 
         query_params = []
 
@@ -6016,27 +6787,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/hostgroup/{hostgroup}/agents', 'GET',
+            "/config/server/{server}/hostgroup/{hostgroup}/agents",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AgentsInGroupListResult',  # noqa: E501
+            response_type="AgentsInGroupListResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_hub_status_details(self, node_id, **kwargs):  # noqa: E501
         """Get hub status.  # noqa: E501
@@ -6053,11 +6827,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_hub_status_details_with_http_info(node_id, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_hub_status_details_with_http_info(
+                node_id, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_hub_status_details_with_http_info(node_id, **kwargs)  # noqa: E501
+            (data) = self.get_hub_status_details_with_http_info(
+                node_id, **kwargs
+            )  # noqa: E501
             return data
 
     def get_hub_status_details_with_http_info(self, node_id, **kwargs):  # noqa: E501
@@ -6076,31 +6854,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['node_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["node_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_hub_status_details" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'node_id' is set
-        if self.api_client.client_side_validation and ('node_id' not in params or
-                                                       params['node_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `node_id` when calling `get_hub_status_details`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "node_id" not in params or params["node_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `node_id` when calling `get_hub_status_details`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'node_id' in params:
-            path_params['nodeId'] = params['node_id']  # noqa: E501
+        if "node_id" in params:
+            path_params["nodeId"] = params["node_id"]  # noqa: E501
 
         query_params = []
 
@@ -6111,27 +6892,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/hub/{nodeId}/status', 'GET',
+            "/config/mft/hub/{nodeId}/status",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mft_configuration(self, server, agent, **kwargs):  # noqa: E501
         """Get MFT Configuration  # noqa: E501
@@ -6149,14 +6933,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_mft_configuration_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_mft_configuration_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_mft_configuration_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.get_mft_configuration_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_mft_configuration_with_http_info(self, server, agent, **kwargs):  # noqa: E501
+    def get_mft_configuration_with_http_info(
+        self, server, agent, **kwargs
+    ):  # noqa: E501
         """Get MFT Configuration  # noqa: E501
 
         Get MFT Configuration  # noqa: E501
@@ -6173,37 +6963,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mft_configuration" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_mft_configuration`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_mft_configuration`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `get_mft_configuration`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `get_mft_configuration`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -6214,27 +7010,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/configuration', 'GET',
+            "/config/server/{server}/agent/{agent}/mft/configuration",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MftConfigurationData',  # noqa: E501
+            response_type="MftConfigurationData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mft_folders(self, **kwargs):  # noqa: E501
         """Get MFT virtual folders that match the search criteria.  # noqa: E501
@@ -6251,8 +7050,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_mft_folders_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_mft_folders_with_http_info(**kwargs)  # noqa: E501
@@ -6274,29 +7073,29 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mft_folders" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
 
         header_params = {}
 
@@ -6305,27 +7104,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/virtualfolders', 'GET',
+            "/config/mft/virtualfolders",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[FolderPropertiesData]',  # noqa: E501
+            response_type="list[FolderPropertiesData]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mft_gateways(self, **kwargs):  # noqa: E501
         """Get MFT gateways  # noqa: E501
@@ -6341,8 +7143,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_mft_gateways_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_mft_gateways_with_http_info(**kwargs)  # noqa: E501
@@ -6364,20 +7166,20 @@ class ConfigApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mft_gateways" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -6392,27 +7194,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/gateways', 'GET',
+            "/config/mft/gateways",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GatewayData]',  # noqa: E501
+            response_type="list[GatewayData]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mft_user_groups(self, **kwargs):  # noqa: E501
         """Get all user groups that match the search criteria.  # noqa: E501
@@ -6431,8 +7236,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_mft_user_groups_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_mft_user_groups_with_http_info(**kwargs)  # noqa: E501
@@ -6456,33 +7261,35 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'external_users', 'ldap_groups']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name", "external_users", "ldap_groups"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mft_user_groups" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
-        if 'external_users' in params:
-            query_params.append(('externalUsers', params['external_users']))  # noqa: E501
-        if 'ldap_groups' in params:
-            query_params.append(('ldapGroups', params['ldap_groups']))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
+        if "external_users" in params:
+            query_params.append(
+                ("externalUsers", params["external_users"])
+            )  # noqa: E501
+        if "ldap_groups" in params:
+            query_params.append(("ldapGroups", params["ldap_groups"]))  # noqa: E501
 
         header_params = {}
 
@@ -6491,27 +7298,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/usergroups', 'GET',
+            "/config/mft/usergroups",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[UserGroupPropertiesData]',  # noqa: E501
+            response_type="list[UserGroupPropertiesData]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_pgp_templates(self, server, agent, **kwargs):  # noqa: E501
         """Get PGP Templates  # noqa: E501
@@ -6530,11 +7340,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_pgp_templates_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_pgp_templates_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_pgp_templates_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.get_pgp_templates_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
     def get_pgp_templates_with_http_info(self, server, agent, **kwargs):  # noqa: E501
@@ -6555,41 +7369,47 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_pgp_templates" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_pgp_templates`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_pgp_templates`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `get_pgp_templates`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `get_pgp_templates`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
 
         header_params = {}
 
@@ -6598,27 +7418,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/pgptemplates', 'GET',
+            "/config/server/{server}/agent/{agent}/mft/pgptemplates",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PgpTemplateData]',  # noqa: E501
+            response_type="list[PgpTemplateData]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_remote_host_properties(self, server, remotehost, **kwargs):  # noqa: E501
         """get a remote host configuration from Server  # noqa: E501
@@ -6636,14 +7459,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_remote_host_properties_with_http_info(server, remotehost, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_remote_host_properties_with_http_info(
+                server, remotehost, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_remote_host_properties_with_http_info(server, remotehost, **kwargs)  # noqa: E501
+            (data) = self.get_remote_host_properties_with_http_info(
+                server, remotehost, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_remote_host_properties_with_http_info(self, server, remotehost, **kwargs):  # noqa: E501
+    def get_remote_host_properties_with_http_info(
+        self, server, remotehost, **kwargs
+    ):  # noqa: E501
         """get a remote host configuration from Server  # noqa: E501
 
         Get the remote host configuration properties from the Server  # noqa: E501
@@ -6660,37 +7489,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'remotehost']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "remotehost"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_remote_host_properties" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_remote_host_properties`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_remote_host_properties`"
+            )  # noqa: E501
         # verify the required parameter 'remotehost' is set
-        if self.api_client.client_side_validation and ('remotehost' not in params or
-                                                       params['remotehost'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `remotehost` when calling `get_remote_host_properties`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "remotehost" not in params or params["remotehost"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `remotehost` when calling `get_remote_host_properties`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'remotehost' in params:
-            path_params['remotehost'] = params['remotehost']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "remotehost" in params:
+            path_params["remotehost"] = params["remotehost"]  # noqa: E501
 
         query_params = []
 
@@ -6701,27 +7536,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/remotehost/{remotehost}', 'GET',
+            "/config/server/{server}/remotehost/{remotehost}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AddRemoteHostParams',  # noqa: E501
+            response_type="AddRemoteHostParams",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_remote_hosts(self, server, **kwargs):  # noqa: E501
         """get Server remote hosts  # noqa: E501
@@ -6738,11 +7576,13 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_remote_hosts_with_http_info(server, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_remote_hosts_with_http_info(server, **kwargs)  # noqa: E501
+            (data) = self.get_remote_hosts_with_http_info(
+                server, **kwargs
+            )  # noqa: E501
             return data
 
     def get_remote_hosts_with_http_info(self, server, **kwargs):  # noqa: E501
@@ -6761,31 +7601,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_remote_hosts" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_remote_hosts`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_remote_hosts`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -6796,27 +7639,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/remotehosts', 'GET',
+            "/config/server/{server}/remotehosts",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='StringListResult',  # noqa: E501
+            response_type="StringListResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_role(self, role, **kwargs):  # noqa: E501
         """Get Authorization Role  # noqa: E501
@@ -6833,8 +7679,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_role_with_http_info(role, **kwargs)  # noqa: E501
         else:
             (data) = self.get_role_with_http_info(role, **kwargs)  # noqa: E501
@@ -6856,31 +7702,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_role" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `get_role`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `get_role`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -6891,27 +7740,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/role/{role}', 'GET',
+            "/config/authorization/role/{role}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RoleData',  # noqa: E501
+            response_type="RoleData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_role_associates(self, role, **kwargs):  # noqa: E501
         """Get all authorization entities associated with role  # noqa: E501
@@ -6928,11 +7780,13 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_role_associates_with_http_info(role, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_role_associates_with_http_info(role, **kwargs)  # noqa: E501
+            (data) = self.get_role_associates_with_http_info(
+                role, **kwargs
+            )  # noqa: E501
             return data
 
     def get_role_associates_with_http_info(self, role, **kwargs):  # noqa: E501
@@ -6951,31 +7805,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_role_associates" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `get_role_associates`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `get_role_associates`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -6986,27 +7843,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/role/{role}/associates', 'GET',
+            "/config/authorization/role/{role}/associates",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AssociateData]',  # noqa: E501
+            response_type="list[AssociateData]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_run_as_user(self, server, agent, user, **kwargs):  # noqa: E501
         """Get Run-as user  # noqa: E501
@@ -7025,14 +7885,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_run_as_user_with_http_info(server, agent, user, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_run_as_user_with_http_info(
+                server, agent, user, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_run_as_user_with_http_info(server, agent, user, **kwargs)  # noqa: E501
+            (data) = self.get_run_as_user_with_http_info(
+                server, agent, user, **kwargs
+            )  # noqa: E501
             return data
 
-    def get_run_as_user_with_http_info(self, server, agent, user, **kwargs):  # noqa: E501
+    def get_run_as_user_with_http_info(
+        self, server, agent, user, **kwargs
+    ):  # noqa: E501
         """Get Run-as user  # noqa: E501
 
         Get Run-as user details from server.  # noqa: E501
@@ -7050,43 +7916,52 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'user']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "user"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_run_as_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `get_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `get_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `get_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `get_run_as_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -7097,27 +7972,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/runasuser/{agent}/{user}', 'GET',
+            "/config/server/{server}/runasuser/{agent}/{user}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RunAsUserData',  # noqa: E501
+            response_type="RunAsUserData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_run_as_users_list(self, server, **kwargs):  # noqa: E501
         """Get Run-as user list that match the requested search criteria.  # noqa: E501
@@ -7136,11 +8014,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_run_as_users_list_with_http_info(server, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_run_as_users_list_with_http_info(
+                server, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_run_as_users_list_with_http_info(server, **kwargs)  # noqa: E501
+            (data) = self.get_run_as_users_list_with_http_info(
+                server, **kwargs
+            )  # noqa: E501
             return data
 
     def get_run_as_users_list_with_http_info(self, server, **kwargs):  # noqa: E501
@@ -7161,37 +8043,40 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'user', 'agent']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "user", "agent"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_run_as_users_list" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_run_as_users_list`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_run_as_users_list`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
-        if 'user' in params:
-            query_params.append(('user', params['user']))  # noqa: E501
-        if 'agent' in params:
-            query_params.append(('agent', params['agent']))  # noqa: E501
+        if "user" in params:
+            query_params.append(("user", params["user"]))  # noqa: E501
+        if "agent" in params:
+            query_params.append(("agent", params["agent"]))  # noqa: E501
 
         header_params = {}
 
@@ -7200,27 +8085,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/runasusers', 'GET',
+            "/config/server/{server}/runasusers",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RunAsUsersList',  # noqa: E501
+            response_type="RunAsUsersList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_server_parameters(self, server, **kwargs):  # noqa: E501
         """get Server parameters  # noqa: E501
@@ -7237,11 +8125,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_server_parameters_with_http_info(server, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_server_parameters_with_http_info(
+                server, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_server_parameters_with_http_info(server, **kwargs)  # noqa: E501
+            (data) = self.get_server_parameters_with_http_info(
+                server, **kwargs
+            )  # noqa: E501
             return data
 
     def get_server_parameters_with_http_info(self, server, **kwargs):  # noqa: E501
@@ -7260,31 +8152,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_server_parameters" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_server_parameters`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_server_parameters`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -7295,27 +8190,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/params', 'GET',
+            "/config/server/{server}/params",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='KeyValueListResult',  # noqa: E501
+            response_type="KeyValueListResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_servers(self, **kwargs):  # noqa: E501
         """get all the Servers name and hostname in the system  # noqa: E501
@@ -7331,8 +8229,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_servers_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_servers_with_http_info(**kwargs)  # noqa: E501
@@ -7354,20 +8252,20 @@ class ConfigApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_servers" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -7382,27 +8280,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/servers', 'GET',
+            "/config/servers",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CtmDetailsList',  # noqa: E501
+            response_type="CtmDetailsList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_user(self, user, **kwargs):  # noqa: E501
         """Get user  # noqa: E501
@@ -7419,8 +8320,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_user_with_http_info(user, **kwargs)  # noqa: E501
         else:
             (data) = self.get_user_with_http_info(user, **kwargs)  # noqa: E501
@@ -7442,31 +8343,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `get_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `get_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -7477,27 +8381,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/user/{user}', 'GET',
+            "/config/authorization/user/{user}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='UserData',  # noqa: E501
+            response_type="UserData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_user_effective_rights(self, **kwargs):  # noqa: E501
         """Get user real effective authorizations  # noqa: E501
@@ -7513,11 +8420,13 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_user_effective_rights_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_user_effective_rights_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_user_effective_rights_with_http_info(
+                **kwargs
+            )  # noqa: E501
             return data
 
     def get_user_effective_rights_with_http_info(self, **kwargs):  # noqa: E501
@@ -7536,20 +8445,20 @@ class ConfigApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_user_effective_rights" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -7564,27 +8473,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/user/effectiveRights', 'GET',
+            "/config/authorization/user/effectiveRights",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RoleData',  # noqa: E501
+            response_type="RoleData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_workflow_insights_status(self, **kwargs):  # noqa: E501
         """get Workflow Insights status  # noqa: E501
@@ -7600,11 +8512,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_workflow_insights_status_with_http_info(**kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_workflow_insights_status_with_http_info(
+                **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_workflow_insights_status_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_workflow_insights_status_with_http_info(
+                **kwargs
+            )  # noqa: E501
             return data
 
     def get_workflow_insights_status_with_http_info(self, **kwargs):  # noqa: E501
@@ -7623,20 +8539,20 @@ class ConfigApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_workflow_insights_status" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -7651,27 +8567,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/workflowinsights/status', 'GET',
+            "/config/workflowinsights/status",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='WorkflowInsightsStatus',  # noqa: E501
+            response_type="WorkflowInsightsStatus",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_zos_templates(self, server, agent, **kwargs):  # noqa: E501
         """Get z/OS Templates  # noqa: E501
@@ -7690,11 +8609,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_zos_templates_with_http_info(server, agent, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_zos_templates_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_zos_templates_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.get_zos_templates_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
     def get_zos_templates_with_http_info(self, server, agent, **kwargs):  # noqa: E501
@@ -7715,41 +8638,47 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_zos_templates" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `get_zos_templates`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `get_zos_templates`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `get_zos_templates`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `get_zos_templates`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
 
         header_params = {}
 
@@ -7758,27 +8687,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/zostemplates', 'GET',
+            "/config/server/{server}/agent/{agent}/mft/zostemplates",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ZosTemplateData]',  # noqa: E501
+            response_type="list[ZosTemplateData]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def list_secrets(self, **kwargs):  # noqa: E501
         """Get list of secret names  # noqa: E501
@@ -7794,8 +8726,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.list_secrets_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_secrets_with_http_info(**kwargs)  # noqa: E501
@@ -7817,20 +8749,20 @@ class ConfigApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_secrets" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -7845,27 +8777,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/secrets', 'GET',
+            "/config/secrets",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='StringListResult',  # noqa: E501
+            response_type="StringListResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def ping_agent(self, server, agent, **kwargs):  # noqa: E501
         """ping to the agent in the Server  # noqa: E501
@@ -7884,11 +8819,13 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.ping_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
         else:
-            (data) = self.ping_agent_with_http_info(server, agent, **kwargs)  # noqa: E501
+            (data) = self.ping_agent_with_http_info(
+                server, agent, **kwargs
+            )  # noqa: E501
             return data
 
     def ping_agent_with_http_info(self, server, agent, **kwargs):  # noqa: E501
@@ -7909,37 +8846,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "body"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method ping_agent" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `ping_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `ping_agent`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `ping_agent`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `ping_agent`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -7949,30 +8892,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
+        if "body" in params:
+            body_params = params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/ping', 'POST',
+            "/config/server/{server}/agent/{agent}/ping",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def recycle_item(self, id, **kwargs):  # noqa: E501
         """recycle item  # noqa: E501
@@ -7989,8 +8935,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.recycle_item_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.recycle_item_with_http_info(id, **kwargs)  # noqa: E501
@@ -8012,31 +8958,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method recycle_item" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'id' is set
-        if self.api_client.client_side_validation and ('id' not in params or
-                                                       params['id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `id` when calling `recycle_item`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "id" not in params or params["id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `id` when calling `recycle_item`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if "id" in params:
+            path_params["id"] = params["id"]  # noqa: E501
 
         query_params = []
 
@@ -8047,27 +8996,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/item/{id}/recycle', 'POST',
+            "/config/item/{id}/recycle",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_controlm_server(self, server, **kwargs):  # noqa: E501
         """Delete Server  # noqa: E501
@@ -8084,11 +9036,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.remove_controlm_server_with_http_info(server, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.remove_controlm_server_with_http_info(
+                server, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.remove_controlm_server_with_http_info(server, **kwargs)  # noqa: E501
+            (data) = self.remove_controlm_server_with_http_info(
+                server, **kwargs
+            )  # noqa: E501
             return data
 
     def remove_controlm_server_with_http_info(self, server, **kwargs):  # noqa: E501
@@ -8107,31 +9063,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_controlm_server" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `remove_controlm_server`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `remove_controlm_server`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -8142,27 +9101,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}', 'DELETE',
+            "/config/server/{server}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_gateway(self, gateway_name, **kwargs):  # noqa: E501
         """remove gateway.  # noqa: E501
@@ -8179,11 +9141,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.remove_gateway_with_http_info(gateway_name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.remove_gateway_with_http_info(
+                gateway_name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.remove_gateway_with_http_info(gateway_name, **kwargs)  # noqa: E501
+            (data) = self.remove_gateway_with_http_info(
+                gateway_name, **kwargs
+            )  # noqa: E501
             return data
 
     def remove_gateway_with_http_info(self, gateway_name, **kwargs):  # noqa: E501
@@ -8202,31 +9168,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['gateway_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["gateway_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_gateway" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'gateway_name' is set
-        if self.api_client.client_side_validation and ('gateway_name' not in params or
-                                                       params['gateway_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `gateway_name` when calling `remove_gateway`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "gateway_name" not in params or params["gateway_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `gateway_name` when calling `remove_gateway`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'gateway_name' in params:
-            path_params['gatewayName'] = params['gateway_name']  # noqa: E501
+        if "gateway_name" in params:
+            path_params["gatewayName"] = params["gateway_name"]  # noqa: E501
 
         query_params = []
 
@@ -8237,27 +9206,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/gateway/{gatewayName}', 'DELETE',
+            "/config/mft/gateway/{gatewayName}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_hub_from_cluster(self, agentname, **kwargs):  # noqa: E501
         """remove hub from cluster.  # noqa: E501
@@ -8274,11 +9246,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.remove_hub_from_cluster_with_http_info(agentname, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.remove_hub_from_cluster_with_http_info(
+                agentname, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.remove_hub_from_cluster_with_http_info(agentname, **kwargs)  # noqa: E501
+            (data) = self.remove_hub_from_cluster_with_http_info(
+                agentname, **kwargs
+            )  # noqa: E501
             return data
 
     def remove_hub_from_cluster_with_http_info(self, agentname, **kwargs):  # noqa: E501
@@ -8297,31 +9273,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['agentname']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["agentname"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_hub_from_cluster" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'agentname' is set
-        if self.api_client.client_side_validation and ('agentname' not in params or
-                                                       params['agentname'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agentname` when calling `remove_hub_from_cluster`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agentname" not in params or params["agentname"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agentname` when calling `remove_hub_from_cluster`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'agentname' in params:
-            path_params['agentname'] = params['agentname']  # noqa: E501
+        if "agentname" in params:
+            path_params["agentname"] = params["agentname"]  # noqa: E501
 
         query_params = []
 
@@ -8332,27 +9311,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/cluster/hub/{agentname}', 'DELETE',
+            "/config/mft/cluster/hub/{agentname}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_role_from_user(self, user, role, **kwargs):  # noqa: E501
         """Remove a role from a user  # noqa: E501
@@ -8370,11 +9352,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.remove_role_from_user_with_http_info(user, role, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.remove_role_from_user_with_http_info(
+                user, role, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.remove_role_from_user_with_http_info(user, role, **kwargs)  # noqa: E501
+            (data) = self.remove_role_from_user_with_http_info(
+                user, role, **kwargs
+            )  # noqa: E501
             return data
 
     def remove_role_from_user_with_http_info(self, user, role, **kwargs):  # noqa: E501
@@ -8394,37 +9380,43 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user', 'role']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user", "role"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_role_from_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `remove_role_from_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `remove_role_from_user`"
+            )  # noqa: E501
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `remove_role_from_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `remove_role_from_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -8435,27 +9427,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/user/{user}/role/{role}', 'DELETE',
+            "/config/authorization/user/{user}/role/{role}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def send_archive_cleanup_request(self, **kwargs):  # noqa: E501
         """Deletes data (jobs including outputs and logs) from the Workload Archiving database.  # noqa: E501
@@ -8487,11 +9482,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.send_archive_cleanup_request_with_http_info(**kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.send_archive_cleanup_request_with_http_info(
+                **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.send_archive_cleanup_request_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.send_archive_cleanup_request_with_http_info(
+                **kwargs
+            )  # noqa: E501
             return data
 
     def send_archive_cleanup_request_with_http_info(self, **kwargs):  # noqa: E501
@@ -8525,59 +9524,92 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['application', 'application_exceptions', 'sub_application', 'sub_application_exceptions', 'ctm', 'server', 'ctm_exceptions', 'server_exceptions', 'folder', 'folder_exceptions', 'jobname', 'jobname_exceptions', 'library', 'library_exceptions', 'rule_name', 'job_status']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "application",
+            "application_exceptions",
+            "sub_application",
+            "sub_application_exceptions",
+            "ctm",
+            "server",
+            "ctm_exceptions",
+            "server_exceptions",
+            "folder",
+            "folder_exceptions",
+            "jobname",
+            "jobname_exceptions",
+            "library",
+            "library_exceptions",
+            "rule_name",
+            "job_status",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method send_archive_cleanup_request" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'application' in params:
-            query_params.append(('application', params['application']))  # noqa: E501
-        if 'application_exceptions' in params:
-            query_params.append(('applicationExceptions', params['application_exceptions']))  # noqa: E501
-        if 'sub_application' in params:
-            query_params.append(('subApplication', params['sub_application']))  # noqa: E501
-        if 'sub_application_exceptions' in params:
-            query_params.append(('subApplicationExceptions', params['sub_application_exceptions']))  # noqa: E501
-        if 'ctm' in params:
-            query_params.append(('ctm', params['ctm']))  # noqa: E501
-        if 'server' in params:
-            query_params.append(('server', params['server']))  # noqa: E501
-        if 'ctm_exceptions' in params:
-            query_params.append(('ctmExceptions', params['ctm_exceptions']))  # noqa: E501
-        if 'server_exceptions' in params:
-            query_params.append(('serverExceptions', params['server_exceptions']))  # noqa: E501
-        if 'folder' in params:
-            query_params.append(('folder', params['folder']))  # noqa: E501
-        if 'folder_exceptions' in params:
-            query_params.append(('folderExceptions', params['folder_exceptions']))  # noqa: E501
-        if 'jobname' in params:
-            query_params.append(('jobname', params['jobname']))  # noqa: E501
-        if 'jobname_exceptions' in params:
-            query_params.append(('jobnameExceptions', params['jobname_exceptions']))  # noqa: E501
-        if 'library' in params:
-            query_params.append(('library', params['library']))  # noqa: E501
-        if 'library_exceptions' in params:
-            query_params.append(('libraryExceptions', params['library_exceptions']))  # noqa: E501
-        if 'rule_name' in params:
-            query_params.append(('ruleName', params['rule_name']))  # noqa: E501
-        if 'job_status' in params:
-            query_params.append(('jobStatus', params['job_status']))  # noqa: E501
+        if "application" in params:
+            query_params.append(("application", params["application"]))  # noqa: E501
+        if "application_exceptions" in params:
+            query_params.append(
+                ("applicationExceptions", params["application_exceptions"])
+            )  # noqa: E501
+        if "sub_application" in params:
+            query_params.append(
+                ("subApplication", params["sub_application"])
+            )  # noqa: E501
+        if "sub_application_exceptions" in params:
+            query_params.append(
+                ("subApplicationExceptions", params["sub_application_exceptions"])
+            )  # noqa: E501
+        if "ctm" in params:
+            query_params.append(("ctm", params["ctm"]))  # noqa: E501
+        if "server" in params:
+            query_params.append(("server", params["server"]))  # noqa: E501
+        if "ctm_exceptions" in params:
+            query_params.append(
+                ("ctmExceptions", params["ctm_exceptions"])
+            )  # noqa: E501
+        if "server_exceptions" in params:
+            query_params.append(
+                ("serverExceptions", params["server_exceptions"])
+            )  # noqa: E501
+        if "folder" in params:
+            query_params.append(("folder", params["folder"]))  # noqa: E501
+        if "folder_exceptions" in params:
+            query_params.append(
+                ("folderExceptions", params["folder_exceptions"])
+            )  # noqa: E501
+        if "jobname" in params:
+            query_params.append(("jobname", params["jobname"]))  # noqa: E501
+        if "jobname_exceptions" in params:
+            query_params.append(
+                ("jobnameExceptions", params["jobname_exceptions"])
+            )  # noqa: E501
+        if "library" in params:
+            query_params.append(("library", params["library"]))  # noqa: E501
+        if "library_exceptions" in params:
+            query_params.append(
+                ("libraryExceptions", params["library_exceptions"])
+            )  # noqa: E501
+        if "rule_name" in params:
+            query_params.append(("ruleName", params["rule_name"]))  # noqa: E501
+        if "job_status" in params:
+            query_params.append(("jobStatus", params["job_status"]))  # noqa: E501
 
         header_params = {}
 
@@ -8586,27 +9618,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/archive/cleanup', 'DELETE',
+            "/config/archive/cleanup",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def set_agent_parameter(self, server, agent, name, **kwargs):  # noqa: E501
         """set agent parameter  # noqa: E501
@@ -8626,14 +9661,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.set_agent_parameter_with_http_info(server, agent, name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.set_agent_parameter_with_http_info(
+                server, agent, name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.set_agent_parameter_with_http_info(server, agent, name, **kwargs)  # noqa: E501
+            (data) = self.set_agent_parameter_with_http_info(
+                server, agent, name, **kwargs
+            )  # noqa: E501
             return data
 
-    def set_agent_parameter_with_http_info(self, server, agent, name, **kwargs):  # noqa: E501
+    def set_agent_parameter_with_http_info(
+        self, server, agent, name, **kwargs
+    ):  # noqa: E501
         """set agent parameter  # noqa: E501
 
         Set the value of the specified parameter in the specified agent.  # noqa: E501
@@ -8652,43 +9693,52 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "name", "body"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method set_agent_parameter" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `set_agent_parameter`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `set_agent_parameter`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `set_agent_parameter`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `set_agent_parameter`"
+            )  # noqa: E501
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `set_agent_parameter`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `set_agent_parameter`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -8698,30 +9748,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
+        if "body" in params:
+            body_params = params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/param/{name}', 'POST',
+            "/config/server/{server}/agent/{agent}/param/{name}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='KeyValue',  # noqa: E501
+            response_type="KeyValue",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def set_system_param(self, name, new_value, **kwargs):  # noqa: E501
         """set value of a an em system parameter  # noqa: E501
@@ -8739,11 +9792,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.set_system_param_with_http_info(name, new_value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.set_system_param_with_http_info(
+                name, new_value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.set_system_param_with_http_info(name, new_value, **kwargs)  # noqa: E501
+            (data) = self.set_system_param_with_http_info(
+                name, new_value, **kwargs
+            )  # noqa: E501
             return data
 
     def set_system_param_with_http_info(self, name, new_value, **kwargs):  # noqa: E501
@@ -8763,35 +9820,41 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'new_value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name", "new_value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method set_system_param" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `set_system_param`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `set_system_param`"
+            )  # noqa: E501
         # verify the required parameter 'new_value' is set
-        if self.api_client.client_side_validation and ('new_value' not in params or
-                                                       params['new_value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `new_value` when calling `set_system_param`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "new_value" not in params or params["new_value"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `new_value` when calling `set_system_param`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -8801,30 +9864,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'new_value' in params:
-            body_params = params['new_value']
+        if "new_value" in params:
+            body_params = params["new_value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/em/param/{name}', 'POST',
+            "/config/em/param/{name}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def setasprimary(self, server, **kwargs):  # noqa: E501
         """Set secondary server as Primary on a specified Server  # noqa: E501
@@ -8841,8 +9907,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.setasprimary_with_http_info(server, **kwargs)  # noqa: E501
         else:
             (data) = self.setasprimary_with_http_info(server, **kwargs)  # noqa: E501
@@ -8864,31 +9930,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method setasprimary" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `setasprimary`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `setasprimary`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -8899,27 +9968,30 @@ class ConfigApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/setasprimary', 'PUT',
+            "/config/server/{server}/setasprimary",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def test_run_as_user(self, server, agent, user, **kwargs):  # noqa: E501
         """Test existed Run-as user  # noqa: E501
@@ -8939,14 +10011,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.test_run_as_user_with_http_info(server, agent, user, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.test_run_as_user_with_http_info(
+                server, agent, user, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.test_run_as_user_with_http_info(server, agent, user, **kwargs)  # noqa: E501
+            (data) = self.test_run_as_user_with_http_info(
+                server, agent, user, **kwargs
+            )  # noqa: E501
             return data
 
-    def test_run_as_user_with_http_info(self, server, agent, user, **kwargs):  # noqa: E501
+    def test_run_as_user_with_http_info(
+        self, server, agent, user, **kwargs
+    ):  # noqa: E501
         """Test existed Run-as user  # noqa: E501
 
         Test existing Run-as user in server.  # noqa: E501
@@ -8965,43 +10043,57 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'user', 'run_as_user_details_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "agent",
+            "user",
+            "run_as_user_details_data",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method test_run_as_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `test_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `test_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `test_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `test_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `test_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `test_run_as_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -9011,30 +10103,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'run_as_user_details_data' in params:
-            body_params = params['run_as_user_details_data']
+        if "run_as_user_details_data" in params:
+            body_params = params["run_as_user_details_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/runasuser/{agent}/{user}/test', 'POST',
+            "/config/server/{server}/runasuser/{agent}/{user}/test",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_archive_rule(self, rule_name, archive_rule, **kwargs):  # noqa: E501
         """Edit Workload Archiving rule  # noqa: E501
@@ -9052,14 +10147,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_archive_rule_with_http_info(rule_name, archive_rule, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_archive_rule_with_http_info(
+                rule_name, archive_rule, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_archive_rule_with_http_info(rule_name, archive_rule, **kwargs)  # noqa: E501
+            (data) = self.update_archive_rule_with_http_info(
+                rule_name, archive_rule, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_archive_rule_with_http_info(self, rule_name, archive_rule, **kwargs):  # noqa: E501
+    def update_archive_rule_with_http_info(
+        self, rule_name, archive_rule, **kwargs
+    ):  # noqa: E501
         """Edit Workload Archiving rule  # noqa: E501
 
         Edit Workload Archiving rule details  # noqa: E501
@@ -9076,35 +10177,41 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['rule_name', 'archive_rule']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["rule_name", "archive_rule"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_archive_rule" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'rule_name' is set
-        if self.api_client.client_side_validation and ('rule_name' not in params or
-                                                       params['rule_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `rule_name` when calling `update_archive_rule`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "rule_name" not in params or params["rule_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `rule_name` when calling `update_archive_rule`"
+            )  # noqa: E501
         # verify the required parameter 'archive_rule' is set
-        if self.api_client.client_side_validation and ('archive_rule' not in params or
-                                                       params['archive_rule'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `archive_rule` when calling `update_archive_rule`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "archive_rule" not in params or params["archive_rule"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `archive_rule` when calling `update_archive_rule`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'rule_name' in params:
-            path_params['ruleName'] = params['rule_name']  # noqa: E501
+        if "rule_name" in params:
+            path_params["ruleName"] = params["rule_name"]  # noqa: E501
 
         query_params = []
 
@@ -9114,32 +10221,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'archive_rule' in params:
-            body_params = params['archive_rule']
+        if "archive_rule" in params:
+            body_params = params["archive_rule"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/archive/rule/{ruleName}', 'POST',
+            "/config/archive/rule/{ruleName}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_external_user(self, username, external_user_data, **kwargs):  # noqa: E501
+    def update_external_user(
+        self, username, external_user_data, **kwargs
+    ):  # noqa: E501
         """Update an external user  # noqa: E501
 
         Update an external user for b2b  # noqa: E501
@@ -9155,14 +10267,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_external_user_with_http_info(username, external_user_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_external_user_with_http_info(
+                username, external_user_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_external_user_with_http_info(username, external_user_data, **kwargs)  # noqa: E501
+            (data) = self.update_external_user_with_http_info(
+                username, external_user_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_external_user_with_http_info(self, username, external_user_data, **kwargs):  # noqa: E501
+    def update_external_user_with_http_info(
+        self, username, external_user_data, **kwargs
+    ):  # noqa: E501
         """Update an external user  # noqa: E501
 
         Update an external user for b2b  # noqa: E501
@@ -9179,35 +10297,41 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['username', 'external_user_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["username", "external_user_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_external_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'username' is set
-        if self.api_client.client_side_validation and ('username' not in params or
-                                                       params['username'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `username` when calling `update_external_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "username" not in params or params["username"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `username` when calling `update_external_user`"
+            )  # noqa: E501
         # verify the required parameter 'external_user_data' is set
-        if self.api_client.client_side_validation and ('external_user_data' not in params or
-                                                       params['external_user_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `external_user_data` when calling `update_external_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "external_user_data" not in params or params["external_user_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `external_user_data` when calling `update_external_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'username' in params:
-            path_params['username'] = params['username']  # noqa: E501
+        if "username" in params:
+            path_params["username"] = params["username"]  # noqa: E501
 
         query_params = []
 
@@ -9217,32 +10341,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'external_user_data' in params:
-            body_params = params['external_user_data']
+        if "external_user_data" in params:
+            body_params = params["external_user_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/externaluser/{username}', 'POST',
+            "/config/mft/externaluser/{username}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_fts_settings(self, server, agent, fts_settings_data, **kwargs):  # noqa: E501
+    def update_fts_settings(
+        self, server, agent, fts_settings_data, **kwargs
+    ):  # noqa: E501
         """Update File Transfer Server (FTS) configuration data.  # noqa: E501
 
         Update File Transfer Server (FTS) configuration data.  # noqa: E501
@@ -9259,14 +10388,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_fts_settings_with_http_info(server, agent, fts_settings_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_fts_settings_with_http_info(
+                server, agent, fts_settings_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_fts_settings_with_http_info(server, agent, fts_settings_data, **kwargs)  # noqa: E501
+            (data) = self.update_fts_settings_with_http_info(
+                server, agent, fts_settings_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_fts_settings_with_http_info(self, server, agent, fts_settings_data, **kwargs):  # noqa: E501
+    def update_fts_settings_with_http_info(
+        self, server, agent, fts_settings_data, **kwargs
+    ):  # noqa: E501
         """Update File Transfer Server (FTS) configuration data.  # noqa: E501
 
         Update File Transfer Server (FTS) configuration data.  # noqa: E501
@@ -9284,41 +10419,50 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'fts_settings_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "fts_settings_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_fts_settings" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `update_fts_settings`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `update_fts_settings`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `update_fts_settings`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `update_fts_settings`"
+            )  # noqa: E501
         # verify the required parameter 'fts_settings_data' is set
-        if self.api_client.client_side_validation and ('fts_settings_data' not in params or
-                                                       params['fts_settings_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fts_settings_data` when calling `update_fts_settings`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "fts_settings_data" not in params or params["fts_settings_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `fts_settings_data` when calling `update_fts_settings`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -9328,32 +10472,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'fts_settings_data' in params:
-            body_params = params['fts_settings_data']
+        if "fts_settings_data" in params:
+            body_params = params["fts_settings_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/plain'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/fts/settings', 'POST',
+            "/config/server/{server}/agent/{agent}/mft/fts/settings",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_hosts_in_hostgroup(self, server, hostgroup, host_group_member_params_list, **kwargs):  # noqa: E501
+    def update_hosts_in_hostgroup(
+        self, server, hostgroup, host_group_member_params_list, **kwargs
+    ):  # noqa: E501
         """update agents in hostgroup.  # noqa: E501
 
         update agents in hostgroup.  # noqa: E501
@@ -9370,14 +10519,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_hosts_in_hostgroup_with_http_info(server, hostgroup, host_group_member_params_list, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_hosts_in_hostgroup_with_http_info(
+                server, hostgroup, host_group_member_params_list, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_hosts_in_hostgroup_with_http_info(server, hostgroup, host_group_member_params_list, **kwargs)  # noqa: E501
+            (data) = self.update_hosts_in_hostgroup_with_http_info(
+                server, hostgroup, host_group_member_params_list, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_hosts_in_hostgroup_with_http_info(self, server, hostgroup, host_group_member_params_list, **kwargs):  # noqa: E501
+    def update_hosts_in_hostgroup_with_http_info(
+        self, server, hostgroup, host_group_member_params_list, **kwargs
+    ):  # noqa: E501
         """update agents in hostgroup.  # noqa: E501
 
         update agents in hostgroup.  # noqa: E501
@@ -9395,41 +10550,55 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'hostgroup', 'host_group_member_params_list']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "hostgroup",
+            "host_group_member_params_list",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_hosts_in_hostgroup" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `update_hosts_in_hostgroup`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `update_hosts_in_hostgroup`"
+            )  # noqa: E501
         # verify the required parameter 'hostgroup' is set
-        if self.api_client.client_side_validation and ('hostgroup' not in params or
-                                                       params['hostgroup'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `hostgroup` when calling `update_hosts_in_hostgroup`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostgroup" not in params or params["hostgroup"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `hostgroup` when calling `update_hosts_in_hostgroup`"
+            )  # noqa: E501
         # verify the required parameter 'host_group_member_params_list' is set
-        if self.api_client.client_side_validation and ('host_group_member_params_list' not in params or
-                                                       params['host_group_member_params_list'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `host_group_member_params_list` when calling `update_hosts_in_hostgroup`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "host_group_member_params_list" not in params
+            or params["host_group_member_params_list"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `host_group_member_params_list` when calling `update_hosts_in_hostgroup`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'hostgroup' in params:
-            path_params['hostgroup'] = params['hostgroup']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "hostgroup" in params:
+            path_params["hostgroup"] = params["hostgroup"]  # noqa: E501
 
         query_params = []
 
@@ -9439,32 +10608,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'host_group_member_params_list' in params:
-            body_params = params['host_group_member_params_list']
+        if "host_group_member_params_list" in params:
+            body_params = params["host_group_member_params_list"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/hostgroup/{hostgroup}', 'POST',
+            "/config/server/{server}/hostgroup/{hostgroup}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_mft_configuration(self, server, agent, mft_configuration_data, **kwargs):  # noqa: E501
+    def update_mft_configuration(
+        self, server, agent, mft_configuration_data, **kwargs
+    ):  # noqa: E501
         """Update MFT Configuration  # noqa: E501
 
         Update MFT Configuration  # noqa: E501
@@ -9481,14 +10655,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_mft_configuration_with_http_info(server, agent, mft_configuration_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_mft_configuration_with_http_info(
+                server, agent, mft_configuration_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_mft_configuration_with_http_info(server, agent, mft_configuration_data, **kwargs)  # noqa: E501
+            (data) = self.update_mft_configuration_with_http_info(
+                server, agent, mft_configuration_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_mft_configuration_with_http_info(self, server, agent, mft_configuration_data, **kwargs):  # noqa: E501
+    def update_mft_configuration_with_http_info(
+        self, server, agent, mft_configuration_data, **kwargs
+    ):  # noqa: E501
         """Update MFT Configuration  # noqa: E501
 
         Update MFT Configuration  # noqa: E501
@@ -9506,41 +10686,51 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'mft_configuration_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "agent", "mft_configuration_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_mft_configuration" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `update_mft_configuration`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `update_mft_configuration`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `update_mft_configuration`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `update_mft_configuration`"
+            )  # noqa: E501
         # verify the required parameter 'mft_configuration_data' is set
-        if self.api_client.client_side_validation and ('mft_configuration_data' not in params or
-                                                       params['mft_configuration_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `mft_configuration_data` when calling `update_mft_configuration`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "mft_configuration_data" not in params
+            or params["mft_configuration_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `mft_configuration_data` when calling `update_mft_configuration`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
 
         query_params = []
 
@@ -9550,32 +10740,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'mft_configuration_data' in params:
-            body_params = params['mft_configuration_data']
+        if "mft_configuration_data" in params:
+            body_params = params["mft_configuration_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/configuration', 'POST',
+            "/config/server/{server}/agent/{agent}/mft/configuration",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_mft_folder(self, folder_name, folder_properties_data, **kwargs):  # noqa: E501
+    def update_mft_folder(
+        self, folder_name, folder_properties_data, **kwargs
+    ):  # noqa: E501
         """Update an existing virtual folder in MFT.  # noqa: E501
 
         Update an existing virtual folder in MFT.  # noqa: E501
@@ -9591,14 +10786,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_mft_folder_with_http_info(folder_name, folder_properties_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_mft_folder_with_http_info(
+                folder_name, folder_properties_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_mft_folder_with_http_info(folder_name, folder_properties_data, **kwargs)  # noqa: E501
+            (data) = self.update_mft_folder_with_http_info(
+                folder_name, folder_properties_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_mft_folder_with_http_info(self, folder_name, folder_properties_data, **kwargs):  # noqa: E501
+    def update_mft_folder_with_http_info(
+        self, folder_name, folder_properties_data, **kwargs
+    ):  # noqa: E501
         """Update an existing virtual folder in MFT.  # noqa: E501
 
         Update an existing virtual folder in MFT.  # noqa: E501
@@ -9615,35 +10816,42 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['folder_name', 'folder_properties_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["folder_name", "folder_properties_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_mft_folder" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'folder_name' is set
-        if self.api_client.client_side_validation and ('folder_name' not in params or
-                                                       params['folder_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `folder_name` when calling `update_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "folder_name" not in params or params["folder_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `folder_name` when calling `update_mft_folder`"
+            )  # noqa: E501
         # verify the required parameter 'folder_properties_data' is set
-        if self.api_client.client_side_validation and ('folder_properties_data' not in params or
-                                                       params['folder_properties_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `folder_properties_data` when calling `update_mft_folder`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "folder_properties_data" not in params
+            or params["folder_properties_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `folder_properties_data` when calling `update_mft_folder`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'folder_name' in params:
-            path_params['folderName'] = params['folder_name']  # noqa: E501
+        if "folder_name" in params:
+            path_params["folderName"] = params["folder_name"]  # noqa: E501
 
         query_params = []
 
@@ -9653,32 +10861,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'folder_properties_data' in params:
-            body_params = params['folder_properties_data']
+        if "folder_properties_data" in params:
+            body_params = params["folder_properties_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/virtualfolder/{folderName}', 'POST',
+            "/config/mft/virtualfolder/{folderName}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_mft_user_group(self, name, user_group_details_data, **kwargs):  # noqa: E501
+    def update_mft_user_group(
+        self, name, user_group_details_data, **kwargs
+    ):  # noqa: E501
         """Update user group.  # noqa: E501
 
         Update user group.  # noqa: E501
@@ -9694,14 +10907,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_mft_user_group_with_http_info(name, user_group_details_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_mft_user_group_with_http_info(
+                name, user_group_details_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_mft_user_group_with_http_info(name, user_group_details_data, **kwargs)  # noqa: E501
+            (data) = self.update_mft_user_group_with_http_info(
+                name, user_group_details_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_mft_user_group_with_http_info(self, name, user_group_details_data, **kwargs):  # noqa: E501
+    def update_mft_user_group_with_http_info(
+        self, name, user_group_details_data, **kwargs
+    ):  # noqa: E501
         """Update user group.  # noqa: E501
 
         Update user group.  # noqa: E501
@@ -9718,35 +10937,42 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'user_group_details_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name", "user_group_details_data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_mft_user_group" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `update_mft_user_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `update_mft_user_group`"
+            )  # noqa: E501
         # verify the required parameter 'user_group_details_data' is set
-        if self.api_client.client_side_validation and ('user_group_details_data' not in params or
-                                                       params['user_group_details_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_group_details_data` when calling `update_mft_user_group`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user_group_details_data" not in params
+            or params["user_group_details_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user_group_details_data` when calling `update_mft_user_group`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -9756,32 +10982,37 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'user_group_details_data' in params:
-            body_params = params['user_group_details_data']
+        if "user_group_details_data" in params:
+            body_params = params["user_group_details_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/mft/usergroup/{name}', 'POST',
+            "/config/mft/usergroup/{name}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_pgp_template(self, server, agent, template_name, pgp_template_data, **kwargs):  # noqa: E501
+    def update_pgp_template(
+        self, server, agent, template_name, pgp_template_data, **kwargs
+    ):  # noqa: E501
         """Update PGP Template  # noqa: E501
 
         Update PGP Template  # noqa: E501
@@ -9799,14 +11030,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_pgp_template_with_http_info(server, agent, template_name, pgp_template_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_pgp_template_with_http_info(
+                server, agent, template_name, pgp_template_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_pgp_template_with_http_info(server, agent, template_name, pgp_template_data, **kwargs)  # noqa: E501
+            (data) = self.update_pgp_template_with_http_info(
+                server, agent, template_name, pgp_template_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_pgp_template_with_http_info(self, server, agent, template_name, pgp_template_data, **kwargs):  # noqa: E501
+    def update_pgp_template_with_http_info(
+        self, server, agent, template_name, pgp_template_data, **kwargs
+    ):  # noqa: E501
         """Update PGP Template  # noqa: E501
 
         Update PGP Template  # noqa: E501
@@ -9825,47 +11062,64 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'template_name', 'pgp_template_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "agent",
+            "template_name",
+            "pgp_template_data",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_pgp_template" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `update_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `update_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `update_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `update_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'template_name' is set
-        if self.api_client.client_side_validation and ('template_name' not in params or
-                                                       params['template_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `template_name` when calling `update_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "template_name" not in params or params["template_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `template_name` when calling `update_pgp_template`"
+            )  # noqa: E501
         # verify the required parameter 'pgp_template_data' is set
-        if self.api_client.client_side_validation and ('pgp_template_data' not in params or
-                                                       params['pgp_template_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `pgp_template_data` when calling `update_pgp_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "pgp_template_data" not in params or params["pgp_template_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `pgp_template_data` when calling `update_pgp_template`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'template_name' in params:
-            path_params['templateName'] = params['template_name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "template_name" in params:
+            path_params["templateName"] = params["template_name"]  # noqa: E501
 
         query_params = []
 
@@ -9875,30 +11129,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'pgp_template_data' in params:
-            body_params = params['pgp_template_data']
+        if "pgp_template_data" in params:
+            body_params = params["pgp_template_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/pgptemplate/{templateName}', 'PUT',
+            "/config/server/{server}/agent/{agent}/mft/pgptemplate/{templateName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_role(self, role, role_file, **kwargs):  # noqa: E501
         """Update Authorization Role  # noqa: E501
@@ -9916,11 +11173,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_role_with_http_info(role, role_file, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_role_with_http_info(
+                role, role_file, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_role_with_http_info(role, role_file, **kwargs)  # noqa: E501
+            (data) = self.update_role_with_http_info(
+                role, role_file, **kwargs
+            )  # noqa: E501
             return data
 
     def update_role_with_http_info(self, role, role_file, **kwargs):  # noqa: E501
@@ -9940,35 +11201,41 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['role', 'role_file']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["role", "role_file"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_role" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'role' is set
-        if self.api_client.client_side_validation and ('role' not in params or
-                                                       params['role'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role` when calling `update_role`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role" not in params or params["role"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role` when calling `update_role`"
+            )  # noqa: E501
         # verify the required parameter 'role_file' is set
-        if self.api_client.client_side_validation and ('role_file' not in params or
-                                                       params['role_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role_file` when calling `update_role`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "role_file" not in params or params["role_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `role_file` when calling `update_role`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'role' in params:
-            path_params['role'] = params['role']  # noqa: E501
+        if "role" in params:
+            path_params["role"] = params["role"]  # noqa: E501
 
         query_params = []
 
@@ -9976,38 +11243,46 @@ class ConfigApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'role_file' in params:
-            local_var_files['roleFile'] = params['role_file']  # noqa: E501
+        if "role_file" in params:
+            local_var_files["roleFile"] = params["role_file"]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/role/{role}', 'POST',
+            "/config/authorization/role/{role}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_run_as_user(self, server, agent, user, run_as_user_details_data, **kwargs):  # noqa: E501
+    def update_run_as_user(
+        self, server, agent, user, run_as_user_details_data, **kwargs
+    ):  # noqa: E501
         """Update Run-as user  # noqa: E501
 
         Update Run-as user details in server.  # noqa: E501
@@ -10025,14 +11300,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_run_as_user_with_http_info(server, agent, user, run_as_user_details_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_run_as_user_with_http_info(
+                server, agent, user, run_as_user_details_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_run_as_user_with_http_info(server, agent, user, run_as_user_details_data, **kwargs)  # noqa: E501
+            (data) = self.update_run_as_user_with_http_info(
+                server, agent, user, run_as_user_details_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_run_as_user_with_http_info(self, server, agent, user, run_as_user_details_data, **kwargs):  # noqa: E501
+    def update_run_as_user_with_http_info(
+        self, server, agent, user, run_as_user_details_data, **kwargs
+    ):  # noqa: E501
         """Update Run-as user  # noqa: E501
 
         Update Run-as user details in server.  # noqa: E501
@@ -10051,47 +11332,65 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'user', 'run_as_user_details_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "agent",
+            "user",
+            "run_as_user_details_data",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_run_as_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `update_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `update_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `update_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `update_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `update_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `update_run_as_user`"
+            )  # noqa: E501
         # verify the required parameter 'run_as_user_details_data' is set
-        if self.api_client.client_side_validation and ('run_as_user_details_data' not in params or
-                                                       params['run_as_user_details_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `run_as_user_details_data` when calling `update_run_as_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "run_as_user_details_data" not in params
+            or params["run_as_user_details_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `run_as_user_details_data` when calling `update_run_as_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -10101,30 +11400,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'run_as_user_details_data' in params:
-            body_params = params['run_as_user_details_data']
+        if "run_as_user_details_data" in params:
+            body_params = params["run_as_user_details_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/runasuser/{agent}/{user}', 'POST',
+            "/config/server/{server}/runasuser/{agent}/{user}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_secret(self, name, **kwargs):  # noqa: E501
         """Update an existing secret  # noqa: E501
@@ -10142,8 +11444,8 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.update_secret_with_http_info(name, **kwargs)  # noqa: E501
         else:
             (data) = self.update_secret_with_http_info(name, **kwargs)  # noqa: E501
@@ -10166,31 +11468,34 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name", "value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_secret" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `update_secret`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `update_secret`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -10200,30 +11505,33 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'value' in params:
-            body_params = params['value']
+        if "value" in params:
+            body_params = params["value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/secret/{name}', 'POST',
+            "/config/secret/{name}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_user(self, user, user_file, **kwargs):  # noqa: E501
         """Update user  # noqa: E501
@@ -10241,11 +11549,15 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_user_with_http_info(user, user_file, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_user_with_http_info(
+                user, user_file, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_user_with_http_info(user, user_file, **kwargs)  # noqa: E501
+            (data) = self.update_user_with_http_info(
+                user, user_file, **kwargs
+            )  # noqa: E501
             return data
 
     def update_user_with_http_info(self, user, user_file, **kwargs):  # noqa: E501
@@ -10265,35 +11577,41 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user', 'user_file']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["user", "user_file"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_user" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'user' is set
-        if self.api_client.client_side_validation and ('user' not in params or
-                                                       params['user'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user` when calling `update_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user" not in params or params["user"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user` when calling `update_user`"
+            )  # noqa: E501
         # verify the required parameter 'user_file' is set
-        if self.api_client.client_side_validation and ('user_file' not in params or
-                                                       params['user_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_file` when calling `update_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "user_file" not in params or params["user_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `user_file` when calling `update_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'user' in params:
-            path_params['user'] = params['user']  # noqa: E501
+        if "user" in params:
+            path_params["user"] = params["user"]  # noqa: E501
 
         query_params = []
 
@@ -10301,38 +11619,46 @@ class ConfigApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'user_file' in params:
-            local_var_files['userFile'] = params['user_file']  # noqa: E501
+        if "user_file" in params:
+            local_var_files["userFile"] = params["user_file"]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/authorization/user/{user}', 'POST',
+            "/config/authorization/user/{user}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def update_zos_template(self, server, agent, template_name, zos_template_data, **kwargs):  # noqa: E501
+    def update_zos_template(
+        self, server, agent, template_name, zos_template_data, **kwargs
+    ):  # noqa: E501
         """Update z/OS Template  # noqa: E501
 
         Update z/OS Template  # noqa: E501
@@ -10350,14 +11676,20 @@ class ConfigApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_zos_template_with_http_info(server, agent, template_name, zos_template_data, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_zos_template_with_http_info(
+                server, agent, template_name, zos_template_data, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_zos_template_with_http_info(server, agent, template_name, zos_template_data, **kwargs)  # noqa: E501
+            (data) = self.update_zos_template_with_http_info(
+                server, agent, template_name, zos_template_data, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_zos_template_with_http_info(self, server, agent, template_name, zos_template_data, **kwargs):  # noqa: E501
+    def update_zos_template_with_http_info(
+        self, server, agent, template_name, zos_template_data, **kwargs
+    ):  # noqa: E501
         """Update z/OS Template  # noqa: E501
 
         Update z/OS Template  # noqa: E501
@@ -10376,47 +11708,64 @@ class ConfigApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'agent', 'template_name', 'zos_template_data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "server",
+            "agent",
+            "template_name",
+            "zos_template_data",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_zos_template" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `update_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `update_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'agent' is set
-        if self.api_client.client_side_validation and ('agent' not in params or
-                                                       params['agent'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `agent` when calling `update_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "agent" not in params or params["agent"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `agent` when calling `update_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'template_name' is set
-        if self.api_client.client_side_validation and ('template_name' not in params or
-                                                       params['template_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `template_name` when calling `update_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "template_name" not in params or params["template_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `template_name` when calling `update_zos_template`"
+            )  # noqa: E501
         # verify the required parameter 'zos_template_data' is set
-        if self.api_client.client_side_validation and ('zos_template_data' not in params or
-                                                       params['zos_template_data'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `zos_template_data` when calling `update_zos_template`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "zos_template_data" not in params or params["zos_template_data"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `zos_template_data` when calling `update_zos_template`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'agent' in params:
-            path_params['agent'] = params['agent']  # noqa: E501
-        if 'template_name' in params:
-            path_params['templateName'] = params['template_name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "agent" in params:
+            path_params["agent"] = params["agent"]  # noqa: E501
+        if "template_name" in params:
+            path_params["templateName"] = params["template_name"]  # noqa: E501
 
         query_params = []
 
@@ -10426,27 +11775,30 @@ class ConfigApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'zos_template_data' in params:
-            body_params = params['zos_template_data']
+        if "zos_template_data" in params:
+            body_params = params["zos_template_data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/config/server/{server}/agent/{agent}/mft/zostemplate/{templateName}', 'PUT',
+            "/config/server/{server}/agent/{agent}/mft/zostemplate/{templateName}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

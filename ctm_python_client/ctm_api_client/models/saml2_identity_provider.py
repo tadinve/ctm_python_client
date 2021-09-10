@@ -33,20 +33,27 @@ class Saml2IdentityProvider(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'metadata_url': 'str',
-        'enabled': 'bool',
-        'service_provider_information': 'ServiceProviderInformation',
-        'force_authentication': 'bool'
+        "metadata_url": "str",
+        "enabled": "bool",
+        "service_provider_information": "ServiceProviderInformation",
+        "force_authentication": "bool",
     }
 
     attribute_map = {
-        'metadata_url': 'metadataUrl',
-        'enabled': 'enabled',
-        'service_provider_information': 'serviceProviderInformation',
-        'force_authentication': 'forceAuthentication'
+        "metadata_url": "metadataUrl",
+        "enabled": "enabled",
+        "service_provider_information": "serviceProviderInformation",
+        "force_authentication": "forceAuthentication",
     }
 
-    def __init__(self, metadata_url=None, enabled=None, service_provider_information=None, force_authentication=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        metadata_url=None,
+        enabled=None,
+        service_provider_information=None,
+        force_authentication=None,
+        _configuration=None,
+    ):  # noqa: E501
         """Saml2IdentityProvider - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -84,7 +91,9 @@ class Saml2IdentityProvider(object):
         :type: str
         """
         if self._configuration.client_side_validation and metadata_url is None:
-            raise ValueError("Invalid value for `metadata_url`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `metadata_url`, must not be `None`"
+            )  # noqa: E501
 
         self._metadata_url = metadata_url
 
@@ -107,7 +116,9 @@ class Saml2IdentityProvider(object):
         :type: bool
         """
         if self._configuration.client_side_validation and enabled is None:
-            raise ValueError("Invalid value for `enabled`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `enabled`, must not be `None`"
+            )  # noqa: E501
 
         self._enabled = enabled
 
@@ -160,18 +171,20 @@ class Saml2IdentityProvider(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(Saml2IdentityProvider, dict):

@@ -33,24 +33,33 @@ class LogJobResultItem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data_arguments': 'list[LogDataArguments]',
-        'formatted_message': 'str',
-        'full_line': 'str',
-        'local_timestamp_iso8601': 'str',
-        'message': 'str',
-        'message_code': 'str'
+        "data_arguments": "list[LogDataArguments]",
+        "formatted_message": "str",
+        "full_line": "str",
+        "local_timestamp_iso8601": "str",
+        "message": "str",
+        "message_code": "str",
     }
 
     attribute_map = {
-        'data_arguments': 'data_arguments',
-        'formatted_message': 'formatted_message',
-        'full_line': 'full_line',
-        'local_timestamp_iso8601': 'local_timestamp_iso8601',
-        'message': 'message',
-        'message_code': 'message_code'
+        "data_arguments": "data_arguments",
+        "formatted_message": "formatted_message",
+        "full_line": "full_line",
+        "local_timestamp_iso8601": "local_timestamp_iso8601",
+        "message": "message",
+        "message_code": "message_code",
     }
 
-    def __init__(self, data_arguments=None, formatted_message=None, full_line=None, local_timestamp_iso8601=None, message=None, message_code=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        data_arguments=None,
+        formatted_message=None,
+        full_line=None,
+        local_timestamp_iso8601=None,
+        message=None,
+        message_code=None,
+        _configuration=None,
+    ):  # noqa: E501
         """LogJobResultItem - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -210,18 +219,20 @@ class LogJobResultItem(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(LogJobResultItem, dict):

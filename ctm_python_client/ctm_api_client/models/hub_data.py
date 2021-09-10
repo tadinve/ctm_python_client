@@ -33,24 +33,33 @@ class HubData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'status': 'str',
-        'sync_status': 'str',
-        'name': 'str',
-        'cpu': 'str',
-        'memory': 'str',
-        'message': 'str'
+        "status": "str",
+        "sync_status": "str",
+        "name": "str",
+        "cpu": "str",
+        "memory": "str",
+        "message": "str",
     }
 
     attribute_map = {
-        'status': 'status',
-        'sync_status': 'syncStatus',
-        'name': 'name',
-        'cpu': 'cpu',
-        'memory': 'memory',
-        'message': 'message'
+        "status": "status",
+        "sync_status": "syncStatus",
+        "name": "name",
+        "cpu": "cpu",
+        "memory": "memory",
+        "message": "message",
     }
 
-    def __init__(self, status=None, sync_status=None, name=None, cpu=None, memory=None, message=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        status=None,
+        sync_status=None,
+        name=None,
+        cpu=None,
+        memory=None,
+        message=None,
+        _configuration=None,
+    ):  # noqa: E501
         """HubData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -222,18 +231,20 @@ class HubData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(HubData, dict):

@@ -33,18 +33,24 @@ class UserAdditionalProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'member_of_groups': 'list[str]',
-        'authentication': 'AuthenticationData',
-        'is_external_user': 'bool'
+        "member_of_groups": "list[str]",
+        "authentication": "AuthenticationData",
+        "is_external_user": "bool",
     }
 
     attribute_map = {
-        'member_of_groups': 'memberOfGroups',
-        'authentication': 'authentication',
-        'is_external_user': 'isExternalUser'
+        "member_of_groups": "memberOfGroups",
+        "authentication": "authentication",
+        "is_external_user": "isExternalUser",
     }
 
-    def __init__(self, member_of_groups=None, authentication=None, is_external_user=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        member_of_groups=None,
+        authentication=None,
+        is_external_user=None,
+        _configuration=None,
+    ):  # noqa: E501
         """UserAdditionalProperties - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -136,18 +142,20 @@ class UserAdditionalProperties(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(UserAdditionalProperties, dict):

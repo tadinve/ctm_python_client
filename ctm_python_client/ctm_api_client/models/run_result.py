@@ -32,19 +32,17 @@ class RunResult(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'run_id': 'str',
-        'status_uri': 'str',
-        'monitor_page_uri': 'str'
-    }
+    swagger_types = {"run_id": "str", "status_uri": "str", "monitor_page_uri": "str"}
 
     attribute_map = {
-        'run_id': 'runId',
-        'status_uri': 'statusURI',
-        'monitor_page_uri': 'monitorPageURI'
+        "run_id": "runId",
+        "status_uri": "statusURI",
+        "monitor_page_uri": "monitorPageURI",
     }
 
-    def __init__(self, run_id=None, status_uri=None, monitor_page_uri=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, run_id=None, status_uri=None, monitor_page_uri=None, _configuration=None
+    ):  # noqa: E501
         """RunResult - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -82,7 +80,9 @@ class RunResult(object):
         :type: str
         """
         if self._configuration.client_side_validation and run_id is None:
-            raise ValueError("Invalid value for `run_id`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `run_id`, must not be `None`"
+            )  # noqa: E501
 
         self._run_id = run_id
 
@@ -139,18 +139,20 @@ class RunResult(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(RunResult, dict):

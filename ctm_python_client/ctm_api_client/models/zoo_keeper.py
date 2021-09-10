@@ -33,24 +33,33 @@ class ZooKeeper(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'zookeeper_id': 'int',
-        'zookeeper_server_host': 'str',
-        'zookeeper_admin_server_port': 'int',
-        'zookeeper_client_port': 'int',
-        'zookeeper_leader_port': 'int',
-        'zookeeper_leader_election_port': 'int'
+        "zookeeper_id": "int",
+        "zookeeper_server_host": "str",
+        "zookeeper_admin_server_port": "int",
+        "zookeeper_client_port": "int",
+        "zookeeper_leader_port": "int",
+        "zookeeper_leader_election_port": "int",
     }
 
     attribute_map = {
-        'zookeeper_id': 'zookeeperId',
-        'zookeeper_server_host': 'zookeeperServerHost',
-        'zookeeper_admin_server_port': 'zookeeperAdminServerPort',
-        'zookeeper_client_port': 'zookeeperClientPort',
-        'zookeeper_leader_port': 'zookeeperLeaderPort',
-        'zookeeper_leader_election_port': 'zookeeperLeaderElectionPort'
+        "zookeeper_id": "zookeeperId",
+        "zookeeper_server_host": "zookeeperServerHost",
+        "zookeeper_admin_server_port": "zookeeperAdminServerPort",
+        "zookeeper_client_port": "zookeeperClientPort",
+        "zookeeper_leader_port": "zookeeperLeaderPort",
+        "zookeeper_leader_election_port": "zookeeperLeaderElectionPort",
     }
 
-    def __init__(self, zookeeper_id=None, zookeeper_server_host=None, zookeeper_admin_server_port=None, zookeeper_client_port=None, zookeeper_leader_port=None, zookeeper_leader_election_port=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        zookeeper_id=None,
+        zookeeper_server_host=None,
+        zookeeper_admin_server_port=None,
+        zookeeper_client_port=None,
+        zookeeper_leader_port=None,
+        zookeeper_leader_election_port=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ZooKeeper - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -222,18 +231,20 @@ class ZooKeeper(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ZooKeeper, dict):

@@ -33,24 +33,33 @@ class OrderFolderResultItem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'errored_count': 'int',
-        'folder_name': 'str',
-        'not_met_criteria_count': 'int',
-        'order_folder_status': 'str',
-        'ordered_count': 'int',
-        'ordered_list': 'list[OrderedItemItem]'
+        "errored_count": "int",
+        "folder_name": "str",
+        "not_met_criteria_count": "int",
+        "order_folder_status": "str",
+        "ordered_count": "int",
+        "ordered_list": "list[OrderedItemItem]",
     }
 
     attribute_map = {
-        'errored_count': 'errored_count',
-        'folder_name': 'folder_name',
-        'not_met_criteria_count': 'not_met_criteria_count',
-        'order_folder_status': 'order_folder_status',
-        'ordered_count': 'ordered_count',
-        'ordered_list': 'ordered_list'
+        "errored_count": "errored_count",
+        "folder_name": "folder_name",
+        "not_met_criteria_count": "not_met_criteria_count",
+        "order_folder_status": "order_folder_status",
+        "ordered_count": "ordered_count",
+        "ordered_list": "ordered_list",
     }
 
-    def __init__(self, errored_count=None, folder_name=None, not_met_criteria_count=None, order_folder_status=None, ordered_count=None, ordered_list=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        errored_count=None,
+        folder_name=None,
+        not_met_criteria_count=None,
+        order_folder_status=None,
+        ordered_count=None,
+        ordered_list=None,
+        _configuration=None,
+    ):  # noqa: E501
         """OrderFolderResultItem - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -158,12 +167,20 @@ class OrderFolderResultItem(object):
         :param order_folder_status: The order_folder_status of this OrderFolderResultItem.  # noqa: E501
         :type: str
         """
-        allowed_values = ["OrderFolderStatusSuccess", "FolderNotFound", "UnKnownError", "UNRECOGNIZED"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                order_folder_status not in allowed_values):
+        allowed_values = [
+            "OrderFolderStatusSuccess",
+            "FolderNotFound",
+            "UnKnownError",
+            "UNRECOGNIZED",
+        ]  # noqa: E501
+        if (
+            self._configuration.client_side_validation
+            and order_folder_status not in allowed_values
+        ):
             raise ValueError(
-                "Invalid value for `order_folder_status` ({0}), must be one of {1}"  # noqa: E501
-                .format(order_folder_status, allowed_values)
+                "Invalid value for `order_folder_status` ({0}), must be one of {1}".format(  # noqa: E501
+                    order_folder_status, allowed_values
+                )
             )
 
         self._order_folder_status = order_folder_status
@@ -217,18 +234,20 @@ class OrderFolderResultItem(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(OrderFolderResultItem, dict):

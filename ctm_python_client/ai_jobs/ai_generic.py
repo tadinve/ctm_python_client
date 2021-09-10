@@ -1,9 +1,17 @@
 from ctm_python_client.core.base import BaseJob
 
+
 class AiGenericJob(BaseJob):
     def __init__(
-        self, folder, job_name, connection_profile, ai_name, 
-        host=None, run_as=None, description=None, **kwargs
+        self,
+        folder,
+        job_name,
+        connection_profile,
+        ai_name,
+        host=None,
+        run_as=None,
+        description=None,
+        **kwargs
     ):
         BaseJob.__init__(self, folder, job_name, description, host, run_as)
         self.connection_profile = connection_profile

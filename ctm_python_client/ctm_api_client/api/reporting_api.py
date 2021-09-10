@@ -49,11 +49,13 @@ class ReportingApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_report_by_name_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_report_by_name_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.get_report_by_name_with_http_info(
+                name, **kwargs
+            )  # noqa: E501
             return data
 
     def get_report_by_name_with_http_info(self, name, **kwargs):  # noqa: E501
@@ -73,35 +75,38 @@ class ReportingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'format']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name", "format"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_report_by_name" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `get_report_by_name`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `get_report_by_name`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
-        if 'format' in params:
-            query_params.append(('format', params['format']))  # noqa: E501
+        if "format" in params:
+            query_params.append(("format", params["format"]))  # noqa: E501
 
         header_params = {}
 
@@ -110,27 +115,30 @@ class ReportingApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/reporting/report/{name}', 'GET',
+            "/reporting/report/{name}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ReportResult',  # noqa: E501
+            response_type="ReportResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_report_filters(self, name, **kwargs):  # noqa: E501
         """Retrieves report filters  # noqa: E501
@@ -147,11 +155,13 @@ class ReportingApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_report_filters_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_report_filters_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.get_report_filters_with_http_info(
+                name, **kwargs
+            )  # noqa: E501
             return data
 
     def get_report_filters_with_http_info(self, name, **kwargs):  # noqa: E501
@@ -170,31 +180,34 @@ class ReportingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_report_filters" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `get_report_filters`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `get_report_filters`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -205,27 +218,30 @@ class ReportingApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/reporting/reportFilters/{name}', 'GET',
+            "/reporting/reportFilters/{name}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RunReport',  # noqa: E501
+            response_type="RunReport",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_report_status(self, report_id, **kwargs):  # noqa: E501
         """Retrieves status information for a report generation request based on the report ID  # noqa: E501
@@ -242,11 +258,15 @@ class ReportingApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_report_status_with_http_info(report_id, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_report_status_with_http_info(
+                report_id, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_report_status_with_http_info(report_id, **kwargs)  # noqa: E501
+            (data) = self.get_report_status_with_http_info(
+                report_id, **kwargs
+            )  # noqa: E501
             return data
 
     def get_report_status_with_http_info(self, report_id, **kwargs):  # noqa: E501
@@ -265,31 +285,34 @@ class ReportingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['report_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["report_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_report_status" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'report_id' is set
-        if self.api_client.client_side_validation and ('report_id' not in params or
-                                                       params['report_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `report_id` when calling `get_report_status`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "report_id" not in params or params["report_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `report_id` when calling `get_report_status`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'report_id' in params:
-            path_params['reportId'] = params['report_id']  # noqa: E501
+        if "report_id" in params:
+            path_params["reportId"] = params["report_id"]  # noqa: E501
 
         query_params = []
 
@@ -300,27 +323,30 @@ class ReportingApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/reporting/status/{reportId}', 'GET',
+            "/reporting/status/{reportId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RunReportInfo',  # noqa: E501
+            response_type="RunReportInfo",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def run_report(self, report_run, **kwargs):  # noqa: E501
         """Run a report  # noqa: E501
@@ -337,8 +363,8 @@ class ReportingApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.run_report_with_http_info(report_run, **kwargs)  # noqa: E501
         else:
             (data) = self.run_report_with_http_info(report_run, **kwargs)  # noqa: E501
@@ -360,25 +386,28 @@ class ReportingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['report_run']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["report_run"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method run_report" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'report_run' is set
-        if self.api_client.client_side_validation and ('report_run' not in params or
-                                                       params['report_run'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `report_run` when calling `run_report`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "report_run" not in params or params["report_run"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `report_run` when calling `run_report`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -392,27 +421,30 @@ class ReportingApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'report_run' in params:
-            body_params = params['report_run']
+        if "report_run" in params:
+            body_params = params["report_run"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/reporting/report', 'POST',
+            "/reporting/report",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RunReportInfo',  # noqa: E501
+            response_type="RunReportInfo",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

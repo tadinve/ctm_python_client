@@ -33,60 +33,87 @@ class FieldMetadataProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'control_type': 'str',
-        'data_type': 'str',
-        'display_name': 'str',
-        'display_name_id': 'str',
-        'false_value': 'str',
-        'hashed_password': 'bool',
-        'hide_if': 'ConditionProperties',
-        'key': 'SettingKeyProperties',
-        'name': 'str',
-        'need_restart': 'bool',
-        'need_restart_message': 'str',
-        'need_restart_message_id': 'str',
-        'placeholder': 'str',
-        'placeholder_id': 'str',
-        'possible_values': 'list[PossibleValueProperties]',
-        'profiles': 'list[str]',
-        'setting_changed_event_types': 'list[str]',
-        'show_if': 'ConditionProperties',
-        'tooltip': 'str',
-        'tooltip_id': 'str',
-        'true_value': 'str',
-        'units_label': 'str',
-        'units_label_id': 'str',
-        'validations': 'ValidationProperties'
+        "control_type": "str",
+        "data_type": "str",
+        "display_name": "str",
+        "display_name_id": "str",
+        "false_value": "str",
+        "hashed_password": "bool",
+        "hide_if": "ConditionProperties",
+        "key": "SettingKeyProperties",
+        "name": "str",
+        "need_restart": "bool",
+        "need_restart_message": "str",
+        "need_restart_message_id": "str",
+        "placeholder": "str",
+        "placeholder_id": "str",
+        "possible_values": "list[PossibleValueProperties]",
+        "profiles": "list[str]",
+        "setting_changed_event_types": "list[str]",
+        "show_if": "ConditionProperties",
+        "tooltip": "str",
+        "tooltip_id": "str",
+        "true_value": "str",
+        "units_label": "str",
+        "units_label_id": "str",
+        "validations": "ValidationProperties",
     }
 
     attribute_map = {
-        'control_type': 'controlType',
-        'data_type': 'dataType',
-        'display_name': 'displayName',
-        'display_name_id': 'displayNameID',
-        'false_value': 'falseValue',
-        'hashed_password': 'hashedPassword',
-        'hide_if': 'hideIf',
-        'key': 'key',
-        'name': 'name',
-        'need_restart': 'needRestart',
-        'need_restart_message': 'needRestartMessage',
-        'need_restart_message_id': 'needRestartMessageID',
-        'placeholder': 'placeholder',
-        'placeholder_id': 'placeholderID',
-        'possible_values': 'possibleValues',
-        'profiles': 'profiles',
-        'setting_changed_event_types': 'settingChangedEventTypes',
-        'show_if': 'showIf',
-        'tooltip': 'tooltip',
-        'tooltip_id': 'tooltipID',
-        'true_value': 'trueValue',
-        'units_label': 'unitsLabel',
-        'units_label_id': 'unitsLabelID',
-        'validations': 'validations'
+        "control_type": "controlType",
+        "data_type": "dataType",
+        "display_name": "displayName",
+        "display_name_id": "displayNameID",
+        "false_value": "falseValue",
+        "hashed_password": "hashedPassword",
+        "hide_if": "hideIf",
+        "key": "key",
+        "name": "name",
+        "need_restart": "needRestart",
+        "need_restart_message": "needRestartMessage",
+        "need_restart_message_id": "needRestartMessageID",
+        "placeholder": "placeholder",
+        "placeholder_id": "placeholderID",
+        "possible_values": "possibleValues",
+        "profiles": "profiles",
+        "setting_changed_event_types": "settingChangedEventTypes",
+        "show_if": "showIf",
+        "tooltip": "tooltip",
+        "tooltip_id": "tooltipID",
+        "true_value": "trueValue",
+        "units_label": "unitsLabel",
+        "units_label_id": "unitsLabelID",
+        "validations": "validations",
     }
 
-    def __init__(self, control_type=None, data_type=None, display_name=None, display_name_id=None, false_value=None, hashed_password=None, hide_if=None, key=None, name=None, need_restart=None, need_restart_message=None, need_restart_message_id=None, placeholder=None, placeholder_id=None, possible_values=None, profiles=None, setting_changed_event_types=None, show_if=None, tooltip=None, tooltip_id=None, true_value=None, units_label=None, units_label_id=None, validations=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        control_type=None,
+        data_type=None,
+        display_name=None,
+        display_name_id=None,
+        false_value=None,
+        hashed_password=None,
+        hide_if=None,
+        key=None,
+        name=None,
+        need_restart=None,
+        need_restart_message=None,
+        need_restart_message_id=None,
+        placeholder=None,
+        placeholder_id=None,
+        possible_values=None,
+        profiles=None,
+        setting_changed_event_types=None,
+        show_if=None,
+        tooltip=None,
+        tooltip_id=None,
+        true_value=None,
+        units_label=None,
+        units_label_id=None,
+        validations=None,
+        _configuration=None,
+    ):  # noqa: E501
         """FieldMetadataProperties - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -678,18 +705,20 @@ class FieldMetadataProperties(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(FieldMetadataProperties, dict):

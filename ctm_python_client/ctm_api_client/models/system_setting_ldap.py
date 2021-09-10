@@ -33,18 +33,20 @@ class SystemSettingLdap(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ldap_enabled': 'bool',
-        'default_domain': 'str',
-        'domains': 'list[LdapDomainSettings]'
+        "ldap_enabled": "bool",
+        "default_domain": "str",
+        "domains": "list[LdapDomainSettings]",
     }
 
     attribute_map = {
-        'ldap_enabled': 'ldapEnabled',
-        'default_domain': 'defaultDomain',
-        'domains': 'domains'
+        "ldap_enabled": "ldapEnabled",
+        "default_domain": "defaultDomain",
+        "domains": "domains",
     }
 
-    def __init__(self, ldap_enabled=None, default_domain=None, domains=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, ldap_enabled=None, default_domain=None, domains=None, _configuration=None
+    ):  # noqa: E501
         """SystemSettingLdap - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -80,7 +82,9 @@ class SystemSettingLdap(object):
         :type: bool
         """
         if self._configuration.client_side_validation and ldap_enabled is None:
-            raise ValueError("Invalid value for `ldap_enabled`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `ldap_enabled`, must not be `None`"
+            )  # noqa: E501
 
         self._ldap_enabled = ldap_enabled
 
@@ -133,18 +137,20 @@ class SystemSettingLdap(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(SystemSettingLdap, dict):

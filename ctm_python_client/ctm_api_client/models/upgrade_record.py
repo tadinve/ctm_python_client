@@ -33,48 +33,69 @@ class UpgradeRecord(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'upgrade_id': 'str',
-        'ctm': 'str',
-        'agent': 'str',
-        'package': 'str',
-        'from_version': 'str',
-        'to_version': 'str',
-        'activity': 'str',
-        'status': 'str',
-        'message': 'str',
-        'creation_time': 'str',
-        'transfer_start_time': 'str',
-        'transfer_end_time': 'str',
-        'install_start_time': 'str',
-        'install_end_time': 'str',
-        'activity_name': 'str',
-        'install_user': 'str',
-        'notify_address': 'str',
-        'description': 'str'
+        "upgrade_id": "str",
+        "ctm": "str",
+        "agent": "str",
+        "package": "str",
+        "from_version": "str",
+        "to_version": "str",
+        "activity": "str",
+        "status": "str",
+        "message": "str",
+        "creation_time": "str",
+        "transfer_start_time": "str",
+        "transfer_end_time": "str",
+        "install_start_time": "str",
+        "install_end_time": "str",
+        "activity_name": "str",
+        "install_user": "str",
+        "notify_address": "str",
+        "description": "str",
     }
 
     attribute_map = {
-        'upgrade_id': 'upgradeId',
-        'ctm': 'ctm',
-        'agent': 'agent',
-        'package': 'package',
-        'from_version': 'fromVersion',
-        'to_version': 'toVersion',
-        'activity': 'activity',
-        'status': 'status',
-        'message': 'message',
-        'creation_time': 'creationTime',
-        'transfer_start_time': 'transferStartTime',
-        'transfer_end_time': 'transferEndTime',
-        'install_start_time': 'installStartTime',
-        'install_end_time': 'installEndTime',
-        'activity_name': 'activityName',
-        'install_user': 'installUser',
-        'notify_address': 'notifyAddress',
-        'description': 'description'
+        "upgrade_id": "upgradeId",
+        "ctm": "ctm",
+        "agent": "agent",
+        "package": "package",
+        "from_version": "fromVersion",
+        "to_version": "toVersion",
+        "activity": "activity",
+        "status": "status",
+        "message": "message",
+        "creation_time": "creationTime",
+        "transfer_start_time": "transferStartTime",
+        "transfer_end_time": "transferEndTime",
+        "install_start_time": "installStartTime",
+        "install_end_time": "installEndTime",
+        "activity_name": "activityName",
+        "install_user": "installUser",
+        "notify_address": "notifyAddress",
+        "description": "description",
     }
 
-    def __init__(self, upgrade_id=None, ctm=None, agent=None, package=None, from_version=None, to_version=None, activity=None, status=None, message=None, creation_time=None, transfer_start_time=None, transfer_end_time=None, install_start_time=None, install_end_time=None, activity_name=None, install_user=None, notify_address=None, description=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        upgrade_id=None,
+        ctm=None,
+        agent=None,
+        package=None,
+        from_version=None,
+        to_version=None,
+        activity=None,
+        status=None,
+        message=None,
+        creation_time=None,
+        transfer_start_time=None,
+        transfer_end_time=None,
+        install_start_time=None,
+        install_end_time=None,
+        activity_name=None,
+        install_user=None,
+        notify_address=None,
+        description=None,
+        _configuration=None,
+    ):  # noqa: E501
         """UpgradeRecord - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -558,18 +579,20 @@ class UpgradeRecord(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(UpgradeRecord, dict):

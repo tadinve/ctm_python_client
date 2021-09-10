@@ -33,18 +33,24 @@ class EmOrderFolderParameters(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'annotation_details': 'AnnotationDetails',
-        'ctm_name': 'str',
-        'em_order_folder_parameters': 'list[EmOrderFolder]'
+        "annotation_details": "AnnotationDetails",
+        "ctm_name": "str",
+        "em_order_folder_parameters": "list[EmOrderFolder]",
     }
 
     attribute_map = {
-        'annotation_details': 'annotation_details',
-        'ctm_name': 'ctm_name',
-        'em_order_folder_parameters': 'em_order_folder_parameters'
+        "annotation_details": "annotation_details",
+        "ctm_name": "ctm_name",
+        "em_order_folder_parameters": "em_order_folder_parameters",
     }
 
-    def __init__(self, annotation_details=None, ctm_name=None, em_order_folder_parameters=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        annotation_details=None,
+        ctm_name=None,
+        em_order_folder_parameters=None,
+        _configuration=None,
+    ):  # noqa: E501
         """EmOrderFolderParameters - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -132,18 +138,20 @@ class EmOrderFolderParameters(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(EmOrderFolderParameters, dict):

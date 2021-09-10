@@ -33,52 +33,75 @@ class SLAService(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'service_name': 'str',
-        'status': 'str',
-        'status_reason': 'str',
-        'start_time': 'str',
-        'end_time': 'str',
-        'due_time': 'str',
-        'slack_time': 'str',
-        'service_order_date_time': 'str',
-        'scheduled_order_date': 'str',
-        'service_job': 'str',
-        'service_control_m': 'str',
-        'priority': 'str',
-        'note': 'str',
-        'total_jobs': 'str',
-        'jobs_completed': 'str',
-        'jobs_without_statistics': 'str',
-        'completion_percentage': 'str',
-        'average_completion_time': 'str',
-        'errors': 'str',
-        'status_by_jobs': 'SLAServiceStatusByJobs'
+        "service_name": "str",
+        "status": "str",
+        "status_reason": "str",
+        "start_time": "str",
+        "end_time": "str",
+        "due_time": "str",
+        "slack_time": "str",
+        "service_order_date_time": "str",
+        "scheduled_order_date": "str",
+        "service_job": "str",
+        "service_control_m": "str",
+        "priority": "str",
+        "note": "str",
+        "total_jobs": "str",
+        "jobs_completed": "str",
+        "jobs_without_statistics": "str",
+        "completion_percentage": "str",
+        "average_completion_time": "str",
+        "errors": "str",
+        "status_by_jobs": "SLAServiceStatusByJobs",
     }
 
     attribute_map = {
-        'service_name': 'serviceName',
-        'status': 'status',
-        'status_reason': 'statusReason',
-        'start_time': 'startTime',
-        'end_time': 'endTime',
-        'due_time': 'dueTime',
-        'slack_time': 'slackTime',
-        'service_order_date_time': 'serviceOrderDateTime',
-        'scheduled_order_date': 'scheduledOrderDate',
-        'service_job': 'serviceJob',
-        'service_control_m': 'serviceControlM',
-        'priority': 'priority',
-        'note': 'note',
-        'total_jobs': 'totalJobs',
-        'jobs_completed': 'jobsCompleted',
-        'jobs_without_statistics': 'jobsWithoutStatistics',
-        'completion_percentage': 'completionPercentage',
-        'average_completion_time': 'averageCompletionTime',
-        'errors': 'errors',
-        'status_by_jobs': 'statusByJobs'
+        "service_name": "serviceName",
+        "status": "status",
+        "status_reason": "statusReason",
+        "start_time": "startTime",
+        "end_time": "endTime",
+        "due_time": "dueTime",
+        "slack_time": "slackTime",
+        "service_order_date_time": "serviceOrderDateTime",
+        "scheduled_order_date": "scheduledOrderDate",
+        "service_job": "serviceJob",
+        "service_control_m": "serviceControlM",
+        "priority": "priority",
+        "note": "note",
+        "total_jobs": "totalJobs",
+        "jobs_completed": "jobsCompleted",
+        "jobs_without_statistics": "jobsWithoutStatistics",
+        "completion_percentage": "completionPercentage",
+        "average_completion_time": "averageCompletionTime",
+        "errors": "errors",
+        "status_by_jobs": "statusByJobs",
     }
 
-    def __init__(self, service_name=None, status=None, status_reason=None, start_time=None, end_time=None, due_time=None, slack_time=None, service_order_date_time=None, scheduled_order_date=None, service_job=None, service_control_m=None, priority=None, note=None, total_jobs=None, jobs_completed=None, jobs_without_statistics=None, completion_percentage=None, average_completion_time=None, errors=None, status_by_jobs=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        service_name=None,
+        status=None,
+        status_reason=None,
+        start_time=None,
+        end_time=None,
+        due_time=None,
+        slack_time=None,
+        service_order_date_time=None,
+        scheduled_order_date=None,
+        service_job=None,
+        service_control_m=None,
+        priority=None,
+        note=None,
+        total_jobs=None,
+        jobs_completed=None,
+        jobs_without_statistics=None,
+        completion_percentage=None,
+        average_completion_time=None,
+        errors=None,
+        status_by_jobs=None,
+        _configuration=None,
+    ):  # noqa: E501
         """SLAService - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -614,18 +637,20 @@ class SLAService(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(SLAService, dict):

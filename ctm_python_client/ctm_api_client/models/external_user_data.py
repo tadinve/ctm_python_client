@@ -33,36 +33,51 @@ class ExternalUserData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'email': 'str',
-        'company': 'str',
-        'password': 'str',
-        'description': 'str',
-        'phone_number': 'str',
-        'ssh_key': 'str',
-        'as2_key': 'As2KeyData',
-        'is_locked': 'bool',
-        'lock_reason': 'str',
-        'change_password_at_next_login': 'bool',
-        'password_never_expires': 'bool'
+        "name": "str",
+        "email": "str",
+        "company": "str",
+        "password": "str",
+        "description": "str",
+        "phone_number": "str",
+        "ssh_key": "str",
+        "as2_key": "As2KeyData",
+        "is_locked": "bool",
+        "lock_reason": "str",
+        "change_password_at_next_login": "bool",
+        "password_never_expires": "bool",
     }
 
     attribute_map = {
-        'name': 'name',
-        'email': 'email',
-        'company': 'company',
-        'password': 'password',
-        'description': 'description',
-        'phone_number': 'phoneNumber',
-        'ssh_key': 'sshKey',
-        'as2_key': 'as2Key',
-        'is_locked': 'isLocked',
-        'lock_reason': 'lockReason',
-        'change_password_at_next_login': 'changePasswordAtNextLogin',
-        'password_never_expires': 'passwordNeverExpires'
+        "name": "name",
+        "email": "email",
+        "company": "company",
+        "password": "password",
+        "description": "description",
+        "phone_number": "phoneNumber",
+        "ssh_key": "sshKey",
+        "as2_key": "as2Key",
+        "is_locked": "isLocked",
+        "lock_reason": "lockReason",
+        "change_password_at_next_login": "changePasswordAtNextLogin",
+        "password_never_expires": "passwordNeverExpires",
     }
 
-    def __init__(self, name=None, email=None, company=None, password=None, description=None, phone_number=None, ssh_key=None, as2_key=None, is_locked=None, lock_reason=None, change_password_at_next_login=None, password_never_expires=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        email=None,
+        company=None,
+        password=None,
+        description=None,
+        phone_number=None,
+        ssh_key=None,
+        as2_key=None,
+        is_locked=None,
+        lock_reason=None,
+        change_password_at_next_login=None,
+        password_never_expires=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ExternalUserData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -390,18 +405,20 @@ class ExternalUserData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ExternalUserData, dict):

@@ -48,8 +48,8 @@ class SessionApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.do_login_with_http_info(credentials, **kwargs)  # noqa: E501
         else:
             (data) = self.do_login_with_http_info(credentials, **kwargs)  # noqa: E501
@@ -71,25 +71,28 @@ class SessionApi(object):
                  returns the request thread.
         """
 
-        all_params = ['credentials']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["credentials"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method do_login" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'credentials' is set
-        if self.api_client.client_side_validation and ('credentials' not in params or
-                                                       params['credentials'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `credentials` when calling `do_login`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "credentials" not in params or params["credentials"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `credentials` when calling `do_login`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -103,30 +106,33 @@ class SessionApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'credentials' in params:
-            body_params = params['credentials']
+        if "credentials" in params:
+            body_params = params["credentials"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/session/login', 'POST',
+            "/session/login",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='LoginResult',  # noqa: E501
+            response_type="LoginResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def do_logout(self, **kwargs):  # noqa: E501
         """logout user from Control-M  # noqa: E501
@@ -142,8 +148,8 @@ class SessionApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.do_logout_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.do_logout_with_http_info(**kwargs)  # noqa: E501
@@ -165,20 +171,20 @@ class SessionApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method do_logout" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -193,27 +199,30 @@ class SessionApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/session/logout', 'POST',
+            "/session/logout",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_my_password(self, passwords_object, **kwargs):  # noqa: E501
         """Change my password  # noqa: E501
@@ -230,14 +239,20 @@ class SessionApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_my_password_with_http_info(passwords_object, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_my_password_with_http_info(
+                passwords_object, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_my_password_with_http_info(passwords_object, **kwargs)  # noqa: E501
+            (data) = self.update_my_password_with_http_info(
+                passwords_object, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_my_password_with_http_info(self, passwords_object, **kwargs):  # noqa: E501
+    def update_my_password_with_http_info(
+        self, passwords_object, **kwargs
+    ):  # noqa: E501
         """Change my password  # noqa: E501
 
         Change my password  # noqa: E501
@@ -253,25 +268,28 @@ class SessionApi(object):
                  returns the request thread.
         """
 
-        all_params = ['passwords_object']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["passwords_object"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_my_password" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'passwords_object' is set
-        if self.api_client.client_side_validation and ('passwords_object' not in params or
-                                                       params['passwords_object'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `passwords_object` when calling `update_my_password`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "passwords_object" not in params or params["passwords_object"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `passwords_object` when calling `update_my_password`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -285,27 +303,30 @@ class SessionApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'passwords_object' in params:
-            body_params = params['passwords_object']
+        if "passwords_object" in params:
+            body_params = params["passwords_object"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/session/user/password/update', 'POST',
+            "/session/user/password/update",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

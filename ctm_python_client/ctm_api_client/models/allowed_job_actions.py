@@ -33,52 +33,75 @@ class AllowedJobActions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'view_properties': 'bool',
-        'documentation': 'bool',
-        'log': 'bool',
-        'statistics': 'bool',
-        'view_output_list': 'bool',
-        'view_jcl': 'bool',
-        'why': 'bool',
-        'hold': 'bool',
-        'free': 'bool',
-        'confirm': 'bool',
-        'rerun': 'bool',
-        'react': 'bool',
-        'restart': 'bool',
-        'kill': 'bool',
-        'bypass': 'bool',
-        'delete': 'bool',
-        'undelete': 'bool',
-        'set_to_ok': 'bool',
-        'edit_properties': 'bool',
-        'edit_jcl': 'bool'
+        "view_properties": "bool",
+        "documentation": "bool",
+        "log": "bool",
+        "statistics": "bool",
+        "view_output_list": "bool",
+        "view_jcl": "bool",
+        "why": "bool",
+        "hold": "bool",
+        "free": "bool",
+        "confirm": "bool",
+        "rerun": "bool",
+        "react": "bool",
+        "restart": "bool",
+        "kill": "bool",
+        "bypass": "bool",
+        "delete": "bool",
+        "undelete": "bool",
+        "set_to_ok": "bool",
+        "edit_properties": "bool",
+        "edit_jcl": "bool",
     }
 
     attribute_map = {
-        'view_properties': 'ViewProperties',
-        'documentation': 'Documentation',
-        'log': 'Log',
-        'statistics': 'Statistics',
-        'view_output_list': 'ViewOutputList',
-        'view_jcl': 'ViewJcl',
-        'why': 'Why',
-        'hold': 'Hold',
-        'free': 'Free',
-        'confirm': 'Confirm',
-        'rerun': 'Rerun',
-        'react': 'React',
-        'restart': 'Restart',
-        'kill': 'Kill',
-        'bypass': 'Bypass',
-        'delete': 'Delete',
-        'undelete': 'Undelete',
-        'set_to_ok': 'SetToOk',
-        'edit_properties': 'EditProperties',
-        'edit_jcl': 'EditJcl'
+        "view_properties": "ViewProperties",
+        "documentation": "Documentation",
+        "log": "Log",
+        "statistics": "Statistics",
+        "view_output_list": "ViewOutputList",
+        "view_jcl": "ViewJcl",
+        "why": "Why",
+        "hold": "Hold",
+        "free": "Free",
+        "confirm": "Confirm",
+        "rerun": "Rerun",
+        "react": "React",
+        "restart": "Restart",
+        "kill": "Kill",
+        "bypass": "Bypass",
+        "delete": "Delete",
+        "undelete": "Undelete",
+        "set_to_ok": "SetToOk",
+        "edit_properties": "EditProperties",
+        "edit_jcl": "EditJcl",
     }
 
-    def __init__(self, view_properties=None, documentation=None, log=None, statistics=None, view_output_list=None, view_jcl=None, why=None, hold=None, free=None, confirm=None, rerun=None, react=None, restart=None, kill=None, bypass=None, delete=None, undelete=None, set_to_ok=None, edit_properties=None, edit_jcl=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        view_properties=None,
+        documentation=None,
+        log=None,
+        statistics=None,
+        view_output_list=None,
+        view_jcl=None,
+        why=None,
+        hold=None,
+        free=None,
+        confirm=None,
+        rerun=None,
+        react=None,
+        restart=None,
+        kill=None,
+        bypass=None,
+        delete=None,
+        undelete=None,
+        set_to_ok=None,
+        edit_properties=None,
+        edit_jcl=None,
+        _configuration=None,
+    ):  # noqa: E501
         """AllowedJobActions - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -614,18 +637,20 @@ class AllowedJobActions(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AllowedJobActions, dict):

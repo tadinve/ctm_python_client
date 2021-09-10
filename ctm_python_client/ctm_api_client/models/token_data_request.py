@@ -33,20 +33,27 @@ class TokenDataRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'token_name': 'str',
-        'roles': 'list[str]',
-        'expiration_date': 'str',
-        'token_type': 'str'
+        "token_name": "str",
+        "roles": "list[str]",
+        "expiration_date": "str",
+        "token_type": "str",
     }
 
     attribute_map = {
-        'token_name': 'tokenName',
-        'roles': 'roles',
-        'expiration_date': 'expirationDate',
-        'token_type': 'tokenType'
+        "token_name": "tokenName",
+        "roles": "roles",
+        "expiration_date": "expirationDate",
+        "token_type": "tokenType",
     }
 
-    def __init__(self, token_name=None, roles=None, expiration_date=None, token_type=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        token_name=None,
+        roles=None,
+        expiration_date=None,
+        token_type=None,
+        _configuration=None,
+    ):  # noqa: E501
         """TokenDataRequest - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -87,7 +94,9 @@ class TokenDataRequest(object):
         :type: str
         """
         if self._configuration.client_side_validation and token_name is None:
-            raise ValueError("Invalid value for `token_name`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `token_name`, must not be `None`"
+            )  # noqa: E501
 
         self._token_name = token_name
 
@@ -167,18 +176,20 @@ class TokenDataRequest(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(TokenDataRequest, dict):

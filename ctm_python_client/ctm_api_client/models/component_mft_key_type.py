@@ -33,26 +33,36 @@ class ComponentMftKeyType(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
-        'name': 'str',
-        'host': 'str',
-        'node_id': 'str',
-        'appl_type': 'str',
-        'appl_ver': 'str',
-        'cm_ver': 'str'
+        "type": "str",
+        "name": "str",
+        "host": "str",
+        "node_id": "str",
+        "appl_type": "str",
+        "appl_ver": "str",
+        "cm_ver": "str",
     }
 
     attribute_map = {
-        'type': 'type',
-        'name': 'name',
-        'host': 'host',
-        'node_id': 'nodeId',
-        'appl_type': 'applType',
-        'appl_ver': 'applVer',
-        'cm_ver': 'cmVer'
+        "type": "type",
+        "name": "name",
+        "host": "host",
+        "node_id": "nodeId",
+        "appl_type": "applType",
+        "appl_ver": "applVer",
+        "cm_ver": "cmVer",
     }
 
-    def __init__(self, type=None, name=None, host=None, node_id=None, appl_type=None, appl_ver=None, cm_ver=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        type=None,
+        name=None,
+        host=None,
+        node_id=None,
+        appl_type=None,
+        appl_ver=None,
+        cm_ver=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ComponentMftKeyType - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -250,18 +260,20 @@ class ComponentMftKeyType(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ComponentMftKeyType, dict):

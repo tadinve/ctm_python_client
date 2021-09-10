@@ -33,36 +33,51 @@ class SystemSetting(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'saml2_identity_provider': 'Saml2IdentityProvider',
-        'ldap_settings': 'SystemSettingLdap',
-        'new_day_time': 'SystemSettingProperty',
-        'first_day_of_the_week': 'SystemSettingProperty',
-        'environment_banner_color': 'SystemSettingProperty',
-        'environment_title': 'SystemSettingProperty',
-        'environment_description': 'SystemSettingProperty',
-        'enforce_site_standards': 'SystemSettingProperty',
-        'strictnesslevel': 'SystemSettingProperty',
-        'history_retention_days': 'SystemSettingProperty',
-        'annotations': 'SystemSettingAnnotationProperty',
-        'errors': 'list[ErrorData]'
+        "saml2_identity_provider": "Saml2IdentityProvider",
+        "ldap_settings": "SystemSettingLdap",
+        "new_day_time": "SystemSettingProperty",
+        "first_day_of_the_week": "SystemSettingProperty",
+        "environment_banner_color": "SystemSettingProperty",
+        "environment_title": "SystemSettingProperty",
+        "environment_description": "SystemSettingProperty",
+        "enforce_site_standards": "SystemSettingProperty",
+        "strictnesslevel": "SystemSettingProperty",
+        "history_retention_days": "SystemSettingProperty",
+        "annotations": "SystemSettingAnnotationProperty",
+        "errors": "list[ErrorData]",
     }
 
     attribute_map = {
-        'saml2_identity_provider': 'saml2IdentityProvider',
-        'ldap_settings': 'ldapSettings',
-        'new_day_time': 'newDayTime',
-        'first_day_of_the_week': 'firstDayOfTheWeek',
-        'environment_banner_color': 'environmentBannerColor',
-        'environment_title': 'environmentTitle',
-        'environment_description': 'environmentDescription',
-        'enforce_site_standards': 'enforceSiteStandards',
-        'strictnesslevel': 'strictnesslevel',
-        'history_retention_days': 'historyRetentionDays',
-        'annotations': 'annotations',
-        'errors': 'errors'
+        "saml2_identity_provider": "saml2IdentityProvider",
+        "ldap_settings": "ldapSettings",
+        "new_day_time": "newDayTime",
+        "first_day_of_the_week": "firstDayOfTheWeek",
+        "environment_banner_color": "environmentBannerColor",
+        "environment_title": "environmentTitle",
+        "environment_description": "environmentDescription",
+        "enforce_site_standards": "enforceSiteStandards",
+        "strictnesslevel": "strictnesslevel",
+        "history_retention_days": "historyRetentionDays",
+        "annotations": "annotations",
+        "errors": "errors",
     }
 
-    def __init__(self, saml2_identity_provider=None, ldap_settings=None, new_day_time=None, first_day_of_the_week=None, environment_banner_color=None, environment_title=None, environment_description=None, enforce_site_standards=None, strictnesslevel=None, history_retention_days=None, annotations=None, errors=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        saml2_identity_provider=None,
+        ldap_settings=None,
+        new_day_time=None,
+        first_day_of_the_week=None,
+        environment_banner_color=None,
+        environment_title=None,
+        environment_description=None,
+        enforce_site_standards=None,
+        strictnesslevel=None,
+        history_retention_days=None,
+        annotations=None,
+        errors=None,
+        _configuration=None,
+    ):  # noqa: E501
         """SystemSetting - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -366,18 +381,20 @@ class SystemSetting(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(SystemSetting, dict):

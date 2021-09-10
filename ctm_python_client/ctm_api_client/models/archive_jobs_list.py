@@ -33,18 +33,24 @@ class ArchiveJobsList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'jobs': 'list[Job]',
-        'returned': 'int',
-        'additional_jobs_match_search_criteria': 'bool'
+        "jobs": "list[Job]",
+        "returned": "int",
+        "additional_jobs_match_search_criteria": "bool",
     }
 
     attribute_map = {
-        'jobs': 'jobs',
-        'returned': 'returned',
-        'additional_jobs_match_search_criteria': 'additionalJobsMatchSearchCriteria'
+        "jobs": "jobs",
+        "returned": "returned",
+        "additional_jobs_match_search_criteria": "additionalJobsMatchSearchCriteria",
     }
 
-    def __init__(self, jobs=None, returned=None, additional_jobs_match_search_criteria=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        jobs=None,
+        returned=None,
+        additional_jobs_match_search_criteria=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ArchiveJobsList - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -60,7 +66,9 @@ class ArchiveJobsList(object):
         if returned is not None:
             self.returned = returned
         if additional_jobs_match_search_criteria is not None:
-            self.additional_jobs_match_search_criteria = additional_jobs_match_search_criteria
+            self.additional_jobs_match_search_criteria = (
+                additional_jobs_match_search_criteria
+            )
 
     @property
     def jobs(self):
@@ -115,7 +123,9 @@ class ArchiveJobsList(object):
         return self._additional_jobs_match_search_criteria
 
     @additional_jobs_match_search_criteria.setter
-    def additional_jobs_match_search_criteria(self, additional_jobs_match_search_criteria):
+    def additional_jobs_match_search_criteria(
+        self, additional_jobs_match_search_criteria
+    ):
         """Sets the additional_jobs_match_search_criteria of this ArchiveJobsList.
 
 
@@ -123,7 +133,9 @@ class ArchiveJobsList(object):
         :type: bool
         """
 
-        self._additional_jobs_match_search_criteria = additional_jobs_match_search_criteria
+        self._additional_jobs_match_search_criteria = (
+            additional_jobs_match_search_criteria
+        )
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -132,18 +144,20 @@ class ArchiveJobsList(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ArchiveJobsList, dict):

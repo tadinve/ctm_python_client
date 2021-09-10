@@ -33,36 +33,51 @@ class OrderFolderParameters(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ctm': 'str',
-        'folder': 'str',
-        'jobs': 'str',
-        'library': 'str',
-        'create_duplicate': 'bool',
-        'hold': 'bool',
-        'ignore_criteria': 'bool',
-        'independent_flow': 'bool',
-        'order_date': 'str',
-        'order_into_folder': 'str',
-        'wait_for_order_date': 'bool',
-        'variables': 'list[dict(str, str)]'
+        "ctm": "str",
+        "folder": "str",
+        "jobs": "str",
+        "library": "str",
+        "create_duplicate": "bool",
+        "hold": "bool",
+        "ignore_criteria": "bool",
+        "independent_flow": "bool",
+        "order_date": "str",
+        "order_into_folder": "str",
+        "wait_for_order_date": "bool",
+        "variables": "list[dict(str, str)]",
     }
 
     attribute_map = {
-        'ctm': 'ctm',
-        'folder': 'folder',
-        'jobs': 'jobs',
-        'library': 'library',
-        'create_duplicate': 'createDuplicate',
-        'hold': 'hold',
-        'ignore_criteria': 'ignoreCriteria',
-        'independent_flow': 'independentFlow',
-        'order_date': 'orderDate',
-        'order_into_folder': 'orderIntoFolder',
-        'wait_for_order_date': 'waitForOrderDate',
-        'variables': 'variables'
+        "ctm": "ctm",
+        "folder": "folder",
+        "jobs": "jobs",
+        "library": "library",
+        "create_duplicate": "createDuplicate",
+        "hold": "hold",
+        "ignore_criteria": "ignoreCriteria",
+        "independent_flow": "independentFlow",
+        "order_date": "orderDate",
+        "order_into_folder": "orderIntoFolder",
+        "wait_for_order_date": "waitForOrderDate",
+        "variables": "variables",
     }
 
-    def __init__(self, ctm=None, folder=None, jobs=None, library=None, create_duplicate=None, hold=None, ignore_criteria=None, independent_flow=None, order_date=None, order_into_folder=None, wait_for_order_date=None, variables=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        ctm=None,
+        folder=None,
+        jobs=None,
+        library=None,
+        create_duplicate=None,
+        hold=None,
+        ignore_criteria=None,
+        independent_flow=None,
+        order_date=None,
+        order_into_folder=None,
+        wait_for_order_date=None,
+        variables=None,
+        _configuration=None,
+    ):  # noqa: E501
         """OrderFolderParameters - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -390,18 +405,20 @@ class OrderFolderParameters(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(OrderFolderParameters, dict):

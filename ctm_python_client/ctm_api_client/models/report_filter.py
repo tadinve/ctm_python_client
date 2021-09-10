@@ -32,15 +32,9 @@ class ReportFilter(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'name': 'str',
-        'value': 'str'
-    }
+    swagger_types = {"name": "str", "value": "str"}
 
-    attribute_map = {
-        'name': 'name',
-        'value': 'value'
-    }
+    attribute_map = {"name": "name", "value": "value"}
 
     def __init__(self, name=None, value=None, _configuration=None):  # noqa: E501
         """ReportFilter - a model defined in Swagger"""  # noqa: E501
@@ -74,7 +68,9 @@ class ReportFilter(object):
         :type: str
         """
         if self._configuration.client_side_validation and name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `name`, must not be `None`"
+            )  # noqa: E501
 
         self._name = name
 
@@ -97,7 +93,9 @@ class ReportFilter(object):
         :type: str
         """
         if self._configuration.client_side_validation and value is None:
-            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `value`, must not be `None`"
+            )  # noqa: E501
 
         self._value = value
 
@@ -108,18 +106,20 @@ class ReportFilter(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ReportFilter, dict):

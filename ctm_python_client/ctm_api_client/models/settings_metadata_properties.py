@@ -33,20 +33,27 @@ class SettingsMetadataProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'components': 'list[ComponentMetaDataProperties]',
-        'error': 'str',
-        'selected_component_after_activation': 'str',
-        'selected_component_before_activation': 'str'
+        "components": "list[ComponentMetaDataProperties]",
+        "error": "str",
+        "selected_component_after_activation": "str",
+        "selected_component_before_activation": "str",
     }
 
     attribute_map = {
-        'components': 'components',
-        'error': 'error',
-        'selected_component_after_activation': 'selectedComponentAfterActivation',
-        'selected_component_before_activation': 'selectedComponentBeforeActivation'
+        "components": "components",
+        "error": "error",
+        "selected_component_after_activation": "selectedComponentAfterActivation",
+        "selected_component_before_activation": "selectedComponentBeforeActivation",
     }
 
-    def __init__(self, components=None, error=None, selected_component_after_activation=None, selected_component_before_activation=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        components=None,
+        error=None,
+        selected_component_after_activation=None,
+        selected_component_before_activation=None,
+        _configuration=None,
+    ):  # noqa: E501
         """SettingsMetadataProperties - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -63,9 +70,13 @@ class SettingsMetadataProperties(object):
         if error is not None:
             self.error = error
         if selected_component_after_activation is not None:
-            self.selected_component_after_activation = selected_component_after_activation
+            self.selected_component_after_activation = (
+                selected_component_after_activation
+            )
         if selected_component_before_activation is not None:
-            self.selected_component_before_activation = selected_component_before_activation
+            self.selected_component_before_activation = (
+                selected_component_before_activation
+            )
 
     @property
     def components(self):
@@ -141,7 +152,9 @@ class SettingsMetadataProperties(object):
         return self._selected_component_before_activation
 
     @selected_component_before_activation.setter
-    def selected_component_before_activation(self, selected_component_before_activation):
+    def selected_component_before_activation(
+        self, selected_component_before_activation
+    ):
         """Sets the selected_component_before_activation of this SettingsMetadataProperties.
 
 
@@ -149,7 +162,9 @@ class SettingsMetadataProperties(object):
         :type: str
         """
 
-        self._selected_component_before_activation = selected_component_before_activation
+        self._selected_component_before_activation = (
+            selected_component_before_activation
+        )
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -158,18 +173,20 @@ class SettingsMetadataProperties(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(SettingsMetadataProperties, dict):

@@ -33,26 +33,36 @@ class RerunZosParameters(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        '_from': 'RestartStep',
-        'to': 'RestartStep',
-        'cleanup': 'bool',
-        'recapture_abend': 'str',
-        'recapture_condition_code': 'str',
-        'step_adjustment': 'bool',
-        'restart_parm_member_name': 'str'
+        "_from": "RestartStep",
+        "to": "RestartStep",
+        "cleanup": "bool",
+        "recapture_abend": "str",
+        "recapture_condition_code": "str",
+        "step_adjustment": "bool",
+        "restart_parm_member_name": "str",
     }
 
     attribute_map = {
-        '_from': 'from',
-        'to': 'to',
-        'cleanup': 'cleanup',
-        'recapture_abend': 'recaptureAbend',
-        'recapture_condition_code': 'recaptureConditionCode',
-        'step_adjustment': 'stepAdjustment',
-        'restart_parm_member_name': 'restartParmMemberName'
+        "_from": "from",
+        "to": "to",
+        "cleanup": "cleanup",
+        "recapture_abend": "recaptureAbend",
+        "recapture_condition_code": "recaptureConditionCode",
+        "step_adjustment": "stepAdjustment",
+        "restart_parm_member_name": "restartParmMemberName",
     }
 
-    def __init__(self, _from=None, to=None, cleanup=None, recapture_abend=None, recapture_condition_code=None, step_adjustment=None, restart_parm_member_name=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        _from=None,
+        to=None,
+        cleanup=None,
+        recapture_abend=None,
+        recapture_condition_code=None,
+        step_adjustment=None,
+        restart_parm_member_name=None,
+        _configuration=None,
+    ):  # noqa: E501
         """RerunZosParameters - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -250,18 +260,20 @@ class RerunZosParameters(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(RerunZosParameters, dict):

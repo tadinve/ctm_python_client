@@ -33,26 +33,36 @@ class RuleStatistics(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rule_name': 'str',
-        'retention': 'int',
-        'retention_type': 'str',
-        'oldest_item': 'str',
-        'newest_item': 'str',
-        'total_jobs': 'int',
-        'data_size': 'str'
+        "rule_name": "str",
+        "retention": "int",
+        "retention_type": "str",
+        "oldest_item": "str",
+        "newest_item": "str",
+        "total_jobs": "int",
+        "data_size": "str",
     }
 
     attribute_map = {
-        'rule_name': 'ruleName',
-        'retention': 'retention',
-        'retention_type': 'retentionType',
-        'oldest_item': 'oldestItem',
-        'newest_item': 'newestItem',
-        'total_jobs': 'totalJobs',
-        'data_size': 'dataSize'
+        "rule_name": "ruleName",
+        "retention": "retention",
+        "retention_type": "retentionType",
+        "oldest_item": "oldestItem",
+        "newest_item": "newestItem",
+        "total_jobs": "totalJobs",
+        "data_size": "dataSize",
     }
 
-    def __init__(self, rule_name=None, retention=None, retention_type=None, oldest_item=None, newest_item=None, total_jobs=None, data_size=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        rule_name=None,
+        retention=None,
+        retention_type=None,
+        oldest_item=None,
+        newest_item=None,
+        total_jobs=None,
+        data_size=None,
+        _configuration=None,
+    ):  # noqa: E501
         """RuleStatistics - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -143,11 +153,14 @@ class RuleStatistics(object):
         :type: str
         """
         allowed_values = ["Years", "Months", "Days"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                retention_type not in allowed_values):
+        if (
+            self._configuration.client_side_validation
+            and retention_type not in allowed_values
+        ):
             raise ValueError(
-                "Invalid value for `retention_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(retention_type, allowed_values)
+                "Invalid value for `retention_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    retention_type, allowed_values
+                )
             )
 
         self._retention_type = retention_type
@@ -243,18 +256,20 @@ class RuleStatistics(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(RuleStatistics, dict):

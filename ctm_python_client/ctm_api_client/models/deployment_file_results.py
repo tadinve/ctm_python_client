@@ -33,44 +33,63 @@ class DeploymentFileResults(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'deployment_file': 'str',
-        'successful_folders_count': 'int',
-        'successful_smart_folders_count': 'int',
-        'successful_sub_folders_count': 'int',
-        'successful_jobs_count': 'int',
-        'successful_connection_profiles_count': 'int',
-        'successful_drivers_count': 'int',
-        'successful_calendars_count': 'int',
-        'is_deploy_descriptor_valid': 'bool',
-        'deployed_folders': 'list[str]',
-        'deployed_jobs': 'list[str]',
-        'deployed_drivers': 'list[str]',
-        'deployed_connection_profiles': 'list[str]',
-        'deployed_calendars': 'list[str]',
-        'errors': 'list[DeploymentFileError]',
-        'warnings': 'list[WarningData]'
+        "deployment_file": "str",
+        "successful_folders_count": "int",
+        "successful_smart_folders_count": "int",
+        "successful_sub_folders_count": "int",
+        "successful_jobs_count": "int",
+        "successful_connection_profiles_count": "int",
+        "successful_drivers_count": "int",
+        "successful_calendars_count": "int",
+        "is_deploy_descriptor_valid": "bool",
+        "deployed_folders": "list[str]",
+        "deployed_jobs": "list[str]",
+        "deployed_drivers": "list[str]",
+        "deployed_connection_profiles": "list[str]",
+        "deployed_calendars": "list[str]",
+        "errors": "list[DeploymentFileError]",
+        "warnings": "list[WarningData]",
     }
 
     attribute_map = {
-        'deployment_file': 'deploymentFile',
-        'successful_folders_count': 'successfulFoldersCount',
-        'successful_smart_folders_count': 'successfulSmartFoldersCount',
-        'successful_sub_folders_count': 'successfulSubFoldersCount',
-        'successful_jobs_count': 'successfulJobsCount',
-        'successful_connection_profiles_count': 'successfulConnectionProfilesCount',
-        'successful_drivers_count': 'successfulDriversCount',
-        'successful_calendars_count': 'successfulCalendarsCount',
-        'is_deploy_descriptor_valid': 'isDeployDescriptorValid',
-        'deployed_folders': 'deployedFolders',
-        'deployed_jobs': 'deployedJobs',
-        'deployed_drivers': 'deployedDrivers',
-        'deployed_connection_profiles': 'deployedConnectionProfiles',
-        'deployed_calendars': 'deployedCalendars',
-        'errors': 'errors',
-        'warnings': 'warnings'
+        "deployment_file": "deploymentFile",
+        "successful_folders_count": "successfulFoldersCount",
+        "successful_smart_folders_count": "successfulSmartFoldersCount",
+        "successful_sub_folders_count": "successfulSubFoldersCount",
+        "successful_jobs_count": "successfulJobsCount",
+        "successful_connection_profiles_count": "successfulConnectionProfilesCount",
+        "successful_drivers_count": "successfulDriversCount",
+        "successful_calendars_count": "successfulCalendarsCount",
+        "is_deploy_descriptor_valid": "isDeployDescriptorValid",
+        "deployed_folders": "deployedFolders",
+        "deployed_jobs": "deployedJobs",
+        "deployed_drivers": "deployedDrivers",
+        "deployed_connection_profiles": "deployedConnectionProfiles",
+        "deployed_calendars": "deployedCalendars",
+        "errors": "errors",
+        "warnings": "warnings",
     }
 
-    def __init__(self, deployment_file=None, successful_folders_count=None, successful_smart_folders_count=None, successful_sub_folders_count=None, successful_jobs_count=None, successful_connection_profiles_count=None, successful_drivers_count=None, successful_calendars_count=None, is_deploy_descriptor_valid=None, deployed_folders=None, deployed_jobs=None, deployed_drivers=None, deployed_connection_profiles=None, deployed_calendars=None, errors=None, warnings=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        deployment_file=None,
+        successful_folders_count=None,
+        successful_smart_folders_count=None,
+        successful_sub_folders_count=None,
+        successful_jobs_count=None,
+        successful_connection_profiles_count=None,
+        successful_drivers_count=None,
+        successful_calendars_count=None,
+        is_deploy_descriptor_valid=None,
+        deployed_folders=None,
+        deployed_jobs=None,
+        deployed_drivers=None,
+        deployed_connection_profiles=None,
+        deployed_calendars=None,
+        errors=None,
+        warnings=None,
+        _configuration=None,
+    ):  # noqa: E501
         """DeploymentFileResults - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -105,7 +124,9 @@ class DeploymentFileResults(object):
         if successful_jobs_count is not None:
             self.successful_jobs_count = successful_jobs_count
         if successful_connection_profiles_count is not None:
-            self.successful_connection_profiles_count = successful_connection_profiles_count
+            self.successful_connection_profiles_count = (
+                successful_connection_profiles_count
+            )
         if successful_drivers_count is not None:
             self.successful_drivers_count = successful_drivers_count
         if successful_calendars_count is not None:
@@ -254,7 +275,9 @@ class DeploymentFileResults(object):
         return self._successful_connection_profiles_count
 
     @successful_connection_profiles_count.setter
-    def successful_connection_profiles_count(self, successful_connection_profiles_count):
+    def successful_connection_profiles_count(
+        self, successful_connection_profiles_count
+    ):
         """Sets the successful_connection_profiles_count of this DeploymentFileResults.
 
         Determines the number of successfully deployed sub folders.  # noqa: E501
@@ -263,7 +286,9 @@ class DeploymentFileResults(object):
         :type: int
         """
 
-        self._successful_connection_profiles_count = successful_connection_profiles_count
+        self._successful_connection_profiles_count = (
+            successful_connection_profiles_count
+        )
 
     @property
     def successful_drivers_count(self):
@@ -488,18 +513,20 @@ class DeploymentFileResults(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(DeploymentFileResults, dict):

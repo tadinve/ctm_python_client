@@ -33,58 +33,84 @@ class JobRunStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'job_id': 'str',
-        'folder_id': 'str',
-        'number_of_runs': 'int',
-        'name': 'str',
-        'folder': 'str',
-        'type': 'str',
-        'status': 'str',
-        'held': 'bool',
-        'deleted': 'bool',
-        'cyclic': 'bool',
-        'start_time': 'str',
-        'end_time': 'str',
-        'estimated_start_time': 'list[str]',
-        'estimated_end_time': 'list[str]',
-        'order_date': 'str',
-        'ctm': 'str',
-        'description': 'str',
-        'host': 'str',
-        'application': 'str',
-        'sub_application': 'str',
-        'job_json': 'str',
-        'output_uri': 'str',
-        'log_uri': 'str'
+        "job_id": "str",
+        "folder_id": "str",
+        "number_of_runs": "int",
+        "name": "str",
+        "folder": "str",
+        "type": "str",
+        "status": "str",
+        "held": "bool",
+        "deleted": "bool",
+        "cyclic": "bool",
+        "start_time": "str",
+        "end_time": "str",
+        "estimated_start_time": "list[str]",
+        "estimated_end_time": "list[str]",
+        "order_date": "str",
+        "ctm": "str",
+        "description": "str",
+        "host": "str",
+        "application": "str",
+        "sub_application": "str",
+        "job_json": "str",
+        "output_uri": "str",
+        "log_uri": "str",
     }
 
     attribute_map = {
-        'job_id': 'jobId',
-        'folder_id': 'folderId',
-        'number_of_runs': 'numberOfRuns',
-        'name': 'name',
-        'folder': 'folder',
-        'type': 'type',
-        'status': 'status',
-        'held': 'held',
-        'deleted': 'deleted',
-        'cyclic': 'cyclic',
-        'start_time': 'startTime',
-        'end_time': 'endTime',
-        'estimated_start_time': 'estimatedStartTime',
-        'estimated_end_time': 'estimatedEndTime',
-        'order_date': 'orderDate',
-        'ctm': 'ctm',
-        'description': 'description',
-        'host': 'host',
-        'application': 'application',
-        'sub_application': 'subApplication',
-        'job_json': 'jobJSON',
-        'output_uri': 'outputURI',
-        'log_uri': 'logURI'
+        "job_id": "jobId",
+        "folder_id": "folderId",
+        "number_of_runs": "numberOfRuns",
+        "name": "name",
+        "folder": "folder",
+        "type": "type",
+        "status": "status",
+        "held": "held",
+        "deleted": "deleted",
+        "cyclic": "cyclic",
+        "start_time": "startTime",
+        "end_time": "endTime",
+        "estimated_start_time": "estimatedStartTime",
+        "estimated_end_time": "estimatedEndTime",
+        "order_date": "orderDate",
+        "ctm": "ctm",
+        "description": "description",
+        "host": "host",
+        "application": "application",
+        "sub_application": "subApplication",
+        "job_json": "jobJSON",
+        "output_uri": "outputURI",
+        "log_uri": "logURI",
     }
 
-    def __init__(self, job_id=None, folder_id=None, number_of_runs=None, name=None, folder=None, type=None, status=None, held=None, deleted=None, cyclic=None, start_time=None, end_time=None, estimated_start_time=None, estimated_end_time=None, order_date=None, ctm=None, description=None, host=None, application=None, sub_application=None, job_json=None, output_uri=None, log_uri=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        job_id=None,
+        folder_id=None,
+        number_of_runs=None,
+        name=None,
+        folder=None,
+        type=None,
+        status=None,
+        held=None,
+        deleted=None,
+        cyclic=None,
+        start_time=None,
+        end_time=None,
+        estimated_start_time=None,
+        estimated_end_time=None,
+        order_date=None,
+        ctm=None,
+        description=None,
+        host=None,
+        application=None,
+        sub_application=None,
+        job_json=None,
+        output_uri=None,
+        log_uri=None,
+        _configuration=None,
+    ):  # noqa: E501
         """JobRunStatus - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -182,7 +208,9 @@ class JobRunStatus(object):
         :type: str
         """
         if self._configuration.client_side_validation and job_id is None:
-            raise ValueError("Invalid value for `job_id`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `job_id`, must not be `None`"
+            )  # noqa: E501
 
         self._job_id = job_id
 
@@ -699,18 +727,20 @@ class JobRunStatus(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(JobRunStatus, dict):

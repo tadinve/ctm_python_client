@@ -33,26 +33,36 @@ class CtmagentBasicInfoType(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'server_to_agent_port_number': 'int',
-        'agent_to_server_port_number': 'int',
-        'persistent_connection': 'str',
-        'tcpssl_server_mode': 'str',
-        'protocol_version': 'str',
-        'agent_status': 'str',
-        'ip_addresses_list': 'list[str]'
+        "server_to_agent_port_number": "int",
+        "agent_to_server_port_number": "int",
+        "persistent_connection": "str",
+        "tcpssl_server_mode": "str",
+        "protocol_version": "str",
+        "agent_status": "str",
+        "ip_addresses_list": "list[str]",
     }
 
     attribute_map = {
-        'server_to_agent_port_number': 'serverToAgentPortNumber',
-        'agent_to_server_port_number': 'agentToServerPortNumber',
-        'persistent_connection': 'persistentConnection',
-        'tcpssl_server_mode': 'tcpsslServerMode',
-        'protocol_version': 'protocolVersion',
-        'agent_status': 'agentStatus',
-        'ip_addresses_list': 'ipAddressesList'
+        "server_to_agent_port_number": "serverToAgentPortNumber",
+        "agent_to_server_port_number": "agentToServerPortNumber",
+        "persistent_connection": "persistentConnection",
+        "tcpssl_server_mode": "tcpsslServerMode",
+        "protocol_version": "protocolVersion",
+        "agent_status": "agentStatus",
+        "ip_addresses_list": "ipAddressesList",
     }
 
-    def __init__(self, server_to_agent_port_number=None, agent_to_server_port_number=None, persistent_connection=None, tcpssl_server_mode=None, protocol_version=None, agent_status=None, ip_addresses_list=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        server_to_agent_port_number=None,
+        agent_to_server_port_number=None,
+        persistent_connection=None,
+        tcpssl_server_mode=None,
+        protocol_version=None,
+        agent_status=None,
+        ip_addresses_list=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CtmagentBasicInfoType - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -248,18 +258,20 @@ class CtmagentBasicInfoType(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CtmagentBasicInfoType, dict):

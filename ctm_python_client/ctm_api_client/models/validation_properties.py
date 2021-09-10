@@ -33,30 +33,42 @@ class ValidationProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'max': 'int',
-        'min': 'int',
-        'regex_pattern': 'str',
-        'regex_pattern_java': 'str',
-        'regex_pattern_java_script': 'str',
-        'regex_pattern_no_match_message': 'str',
-        'regex_pattern_no_match_message_id': 'str',
-        'required': 'bool',
-        'required_if': 'ConditionProperties'
+        "max": "int",
+        "min": "int",
+        "regex_pattern": "str",
+        "regex_pattern_java": "str",
+        "regex_pattern_java_script": "str",
+        "regex_pattern_no_match_message": "str",
+        "regex_pattern_no_match_message_id": "str",
+        "required": "bool",
+        "required_if": "ConditionProperties",
     }
 
     attribute_map = {
-        'max': 'max',
-        'min': 'min',
-        'regex_pattern': 'regexPattern',
-        'regex_pattern_java': 'regexPatternJava',
-        'regex_pattern_java_script': 'regexPatternJavaScript',
-        'regex_pattern_no_match_message': 'regexPatternNoMatchMessage',
-        'regex_pattern_no_match_message_id': 'regexPatternNoMatchMessageID',
-        'required': 'required',
-        'required_if': 'requiredIf'
+        "max": "max",
+        "min": "min",
+        "regex_pattern": "regexPattern",
+        "regex_pattern_java": "regexPatternJava",
+        "regex_pattern_java_script": "regexPatternJavaScript",
+        "regex_pattern_no_match_message": "regexPatternNoMatchMessage",
+        "regex_pattern_no_match_message_id": "regexPatternNoMatchMessageID",
+        "required": "required",
+        "required_if": "requiredIf",
     }
 
-    def __init__(self, max=None, min=None, regex_pattern=None, regex_pattern_java=None, regex_pattern_java_script=None, regex_pattern_no_match_message=None, regex_pattern_no_match_message_id=None, required=None, required_if=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        max=None,
+        min=None,
+        regex_pattern=None,
+        regex_pattern_java=None,
+        regex_pattern_java_script=None,
+        regex_pattern_no_match_message=None,
+        regex_pattern_no_match_message_id=None,
+        required=None,
+        required_if=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ValidationProperties - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -288,18 +300,20 @@ class ValidationProperties(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ValidationProperties, dict):

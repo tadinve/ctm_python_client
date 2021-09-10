@@ -33,20 +33,27 @@ class Statistics(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'current_period': 'str',
-        'calendar_controlm': 'str',
-        'calendar_name': 'str',
-        'periods': 'list[StatisticsPeriod]'
+        "current_period": "str",
+        "calendar_controlm": "str",
+        "calendar_name": "str",
+        "periods": "list[StatisticsPeriod]",
     }
 
     attribute_map = {
-        'current_period': 'currentPeriod',
-        'calendar_controlm': 'calendarControlm',
-        'calendar_name': 'calendarName',
-        'periods': 'periods'
+        "current_period": "currentPeriod",
+        "calendar_controlm": "calendarControlm",
+        "calendar_name": "calendarName",
+        "periods": "periods",
     }
 
-    def __init__(self, current_period=None, calendar_controlm=None, calendar_name=None, periods=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        current_period=None,
+        calendar_controlm=None,
+        calendar_name=None,
+        periods=None,
+        _configuration=None,
+    ):  # noqa: E501
         """Statistics - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -164,18 +171,20 @@ class Statistics(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(Statistics, dict):

@@ -33,22 +33,30 @@ class CtmvarResults(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'completed_status': 'ResultsStatus',
-        'error': 'ApiThrowable',
-        '_from': 'int',
-        'results': 'list[CtmvarResultItem]',
-        'to': 'int'
+        "completed_status": "ResultsStatus",
+        "error": "ApiThrowable",
+        "_from": "int",
+        "results": "list[CtmvarResultItem]",
+        "to": "int",
     }
 
     attribute_map = {
-        'completed_status': 'completed_status',
-        'error': 'error',
-        '_from': 'from',
-        'results': 'results',
-        'to': 'to'
+        "completed_status": "completed_status",
+        "error": "error",
+        "_from": "from",
+        "results": "results",
+        "to": "to",
     }
 
-    def __init__(self, completed_status=None, error=None, _from=None, results=None, to=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        completed_status=None,
+        error=None,
+        _from=None,
+        results=None,
+        to=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CtmvarResults - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -184,18 +192,20 @@ class CtmvarResults(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CtmvarResults, dict):

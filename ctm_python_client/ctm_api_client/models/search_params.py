@@ -33,52 +33,75 @@ class SearchParams(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ctm': 'str',
-        'job_name': 'str',
-        'app': 'str',
-        'sub_app': 'str',
-        'folder': 'str',
-        'status': 'str',
-        'lib': 'str',
-        'limit': 'int',
-        'log_contains': 'str',
-        'output_contains': 'str',
-        'mem_lib': 'str',
-        'mem_name': 'str',
-        'node_group': 'str',
-        'node_id': 'str',
-        'from_order_date': 'str',
-        'to_order_date': 'str',
-        'order_id': 'str',
-        'run_as': 'str',
-        'start_date': 'str',
-        'end_date': 'str'
+        "ctm": "str",
+        "job_name": "str",
+        "app": "str",
+        "sub_app": "str",
+        "folder": "str",
+        "status": "str",
+        "lib": "str",
+        "limit": "int",
+        "log_contains": "str",
+        "output_contains": "str",
+        "mem_lib": "str",
+        "mem_name": "str",
+        "node_group": "str",
+        "node_id": "str",
+        "from_order_date": "str",
+        "to_order_date": "str",
+        "order_id": "str",
+        "run_as": "str",
+        "start_date": "str",
+        "end_date": "str",
     }
 
     attribute_map = {
-        'ctm': 'ctm',
-        'job_name': 'jobName',
-        'app': 'app',
-        'sub_app': 'subApp',
-        'folder': 'folder',
-        'status': 'status',
-        'lib': 'lib',
-        'limit': 'limit',
-        'log_contains': 'logContains',
-        'output_contains': 'outputContains',
-        'mem_lib': 'memLib',
-        'mem_name': 'memName',
-        'node_group': 'nodeGroup',
-        'node_id': 'nodeId',
-        'from_order_date': 'fromOrderDate',
-        'to_order_date': 'toOrderDate',
-        'order_id': 'orderId',
-        'run_as': 'runAs',
-        'start_date': 'startDate',
-        'end_date': 'endDate'
+        "ctm": "ctm",
+        "job_name": "jobName",
+        "app": "app",
+        "sub_app": "subApp",
+        "folder": "folder",
+        "status": "status",
+        "lib": "lib",
+        "limit": "limit",
+        "log_contains": "logContains",
+        "output_contains": "outputContains",
+        "mem_lib": "memLib",
+        "mem_name": "memName",
+        "node_group": "nodeGroup",
+        "node_id": "nodeId",
+        "from_order_date": "fromOrderDate",
+        "to_order_date": "toOrderDate",
+        "order_id": "orderId",
+        "run_as": "runAs",
+        "start_date": "startDate",
+        "end_date": "endDate",
     }
 
-    def __init__(self, ctm=None, job_name=None, app=None, sub_app=None, folder=None, status=None, lib=None, limit=None, log_contains=None, output_contains=None, mem_lib=None, mem_name=None, node_group=None, node_id=None, from_order_date=None, to_order_date=None, order_id=None, run_as=None, start_date=None, end_date=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        ctm=None,
+        job_name=None,
+        app=None,
+        sub_app=None,
+        folder=None,
+        status=None,
+        lib=None,
+        limit=None,
+        log_contains=None,
+        output_contains=None,
+        mem_lib=None,
+        mem_name=None,
+        node_group=None,
+        node_id=None,
+        from_order_date=None,
+        to_order_date=None,
+        order_id=None,
+        run_as=None,
+        start_date=None,
+        end_date=None,
+        _configuration=None,
+    ):  # noqa: E501
         """SearchParams - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -283,11 +306,11 @@ class SearchParams(object):
         :type: str
         """
         allowed_values = ["OK", "NOTOK", "ALL"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                status not in allowed_values):
+        if self._configuration.client_side_validation and status not in allowed_values:
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
+                "Invalid value for `status` ({0}), must be one of {1}".format(  # noqa: E501
+                    status, allowed_values
+                )
             )
 
         self._status = status
@@ -621,18 +644,20 @@ class SearchParams(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(SearchParams, dict):

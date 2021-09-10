@@ -33,48 +33,69 @@ class AgentData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'host': 'str',
-        'node_id': 'str',
-        'ctm': 'str',
-        'ctm_host': 'str',
-        'ctm_current_state': 'str',
-        'current_state': 'str',
-        'status': 'str',
-        'status_message': 'str',
-        'operating_system': 'str',
-        'platform': 'str',
-        'version': 'str',
-        'last_update': 'str',
-        'communication_version': 'str',
-        'tag': 'str',
-        'ssl_state': 'str',
-        'host_groups': 'str',
-        'plugins': 'list[PluginData]'
+        "name": "str",
+        "host": "str",
+        "node_id": "str",
+        "ctm": "str",
+        "ctm_host": "str",
+        "ctm_current_state": "str",
+        "current_state": "str",
+        "status": "str",
+        "status_message": "str",
+        "operating_system": "str",
+        "platform": "str",
+        "version": "str",
+        "last_update": "str",
+        "communication_version": "str",
+        "tag": "str",
+        "ssl_state": "str",
+        "host_groups": "str",
+        "plugins": "list[PluginData]",
     }
 
     attribute_map = {
-        'name': 'name',
-        'host': 'host',
-        'node_id': 'nodeID',
-        'ctm': 'ctm',
-        'ctm_host': 'ctmHost',
-        'ctm_current_state': 'ctmCurrentState',
-        'current_state': 'currentState',
-        'status': 'status',
-        'status_message': 'statusMessage',
-        'operating_system': 'operatingSystem',
-        'platform': 'platform',
-        'version': 'version',
-        'last_update': 'lastUpdate',
-        'communication_version': 'communicationVersion',
-        'tag': 'tag',
-        'ssl_state': 'sslState',
-        'host_groups': 'hostGroups',
-        'plugins': 'plugins'
+        "name": "name",
+        "host": "host",
+        "node_id": "nodeID",
+        "ctm": "ctm",
+        "ctm_host": "ctmHost",
+        "ctm_current_state": "ctmCurrentState",
+        "current_state": "currentState",
+        "status": "status",
+        "status_message": "statusMessage",
+        "operating_system": "operatingSystem",
+        "platform": "platform",
+        "version": "version",
+        "last_update": "lastUpdate",
+        "communication_version": "communicationVersion",
+        "tag": "tag",
+        "ssl_state": "sslState",
+        "host_groups": "hostGroups",
+        "plugins": "plugins",
     }
 
-    def __init__(self, name=None, host=None, node_id=None, ctm=None, ctm_host=None, ctm_current_state=None, current_state=None, status=None, status_message=None, operating_system=None, platform=None, version=None, last_update=None, communication_version=None, tag=None, ssl_state=None, host_groups=None, plugins=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        host=None,
+        node_id=None,
+        ctm=None,
+        ctm_host=None,
+        ctm_current_state=None,
+        current_state=None,
+        status=None,
+        status_message=None,
+        operating_system=None,
+        platform=None,
+        version=None,
+        last_update=None,
+        communication_version=None,
+        tag=None,
+        ssl_state=None,
+        host_groups=None,
+        plugins=None,
+        _configuration=None,
+    ):  # noqa: E501
         """AgentData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -556,18 +577,20 @@ class AgentData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AgentData, dict):

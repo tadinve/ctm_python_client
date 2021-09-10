@@ -33,32 +33,45 @@ class FolderPropertiesData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'authorized_internal_users': 'list[str]',
-        'authorized_external_users_and_groups': 'list[str]',
-        'delete_files_after_download': 'bool',
-        'notify_by_email_when_file_arrive': 'bool',
-        'retention_policy': 'int',
-        'size_limit': 'int',
-        'allowed_file_pattern': 'str',
-        'blocked_file_pattern': 'str',
-        'access_type': 'str'
+        "name": "str",
+        "authorized_internal_users": "list[str]",
+        "authorized_external_users_and_groups": "list[str]",
+        "delete_files_after_download": "bool",
+        "notify_by_email_when_file_arrive": "bool",
+        "retention_policy": "int",
+        "size_limit": "int",
+        "allowed_file_pattern": "str",
+        "blocked_file_pattern": "str",
+        "access_type": "str",
     }
 
     attribute_map = {
-        'name': 'name',
-        'authorized_internal_users': 'authorizedInternalUsers',
-        'authorized_external_users_and_groups': 'authorizedExternalUsersAndGroups',
-        'delete_files_after_download': 'deleteFilesAfterDownload',
-        'notify_by_email_when_file_arrive': 'notifyByEmailWhenFileArrive',
-        'retention_policy': 'retentionPolicy',
-        'size_limit': 'sizeLimit',
-        'allowed_file_pattern': 'allowedFilePattern',
-        'blocked_file_pattern': 'blockedFilePattern',
-        'access_type': 'accessType'
+        "name": "name",
+        "authorized_internal_users": "authorizedInternalUsers",
+        "authorized_external_users_and_groups": "authorizedExternalUsersAndGroups",
+        "delete_files_after_download": "deleteFilesAfterDownload",
+        "notify_by_email_when_file_arrive": "notifyByEmailWhenFileArrive",
+        "retention_policy": "retentionPolicy",
+        "size_limit": "sizeLimit",
+        "allowed_file_pattern": "allowedFilePattern",
+        "blocked_file_pattern": "blockedFilePattern",
+        "access_type": "accessType",
     }
 
-    def __init__(self, name=None, authorized_internal_users=None, authorized_external_users_and_groups=None, delete_files_after_download=None, notify_by_email_when_file_arrive=None, retention_policy=None, size_limit=None, allowed_file_pattern=None, blocked_file_pattern=None, access_type=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        authorized_internal_users=None,
+        authorized_external_users_and_groups=None,
+        delete_files_after_download=None,
+        notify_by_email_when_file_arrive=None,
+        retention_policy=None,
+        size_limit=None,
+        allowed_file_pattern=None,
+        blocked_file_pattern=None,
+        access_type=None,
+        _configuration=None,
+    ):  # noqa: E501
         """FolderPropertiesData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -81,7 +94,9 @@ class FolderPropertiesData(object):
         if authorized_internal_users is not None:
             self.authorized_internal_users = authorized_internal_users
         if authorized_external_users_and_groups is not None:
-            self.authorized_external_users_and_groups = authorized_external_users_and_groups
+            self.authorized_external_users_and_groups = (
+                authorized_external_users_and_groups
+            )
         if delete_files_after_download is not None:
             self.delete_files_after_download = delete_files_after_download
         if notify_by_email_when_file_arrive is not None:
@@ -155,7 +170,9 @@ class FolderPropertiesData(object):
         return self._authorized_external_users_and_groups
 
     @authorized_external_users_and_groups.setter
-    def authorized_external_users_and_groups(self, authorized_external_users_and_groups):
+    def authorized_external_users_and_groups(
+        self, authorized_external_users_and_groups
+    ):
         """Sets the authorized_external_users_and_groups of this FolderPropertiesData.
 
         Authorized External Users And User Groups. HIDDEN  # noqa: E501
@@ -164,7 +181,9 @@ class FolderPropertiesData(object):
         :type: list[str]
         """
 
-        self._authorized_external_users_and_groups = authorized_external_users_and_groups
+        self._authorized_external_users_and_groups = (
+            authorized_external_users_and_groups
+        )
 
     @property
     def delete_files_after_download(self):
@@ -334,18 +353,20 @@ class FolderPropertiesData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(FolderPropertiesData, dict):
