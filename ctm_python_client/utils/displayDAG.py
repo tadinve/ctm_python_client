@@ -18,7 +18,7 @@ class DisplayDAG:
         # self.g.attr(rankdir='LR', size='8,5',  shape='rectangle')
         graph.attr(shape="ellipse")
         for node in nodes:
-            graph.node(node)
+            graph.node(node[0])
         for edge in edges:
             graph.edge(edge[0], edge[1])
         return graph
