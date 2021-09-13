@@ -20,5 +20,6 @@ class DisplayDAG:
         for node in nodes:
             graph.node(node[0])
         for edge in edges:
-            graph.edge(edge[0], edge[1], style="dashed")
+            graph.edge(edge[0], edge[1], style=edge[2])
+            print(edge)
         return graph
