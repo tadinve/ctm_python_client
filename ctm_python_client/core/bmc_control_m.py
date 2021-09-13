@@ -290,7 +290,7 @@ class CmJobFlow:
         job_name = job.get_job_name()
         self.json[folder][job_name] = job.get_json()
         return self._create_node(job_name, job)
-    
+
     def add_if_output(self, job1, if_name, code, job2):
         job1.job_json[if_name] = {
             "Type": "If:Output",
@@ -313,7 +313,9 @@ class CmJobFlow:
             self.jobs[int(links[0])][0],
         ]
         for j in links[1:]:
-            self.edges.append((self.jobs[int(from_job)][0], self.jobs[int(j)][0], "straight"))
+            self.edges.append(
+                (self.jobs[int(from_job)][0], self.jobs[int(j)][0], "straight")
+            )
             seq.append(self.jobs[int(j)][0])
             fj = self.jobs[int(from_job)][1]
             fj.event_to_add(self.jobs[int(j)][0])

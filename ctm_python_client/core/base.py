@@ -76,8 +76,6 @@ class BaseJob:
             {"Event": self.job_name + "-TO-" + job_to_name}
         )
 
-
-
     def wait_for_jobs(self, job1, job2=None, condition="OR"):
         jobs_json = self.job_json
         if "eventsToWaitFor" not in jobs_json:
