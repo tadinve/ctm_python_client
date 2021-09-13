@@ -300,7 +300,7 @@ class CmJobFlow:
                 "Event": job1.job_name + "-TO-" + job2.get_job_name(),
             },
         }
-        job2.wait_for_jobs(self.job_name)
+        job2.wait_for_jobs(job1.job_name)
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
     def chain_jobs(self, folder, links):
