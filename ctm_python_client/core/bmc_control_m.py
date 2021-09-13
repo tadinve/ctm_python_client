@@ -291,7 +291,7 @@ class CmJobFlow:
         self.json[folder][job_name] = job.get_json()
         return self._create_node(job_name, job)
 
-    def add_if_output(self, job1, if_name, code, job2):
+    def add_if_output(self,folder, job1, if_name, code, job2):
         job1.job_json[if_name] = {
             "Type": "If:Output",
             "Code": code,
@@ -302,8 +302,9 @@ class CmJobFlow:
         }
         job2.wait_for_jobs(job1.job_name)
 
+
     # this function sets up dependencies of jobs, and used to define job execution sequence.
-    def chain_jobs(self, folder, links):
+    def chain_jobs(self, folder, links, style="solid"):
         print(self.jobs)
         print(links)
         self.flowcount += 1
@@ -314,7 +315,7 @@ class CmJobFlow:
         ]
         for j in links[1:]:
             self.edges.append(
-                (self.jobs[int(from_job)][0], self.jobs[int(j)][0], "straight")
+                (self.jobs[int(from_job)][0], self.jobs[int(j)][0], style)
             )
             seq.append(self.jobs[int(j)][0])
             fj = self.jobs[int(from_job)][1]
