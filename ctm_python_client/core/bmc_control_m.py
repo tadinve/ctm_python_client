@@ -301,6 +301,12 @@ class CmJobFlow:
             },
         }
         job2.wait_for_jobs(job1.job_name)
+        for i in range(len(self.jobs)):
+            if self.jobs[i][0] == job1.get_job_name():
+                job1_num = i
+            if self.jobs[i][0] == job2.get_job_name():
+                job2_num = i
+        self.chain_jobs(folder,[job1_num,job2_num],"dashed")
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
     def chain_jobs(self, folder, links, style="solid"):
