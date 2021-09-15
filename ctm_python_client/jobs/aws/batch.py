@@ -7,7 +7,6 @@ class BatchJob(BaseJob):
         folder,
         job_name,
         connection_profile,
-        job_name,
         job_definition,
         job_definition_revision,
         job_queue,

@@ -1,0 +1,7 @@
+-r requirements.txt
+autopep8
+pytest
+requests_mock
+git-pylint-commit-hook
+black[jupyter]
+coverage

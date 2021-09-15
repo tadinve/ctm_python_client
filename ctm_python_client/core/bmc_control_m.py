@@ -306,7 +306,7 @@ class CmJobFlow:
                 job1_num = i
             if self.jobs[i][0] == job2.get_job_name():
                 job2_num = i
-        self.chain_jobs(folder,[job1_num,job2_num],"dashed")
+        self.chain_jobs(folder, [job1_num, job2_num], "dashed")
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
     def chain_jobs(self, folder, links, style="solid"):

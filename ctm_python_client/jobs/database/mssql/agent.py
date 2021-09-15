@@ -7,7 +7,6 @@ class AgentJob(BaseJob):
         folder,
         job_name,
         connection_profile,
-        job_name,
         category,
         host=None,
         run_as=None,
