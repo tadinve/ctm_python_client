@@ -33,16 +33,18 @@ class RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ctm_parameters': 'WhyJobParameters',
-        'em_parameters': 'EMDefaultRequestParameters'
+        "ctm_parameters": "WhyJobParameters",
+        "em_parameters": "EMDefaultRequestParameters",
     }
 
     attribute_map = {
-        'ctm_parameters': 'ctm_parameters',
-        'em_parameters': 'em_parameters'
+        "ctm_parameters": "ctm_parameters",
+        "em_parameters": "em_parameters",
     }
 
-    def __init__(self, ctm_parameters=None, em_parameters=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, ctm_parameters=None, em_parameters=None, _configuration=None
+    ):  # noqa: E501
         """RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -106,21 +108,25 @@ class RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
-        if issubclass(RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter, dict):
+        if issubclass(
+            RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter, dict
+        ):
             for key, value in self.items():
                 result[key] = value
 
@@ -136,14 +142,18 @@ class RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter):
+        if not isinstance(
+            other, RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter
+        ):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter):
+        if not isinstance(
+            other, RequestParametersWrapperEMDefaultRequestParametersWhyJobParameter
+        ):
             return True
 
         return self.to_dict() != other.to_dict()

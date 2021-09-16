@@ -33,30 +33,42 @@ class FtsGeneralSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'home_directory': 'str',
-        'multiple_login_allowed': 'bool',
-        'max_open_sessions': 'int',
-        'max_login_failures': 'int',
-        'delay_after_login_failure': 'int',
-        'throttling_activated': 'bool',
-        'max_simultaneous_uploads': 'int',
-        'max_simultaneous_downloads': 'int',
-        'server_enabled': 'bool'
+        "home_directory": "str",
+        "multiple_login_allowed": "bool",
+        "max_open_sessions": "int",
+        "max_login_failures": "int",
+        "delay_after_login_failure": "int",
+        "throttling_activated": "bool",
+        "max_simultaneous_uploads": "int",
+        "max_simultaneous_downloads": "int",
+        "server_enabled": "bool",
     }
 
     attribute_map = {
-        'home_directory': 'homeDirectory',
-        'multiple_login_allowed': 'multipleLoginAllowed',
-        'max_open_sessions': 'maxOpenSessions',
-        'max_login_failures': 'maxLoginFailures',
-        'delay_after_login_failure': 'delayAfterLoginFailure',
-        'throttling_activated': 'throttlingActivated',
-        'max_simultaneous_uploads': 'maxSimultaneousUploads',
-        'max_simultaneous_downloads': 'maxSimultaneousDownloads',
-        'server_enabled': 'serverEnabled'
+        "home_directory": "homeDirectory",
+        "multiple_login_allowed": "multipleLoginAllowed",
+        "max_open_sessions": "maxOpenSessions",
+        "max_login_failures": "maxLoginFailures",
+        "delay_after_login_failure": "delayAfterLoginFailure",
+        "throttling_activated": "throttlingActivated",
+        "max_simultaneous_uploads": "maxSimultaneousUploads",
+        "max_simultaneous_downloads": "maxSimultaneousDownloads",
+        "server_enabled": "serverEnabled",
     }
 
-    def __init__(self, home_directory=None, multiple_login_allowed=None, max_open_sessions=None, max_login_failures=None, delay_after_login_failure=None, throttling_activated=None, max_simultaneous_uploads=None, max_simultaneous_downloads=None, server_enabled=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        home_directory=None,
+        multiple_login_allowed=None,
+        max_open_sessions=None,
+        max_login_failures=None,
+        delay_after_login_failure=None,
+        throttling_activated=None,
+        max_simultaneous_uploads=None,
+        max_simultaneous_downloads=None,
+        server_enabled=None,
+        _configuration=None,
+    ):  # noqa: E501
         """FtsGeneralSettings - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -306,18 +318,20 @@ class FtsGeneralSettings(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(FtsGeneralSettings, dict):

@@ -12,7 +12,9 @@ class BaseJob:
         self.host = host
         self.run_as = run_as
         self.capture_count = 0
-        self.job_json = {"Type": None}  # This will be overriden in the inhereted class. S
+        self.job_json = {
+            "Type": None
+        }  # This will be overriden in the inhereted class. S
         self.description = description
         if self.host is not None:
             self.job_json["Host"] = self.host
@@ -34,7 +36,12 @@ class BaseJob:
         self.job_json["OnSuccessMail"] = {
             "Type": "If:CompletionStatus",
             "CompletionStatus": "OK",
-            "Mail_0": {"Type": "Action:Mail", "Subject": mail_subject, "To": mail_to, "Message": mail_message},
+            "Mail_0": {
+                "Type": "Action:Mail",
+                "Subject": mail_subject,
+                "To": mail_to,
+                "Message": mail_message,
+            },
         }
 
     def capture_output(self, variable, capture_type, search_string):
@@ -47,7 +54,9 @@ class BaseJob:
             "ForwardBy": {"ColumnsOption": "Characters"},
         }
 
-    def set_job_schedule(self, months=None, month_days=None, week_days=None, from_time=None, to_time=None):
+    def set_job_schedule(
+        self, months=None, month_days=None, week_days=None, from_time=None, to_time=None
+    ):
         self.job_json["When"] = {}
         if months is not None:
             self.job_json["When"]["Months"] = months
@@ -62,13 +71,25 @@ class BaseJob:
 
     def event_to_add(self, job_to_name):
         if "eventsToAdd" not in self.job_json:
-            self.job_json["eventsToAdd"] = {"Type": "AddEvents","Events": [{}]}
-        self.job_json["eventsToAdd"]["Events"].append({"Event":self.job_name+"-To-"+job_to_name})
+            self.job_json["eventsToAdd"] = {"Type": "AddEvents", "Events": []}
+        self.job_json["eventsToAdd"]["Events"].append(
+            {"Event": self.job_name + "-TO-" + job_to_name}
+        )
 
-    def wait_for_jobs(self, job1, job2=None, condition=None):
+    def wait_for_jobs(self, job1, job2=None, condition="OR"):
         jobs_json = self.job_json
         if "eventsToWaitFor" not in jobs_json:
-            jobs_json["eventsToWaitFor"] = {"Type": "WaitForEvents"}
-        
-        
+            jobs_json["eventsToWaitFor"] = {"Type": "WaitForEvents", "Events": []}
 
+        if job2 == None:
+            jobs_json["eventsToWaitFor"]["Events"].append(
+                {"Event": job1 + "-TO-" + self.get_job_name()}
+            )
+        else:
+            event = {"Event": job1 + "-TO-" + self.get_job_name()}
+            jobs_json["eventsToWaitFor"]["Events"].append(event)
+
+            jobs_json["eventsToWaitFor"]["Events"].append(condition)
+
+            event = {"Event": job2 + "-TO-" + self.get_job_name()}
+            jobs_json["eventsToWaitFor"]["Events"].append(event)

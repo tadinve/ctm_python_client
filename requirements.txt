@@ -1,3 +1,4 @@
+pip
 graphviz
 certifi >= 14.05.14
 six >= 1.10
@@ -7,3 +8,5 @@ urllib3 >= 1.15.1
 autopep8
 pytest
 requests_mock
+git-pylint-commit-hook
+black[jupyter]

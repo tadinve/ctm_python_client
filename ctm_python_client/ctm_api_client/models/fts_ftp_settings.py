@@ -33,30 +33,42 @@ class FtsFtpSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'server_enabled': 'bool',
-        'port': 'int',
-        'authentication_method': 'str',
-        'secured': 'bool',
-        'keystore_file_path': 'str',
-        'keystore_file_password': 'str',
-        'ciphers': 'str',
-        'listen_for_implicit_connection': 'bool',
-        'passive_ports': 'str'
+        "server_enabled": "bool",
+        "port": "int",
+        "authentication_method": "str",
+        "secured": "bool",
+        "keystore_file_path": "str",
+        "keystore_file_password": "str",
+        "ciphers": "str",
+        "listen_for_implicit_connection": "bool",
+        "passive_ports": "str",
     }
 
     attribute_map = {
-        'server_enabled': 'serverEnabled',
-        'port': 'port',
-        'authentication_method': 'authenticationMethod',
-        'secured': 'secured',
-        'keystore_file_path': 'keystoreFilePath',
-        'keystore_file_password': 'keystoreFilePassword',
-        'ciphers': 'ciphers',
-        'listen_for_implicit_connection': 'listenForImplicitConnection',
-        'passive_ports': 'passivePorts'
+        "server_enabled": "serverEnabled",
+        "port": "port",
+        "authentication_method": "authenticationMethod",
+        "secured": "secured",
+        "keystore_file_path": "keystoreFilePath",
+        "keystore_file_password": "keystoreFilePassword",
+        "ciphers": "ciphers",
+        "listen_for_implicit_connection": "listenForImplicitConnection",
+        "passive_ports": "passivePorts",
     }
 
-    def __init__(self, server_enabled=None, port=None, authentication_method=None, secured=None, keystore_file_path=None, keystore_file_password=None, ciphers=None, listen_for_implicit_connection=None, passive_ports=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        server_enabled=None,
+        port=None,
+        authentication_method=None,
+        secured=None,
+        keystore_file_path=None,
+        keystore_file_password=None,
+        ciphers=None,
+        listen_for_implicit_connection=None,
+        passive_ports=None,
+        _configuration=None,
+    ):  # noqa: E501
         """FtsFtpSettings - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -306,18 +318,20 @@ class FtsFtpSettings(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(FtsFtpSettings, dict):

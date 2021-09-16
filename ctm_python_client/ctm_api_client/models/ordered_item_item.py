@@ -33,28 +33,39 @@ class OrderedItemItem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file_name': 'str',
-        'folder_name': 'str',
-        'full_msg': 'str',
-        'job_name': 'str',
-        'job_type': 'str',
-        'msg_data_arguments': 'list[MsgDataArguments]',
-        'msg_id': 'str',
-        'order_id': 'str'
+        "file_name": "str",
+        "folder_name": "str",
+        "full_msg": "str",
+        "job_name": "str",
+        "job_type": "str",
+        "msg_data_arguments": "list[MsgDataArguments]",
+        "msg_id": "str",
+        "order_id": "str",
     }
 
     attribute_map = {
-        'file_name': 'file_name',
-        'folder_name': 'folder_name',
-        'full_msg': 'full_msg',
-        'job_name': 'job_name',
-        'job_type': 'job_type',
-        'msg_data_arguments': 'msg_data_arguments',
-        'msg_id': 'msg_id',
-        'order_id': 'order_id'
+        "file_name": "file_name",
+        "folder_name": "folder_name",
+        "full_msg": "full_msg",
+        "job_name": "job_name",
+        "job_type": "job_type",
+        "msg_data_arguments": "msg_data_arguments",
+        "msg_id": "msg_id",
+        "order_id": "order_id",
     }
 
-    def __init__(self, file_name=None, folder_name=None, full_msg=None, job_name=None, job_type=None, msg_data_arguments=None, msg_id=None, order_id=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        file_name=None,
+        folder_name=None,
+        full_msg=None,
+        job_name=None,
+        job_type=None,
+        msg_data_arguments=None,
+        msg_id=None,
+        order_id=None,
+        _configuration=None,
+    ):  # noqa: E501
         """OrderedItemItem - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -189,12 +200,20 @@ class OrderedItemItem(object):
         :param job_type: The job_type of this OrderedItemItem.  # noqa: E501
         :type: str
         """
-        allowed_values = ["job", "smartFolder", "subFolder", "UNRECOGNIZED"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                job_type not in allowed_values):
+        allowed_values = [
+            "job",
+            "smartFolder",
+            "subFolder",
+            "UNRECOGNIZED",
+        ]  # noqa: E501
+        if (
+            self._configuration.client_side_validation
+            and job_type not in allowed_values
+        ):
             raise ValueError(
-                "Invalid value for `job_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(job_type, allowed_values)
+                "Invalid value for `job_type` ({0}), must be one of {1}".format(  # noqa: E501
+                    job_type, allowed_values
+                )
             )
 
         self._job_type = job_type
@@ -269,18 +288,20 @@ class OrderedItemItem(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(OrderedItemItem, dict):

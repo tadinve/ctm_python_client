@@ -33,20 +33,27 @@ class PlanningPrivilegeCategory(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'periodical_statistics': 'str',
-        'forecast_or_batch_impact_manager_config': 'str',
-        'promotion_rules': 'str',
-        'promote_action': 'str'
+        "periodical_statistics": "str",
+        "forecast_or_batch_impact_manager_config": "str",
+        "promotion_rules": "str",
+        "promote_action": "str",
     }
 
     attribute_map = {
-        'periodical_statistics': 'PeriodicalStatistics',
-        'forecast_or_batch_impact_manager_config': 'ForecastOrBatchImpactManagerConfig',
-        'promotion_rules': 'PromotionRules',
-        'promote_action': 'PromoteAction'
+        "periodical_statistics": "PeriodicalStatistics",
+        "forecast_or_batch_impact_manager_config": "ForecastOrBatchImpactManagerConfig",
+        "promotion_rules": "PromotionRules",
+        "promote_action": "PromoteAction",
     }
 
-    def __init__(self, periodical_statistics=None, forecast_or_batch_impact_manager_config=None, promotion_rules=None, promote_action=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        periodical_statistics=None,
+        forecast_or_batch_impact_manager_config=None,
+        promotion_rules=None,
+        promote_action=None,
+        _configuration=None,
+    ):  # noqa: E501
         """PlanningPrivilegeCategory - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -61,7 +68,9 @@ class PlanningPrivilegeCategory(object):
         if periodical_statistics is not None:
             self.periodical_statistics = periodical_statistics
         if forecast_or_batch_impact_manager_config is not None:
-            self.forecast_or_batch_impact_manager_config = forecast_or_batch_impact_manager_config
+            self.forecast_or_batch_impact_manager_config = (
+                forecast_or_batch_impact_manager_config
+            )
         if promotion_rules is not None:
             self.promotion_rules = promotion_rules
         if promote_action is not None:
@@ -102,7 +111,9 @@ class PlanningPrivilegeCategory(object):
         return self._forecast_or_batch_impact_manager_config
 
     @forecast_or_batch_impact_manager_config.setter
-    def forecast_or_batch_impact_manager_config(self, forecast_or_batch_impact_manager_config):
+    def forecast_or_batch_impact_manager_config(
+        self, forecast_or_batch_impact_manager_config
+    ):
         """Sets the forecast_or_batch_impact_manager_config of this PlanningPrivilegeCategory.
 
         Forecast/BIM Configuration access level (None, Browse, Update, Full)  # noqa: E501
@@ -111,7 +122,9 @@ class PlanningPrivilegeCategory(object):
         :type: str
         """
 
-        self._forecast_or_batch_impact_manager_config = forecast_or_batch_impact_manager_config
+        self._forecast_or_batch_impact_manager_config = (
+            forecast_or_batch_impact_manager_config
+        )
 
     @property
     def promotion_rules(self):
@@ -166,18 +179,20 @@ class PlanningPrivilegeCategory(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(PlanningPrivilegeCategory, dict):

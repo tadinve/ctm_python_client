@@ -32,17 +32,13 @@ class WorkspaceFolder(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'folder_data': 'str',
-        'jobs_data': 'list[str]'
-    }
+    swagger_types = {"folder_data": "str", "jobs_data": "list[str]"}
 
-    attribute_map = {
-        'folder_data': 'folderData',
-        'jobs_data': 'jobsData'
-    }
+    attribute_map = {"folder_data": "folderData", "jobs_data": "jobsData"}
 
-    def __init__(self, folder_data=None, jobs_data=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, folder_data=None, jobs_data=None, _configuration=None
+    ):  # noqa: E501
         """WorkspaceFolder - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -75,9 +71,17 @@ class WorkspaceFolder(object):
         :param folder_data: The folder_data of this WorkspaceFolder.  # noqa: E501
         :type: str
         """
-        if (self._configuration.client_side_validation and
-                folder_data is not None and not re.search(r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', folder_data)):  # noqa: E501
-            raise ValueError(r"Invalid value for `folder_data`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`")  # noqa: E501
+        if (
+            self._configuration.client_side_validation
+            and folder_data is not None
+            and not re.search(
+                r"^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$",
+                folder_data,
+            )
+        ):  # noqa: E501
+            raise ValueError(
+                r"Invalid value for `folder_data`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`"
+            )  # noqa: E501
 
         self._folder_data = folder_data
 
@@ -109,18 +113,20 @@ class WorkspaceFolder(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(WorkspaceFolder, dict):

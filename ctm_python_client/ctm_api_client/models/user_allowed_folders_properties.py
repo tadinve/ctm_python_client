@@ -33,50 +33,72 @@ class UserAllowedFoldersProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allowed_folders_names': 'list[str]',
-        'as2_certificate_alias': 'str',
-        'as2_id': 'str',
-        'as2_public_key_certificate': 'str',
-        'as2_target_folder': 'str',
-        'company': 'str',
-        'description': 'str',
-        'email': 'str',
-        'full_name': 'str',
-        'hashed_password': 'str',
-        'is_ldap_auth': 'int',
-        'name': 'str',
-        'phone_number': 'str',
-        'ssh_public_key': 'str',
-        'is_locked': 'bool',
-        'lock_reason': 'str',
-        'change_password_at_next_login': 'bool',
-        'password_never_expires': 'bool',
-        'last_successful_login_time': 'str'
+        "allowed_folders_names": "list[str]",
+        "as2_certificate_alias": "str",
+        "as2_id": "str",
+        "as2_public_key_certificate": "str",
+        "as2_target_folder": "str",
+        "company": "str",
+        "description": "str",
+        "email": "str",
+        "full_name": "str",
+        "hashed_password": "str",
+        "is_ldap_auth": "int",
+        "name": "str",
+        "phone_number": "str",
+        "ssh_public_key": "str",
+        "is_locked": "bool",
+        "lock_reason": "str",
+        "change_password_at_next_login": "bool",
+        "password_never_expires": "bool",
+        "last_successful_login_time": "str",
     }
 
     attribute_map = {
-        'allowed_folders_names': 'allowedFoldersNames',
-        'as2_certificate_alias': 'as2CertificateAlias',
-        'as2_id': 'as2Id',
-        'as2_public_key_certificate': 'as2PublicKeyCertificate',
-        'as2_target_folder': 'as2TargetFolder',
-        'company': 'company',
-        'description': 'description',
-        'email': 'email',
-        'full_name': 'fullName',
-        'hashed_password': 'hashedPassword',
-        'is_ldap_auth': 'isLdapAuth',
-        'name': 'name',
-        'phone_number': 'phoneNumber',
-        'ssh_public_key': 'sshPublicKey',
-        'is_locked': 'isLocked',
-        'lock_reason': 'lockReason',
-        'change_password_at_next_login': 'changePasswordAtNextLogin',
-        'password_never_expires': 'passwordNeverExpires',
-        'last_successful_login_time': 'lastSuccessfulLoginTime'
+        "allowed_folders_names": "allowedFoldersNames",
+        "as2_certificate_alias": "as2CertificateAlias",
+        "as2_id": "as2Id",
+        "as2_public_key_certificate": "as2PublicKeyCertificate",
+        "as2_target_folder": "as2TargetFolder",
+        "company": "company",
+        "description": "description",
+        "email": "email",
+        "full_name": "fullName",
+        "hashed_password": "hashedPassword",
+        "is_ldap_auth": "isLdapAuth",
+        "name": "name",
+        "phone_number": "phoneNumber",
+        "ssh_public_key": "sshPublicKey",
+        "is_locked": "isLocked",
+        "lock_reason": "lockReason",
+        "change_password_at_next_login": "changePasswordAtNextLogin",
+        "password_never_expires": "passwordNeverExpires",
+        "last_successful_login_time": "lastSuccessfulLoginTime",
     }
 
-    def __init__(self, allowed_folders_names=None, as2_certificate_alias=None, as2_id=None, as2_public_key_certificate=None, as2_target_folder=None, company=None, description=None, email=None, full_name=None, hashed_password=None, is_ldap_auth=None, name=None, phone_number=None, ssh_public_key=None, is_locked=None, lock_reason=None, change_password_at_next_login=None, password_never_expires=None, last_successful_login_time=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        allowed_folders_names=None,
+        as2_certificate_alias=None,
+        as2_id=None,
+        as2_public_key_certificate=None,
+        as2_target_folder=None,
+        company=None,
+        description=None,
+        email=None,
+        full_name=None,
+        hashed_password=None,
+        is_ldap_auth=None,
+        name=None,
+        phone_number=None,
+        ssh_public_key=None,
+        is_locked=None,
+        lock_reason=None,
+        change_password_at_next_login=None,
+        password_never_expires=None,
+        last_successful_login_time=None,
+        _configuration=None,
+    ):  # noqa: E501
         """UserAllowedFoldersProperties - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -548,18 +570,20 @@ class UserAllowedFoldersProperties(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(UserAllowedFoldersProperties, dict):

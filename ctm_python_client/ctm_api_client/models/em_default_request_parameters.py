@@ -33,20 +33,27 @@ class EMDefaultRequestParameters(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'annotation_category': 'str',
-        'annotation_notes': 'str',
-        'ctm_name': 'str',
-        'net_name': 'str'
+        "annotation_category": "str",
+        "annotation_notes": "str",
+        "ctm_name": "str",
+        "net_name": "str",
     }
 
     attribute_map = {
-        'annotation_category': 'annotation_category',
-        'annotation_notes': 'annotation_notes',
-        'ctm_name': 'ctm_name',
-        'net_name': 'net_name'
+        "annotation_category": "annotation_category",
+        "annotation_notes": "annotation_notes",
+        "ctm_name": "ctm_name",
+        "net_name": "net_name",
     }
 
-    def __init__(self, annotation_category=None, annotation_notes=None, ctm_name=None, net_name=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        annotation_category=None,
+        annotation_notes=None,
+        ctm_name=None,
+        net_name=None,
+        _configuration=None,
+    ):  # noqa: E501
         """EMDefaultRequestParameters - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -158,18 +165,20 @@ class EMDefaultRequestParameters(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(EMDefaultRequestParameters, dict):

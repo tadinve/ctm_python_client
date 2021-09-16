@@ -33,30 +33,42 @@ class AppDeployed(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'displayname': 'str',
-        'name': 'str',
-        'version': 'str',
-        'default_type': 'str',
-        'last_deployed': 'str',
-        'last_published': 'str',
-        'icon_base64': 'str',
-        'created_on': 'str',
-        'created_by': 'str'
+        "displayname": "str",
+        "name": "str",
+        "version": "str",
+        "default_type": "str",
+        "last_deployed": "str",
+        "last_published": "str",
+        "icon_base64": "str",
+        "created_on": "str",
+        "created_by": "str",
     }
 
     attribute_map = {
-        'displayname': 'displayname',
-        'name': 'name',
-        'version': 'version',
-        'default_type': 'defaultType',
-        'last_deployed': 'lastDeployed',
-        'last_published': 'lastPublished',
-        'icon_base64': 'iconBase64',
-        'created_on': 'createdOn',
-        'created_by': 'createdBy'
+        "displayname": "displayname",
+        "name": "name",
+        "version": "version",
+        "default_type": "defaultType",
+        "last_deployed": "lastDeployed",
+        "last_published": "lastPublished",
+        "icon_base64": "iconBase64",
+        "created_on": "createdOn",
+        "created_by": "createdBy",
     }
 
-    def __init__(self, displayname=None, name=None, version=None, default_type=None, last_deployed=None, last_published=None, icon_base64=None, created_on=None, created_by=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        displayname=None,
+        name=None,
+        version=None,
+        default_type=None,
+        last_deployed=None,
+        last_published=None,
+        icon_base64=None,
+        created_on=None,
+        created_by=None,
+        _configuration=None,
+    ):  # noqa: E501
         """AppDeployed - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -306,18 +318,20 @@ class AppDeployed(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AppDeployed, dict):

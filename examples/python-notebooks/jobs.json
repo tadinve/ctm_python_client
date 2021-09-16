@@ -1,0 +1,121 @@
+{
+    "Defaults": {
+        "Application": "Naga0.3_Examples",
+        "SubApplication": "Demo-OR_JOB",
+        "RunAs": "ctmuser",
+        "Host": "acb-rhctmv20",
+        "When": {
+            "Months": [
+                "JAN",
+                "OCT",
+                "DEC"
+            ],
+            "MonthDays": [
+                "ALL"
+            ],
+            "WeekDays": [
+                "MON",
+                "TUE",
+                "WED",
+                "THU",
+                "FRI"
+            ],
+            "FromTime": "0300",
+            "ToTime": "2100"
+        }
+    },
+    "OR-JOB": {
+        "Type": "Folder",
+        "Start-Flow": {
+            "Type": "Job:Dummy",
+            "eventsToAdd": {
+                "Type": "AddEvents",
+                "Events": [
+                    {
+                        "Event": "Start-Flow-To-Job1"
+                    }
+                ]
+            }
+        },
+        "Job1": {
+            "Type": "Job:Dummy",
+            "if-true": {
+                "Type": "If:Output",
+                "Code": "*true*",
+                "Event:Add_0": {
+                    "Type": "Event:Add",
+                    "Event": "Job1-TO-Job2"
+                }
+            },
+            "if-flase": {
+                "Type": "If:Output",
+                "Code": "*false*",
+                "Event:Add_0": {
+                    "Type": "Event:Add",
+                    "Event": "Job1-TO-Job3"
+                }
+            }
+        },
+        "Job2": {
+            "Type": "Job:Dummy",
+            "eventsToAdd": {
+                "Type": "AddEvents",
+                "Events": [
+                    {
+                        "Event": "Job2-To-Job3"
+                    }
+                ]
+            }
+        },
+        "Job3": {
+            "Type": "Job:Dummy"
+        },
+        "Job4": {
+            "Type": "Job:Dummy",
+            "eventsToWaitFor": {
+                "Type": "WaitForEvents",
+                "Events": [
+                    {
+                        "Event": "Job1-To-Job4"
+                    },
+                    "OR",
+                    {
+                        "Event": "Job3-To-Job4"
+                    }
+                ]
+            },
+            "eventsToAdd": {
+                "Type": "AddEvents",
+                "Events": [
+                    {
+                        "Event": "Job4-To-End-Flow"
+                    }
+                ]
+            }
+        },
+        "End-Flow": {
+            "Type": "Job:Dummy"
+        },
+        "Flow1": {
+            "Type": "Flow",
+            "Sequence": [
+                "Start-Flow",
+                "Job1"
+            ]
+        },
+        "Flow2": {
+            "Type": "Flow",
+            "Sequence": [
+                "Job2",
+                "Job3"
+            ]
+        },
+        "Flow3": {
+            "Type": "Flow",
+            "Sequence": [
+                "Job4",
+                "End-Flow"
+            ]
+        }
+    }
+}

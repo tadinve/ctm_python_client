@@ -32,17 +32,16 @@ class AgentDebugInformation(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'diagnostic_level': 'int',
-        'communication_trace': 'bool'
-    }
+    swagger_types = {"diagnostic_level": "int", "communication_trace": "bool"}
 
     attribute_map = {
-        'diagnostic_level': 'diagnosticLevel',
-        'communication_trace': 'communicationTrace'
+        "diagnostic_level": "diagnosticLevel",
+        "communication_trace": "communicationTrace",
     }
 
-    def __init__(self, diagnostic_level=None, communication_trace=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, diagnostic_level=None, communication_trace=None, _configuration=None
+    ):  # noqa: E501
         """AgentDebugInformation - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -76,7 +75,9 @@ class AgentDebugInformation(object):
         :type: int
         """
         if self._configuration.client_side_validation and diagnostic_level is None:
-            raise ValueError("Invalid value for `diagnostic_level`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `diagnostic_level`, must not be `None`"
+            )  # noqa: E501
 
         self._diagnostic_level = diagnostic_level
 
@@ -101,7 +102,9 @@ class AgentDebugInformation(object):
         :type: bool
         """
         if self._configuration.client_side_validation and communication_trace is None:
-            raise ValueError("Invalid value for `communication_trace`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `communication_trace`, must not be `None`"
+            )  # noqa: E501
 
         self._communication_trace = communication_trace
 
@@ -112,18 +115,20 @@ class AgentDebugInformation(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AgentDebugInformation, dict):

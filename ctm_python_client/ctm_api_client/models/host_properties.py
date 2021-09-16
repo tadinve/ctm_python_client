@@ -33,46 +33,66 @@ class HostProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'host_name': 'str',
-        'os_type': 'str',
-        'user': 'str',
-        'password': 'str',
-        'protocol': 'str',
-        'port': 'int',
-        'ssl': 'bool',
-        'ssl_implicit': 'bool',
-        'ccc_command': 'bool',
-        'cdc_command': 'bool',
-        'ssl_level': 'str',
-        'passive': 'bool',
-        'substitute_ip_address': 'bool',
-        'extended_passive_mode': 'bool',
-        'ssh_compression': 'bool',
-        'logical_key_name': 'str',
-        'passphrase': 'str'
+        "host_name": "str",
+        "os_type": "str",
+        "user": "str",
+        "password": "str",
+        "protocol": "str",
+        "port": "int",
+        "ssl": "bool",
+        "ssl_implicit": "bool",
+        "ccc_command": "bool",
+        "cdc_command": "bool",
+        "ssl_level": "str",
+        "passive": "bool",
+        "substitute_ip_address": "bool",
+        "extended_passive_mode": "bool",
+        "ssh_compression": "bool",
+        "logical_key_name": "str",
+        "passphrase": "str",
     }
 
     attribute_map = {
-        'host_name': 'hostName',
-        'os_type': 'osType',
-        'user': 'user',
-        'password': 'password',
-        'protocol': 'protocol',
-        'port': 'port',
-        'ssl': 'ssl',
-        'ssl_implicit': 'sslImplicit',
-        'ccc_command': 'cccCommand',
-        'cdc_command': 'cdcCommand',
-        'ssl_level': 'sslLevel',
-        'passive': 'passive',
-        'substitute_ip_address': 'substituteIpAddress',
-        'extended_passive_mode': 'extendedPassiveMode',
-        'ssh_compression': 'sshCompression',
-        'logical_key_name': 'logicalKeyName',
-        'passphrase': 'passphrase'
+        "host_name": "hostName",
+        "os_type": "osType",
+        "user": "user",
+        "password": "password",
+        "protocol": "protocol",
+        "port": "port",
+        "ssl": "ssl",
+        "ssl_implicit": "sslImplicit",
+        "ccc_command": "cccCommand",
+        "cdc_command": "cdcCommand",
+        "ssl_level": "sslLevel",
+        "passive": "passive",
+        "substitute_ip_address": "substituteIpAddress",
+        "extended_passive_mode": "extendedPassiveMode",
+        "ssh_compression": "sshCompression",
+        "logical_key_name": "logicalKeyName",
+        "passphrase": "passphrase",
     }
 
-    def __init__(self, host_name='Local', os_type=None, user=None, password=None, protocol=None, port=0, ssl=False, ssl_implicit=False, ccc_command=False, cdc_command=False, ssl_level=None, passive=False, substitute_ip_address=False, extended_passive_mode=False, ssh_compression=False, logical_key_name='', passphrase='', _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        host_name="Local",
+        os_type=None,
+        user=None,
+        password=None,
+        protocol=None,
+        port=0,
+        ssl=False,
+        ssl_implicit=False,
+        ccc_command=False,
+        cdc_command=False,
+        ssl_level=None,
+        passive=False,
+        substitute_ip_address=False,
+        extended_passive_mode=False,
+        ssh_compression=False,
+        logical_key_name="",
+        passphrase="",
+        _configuration=None,
+    ):  # noqa: E501
         """HostProperties - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -530,18 +550,20 @@ class HostProperties(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(HostProperties, dict):

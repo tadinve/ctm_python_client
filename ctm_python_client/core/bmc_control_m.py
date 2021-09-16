@@ -28,7 +28,8 @@ import os
 import json
 from ctm_python_client.session.session import Session
 import ctm_python_client.ctm_api_client as ctm_api_client
- #from graphviz import Digraph
+
+# from graphviz import Digraph
 
 
 JOBS_FILE = "jobs.json"
@@ -37,8 +38,14 @@ JOBS_FILE = "jobs.json"
 class CmJobFlow:
 
     # Constructor and setting some default values
-    def __init__(self, application, sub_application, description=None, order_method=None, 
-                session=None):
+    def __init__(
+        self,
+        application,
+        sub_application,
+        description=None,
+        order_method=None,
+        session=None,
+    ):
         self.application = application
         self.sub_application = sub_application
         self.folders = []
@@ -47,12 +54,12 @@ class CmJobFlow:
         self.schedule_set = False
         self.failure_notification = False
 
-        #session variables
+        # session variables
         self.session = session
-        #self.buildApi = ctm_api_client.BuildApi(ctm_api_client.ApiClient(self.session.configuration))
-        #self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
+        # self.buildApi = ctm_api_client.BuildApi(ctm_api_client.ApiClient(self.session.configuration))
+        # self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
 
-        #network graph
+        # network graph
         self.nodes = []
         self.edges = []
 
@@ -63,7 +70,9 @@ class CmJobFlow:
         self.flowcount = 0
         self.variables = []
 
-        self.json = {"Defaults": {"Application": application, "SubApplication": sub_application}}
+        self.json = {
+            "Defaults": {"Application": application, "SubApplication": sub_application}
+        }
         if description is not None:
             self.json["Defaults"]["Description"] = description
         if order_method is not None:
@@ -84,7 +93,6 @@ class CmJobFlow:
         self.uri = ctm_uri
         self.token = ctm_token
         self.https = https
-
 
     def ctm_login(self, ctm_uri, ctm_user, ctm_pwd, https=True):
         self.uri = ctm_uri
@@ -108,12 +116,12 @@ class CmJobFlow:
         self.token = r_login.json()["token"]
         print("Token =", self.token)
         return r_login.status_code
-    
+
     # this is a private functions defined to create nodes in the graph
-    def _create_node(self, name,job):
-        self.jobs.append((name,job))
+    def _create_node(self, name, job):
+        self.jobs.append((name, job))
         node_id = str(len(self.jobs) - 1)
-        #self.graph.node(node_id, label=name, shape=shape)
+        # self.graph.node(node_id, label=name, shape=shape)
         return node_id
 
     # sets up the default user to run the jobs (can be overridden at the job level)
@@ -129,7 +137,9 @@ class CmJobFlow:
             self.json["Defaults"]["SiteStandard"] = site_standard
 
     # sets up the default user to run the jobs (can be overridden at the job level)
-    def set_schedule(self, months=None, month_days=None, week_days=None, from_time=None, to_time=None):
+    def set_schedule(
+        self, months=None, month_days=None, week_days=None, from_time=None, to_time=None
+    ):
         self.schedule_set = True
         self.json["Defaults"]["When"] = {}
         if months is not None:
@@ -154,7 +164,9 @@ class CmJobFlow:
 
     def deploy(self):
 
-        self.deployApi = ctm_api_client.DeployApi(ctm_api_client.ApiClient(self.session.configuration))
+        self.deployApi = ctm_api_client.DeployApi(
+            ctm_api_client.ApiClient(self.session.configuration)
+        )
         self.token = self.session.get_token()
 
         with open(JOBS_FILE, "w") as outfile:
@@ -168,7 +180,6 @@ class CmJobFlow:
             print(e)
             return
 
- 
         # Remove temporary file
         os.remove(JOBS_FILE)
 
@@ -178,10 +189,11 @@ class CmJobFlow:
 
     def run(self):
 
-        self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
+        self.runApi = ctm_api_client.RunApi(
+            ctm_api_client.ApiClient(self.session.configuration)
+        )
 
         self.token = self.session.get_token()
-
 
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
@@ -192,21 +204,20 @@ class CmJobFlow:
         except Exception as e:
             print("Error deploying job, look for more details below")
             print(e)
-            return        
-
+            return
 
         print("Successfully Run job on Control-M")
         print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
         return True
-
-
 
     def submit_saas(self):
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
 
         with open(JOBS_FILE, "rb") as fo_jobs:
-            uploaded_files = [("definitionsFile", (JOBS_FILE, fo_jobs, "application/json"))]
+            uploaded_files = [
+                ("definitionsFile", (JOBS_FILE, fo_jobs, "application/json"))
+            ]
             r_submit = requests.post(
                 self.uri + "/automation-api/deploy",
                 files=uploaded_files,
@@ -237,15 +248,23 @@ class CmJobFlow:
         print("Sub Application: ", self.sub_application)
 
         if self.run_as_set:
-            print("\nRun as Username: {0} on Host: {1}".format(self.username, self.host))
+            print(
+                "\nRun as Username: {0} on Host: {1}".format(self.username, self.host)
+            )
 
         for folder in self.folders:
-            print("\nFolder Name {0} with Server {1}\n\n\n".format(folder[0], folder[1]))
+            print(
+                "\nFolder Name {0} with Server {1}\n\n\n".format(folder[0], folder[1])
+            )
 
         if self.failure_notification:
-            print("\n On Failure notify {0} with Subject {1}".format(self.mail_to, self.mail_subject))
+            print(
+                "\n On Failure notify {0} with Subject {1}".format(
+                    self.mail_to, self.mail_subject
+                )
+            )
 
-        return True #self.graph
+        return True  # self.graph
 
     def display_json(self):
         str = json.dumps(self.json, indent=4)
@@ -254,7 +273,7 @@ class CmJobFlow:
     def get_json_for_folder(self, folder_name):
 
         res = self.deployApi.get_deployed_folders_new(server="*", folder=folder_name)
-        return json.loads(res.replace("'",'"'))
+        return json.loads(res.replace("'", '"'))
 
     # Jobs can be grouped together as folders, this creates the folder
     def create_folder(self, name, server=None):
@@ -270,10 +289,27 @@ class CmJobFlow:
     def add_job(self, folder, job):
         job_name = job.get_job_name()
         self.json[folder][job_name] = job.get_json()
-        return self._create_node(job_name,job)
+        return self._create_node(job_name, job)
+
+    def add_if_output(self, folder, job1, if_name, code, job2):
+        job1.job_json[if_name] = {
+            "Type": "If:Output",
+            "Code": code,
+            "Event:Add_0": {
+                "Type": "Event:Add",
+                "Event": job1.job_name + "-TO-" + job2.get_job_name(),
+            },
+        }
+        job2.wait_for_jobs(job1.job_name)
+        for i in range(len(self.jobs)):
+            if self.jobs[i][0] == job1.get_job_name():
+                job1_num = i
+            if self.jobs[i][0] == job2.get_job_name():
+                job2_num = i
+        self.chain_jobs(folder, [job1_num, job2_num], "dashed")
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
-    def chain_jobs(self, folder, links):
+    def chain_jobs(self, folder, links, style="solid"):
         print(self.jobs)
         print(links)
         self.flowcount += 1
@@ -283,15 +319,19 @@ class CmJobFlow:
             self.jobs[int(links[0])][0],
         ]
         for j in links[1:]:
-            self.edges.append((self.jobs[int(from_job)][0], self.jobs[int(j)][0]))
+            self.edges.append(
+                (self.jobs[int(from_job)][0], self.jobs[int(j)][0], style)
+            )
             seq.append(self.jobs[int(j)][0])
             fj = self.jobs[int(from_job)][1]
             fj.event_to_add(self.jobs[int(j)][0])
             from_job = j
-            
-        self.json[folder]["Flow" + str(self.flowcount)] = {"Type": "Flow", "Sequence": seq}
-    
-    #return nodes and edges. can be used by graphviz or matplotlib for display
+
+        self.json[folder]["Flow" + str(self.flowcount)] = {
+            "Type": "Flow",
+            "Sequence": seq,
+        }
+
+    # return nodes and edges. can be used by graphviz or matplotlib for display
     def get_nodes_and_edges(self):
         return self.jobs, self.edges
-

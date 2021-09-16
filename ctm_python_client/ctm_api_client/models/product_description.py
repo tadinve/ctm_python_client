@@ -33,22 +33,30 @@ class ProductDescription(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'product_name': 'str',
-        'product_description': 'str',
-        'is_section_open': 'bool',
-        'static_text': 'bool',
-        'token_component': 'bool'
+        "product_name": "str",
+        "product_description": "str",
+        "is_section_open": "bool",
+        "static_text": "bool",
+        "token_component": "bool",
     }
 
     attribute_map = {
-        'product_name': 'productName',
-        'product_description': 'productDescription',
-        'is_section_open': 'isSectionOpen',
-        'static_text': 'staticText',
-        'token_component': 'tokenComponent'
+        "product_name": "productName",
+        "product_description": "productDescription",
+        "is_section_open": "isSectionOpen",
+        "static_text": "staticText",
+        "token_component": "tokenComponent",
     }
 
-    def __init__(self, product_name=None, product_description=None, is_section_open=None, static_text=None, token_component=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        product_name=None,
+        product_description=None,
+        is_section_open=None,
+        static_text=None,
+        token_component=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ProductDescription - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -194,18 +202,20 @@ class ProductDescription(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ProductDescription, dict):

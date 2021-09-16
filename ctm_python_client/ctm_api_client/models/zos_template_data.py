@@ -33,46 +33,66 @@ class ZosTemplateData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'record_format': 'str',
-        'logical_record_length': 'int',
-        'block_size': 'int',
-        'translation_table': 'str',
-        'transfer_mode': 'str',
-        'sms_managment_class': 'str',
-        'allocation_units': 'str',
-        'volume': 'str',
-        'unit': 'str',
-        'primary_allocation': 'int',
-        'secondary_allocation': 'int',
-        'sms_data_class': 'str',
-        'dbcs_encoding': 'str',
-        'transfer_to_unique_file': 'bool',
-        'additional_options_host1': 'str',
-        'additional_options_host2': 'str'
+        "name": "str",
+        "record_format": "str",
+        "logical_record_length": "int",
+        "block_size": "int",
+        "translation_table": "str",
+        "transfer_mode": "str",
+        "sms_managment_class": "str",
+        "allocation_units": "str",
+        "volume": "str",
+        "unit": "str",
+        "primary_allocation": "int",
+        "secondary_allocation": "int",
+        "sms_data_class": "str",
+        "dbcs_encoding": "str",
+        "transfer_to_unique_file": "bool",
+        "additional_options_host1": "str",
+        "additional_options_host2": "str",
     }
 
     attribute_map = {
-        'name': 'name',
-        'record_format': 'recordFormat',
-        'logical_record_length': 'logicalRecordLength',
-        'block_size': 'blockSize',
-        'translation_table': 'translationTable',
-        'transfer_mode': 'transferMode',
-        'sms_managment_class': 'smsManagmentClass',
-        'allocation_units': 'allocationUnits',
-        'volume': 'volume',
-        'unit': 'unit',
-        'primary_allocation': 'primaryAllocation',
-        'secondary_allocation': 'secondaryAllocation',
-        'sms_data_class': 'smsDataClass',
-        'dbcs_encoding': 'dbcsEncoding',
-        'transfer_to_unique_file': 'transferToUniqueFile',
-        'additional_options_host1': 'additionalOptionsHost1',
-        'additional_options_host2': 'additionalOptionsHost2'
+        "name": "name",
+        "record_format": "recordFormat",
+        "logical_record_length": "logicalRecordLength",
+        "block_size": "blockSize",
+        "translation_table": "translationTable",
+        "transfer_mode": "transferMode",
+        "sms_managment_class": "smsManagmentClass",
+        "allocation_units": "allocationUnits",
+        "volume": "volume",
+        "unit": "unit",
+        "primary_allocation": "primaryAllocation",
+        "secondary_allocation": "secondaryAllocation",
+        "sms_data_class": "smsDataClass",
+        "dbcs_encoding": "dbcsEncoding",
+        "transfer_to_unique_file": "transferToUniqueFile",
+        "additional_options_host1": "additionalOptionsHost1",
+        "additional_options_host2": "additionalOptionsHost2",
     }
 
-    def __init__(self, name=None, record_format=None, logical_record_length=None, block_size=None, translation_table=None, transfer_mode=None, sms_managment_class=None, allocation_units=None, volume=None, unit=None, primary_allocation=None, secondary_allocation=None, sms_data_class=None, dbcs_encoding=None, transfer_to_unique_file=None, additional_options_host1=None, additional_options_host2=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        record_format=None,
+        logical_record_length=None,
+        block_size=None,
+        translation_table=None,
+        transfer_mode=None,
+        sms_managment_class=None,
+        allocation_units=None,
+        volume=None,
+        unit=None,
+        primary_allocation=None,
+        secondary_allocation=None,
+        sms_data_class=None,
+        dbcs_encoding=None,
+        transfer_to_unique_file=None,
+        additional_options_host1=None,
+        additional_options_host2=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ZosTemplateData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -530,18 +550,20 @@ class ZosTemplateData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ZosTemplateData, dict):

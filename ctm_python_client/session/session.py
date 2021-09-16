@@ -4,11 +4,12 @@ from ctm_python_client.ctm_api_client.rest import ApiException
 from pprint import pprint
 
 import urllib3
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 class Session:
-    def __init__(self, endpoint=None,username=None,password=None, apiKey=None):
+    def __init__(self, endpoint=None, username=None, password=None, apiKey=None):
         self.endpoint = endpoint
         self.username = username
         self.password = password
@@ -19,19 +20,22 @@ class Session:
         self.configuration.verify_ssl = False
 
         if password:
-            self.configuration.api_key_prefix['Authorization'] = 'Bearer'
-            self.configuration.api_key['Authorization'] = self.get_token()
+            self.configuration.api_key_prefix["Authorization"] = "Bearer"
+            self.configuration.api_key["Authorization"] = self.get_token()
         else:
-            #self.configuration.api_key_prefix['Authorization'] = 'Bearer'
-            #self.configuration.api_key['x-api-key'] = apiKey
-            self.configuration.api_key['Authorization'] = apiKey
-    
+            # self.configuration.api_key_prefix['Authorization'] = 'Bearer'
+            # self.configuration.api_key['x-api-key'] = apiKey
+            self.configuration.api_key["Authorization"] = apiKey
+
     def login(self):
-        api_session = ctm_api_client.SessionApi(ctm_api_client.ApiClient(self.configuration))
-        res = api_session.do_login({'username':self.username,'password':self.password})        
-    
+        api_session = ctm_api_client.SessionApi(
+            ctm_api_client.ApiClient(self.configuration)
+        )
+        res = api_session.do_login(
+            {"username": self.username, "password": self.password}
+        )
+
         return res
-    
+
     def get_token(self):
         return self.login().token
-

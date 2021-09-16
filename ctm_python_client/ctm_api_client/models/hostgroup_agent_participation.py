@@ -32,15 +32,9 @@ class HostgroupAgentParticipation(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'event': 'str',
-        'order_date': 'str'
-    }
+    swagger_types = {"event": "str", "order_date": "str"}
 
-    attribute_map = {
-        'event': 'event',
-        'order_date': 'orderDate'
-    }
+    attribute_map = {"event": "event", "order_date": "orderDate"}
 
     def __init__(self, event=None, order_date=None, _configuration=None):  # noqa: E501
         """HostgroupAgentParticipation - a model defined in Swagger"""  # noqa: E501
@@ -77,7 +71,9 @@ class HostgroupAgentParticipation(object):
         :type: str
         """
         if self._configuration.client_side_validation and event is None:
-            raise ValueError("Invalid value for `event`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `event`, must not be `None`"
+            )  # noqa: E501
 
         self._event = event
 
@@ -111,18 +107,20 @@ class HostgroupAgentParticipation(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(HostgroupAgentParticipation, dict):

@@ -33,26 +33,36 @@ class AddAgentParams(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'host': 'str',
-        'port': 'int',
-        'tag': 'str',
-        'ssl_state': 'str',
-        'persistent_connection': 'bool',
-        'timeout': 'int',
-        'suppress_ping': 'bool'
+        "host": "str",
+        "port": "int",
+        "tag": "str",
+        "ssl_state": "str",
+        "persistent_connection": "bool",
+        "timeout": "int",
+        "suppress_ping": "bool",
     }
 
     attribute_map = {
-        'host': 'host',
-        'port': 'port',
-        'tag': 'tag',
-        'ssl_state': 'sslState',
-        'persistent_connection': 'persistentConnection',
-        'timeout': 'timeout',
-        'suppress_ping': 'suppressPing'
+        "host": "host",
+        "port": "port",
+        "tag": "tag",
+        "ssl_state": "sslState",
+        "persistent_connection": "persistentConnection",
+        "timeout": "timeout",
+        "suppress_ping": "suppressPing",
     }
 
-    def __init__(self, host=None, port=None, tag=None, ssl_state=None, persistent_connection=None, timeout=60, suppress_ping=False, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        host=None,
+        port=None,
+        tag=None,
+        ssl_state=None,
+        persistent_connection=None,
+        timeout=60,
+        suppress_ping=False,
+        _configuration=None,
+    ):  # noqa: E501
         """AddAgentParams - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -101,7 +111,9 @@ class AddAgentParams(object):
         :type: str
         """
         if self._configuration.client_side_validation and host is None:
-            raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `host`, must not be `None`"
+            )  # noqa: E501
 
         self._host = host
 
@@ -126,7 +138,9 @@ class AddAgentParams(object):
         :type: int
         """
         if self._configuration.client_side_validation and port is None:
-            raise ValueError("Invalid value for `port`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `port`, must not be `None`"
+            )  # noqa: E501
 
         self._port = port
 
@@ -252,18 +266,20 @@ class AddAgentParams(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AddAgentParams, dict):

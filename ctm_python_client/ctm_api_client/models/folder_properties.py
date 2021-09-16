@@ -33,34 +33,48 @@ class FolderProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'allowed_internal_user_names': 'list[str]',
-        'allowed_user_names': 'list[str]',
-        'allowed_group_names': 'list[str]',
-        'delete_files_after_processing': 'bool',
-        'notify_by_email_when_file_arrived': 'bool',
-        'retention_hours': 'int',
-        'size_limit': 'int',
-        'allowed_file_pattern': 'str',
-        'exclude_file_pattern': 'str',
-        'access_type': 'str'
+        "name": "str",
+        "allowed_internal_user_names": "list[str]",
+        "allowed_user_names": "list[str]",
+        "allowed_group_names": "list[str]",
+        "delete_files_after_processing": "bool",
+        "notify_by_email_when_file_arrived": "bool",
+        "retention_hours": "int",
+        "size_limit": "int",
+        "allowed_file_pattern": "str",
+        "exclude_file_pattern": "str",
+        "access_type": "str",
     }
 
     attribute_map = {
-        'name': 'name',
-        'allowed_internal_user_names': 'allowedInternalUserNames',
-        'allowed_user_names': 'allowedUserNames',
-        'allowed_group_names': 'allowedGroupNames',
-        'delete_files_after_processing': 'deleteFilesAfterProcessing',
-        'notify_by_email_when_file_arrived': 'notifyByEmailWhenFileArrived',
-        'retention_hours': 'retentionHours',
-        'size_limit': 'sizeLimit',
-        'allowed_file_pattern': 'allowedFilePattern',
-        'exclude_file_pattern': 'excludeFilePattern',
-        'access_type': 'accessType'
+        "name": "name",
+        "allowed_internal_user_names": "allowedInternalUserNames",
+        "allowed_user_names": "allowedUserNames",
+        "allowed_group_names": "allowedGroupNames",
+        "delete_files_after_processing": "deleteFilesAfterProcessing",
+        "notify_by_email_when_file_arrived": "notifyByEmailWhenFileArrived",
+        "retention_hours": "retentionHours",
+        "size_limit": "sizeLimit",
+        "allowed_file_pattern": "allowedFilePattern",
+        "exclude_file_pattern": "excludeFilePattern",
+        "access_type": "accessType",
     }
 
-    def __init__(self, name=None, allowed_internal_user_names=None, allowed_user_names=None, allowed_group_names=None, delete_files_after_processing=None, notify_by_email_when_file_arrived=None, retention_hours=None, size_limit=None, allowed_file_pattern=None, exclude_file_pattern=None, access_type=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        allowed_internal_user_names=None,
+        allowed_user_names=None,
+        allowed_group_names=None,
+        delete_files_after_processing=None,
+        notify_by_email_when_file_arrived=None,
+        retention_hours=None,
+        size_limit=None,
+        allowed_file_pattern=None,
+        exclude_file_pattern=None,
+        access_type=None,
+        _configuration=None,
+    ):  # noqa: E501
         """FolderProperties - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -362,18 +376,20 @@ class FolderProperties(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(FolderProperties, dict):

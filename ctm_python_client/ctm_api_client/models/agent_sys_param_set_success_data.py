@@ -32,17 +32,13 @@ class AgentSysParamSetSuccessData(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'message': 'str',
-        'unsuccess_agents': 'list[AgentInfoResult]'
-    }
+    swagger_types = {"message": "str", "unsuccess_agents": "list[AgentInfoResult]"}
 
-    attribute_map = {
-        'message': 'message',
-        'unsuccess_agents': 'unsuccessAgents'
-    }
+    attribute_map = {"message": "message", "unsuccess_agents": "unsuccessAgents"}
 
-    def __init__(self, message=None, unsuccess_agents=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, message=None, unsuccess_agents=None, _configuration=None
+    ):  # noqa: E501
         """AgentSysParamSetSuccessData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -110,18 +106,20 @@ class AgentSysParamSetSuccessData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AgentSysParamSetSuccessData, dict):

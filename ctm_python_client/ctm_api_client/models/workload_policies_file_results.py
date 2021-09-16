@@ -33,22 +33,30 @@ class WorkloadPoliciesFileResults(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'work_load_policies_file': 'str',
-        'success_workpolicies_count': 'int',
-        'is_deploy_descriptor_valid': 'bool',
-        'added_workload_policies': 'list[str]',
-        'errors': 'list[str]'
+        "work_load_policies_file": "str",
+        "success_workpolicies_count": "int",
+        "is_deploy_descriptor_valid": "bool",
+        "added_workload_policies": "list[str]",
+        "errors": "list[str]",
     }
 
     attribute_map = {
-        'work_load_policies_file': 'workLoadPoliciesFile',
-        'success_workpolicies_count': 'successWorkpoliciesCount',
-        'is_deploy_descriptor_valid': 'isDeployDescriptorValid',
-        'added_workload_policies': 'addedWorkloadPolicies',
-        'errors': 'errors'
+        "work_load_policies_file": "workLoadPoliciesFile",
+        "success_workpolicies_count": "successWorkpoliciesCount",
+        "is_deploy_descriptor_valid": "isDeployDescriptorValid",
+        "added_workload_policies": "addedWorkloadPolicies",
+        "errors": "errors",
     }
 
-    def __init__(self, work_load_policies_file=None, success_workpolicies_count=None, is_deploy_descriptor_valid=None, added_workload_policies=None, errors=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        work_load_policies_file=None,
+        success_workpolicies_count=None,
+        is_deploy_descriptor_valid=None,
+        added_workload_policies=None,
+        errors=None,
+        _configuration=None,
+    ):  # noqa: E501
         """WorkloadPoliciesFileResults - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -190,18 +198,20 @@ class WorkloadPoliciesFileResults(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(WorkloadPoliciesFileResults, dict):

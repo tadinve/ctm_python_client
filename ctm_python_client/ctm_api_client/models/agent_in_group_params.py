@@ -33,16 +33,18 @@ class AgentInGroupParams(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'host': 'str',
-        'hostgroup_agent_participation': 'HostgroupAgentParticipation'
+        "host": "str",
+        "hostgroup_agent_participation": "HostgroupAgentParticipation",
     }
 
     attribute_map = {
-        'host': 'host',
-        'hostgroup_agent_participation': 'hostgroupAgentParticipation'
+        "host": "host",
+        "hostgroup_agent_participation": "hostgroupAgentParticipation",
     }
 
-    def __init__(self, host=None, hostgroup_agent_participation=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, host=None, hostgroup_agent_participation=None, _configuration=None
+    ):  # noqa: E501
         """AgentInGroupParams - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -77,7 +79,9 @@ class AgentInGroupParams(object):
         :type: str
         """
         if self._configuration.client_side_validation and host is None:
-            raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `host`, must not be `None`"
+            )  # noqa: E501
 
         self._host = host
 
@@ -111,18 +115,20 @@ class AgentInGroupParams(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AgentInGroupParams, dict):

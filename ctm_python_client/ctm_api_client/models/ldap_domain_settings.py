@@ -33,26 +33,36 @@ class LdapDomainSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'domain_name': 'str',
-        'directory_search_user': 'str',
-        'directory_search_password': 'str',
-        'communication_protocol': 'str',
-        'directory_server_type': 'str',
-        'server_host_name_and_port': 'list[HostnamePortPair]',
-        'directory_search_base': 'list[str]'
+        "domain_name": "str",
+        "directory_search_user": "str",
+        "directory_search_password": "str",
+        "communication_protocol": "str",
+        "directory_server_type": "str",
+        "server_host_name_and_port": "list[HostnamePortPair]",
+        "directory_search_base": "list[str]",
     }
 
     attribute_map = {
-        'domain_name': 'domainName',
-        'directory_search_user': 'directorySearchUser',
-        'directory_search_password': 'directorySearchPassword',
-        'communication_protocol': 'communicationProtocol',
-        'directory_server_type': 'directoryServerType',
-        'server_host_name_and_port': 'serverHostNameAndPort',
-        'directory_search_base': 'directorySearchBase'
+        "domain_name": "domainName",
+        "directory_search_user": "directorySearchUser",
+        "directory_search_password": "directorySearchPassword",
+        "communication_protocol": "communicationProtocol",
+        "directory_server_type": "directoryServerType",
+        "server_host_name_and_port": "serverHostNameAndPort",
+        "directory_search_base": "directorySearchBase",
     }
 
-    def __init__(self, domain_name=None, directory_search_user=None, directory_search_password=None, communication_protocol=None, directory_server_type=None, server_host_name_and_port=None, directory_search_base=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        domain_name=None,
+        directory_search_user=None,
+        directory_search_password=None,
+        communication_protocol=None,
+        directory_server_type=None,
+        server_host_name_and_port=None,
+        directory_search_base=None,
+        _configuration=None,
+    ):  # noqa: E501
         """LdapDomainSettings - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -236,18 +246,20 @@ class LdapDomainSettings(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(LdapDomainSettings, dict):

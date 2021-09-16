@@ -32,19 +32,13 @@ class AgentInfoResult(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {
-        'node_id': 'str',
-        'ctm': 'str',
-        'err_msg': 'str'
-    }
+    swagger_types = {"node_id": "str", "ctm": "str", "err_msg": "str"}
 
-    attribute_map = {
-        'node_id': 'nodeID',
-        'ctm': 'ctm',
-        'err_msg': 'errMsg'
-    }
+    attribute_map = {"node_id": "nodeID", "ctm": "ctm", "err_msg": "errMsg"}
 
-    def __init__(self, node_id=None, ctm=None, err_msg=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self, node_id=None, ctm=None, err_msg=None, _configuration=None
+    ):  # noqa: E501
         """AgentInfoResult - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -81,7 +75,9 @@ class AgentInfoResult(object):
         :type: str
         """
         if self._configuration.client_side_validation and node_id is None:
-            raise ValueError("Invalid value for `node_id`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `node_id`, must not be `None`"
+            )  # noqa: E501
 
         self._node_id = node_id
 
@@ -106,7 +102,9 @@ class AgentInfoResult(object):
         :type: str
         """
         if self._configuration.client_side_validation and ctm is None:
-            raise ValueError("Invalid value for `ctm`, must not be `None`")  # noqa: E501
+            raise ValueError(
+                "Invalid value for `ctm`, must not be `None`"
+            )  # noqa: E501
 
         self._ctm = ctm
 
@@ -140,18 +138,20 @@ class AgentInfoResult(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(AgentInfoResult, dict):

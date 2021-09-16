@@ -33,24 +33,33 @@ class CertificateSigningRequestData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'organization': 'str',
-        'organization_unit': 'str',
-        'city_locality': 'str',
-        'state_province': 'str',
-        'country': 'str',
-        'email_address': 'str'
+        "organization": "str",
+        "organization_unit": "str",
+        "city_locality": "str",
+        "state_province": "str",
+        "country": "str",
+        "email_address": "str",
     }
 
     attribute_map = {
-        'organization': 'organization',
-        'organization_unit': 'organizationUnit',
-        'city_locality': 'cityLocality',
-        'state_province': 'stateProvince',
-        'country': 'country',
-        'email_address': 'emailAddress'
+        "organization": "organization",
+        "organization_unit": "organizationUnit",
+        "city_locality": "cityLocality",
+        "state_province": "stateProvince",
+        "country": "country",
+        "email_address": "emailAddress",
     }
 
-    def __init__(self, organization=None, organization_unit=None, city_locality=None, state_province=None, country=None, email_address=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        organization=None,
+        organization_unit=None,
+        city_locality=None,
+        state_province=None,
+        country=None,
+        email_address=None,
+        _configuration=None,
+    ):  # noqa: E501
         """CertificateSigningRequestData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -222,18 +231,20 @@ class CertificateSigningRequestData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(CertificateSigningRequestData, dict):

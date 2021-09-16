@@ -50,11 +50,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.activate_workload_policy_with_http_info(policy, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.activate_workload_policy_with_http_info(
+                policy, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.activate_workload_policy_with_http_info(policy, **kwargs)  # noqa: E501
+            (data) = self.activate_workload_policy_with_http_info(
+                policy, **kwargs
+            )  # noqa: E501
             return data
 
     def activate_workload_policy_with_http_info(self, policy, **kwargs):  # noqa: E501
@@ -75,37 +79,40 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['policy', 'ctm', 'server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["policy", "ctm", "server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method activate_workload_policy" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'policy' is set
-        if self.api_client.client_side_validation and ('policy' not in params or
-                                                       params['policy'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `policy` when calling `activate_workload_policy`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "policy" not in params or params["policy"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `policy` when calling `activate_workload_policy`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'policy' in params:
-            path_params['policy'] = params['policy']  # noqa: E501
+        if "policy" in params:
+            path_params["policy"] = params["policy"]  # noqa: E501
 
         query_params = []
-        if 'ctm' in params:
-            query_params.append(('ctm', params['ctm']))  # noqa: E501
-        if 'server' in params:
-            query_params.append(('server', params['server']))  # noqa: E501
+        if "ctm" in params:
+            query_params.append(("ctm", params["ctm"]))  # noqa: E501
+        if "server" in params:
+            query_params.append(("server", params["server"]))  # noqa: E501
 
         header_params = {}
 
@@ -114,27 +121,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/workloadpolicy/{policy}/activate', 'POST',
+            "/run/workloadpolicy/{policy}/activate",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='WorkloadPolicyStateList',  # noqa: E501
+            response_type="WorkloadPolicyStateList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_event(self, server, event, **kwargs):  # noqa: E501
         """Add a new  event.  # noqa: E501
@@ -152,11 +162,13 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.add_event_with_http_info(server, event, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_event_with_http_info(server, event, **kwargs)  # noqa: E501
+            (data) = self.add_event_with_http_info(
+                server, event, **kwargs
+            )  # noqa: E501
             return data
 
     def add_event_with_http_info(self, server, event, **kwargs):  # noqa: E501
@@ -176,35 +188,41 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'event']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "event"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_event" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `add_event`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `add_event`"
+            )  # noqa: E501
         # verify the required parameter 'event' is set
-        if self.api_client.client_side_validation and ('event' not in params or
-                                                       params['event'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `event` when calling `add_event`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "event" not in params or params["event"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `event` when calling `add_event`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -214,30 +232,33 @@ class RunApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'event' in params:
-            body_params = params['event']
+        if "event" in params:
+            body_params = params["event"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/event/{server}', 'POST',
+            "/run/event/{server}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_resource(self, server, resource, **kwargs):  # noqa: E501
         """Add a new pool resource.  # noqa: E501
@@ -255,11 +276,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_resource_with_http_info(server, resource, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_resource_with_http_info(
+                server, resource, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_resource_with_http_info(server, resource, **kwargs)  # noqa: E501
+            (data) = self.add_resource_with_http_info(
+                server, resource, **kwargs
+            )  # noqa: E501
             return data
 
     def add_resource_with_http_info(self, server, resource, **kwargs):  # noqa: E501
@@ -279,35 +304,41 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'resource']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "resource"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_resource" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `add_resource`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `add_resource`"
+            )  # noqa: E501
         # verify the required parameter 'resource' is set
-        if self.api_client.client_side_validation and ('resource' not in params or
-                                                       params['resource'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `resource` when calling `add_resource`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "resource" not in params or params["resource"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `resource` when calling `add_resource`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
 
         query_params = []
 
@@ -317,30 +348,33 @@ class RunApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'resource' in params:
-            body_params = params['resource']
+        if "resource" in params:
+            body_params = params["resource"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/resource/{server}', 'POST',
+            "/run/resource/{server}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_workload_policies(self, workloadpoliciesfile, **kwargs):  # noqa: E501
         """Add workload policies from definitions file  # noqa: E501
@@ -357,14 +391,20 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.add_workload_policies_with_http_info(workloadpoliciesfile, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.add_workload_policies_with_http_info(
+                workloadpoliciesfile, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.add_workload_policies_with_http_info(workloadpoliciesfile, **kwargs)  # noqa: E501
+            (data) = self.add_workload_policies_with_http_info(
+                workloadpoliciesfile, **kwargs
+            )  # noqa: E501
             return data
 
-    def add_workload_policies_with_http_info(self, workloadpoliciesfile, **kwargs):  # noqa: E501
+    def add_workload_policies_with_http_info(
+        self, workloadpoliciesfile, **kwargs
+    ):  # noqa: E501
         """Add workload policies from definitions file  # noqa: E501
 
         Add workload policies from json definitions file to Control-M  # noqa: E501
@@ -380,25 +420,29 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['workloadpoliciesfile']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["workloadpoliciesfile"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_workload_policies" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'workloadpoliciesfile' is set
-        if self.api_client.client_side_validation and ('workloadpoliciesfile' not in params or
-                                                       params['workloadpoliciesfile'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `workloadpoliciesfile` when calling `add_workload_policies`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "workloadpoliciesfile" not in params
+            or params["workloadpoliciesfile"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `workloadpoliciesfile` when calling `add_workload_policies`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -410,36 +454,44 @@ class RunApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'workloadpoliciesfile' in params:
-            local_var_files['workloadpoliciesfile'] = params['workloadpoliciesfile']  # noqa: E501
+        if "workloadpoliciesfile" in params:
+            local_var_files["workloadpoliciesfile"] = params[
+                "workloadpoliciesfile"
+            ]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/workloadpolicies', 'POST',
+            "/run/workloadpolicies",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='WorkloadPoliciesFileResults',  # noqa: E501
+            response_type="WorkloadPoliciesFileResults",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def confirm_job(self, job_id, **kwargs):  # noqa: E501
         """confirm a job  # noqa: E501
@@ -456,8 +508,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.confirm_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.confirm_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -479,31 +531,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method confirm_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `confirm_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `confirm_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -514,27 +569,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/confirm', 'POST',
+            "/run/job/{jobId}/confirm",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def deactivate_workload_policy(self, policy, **kwargs):  # noqa: E501
         """deactivate a workload policy  # noqa: E501
@@ -553,11 +611,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.deactivate_workload_policy_with_http_info(policy, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.deactivate_workload_policy_with_http_info(
+                policy, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.deactivate_workload_policy_with_http_info(policy, **kwargs)  # noqa: E501
+            (data) = self.deactivate_workload_policy_with_http_info(
+                policy, **kwargs
+            )  # noqa: E501
             return data
 
     def deactivate_workload_policy_with_http_info(self, policy, **kwargs):  # noqa: E501
@@ -578,37 +640,40 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['policy', 'ctm', 'server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["policy", "ctm", "server"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method deactivate_workload_policy" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'policy' is set
-        if self.api_client.client_side_validation and ('policy' not in params or
-                                                       params['policy'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `policy` when calling `deactivate_workload_policy`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "policy" not in params or params["policy"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `policy` when calling `deactivate_workload_policy`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'policy' in params:
-            path_params['policy'] = params['policy']  # noqa: E501
+        if "policy" in params:
+            path_params["policy"] = params["policy"]  # noqa: E501
 
         query_params = []
-        if 'ctm' in params:
-            query_params.append(('ctm', params['ctm']))  # noqa: E501
-        if 'server' in params:
-            query_params.append(('server', params['server']))  # noqa: E501
+        if "ctm" in params:
+            query_params.append(("ctm", params["ctm"]))  # noqa: E501
+        if "server" in params:
+            query_params.append(("server", params["server"]))  # noqa: E501
 
         header_params = {}
 
@@ -617,27 +682,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/workloadpolicy/{policy}/deactivate', 'POST',
+            "/run/workloadpolicy/{policy}/deactivate",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='WorkloadPolicyStateList',  # noqa: E501
+            response_type="WorkloadPolicyStateList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_event(self, server, name, _date, **kwargs):  # noqa: E501
         """Delete a  event.  # noqa: E501
@@ -656,11 +724,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_event_with_http_info(server, name, _date, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_event_with_http_info(
+                server, name, _date, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_event_with_http_info(server, name, _date, **kwargs)  # noqa: E501
+            (data) = self.delete_event_with_http_info(
+                server, name, _date, **kwargs
+            )  # noqa: E501
             return data
 
     def delete_event_with_http_info(self, server, name, _date, **kwargs):  # noqa: E501
@@ -681,43 +753,52 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'name', '_date']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "name", "_date"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_event" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_event`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_event`"
+            )  # noqa: E501
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `delete_event`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `delete_event`"
+            )  # noqa: E501
         # verify the required parameter '_date' is set
-        if self.api_client.client_side_validation and ('_date' not in params or
-                                                       params['_date'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `_date` when calling `delete_event`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "_date" not in params or params["_date"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `_date` when calling `delete_event`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-        if '_date' in params:
-            path_params['date'] = params['_date']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
+        if "_date" in params:
+            path_params["date"] = params["_date"]  # noqa: E501
 
         query_params = []
 
@@ -728,27 +809,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/event/{server}/{name}/{date}', 'DELETE',
+            "/run/event/{server}/{name}/{date}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_job(self, job_id, **kwargs):  # noqa: E501
         """mark job as deleted  # noqa: E501
@@ -765,8 +849,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.delete_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -788,31 +872,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `delete_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `delete_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -823,27 +910,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/delete', 'POST',
+            "/run/job/{jobId}/delete",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_resource(self, server, name, **kwargs):  # noqa: E501
         """Delete a pool resource.  # noqa: E501
@@ -861,11 +951,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_resource_with_http_info(server, name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_resource_with_http_info(
+                server, name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_resource_with_http_info(server, name, **kwargs)  # noqa: E501
+            (data) = self.delete_resource_with_http_info(
+                server, name, **kwargs
+            )  # noqa: E501
             return data
 
     def delete_resource_with_http_info(self, server, name, **kwargs):  # noqa: E501
@@ -885,37 +979,43 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_resource" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `delete_resource`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `delete_resource`"
+            )  # noqa: E501
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `delete_resource`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `delete_resource`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -926,27 +1026,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/resource/{server}/{name}', 'DELETE',
+            "/run/resource/{server}/{name}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def delete_workload_policy(self, workloadpolicy_name, **kwargs):  # noqa: E501
         """delete workloadpolicy  # noqa: E501
@@ -963,14 +1066,20 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_workload_policy_with_http_info(workloadpolicy_name, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.delete_workload_policy_with_http_info(
+                workloadpolicy_name, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.delete_workload_policy_with_http_info(workloadpolicy_name, **kwargs)  # noqa: E501
+            (data) = self.delete_workload_policy_with_http_info(
+                workloadpolicy_name, **kwargs
+            )  # noqa: E501
             return data
 
-    def delete_workload_policy_with_http_info(self, workloadpolicy_name, **kwargs):  # noqa: E501
+    def delete_workload_policy_with_http_info(
+        self, workloadpolicy_name, **kwargs
+    ):  # noqa: E501
         """delete workloadpolicy  # noqa: E501
 
         Delete workloadpolicy  # noqa: E501
@@ -986,31 +1095,36 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['workloadpolicy_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["workloadpolicy_name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method delete_workload_policy" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'workloadpolicy_name' is set
-        if self.api_client.client_side_validation and ('workloadpolicy_name' not in params or
-                                                       params['workloadpolicy_name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `workloadpolicy_name` when calling `delete_workload_policy`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "workloadpolicy_name" not in params or params["workloadpolicy_name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `workloadpolicy_name` when calling `delete_workload_policy`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'workloadpolicy_name' in params:
-            path_params['workloadpolicyName'] = params['workloadpolicy_name']  # noqa: E501
+        if "workloadpolicy_name" in params:
+            path_params["workloadpolicyName"] = params[
+                "workloadpolicy_name"
+            ]  # noqa: E501
 
         query_params = []
 
@@ -1021,27 +1135,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/workloadpolicy/{workloadpolicyName}', 'DELETE',
+            "/run/workloadpolicy/{workloadpolicyName}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def free_job(self, job_id, **kwargs):  # noqa: E501
         """free an already held the job  # noqa: E501
@@ -1058,8 +1175,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.free_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.free_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -1081,31 +1198,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method free_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `free_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `free_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -1116,27 +1236,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/free', 'POST',
+            "/run/job/{jobId}/free",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_active_job(self, job_id, **kwargs):  # noqa: E501
         """get active job  # noqa: E501
@@ -1153,8 +1276,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_active_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_active_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -1176,31 +1299,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_active_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `get_active_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `get_active_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -1211,27 +1337,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/get', 'GET',
+            "/run/job/{jobId}/get",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_active_services(self, **kwargs):  # noqa: E501
         """Get SLA active services  # noqa: E501
@@ -1247,8 +1376,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_active_services_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_active_services_with_http_info(**kwargs)  # noqa: E501
@@ -1270,20 +1399,20 @@ class RunApi(object):
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_active_services" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -1298,27 +1427,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/services/sla', 'GET',
+            "/run/services/sla",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActiveServices',  # noqa: E501
+            response_type="ActiveServices",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_detailed_workload_policies(self, **kwargs):  # noqa: E501
         """get full workLoad policies data that match the search criteria.  # noqa: E501
@@ -1335,11 +1467,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_detailed_workload_policies_with_http_info(**kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_detailed_workload_policies_with_http_info(
+                **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_detailed_workload_policies_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_detailed_workload_policies_with_http_info(
+                **kwargs
+            )  # noqa: E501
             return data
 
     def get_detailed_workload_policies_with_http_info(self, **kwargs):  # noqa: E501
@@ -1358,29 +1494,29 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_detailed_workload_policies" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
 
         header_params = {}
 
@@ -1389,27 +1525,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/workloadpolicies/detailed', 'GET',
+            "/run/workloadpolicies/detailed",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_events(self, **kwargs):  # noqa: E501
         """Get all events records for specific search.  # noqa: E501
@@ -1430,8 +1569,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_events_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_events_with_http_info(**kwargs)  # noqa: E501
@@ -1457,37 +1596,37 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ctm', 'server', 'name', '_date', 'limit']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["ctm", "server", "name", "_date", "limit"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_events" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'ctm' in params:
-            query_params.append(('ctm', params['ctm']))  # noqa: E501
-        if 'server' in params:
-            query_params.append(('server', params['server']))  # noqa: E501
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
-        if '_date' in params:
-            query_params.append(('date', params['_date']))  # noqa: E501
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))  # noqa: E501
+        if "ctm" in params:
+            query_params.append(("ctm", params["ctm"]))  # noqa: E501
+        if "server" in params:
+            query_params.append(("server", params["server"]))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
+        if "_date" in params:
+            query_params.append(("date", params["_date"]))  # noqa: E501
+        if "limit" in params:
+            query_params.append(("limit", params["limit"]))  # noqa: E501
 
         header_params = {}
 
@@ -1496,27 +1635,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/events', 'GET',
+            "/run/events",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='EventSet',  # noqa: E501
+            response_type="EventSet",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_job_log(self, job_id, **kwargs):  # noqa: E501
         """Get job's log  # noqa: E501
@@ -1533,8 +1675,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_job_log_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_job_log_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -1556,31 +1698,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_job_log" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `get_job_log`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `get_job_log`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -1591,27 +1736,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/plain'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/log', 'GET',
+            "/run/job/{jobId}/log",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_job_output(self, job_id, **kwargs):  # noqa: E501
         """Get job output  # noqa: E501
@@ -1629,8 +1777,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_job_output_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_job_output_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -1653,35 +1801,38 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id', 'run_no']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id", "run_no"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_job_output" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `get_job_output`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `get_job_output`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
-        if 'run_no' in params:
-            query_params.append(('runNo', params['run_no']))  # noqa: E501
+        if "run_no" in params:
+            query_params.append(("runNo", params["run_no"]))  # noqa: E501
 
         header_params = {}
 
@@ -1690,27 +1841,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/plain'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/output', 'GET',
+            "/run/job/{jobId}/output",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_job_statistics(self, job_id, **kwargs):  # noqa: E501
         """Get job statistics  # noqa: E501
@@ -1727,11 +1881,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_job_statistics_with_http_info(job_id, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.get_job_statistics_with_http_info(
+                job_id, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.get_job_statistics_with_http_info(job_id, **kwargs)  # noqa: E501
+            (data) = self.get_job_statistics_with_http_info(
+                job_id, **kwargs
+            )  # noqa: E501
             return data
 
     def get_job_statistics_with_http_info(self, job_id, **kwargs):  # noqa: E501
@@ -1750,31 +1908,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_job_statistics" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `get_job_statistics`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `get_job_statistics`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -1785,27 +1946,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/plain'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/statistics', 'GET',
+            "/run/job/{jobId}/statistics",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Statistics',  # noqa: E501
+            response_type="Statistics",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_job_status(self, job_id, **kwargs):  # noqa: E501
         """Get status of a job  # noqa: E501
@@ -1822,8 +1986,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_job_status_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_job_status_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -1845,31 +2009,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_job_status" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `get_job_status`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `get_job_status`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -1880,27 +2047,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/status', 'GET',
+            "/run/job/{jobId}/status",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JobRunStatus',  # noqa: E501
+            response_type="JobRunStatus",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_jobs_status(self, run_id, **kwargs):  # noqa: E501
         """Get status of running jobs  # noqa: E501
@@ -1918,8 +2088,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_jobs_status_with_http_info(run_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_jobs_status_with_http_info(run_id, **kwargs)  # noqa: E501
@@ -1942,35 +2112,38 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['run_id', 'start_index']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["run_id", "start_index"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_jobs_status" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'run_id' is set
-        if self.api_client.client_side_validation and ('run_id' not in params or
-                                                       params['run_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `run_id` when calling `get_jobs_status`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "run_id" not in params or params["run_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `run_id` when calling `get_jobs_status`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'run_id' in params:
-            path_params['runId'] = params['run_id']  # noqa: E501
+        if "run_id" in params:
+            path_params["runId"] = params["run_id"]  # noqa: E501
 
         query_params = []
-        if 'start_index' in params:
-            query_params.append(('startIndex', params['start_index']))  # noqa: E501
+        if "start_index" in params:
+            query_params.append(("startIndex", params["start_index"]))  # noqa: E501
 
         header_params = {}
 
@@ -1979,27 +2152,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/status/{runId}', 'GET',
+            "/run/status/{runId}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JobStatusResult',  # noqa: E501
+            response_type="JobStatusResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_jobs_status_by_filter(self, **kwargs):  # noqa: E501
         """Get jobs that match the search criteria.  # noqa: E501
@@ -2049,11 +2225,13 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_jobs_status_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_jobs_status_by_filter_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_jobs_status_by_filter_with_http_info(
+                **kwargs
+            )  # noqa: E501
             return data
 
     def get_jobs_status_by_filter_with_http_info(self, **kwargs):  # noqa: E501
@@ -2105,95 +2283,144 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['limit', 'jobname', 'ctm', 'server', 'application', 'sub_application', 'host', 'status', 'folder', 'description', 'jobid', 'neighborhood', 'depth', 'direction', 'order_date_from', 'order_date_to', 'from_time', 'to_time', 'folder_library', 'host_group', 'run_as', 'command', 'file_path', 'file_name', 'workload_policy', 'rule_based_calendar', 'resource_mutex', 'resource_semaphore', 'resource_lock', 'resource_pool', 'held', 'folder_held', 'cyclic', 'deleted']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "limit",
+            "jobname",
+            "ctm",
+            "server",
+            "application",
+            "sub_application",
+            "host",
+            "status",
+            "folder",
+            "description",
+            "jobid",
+            "neighborhood",
+            "depth",
+            "direction",
+            "order_date_from",
+            "order_date_to",
+            "from_time",
+            "to_time",
+            "folder_library",
+            "host_group",
+            "run_as",
+            "command",
+            "file_path",
+            "file_name",
+            "workload_policy",
+            "rule_based_calendar",
+            "resource_mutex",
+            "resource_semaphore",
+            "resource_lock",
+            "resource_pool",
+            "held",
+            "folder_held",
+            "cyclic",
+            "deleted",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_jobs_status_by_filter" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))  # noqa: E501
-        if 'jobname' in params:
-            query_params.append(('jobname', params['jobname']))  # noqa: E501
-        if 'ctm' in params:
-            query_params.append(('ctm', params['ctm']))  # noqa: E501
-        if 'server' in params:
-            query_params.append(('server', params['server']))  # noqa: E501
-        if 'application' in params:
-            query_params.append(('application', params['application']))  # noqa: E501
-        if 'sub_application' in params:
-            query_params.append(('subApplication', params['sub_application']))  # noqa: E501
-        if 'host' in params:
-            query_params.append(('host', params['host']))  # noqa: E501
-        if 'status' in params:
-            query_params.append(('status', params['status']))  # noqa: E501
-        if 'folder' in params:
-            query_params.append(('folder', params['folder']))  # noqa: E501
-        if 'description' in params:
-            query_params.append(('description', params['description']))  # noqa: E501
-        if 'jobid' in params:
-            query_params.append(('jobid', params['jobid']))  # noqa: E501
-        if 'neighborhood' in params:
-            query_params.append(('neighborhood', params['neighborhood']))  # noqa: E501
-        if 'depth' in params:
-            query_params.append(('depth', params['depth']))  # noqa: E501
-        if 'direction' in params:
-            query_params.append(('direction', params['direction']))  # noqa: E501
-        if 'order_date_from' in params:
-            query_params.append(('orderDateFrom', params['order_date_from']))  # noqa: E501
-        if 'order_date_to' in params:
-            query_params.append(('orderDateTo', params['order_date_to']))  # noqa: E501
-        if 'from_time' in params:
-            query_params.append(('fromTime', params['from_time']))  # noqa: E501
-        if 'to_time' in params:
-            query_params.append(('toTime', params['to_time']))  # noqa: E501
-        if 'folder_library' in params:
-            query_params.append(('folderLibrary', params['folder_library']))  # noqa: E501
-        if 'host_group' in params:
-            query_params.append(('hostGroup', params['host_group']))  # noqa: E501
-        if 'run_as' in params:
-            query_params.append(('runAs', params['run_as']))  # noqa: E501
-        if 'command' in params:
-            query_params.append(('command', params['command']))  # noqa: E501
-        if 'file_path' in params:
-            query_params.append(('filePath', params['file_path']))  # noqa: E501
-        if 'file_name' in params:
-            query_params.append(('fileName', params['file_name']))  # noqa: E501
-        if 'workload_policy' in params:
-            query_params.append(('workloadPolicy', params['workload_policy']))  # noqa: E501
-        if 'rule_based_calendar' in params:
-            query_params.append(('ruleBasedCalendar', params['rule_based_calendar']))  # noqa: E501
-        if 'resource_mutex' in params:
-            query_params.append(('resourceMutex', params['resource_mutex']))  # noqa: E501
-        if 'resource_semaphore' in params:
-            query_params.append(('resourceSemaphore', params['resource_semaphore']))  # noqa: E501
-        if 'resource_lock' in params:
-            query_params.append(('resourceLock', params['resource_lock']))  # noqa: E501
-        if 'resource_pool' in params:
-            query_params.append(('resourcePool', params['resource_pool']))  # noqa: E501
-        if 'held' in params:
-            query_params.append(('held', params['held']))  # noqa: E501
-        if 'folder_held' in params:
-            query_params.append(('folderHeld', params['folder_held']))  # noqa: E501
-        if 'cyclic' in params:
-            query_params.append(('cyclic', params['cyclic']))  # noqa: E501
-        if 'deleted' in params:
-            query_params.append(('deleted', params['deleted']))  # noqa: E501
+        if "limit" in params:
+            query_params.append(("limit", params["limit"]))  # noqa: E501
+        if "jobname" in params:
+            query_params.append(("jobname", params["jobname"]))  # noqa: E501
+        if "ctm" in params:
+            query_params.append(("ctm", params["ctm"]))  # noqa: E501
+        if "server" in params:
+            query_params.append(("server", params["server"]))  # noqa: E501
+        if "application" in params:
+            query_params.append(("application", params["application"]))  # noqa: E501
+        if "sub_application" in params:
+            query_params.append(
+                ("subApplication", params["sub_application"])
+            )  # noqa: E501
+        if "host" in params:
+            query_params.append(("host", params["host"]))  # noqa: E501
+        if "status" in params:
+            query_params.append(("status", params["status"]))  # noqa: E501
+        if "folder" in params:
+            query_params.append(("folder", params["folder"]))  # noqa: E501
+        if "description" in params:
+            query_params.append(("description", params["description"]))  # noqa: E501
+        if "jobid" in params:
+            query_params.append(("jobid", params["jobid"]))  # noqa: E501
+        if "neighborhood" in params:
+            query_params.append(("neighborhood", params["neighborhood"]))  # noqa: E501
+        if "depth" in params:
+            query_params.append(("depth", params["depth"]))  # noqa: E501
+        if "direction" in params:
+            query_params.append(("direction", params["direction"]))  # noqa: E501
+        if "order_date_from" in params:
+            query_params.append(
+                ("orderDateFrom", params["order_date_from"])
+            )  # noqa: E501
+        if "order_date_to" in params:
+            query_params.append(("orderDateTo", params["order_date_to"]))  # noqa: E501
+        if "from_time" in params:
+            query_params.append(("fromTime", params["from_time"]))  # noqa: E501
+        if "to_time" in params:
+            query_params.append(("toTime", params["to_time"]))  # noqa: E501
+        if "folder_library" in params:
+            query_params.append(
+                ("folderLibrary", params["folder_library"])
+            )  # noqa: E501
+        if "host_group" in params:
+            query_params.append(("hostGroup", params["host_group"]))  # noqa: E501
+        if "run_as" in params:
+            query_params.append(("runAs", params["run_as"]))  # noqa: E501
+        if "command" in params:
+            query_params.append(("command", params["command"]))  # noqa: E501
+        if "file_path" in params:
+            query_params.append(("filePath", params["file_path"]))  # noqa: E501
+        if "file_name" in params:
+            query_params.append(("fileName", params["file_name"]))  # noqa: E501
+        if "workload_policy" in params:
+            query_params.append(
+                ("workloadPolicy", params["workload_policy"])
+            )  # noqa: E501
+        if "rule_based_calendar" in params:
+            query_params.append(
+                ("ruleBasedCalendar", params["rule_based_calendar"])
+            )  # noqa: E501
+        if "resource_mutex" in params:
+            query_params.append(
+                ("resourceMutex", params["resource_mutex"])
+            )  # noqa: E501
+        if "resource_semaphore" in params:
+            query_params.append(
+                ("resourceSemaphore", params["resource_semaphore"])
+            )  # noqa: E501
+        if "resource_lock" in params:
+            query_params.append(("resourceLock", params["resource_lock"]))  # noqa: E501
+        if "resource_pool" in params:
+            query_params.append(("resourcePool", params["resource_pool"]))  # noqa: E501
+        if "held" in params:
+            query_params.append(("held", params["held"]))  # noqa: E501
+        if "folder_held" in params:
+            query_params.append(("folderHeld", params["folder_held"]))  # noqa: E501
+        if "cyclic" in params:
+            query_params.append(("cyclic", params["cyclic"]))  # noqa: E501
+        if "deleted" in params:
+            query_params.append(("deleted", params["deleted"]))  # noqa: E501
 
         header_params = {}
 
@@ -2202,27 +2429,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/jobs/status', 'GET',
+            "/run/jobs/status",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JobStatusResult',  # noqa: E501
+            response_type="JobStatusResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_resources(self, **kwargs):  # noqa: E501
         """Get all resources records matching search.  # noqa: E501
@@ -2241,8 +2471,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_resources_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_resources_with_http_info(**kwargs)  # noqa: E501
@@ -2266,33 +2496,33 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ctm', 'server', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["ctm", "server", "name"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_resources" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'ctm' in params:
-            query_params.append(('ctm', params['ctm']))  # noqa: E501
-        if 'server' in params:
-            query_params.append(('server', params['server']))  # noqa: E501
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
+        if "ctm" in params:
+            query_params.append(("ctm", params["ctm"]))  # noqa: E501
+        if "server" in params:
+            query_params.append(("server", params["server"]))  # noqa: E501
+        if "name" in params:
+            query_params.append(("name", params["name"]))  # noqa: E501
 
         header_params = {}
 
@@ -2301,27 +2531,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/resources', 'GET',
+            "/run/resources",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ResourceSet',  # noqa: E501
+            response_type="ResourceSet",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_waiting_info(self, job_id, **kwargs):  # noqa: E501
         """get job's waiting information  # noqa: E501
@@ -2338,11 +2571,13 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_waiting_info_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_waiting_info_with_http_info(job_id, **kwargs)  # noqa: E501
+            (data) = self.get_waiting_info_with_http_info(
+                job_id, **kwargs
+            )  # noqa: E501
             return data
 
     def get_waiting_info_with_http_info(self, job_id, **kwargs):  # noqa: E501
@@ -2361,31 +2596,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_waiting_info" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `get_waiting_info`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `get_waiting_info`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -2396,27 +2634,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/waitingInfo', 'GET',
+            "/run/job/{jobId}/waitingInfo",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='StringListResult',  # noqa: E501
+            response_type="StringListResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_workload_policies(self, **kwargs):  # noqa: E501
         """get workload policies  # noqa: E501
@@ -2433,8 +2674,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.get_workload_policies_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_workload_policies_with_http_info(**kwargs)  # noqa: E501
@@ -2456,29 +2697,29 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['state']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["state"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_workload_policies" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'state' in params:
-            query_params.append(('state', params['state']))  # noqa: E501
+        if "state" in params:
+            query_params.append(("state", params["state"]))  # noqa: E501
 
         header_params = {}
 
@@ -2487,27 +2728,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/workloadpolicies', 'GET',
+            "/run/workloadpolicies",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='WorkloadPolicyList',  # noqa: E501
+            response_type="WorkloadPolicyList",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def hold_job(self, job_id, **kwargs):  # noqa: E501
         """hold the job so it will not start untill it is freed  # noqa: E501
@@ -2524,8 +2768,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.hold_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.hold_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -2547,31 +2791,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method hold_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `hold_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `hold_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -2582,27 +2829,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/hold', 'POST',
+            "/run/job/{jobId}/hold",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def kill_job(self, job_id, **kwargs):  # noqa: E501
         """Cancel running job  # noqa: E501
@@ -2619,8 +2869,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.kill_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.kill_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -2642,31 +2892,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method kill_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `kill_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `kill_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -2677,27 +2930,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/kill', 'POST',
+            "/run/job/{jobId}/kill",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def modify_job(self, job_definitions_file, job_id, **kwargs):  # noqa: E501
         """Modify active job  # noqa: E501
@@ -2715,14 +2971,20 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.modify_job_with_http_info(job_definitions_file, job_id, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.modify_job_with_http_info(
+                job_definitions_file, job_id, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.modify_job_with_http_info(job_definitions_file, job_id, **kwargs)  # noqa: E501
+            (data) = self.modify_job_with_http_info(
+                job_definitions_file, job_id, **kwargs
+            )  # noqa: E501
             return data
 
-    def modify_job_with_http_info(self, job_definitions_file, job_id, **kwargs):  # noqa: E501
+    def modify_job_with_http_info(
+        self, job_definitions_file, job_id, **kwargs
+    ):  # noqa: E501
         """Modify active job  # noqa: E501
 
         Modify active job, specified by order id according to given definitions file (JSON).  # noqa: E501
@@ -2739,35 +3001,42 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_definitions_file', 'job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_definitions_file", "job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method modify_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_definitions_file' is set
-        if self.api_client.client_side_validation and ('job_definitions_file' not in params or
-                                                       params['job_definitions_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_definitions_file` when calling `modify_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_definitions_file" not in params
+            or params["job_definitions_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_definitions_file` when calling `modify_job`"
+            )  # noqa: E501
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `modify_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `modify_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -2775,36 +3044,44 @@ class RunApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'job_definitions_file' in params:
-            local_var_files['jobDefinitionsFile'] = params['job_definitions_file']  # noqa: E501
+        if "job_definitions_file" in params:
+            local_var_files["jobDefinitionsFile"] = params[
+                "job_definitions_file"
+            ]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/modify', 'POST',
+            "/run/job/{jobId}/modify",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def order_jobs_in_folder(self, **kwargs):  # noqa: E501
         """Execute requested jobs in certain folder  # noqa: E501
@@ -2821,8 +3098,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.order_jobs_in_folder_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.order_jobs_in_folder_with_http_info(**kwargs)  # noqa: E501
@@ -2844,21 +3121,21 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["data"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method order_jobs_in_folder" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
@@ -2872,30 +3149,33 @@ class RunApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'data' in params:
-            body_params = params['data']
+        if "data" in params:
+            body_params = params["data"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/order', 'POST',
+            "/run/order",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RunResult',  # noqa: E501
+            response_type="RunResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def rerun_job(self, job_id, **kwargs):  # noqa: E501
         """Run job again  # noqa: E501
@@ -2913,8 +3193,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.rerun_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.rerun_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -2937,31 +3217,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id', 'rerun_parameters']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id", "rerun_parameters"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method rerun_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `rerun_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `rerun_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -2971,30 +3254,33 @@ class RunApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'rerun_parameters' in params:
-            body_params = params['rerun_parameters']
+        if "rerun_parameters" in params:
+            body_params = params["rerun_parameters"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/rerun', 'POST',
+            "/run/job/{jobId}/rerun",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JobRunStatus',  # noqa: E501
+            response_type="JobRunStatus",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def run_jobs(self, job_definitions_file, **kwargs):  # noqa: E501
         """Run jobs  # noqa: E501
@@ -3013,11 +3299,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.run_jobs_with_http_info(job_definitions_file, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.run_jobs_with_http_info(
+                job_definitions_file, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.run_jobs_with_http_info(job_definitions_file, **kwargs)  # noqa: E501
+            (data) = self.run_jobs_with_http_info(
+                job_definitions_file, **kwargs
+            )  # noqa: E501
             return data
 
     def run_jobs_with_http_info(self, job_definitions_file, **kwargs):  # noqa: E501
@@ -3038,25 +3328,33 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_definitions_file', 'deploy_descriptor_file', 'additional_configuration']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            "job_definitions_file",
+            "deploy_descriptor_file",
+            "additional_configuration",
+        ]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method run_jobs" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_definitions_file' is set
-        if self.api_client.client_side_validation and ('job_definitions_file' not in params or
-                                                       params['job_definitions_file'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_definitions_file` when calling `run_jobs`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_definitions_file" not in params
+            or params["job_definitions_file"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_definitions_file` when calling `run_jobs`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -3068,40 +3366,52 @@ class RunApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'job_definitions_file' in params:
-            local_var_files['jobDefinitionsFile'] = params['job_definitions_file']  # noqa: E501
-        if 'deploy_descriptor_file' in params:
-            local_var_files['deployDescriptorFile'] = params['deploy_descriptor_file']  # noqa: E501
-        if 'additional_configuration' in params:
-            local_var_files['additionalConfiguration'] = params['additional_configuration']  # noqa: E501
+        if "job_definitions_file" in params:
+            local_var_files["jobDefinitionsFile"] = params[
+                "job_definitions_file"
+            ]  # noqa: E501
+        if "deploy_descriptor_file" in params:
+            local_var_files["deployDescriptorFile"] = params[
+                "deploy_descriptor_file"
+            ]  # noqa: E501
+        if "additional_configuration" in params:
+            local_var_files["additionalConfiguration"] = params[
+                "additional_configuration"
+            ]  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["multipart/form-data"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run', 'POST',
+            "/run",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RunResult',  # noqa: E501
+            response_type="RunResult",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def run_now(self, job_id, **kwargs):  # noqa: E501
         """Bypass scheduling cretirias and start the job  # noqa: E501
@@ -3118,8 +3428,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.run_now_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.run_now_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -3141,31 +3451,33 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method run_now" % key
+                    "Got an unexpected keyword argument '%s'" " to method run_now" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `run_now`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `run_now`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -3176,27 +3488,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/runNow', 'POST',
+            "/run/job/{jobId}/runNow",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def set_to_ok(self, job_id, **kwargs):  # noqa: E501
         """set job end status to OK  # noqa: E501
@@ -3213,8 +3528,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.set_to_ok_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.set_to_ok_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -3236,31 +3551,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method set_to_ok" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `set_to_ok`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `set_to_ok`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -3271,27 +3589,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/setToOk', 'POST',
+            "/run/job/{jobId}/setToOk",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def undelete_job(self, job_id, **kwargs):  # noqa: E501
         """recover a mark for deletion job  # noqa: E501
@@ -3308,8 +3629,8 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
             return self.undelete_job_with_http_info(job_id, **kwargs)  # noqa: E501
         else:
             (data) = self.undelete_job_with_http_info(job_id, **kwargs)  # noqa: E501
@@ -3331,31 +3652,34 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["job_id"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method undelete_job" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'job_id' is set
-        if self.api_client.client_side_validation and ('job_id' not in params or
-                                                       params['job_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `job_id` when calling `undelete_job`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "job_id" not in params or params["job_id"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `undelete_job`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'job_id' in params:
-            path_params['jobId'] = params['job_id']  # noqa: E501
+        if "job_id" in params:
+            path_params["jobId"] = params["job_id"]  # noqa: E501
 
         query_params = []
 
@@ -3366,27 +3690,30 @@ class RunApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/job/{jobId}/undelete', 'POST',
+            "/run/job/{jobId}/undelete",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_alert(self, alert_modify_value, **kwargs):  # noqa: E501
         """Update alert.  # noqa: E501
@@ -3403,11 +3730,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_alert_with_http_info(alert_modify_value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_alert_with_http_info(
+                alert_modify_value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_alert_with_http_info(alert_modify_value, **kwargs)  # noqa: E501
+            (data) = self.update_alert_with_http_info(
+                alert_modify_value, **kwargs
+            )  # noqa: E501
             return data
 
     def update_alert_with_http_info(self, alert_modify_value, **kwargs):  # noqa: E501
@@ -3426,25 +3757,28 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['alert_modify_value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["alert_modify_value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_alert" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'alert_modify_value' is set
-        if self.api_client.client_side_validation and ('alert_modify_value' not in params or
-                                                       params['alert_modify_value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `alert_modify_value` when calling `update_alert`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "alert_modify_value" not in params or params["alert_modify_value"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `alert_modify_value` when calling `update_alert`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -3458,30 +3792,33 @@ class RunApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'alert_modify_value' in params:
-            body_params = params['alert_modify_value']
+        if "alert_modify_value" in params:
+            body_params = params["alert_modify_value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/alerts', 'POST',
+            "/run/alerts",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_alert_status(self, alert_modify_status_value, **kwargs):  # noqa: E501
         """Update alert status.  # noqa: E501
@@ -3498,14 +3835,20 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_alert_status_with_http_info(alert_modify_status_value, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_alert_status_with_http_info(
+                alert_modify_status_value, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_alert_status_with_http_info(alert_modify_status_value, **kwargs)  # noqa: E501
+            (data) = self.update_alert_status_with_http_info(
+                alert_modify_status_value, **kwargs
+            )  # noqa: E501
             return data
 
-    def update_alert_status_with_http_info(self, alert_modify_status_value, **kwargs):  # noqa: E501
+    def update_alert_status_with_http_info(
+        self, alert_modify_status_value, **kwargs
+    ):  # noqa: E501
         """Update alert status.  # noqa: E501
 
         Update alert status.  # noqa: E501
@@ -3521,25 +3864,29 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['alert_modify_status_value']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["alert_modify_status_value"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_alert_status" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'alert_modify_status_value' is set
-        if self.api_client.client_side_validation and ('alert_modify_status_value' not in params or
-                                                       params['alert_modify_status_value'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `alert_modify_status_value` when calling `update_alert_status`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "alert_modify_status_value" not in params
+            or params["alert_modify_status_value"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `alert_modify_status_value` when calling `update_alert_status`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -3553,30 +3900,33 @@ class RunApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'alert_modify_status_value' in params:
-            body_params = params['alert_modify_status_value']
+        if "alert_modify_status_value" in params:
+            body_params = params["alert_modify_status_value"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/alerts/status', 'POST',
+            "/run/alerts/status",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_resource(self, server, name, max, **kwargs):  # noqa: E501
         """Update a pool resource.  # noqa: E501
@@ -3595,11 +3945,15 @@ class RunApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_resource_with_http_info(server, name, max, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async_req"):
+            return self.update_resource_with_http_info(
+                server, name, max, **kwargs
+            )  # noqa: E501
         else:
-            (data) = self.update_resource_with_http_info(server, name, max, **kwargs)  # noqa: E501
+            (data) = self.update_resource_with_http_info(
+                server, name, max, **kwargs
+            )  # noqa: E501
             return data
 
     def update_resource_with_http_info(self, server, name, max, **kwargs):  # noqa: E501
@@ -3620,41 +3974,50 @@ class RunApi(object):
                  returns the request thread.
         """
 
-        all_params = ['server', 'name', 'max']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["server", "name", "max"]  # noqa: E501
+        all_params.append("async_req")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_resource" % key
                 )
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'server' is set
-        if self.api_client.client_side_validation and ('server' not in params or
-                                                       params['server'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `server` when calling `update_resource`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "server" not in params or params["server"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `server` when calling `update_resource`"
+            )  # noqa: E501
         # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in params or
-                                                       params['name'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `name` when calling `update_resource`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "name" not in params or params["name"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `name` when calling `update_resource`"
+            )  # noqa: E501
         # verify the required parameter 'max' is set
-        if self.api_client.client_side_validation and ('max' not in params or
-                                                       params['max'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `max` when calling `update_resource`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "max" not in params or params["max"] is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Missing the required parameter `max` when calling `update_resource`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'server' in params:
-            path_params['server'] = params['server']  # noqa: E501
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
+        if "server" in params:
+            path_params["server"] = params["server"]  # noqa: E501
+        if "name" in params:
+            path_params["name"] = params["name"]  # noqa: E501
 
         query_params = []
 
@@ -3664,27 +4027,30 @@ class RunApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'max' in params:
-            body_params = params['max']
+        if "max" in params:
+            body_params = params["max"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
+        auth_settings = ["Bearer"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/run/resource/{server}/{name}', 'POST',
+            "/run/resource/{server}/{name}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SuccessData',  # noqa: E501
+            response_type="SuccessData",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=params.get("async_req"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

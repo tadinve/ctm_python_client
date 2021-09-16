@@ -33,26 +33,36 @@ class ClientAccessPrivilegeCategory(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'controlm_web_client_access': 'str',
-        'self_service_access': 'str',
-        'workload_change_manager_access': 'str',
-        'utilities_access': 'str',
-        'application_integrator_access': 'str',
-        'automation_api_access': 'str',
-        'workflow_insights_access': 'str'
+        "controlm_web_client_access": "str",
+        "self_service_access": "str",
+        "workload_change_manager_access": "str",
+        "utilities_access": "str",
+        "application_integrator_access": "str",
+        "automation_api_access": "str",
+        "workflow_insights_access": "str",
     }
 
     attribute_map = {
-        'controlm_web_client_access': 'ControlmWebClientAccess',
-        'self_service_access': 'SelfServiceAccess',
-        'workload_change_manager_access': 'WorkloadChangeManagerAccess',
-        'utilities_access': 'UtilitiesAccess',
-        'application_integrator_access': 'ApplicationIntegratorAccess',
-        'automation_api_access': 'AutomationAPIAccess',
-        'workflow_insights_access': 'WorkflowInsightsAccess'
+        "controlm_web_client_access": "ControlmWebClientAccess",
+        "self_service_access": "SelfServiceAccess",
+        "workload_change_manager_access": "WorkloadChangeManagerAccess",
+        "utilities_access": "UtilitiesAccess",
+        "application_integrator_access": "ApplicationIntegratorAccess",
+        "automation_api_access": "AutomationAPIAccess",
+        "workflow_insights_access": "WorkflowInsightsAccess",
     }
 
-    def __init__(self, controlm_web_client_access=None, self_service_access=None, workload_change_manager_access=None, utilities_access=None, application_integrator_access=None, automation_api_access=None, workflow_insights_access=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        controlm_web_client_access=None,
+        self_service_access=None,
+        workload_change_manager_access=None,
+        utilities_access=None,
+        application_integrator_access=None,
+        automation_api_access=None,
+        workflow_insights_access=None,
+        _configuration=None,
+    ):  # noqa: E501
         """ClientAccessPrivilegeCategory - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -250,18 +260,20 @@ class ClientAccessPrivilegeCategory(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(ClientAccessPrivilegeCategory, dict):

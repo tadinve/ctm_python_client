@@ -33,42 +33,60 @@ class GetManifestParams(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'category': 'str',
-        'order': 'int',
-        'product_code': 'str',
-        'name': 'str',
-        'install_uri': 'str',
-        'visible': 'bool',
-        'icon_base64': 'str',
-        'error': 'str',
-        'error_code': 'str',
-        'full_name': 'str',
-        'short_name': 'str',
-        'sub_category': 'str',
-        'keywords': 'list[str]',
-        'versions': 'list[str]',
-        'group': 'ManifestGroupObject'
+        "category": "str",
+        "order": "int",
+        "product_code": "str",
+        "name": "str",
+        "install_uri": "str",
+        "visible": "bool",
+        "icon_base64": "str",
+        "error": "str",
+        "error_code": "str",
+        "full_name": "str",
+        "short_name": "str",
+        "sub_category": "str",
+        "keywords": "list[str]",
+        "versions": "list[str]",
+        "group": "ManifestGroupObject",
     }
 
     attribute_map = {
-        'category': 'category',
-        'order': 'order',
-        'product_code': 'productCode',
-        'name': 'name',
-        'install_uri': 'installUri',
-        'visible': 'visible',
-        'icon_base64': 'iconBase64',
-        'error': 'error',
-        'error_code': 'errorCode',
-        'full_name': 'fullName',
-        'short_name': 'shortName',
-        'sub_category': 'subCategory',
-        'keywords': 'keywords',
-        'versions': 'versions',
-        'group': 'group'
+        "category": "category",
+        "order": "order",
+        "product_code": "productCode",
+        "name": "name",
+        "install_uri": "installUri",
+        "visible": "visible",
+        "icon_base64": "iconBase64",
+        "error": "error",
+        "error_code": "errorCode",
+        "full_name": "fullName",
+        "short_name": "shortName",
+        "sub_category": "subCategory",
+        "keywords": "keywords",
+        "versions": "versions",
+        "group": "group",
     }
 
-    def __init__(self, category=None, order=None, product_code=None, name=None, install_uri=None, visible=None, icon_base64=None, error=None, error_code=None, full_name=None, short_name=None, sub_category=None, keywords=None, versions=None, group=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        category=None,
+        order=None,
+        product_code=None,
+        name=None,
+        install_uri=None,
+        visible=None,
+        icon_base64=None,
+        error=None,
+        error_code=None,
+        full_name=None,
+        short_name=None,
+        sub_category=None,
+        keywords=None,
+        versions=None,
+        group=None,
+        _configuration=None,
+    ):  # noqa: E501
         """GetManifestParams - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -472,18 +490,20 @@ class GetManifestParams(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(GetManifestParams, dict):

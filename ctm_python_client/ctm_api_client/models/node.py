@@ -33,24 +33,33 @@ class Node(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'id': 'str',
-        'role': 'str',
-        'host': 'str',
-        'availability': 'list[Availability]',
-        'performance': 'list[Performance]'
+        "name": "str",
+        "id": "str",
+        "role": "str",
+        "host": "str",
+        "availability": "list[Availability]",
+        "performance": "list[Performance]",
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
-        'role': 'role',
-        'host': 'host',
-        'availability': 'availability',
-        'performance': 'performance'
+        "name": "name",
+        "id": "id",
+        "role": "role",
+        "host": "host",
+        "availability": "availability",
+        "performance": "performance",
     }
 
-    def __init__(self, name=None, id=None, role=None, host=None, availability=None, performance=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        id=None,
+        role=None,
+        host=None,
+        availability=None,
+        performance=None,
+        _configuration=None,
+    ):  # noqa: E501
         """Node - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -218,18 +227,20 @@ class Node(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(Node, dict):

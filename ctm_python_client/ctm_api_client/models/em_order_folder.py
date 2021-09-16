@@ -33,22 +33,30 @@ class EmOrderFolder(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'additional_params': 'list[NameValueAttribute]',
-        'em_job_id': 'list[EmJobsId]',
-        'folder_name': 'str',
-        'library': 'str',
-        'order_parameters': 'OrderParameters'
+        "additional_params": "list[NameValueAttribute]",
+        "em_job_id": "list[EmJobsId]",
+        "folder_name": "str",
+        "library": "str",
+        "order_parameters": "OrderParameters",
     }
 
     attribute_map = {
-        'additional_params': 'additional_params',
-        'em_job_id': 'em_job_id',
-        'folder_name': 'folder_name',
-        'library': 'library',
-        'order_parameters': 'order_parameters'
+        "additional_params": "additional_params",
+        "em_job_id": "em_job_id",
+        "folder_name": "folder_name",
+        "library": "library",
+        "order_parameters": "order_parameters",
     }
 
-    def __init__(self, additional_params=None, em_job_id=None, folder_name=None, library=None, order_parameters=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        additional_params=None,
+        em_job_id=None,
+        folder_name=None,
+        library=None,
+        order_parameters=None,
+        _configuration=None,
+    ):  # noqa: E501
         """EmOrderFolder - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -184,18 +192,20 @@ class EmOrderFolder(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(EmOrderFolder, dict):

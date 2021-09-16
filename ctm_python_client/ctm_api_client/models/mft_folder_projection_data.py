@@ -33,20 +33,27 @@ class MFTFolderProjectionData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'authorized_internal_users': 'list[str]',
-        'authorized_external_users_and_groups': 'list[str]',
-        'access_type': 'str'
+        "name": "str",
+        "authorized_internal_users": "list[str]",
+        "authorized_external_users_and_groups": "list[str]",
+        "access_type": "str",
     }
 
     attribute_map = {
-        'name': 'name',
-        'authorized_internal_users': 'authorizedInternalUsers',
-        'authorized_external_users_and_groups': 'authorizedExternalUsersAndGroups',
-        'access_type': 'accessType'
+        "name": "name",
+        "authorized_internal_users": "authorizedInternalUsers",
+        "authorized_external_users_and_groups": "authorizedExternalUsersAndGroups",
+        "access_type": "accessType",
     }
 
-    def __init__(self, name=None, authorized_internal_users=None, authorized_external_users_and_groups=None, access_type=None, _configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        name=None,
+        authorized_internal_users=None,
+        authorized_external_users_and_groups=None,
+        access_type=None,
+        _configuration=None,
+    ):  # noqa: E501
         """MFTFolderProjectionData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -63,7 +70,9 @@ class MFTFolderProjectionData(object):
         if authorized_internal_users is not None:
             self.authorized_internal_users = authorized_internal_users
         if authorized_external_users_and_groups is not None:
-            self.authorized_external_users_and_groups = authorized_external_users_and_groups
+            self.authorized_external_users_and_groups = (
+                authorized_external_users_and_groups
+            )
         if access_type is not None:
             self.access_type = access_type
 
@@ -125,7 +134,9 @@ class MFTFolderProjectionData(object):
         return self._authorized_external_users_and_groups
 
     @authorized_external_users_and_groups.setter
-    def authorized_external_users_and_groups(self, authorized_external_users_and_groups):
+    def authorized_external_users_and_groups(
+        self, authorized_external_users_and_groups
+    ):
         """Sets the authorized_external_users_and_groups of this MFTFolderProjectionData.
 
         Authorized External Users And User Groups  # noqa: E501
@@ -134,7 +145,9 @@ class MFTFolderProjectionData(object):
         :type: list[str]
         """
 
-        self._authorized_external_users_and_groups = authorized_external_users_and_groups
+        self._authorized_external_users_and_groups = (
+            authorized_external_users_and_groups
+        )
 
     @property
     def access_type(self):
@@ -166,18 +179,20 @@ class MFTFolderProjectionData(object):
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
         if issubclass(MFTFolderProjectionData, dict):
