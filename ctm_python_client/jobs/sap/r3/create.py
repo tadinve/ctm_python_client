@@ -1,7 +1,7 @@
 from ctm_python_client.core.base import BaseJob
 
 
-class CREATEJob(BaseJob):
+class R3CREATEJob(BaseJob):
     def __init__(
         self,
         folder,

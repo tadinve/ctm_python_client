@@ -1,0 +1,613 @@
+{
+    "Defaults": {
+        "Application": "Naga0.3_Test",
+        "SubApplication": "TestAllJobs",
+        "RunAs": "ctmuser",
+        "Host": "acb-rhctmv20",
+        "When": {
+            "Months": [
+                "JAN",
+                "OCT",
+                "DEC"
+            ],
+            "MonthDays": [
+                "ALL"
+            ],
+            "WeekDays": [
+                "MON",
+                "TUE",
+                "WED",
+                "THU",
+                "FRI"
+            ],
+            "FromTime": "0300",
+            "ToTime": "2100"
+        }
+    },
+    "TestAllJobs": {
+        "Type": "Folder",
+        "command": {
+            "Type": "Job:Command",
+            "Host": "myhost.mycomp.com",
+            "RunAs": "user1",
+            "Command": "echo hello",
+            "PreCommand": "echo before running main command",
+            "PostCommand": "echo after running main command"
+        },
+        "peoplesoft": {
+            "Type": "Job:PeopleSoft",
+            "RunAs": "controlm",
+            "ConnectionProfile": "PS_CONNECT",
+            "User": "PS_User3",
+            "ControlId": "ControlId",
+            "ServerName": "ServerName",
+            "ProcessType": "ProcessType",
+            "ProcessName": "ProcessName",
+            "AppendToOutput": false,
+            "BindVariables": [
+                "value1",
+                "value2"
+            ]
+        },
+        "filetransfer": {
+            "Type": "Job:FileTransfer",
+            "Host": "agentHost",
+            "ConnectionProfileSrc": "amazonConn",
+            "ConnectionProfileDest": "LocalConn",
+            "NumberOfRetries": "4",
+            "S3BucketName": "bucket1",
+            "FileTransfers": [
+                {
+                    "Src": "folder/sub_folder/file1",
+                    "Dest": "folder/sub_folder/file2"
+                }
+            ]
+        },
+        "slamanagement": {
+            "Type": "Job:SLAManagement",
+            "RunAs": "DUMMYUSR",
+            "ServiceName": "SLA-GOOD",
+            "ServicePriority": "1",
+            "CreatedBy": "emuser",
+            "JobRunsDeviationsTolerance": "2",
+            "CompleteIn": {
+                "Time": "00:01"
+            },
+            "eventsToWaitFor": {
+                "Type": "WaitForEvents",
+                "Events": [
+                    {
+                        "Event": "Hello-TO-SLA_Job_for_SLA-GOOD"
+                    }
+                ]
+            },
+            "eventsToDelete": {
+                "Type": "DeleteEvents",
+                "Events": [
+                    {
+                        "Event": "Hello-TO-SLA_Job_for_SLA-GOOD"
+                    }
+                ]
+            }
+        },
+        "embeddedscript": {
+            "Type": "Job:EmbeddedScript",
+            "Host": "myhost.mycomp.com",
+            "RunAs": "user1",
+            "Script": "echo 'Hello world'",
+            "FileName": "myscript.sh",
+            "PreCommand": "echo before running script",
+            "PostCommand": "echo after running script"
+        },
+        "script": {
+            "Type": "Job:Script",
+            "Host": "myhost.mycomp.com",
+            "RunAs": "user1",
+            "FileName": "task1123.sh",
+            "FilePath": "/home/user1/scripts",
+            "PreCommand": "echo before running script",
+            "PostCommand": "echo after running script"
+        },
+        "dummy": {
+            "Type": "Job:Dummy"
+        },
+        "sqlscript": {
+            "Type": "Job:Database:SQLScript",
+            "Host": "AgentHost",
+            "SQLScript": "/home/controlm/sqlscripts/selectOrclParm.sql",
+            "ConnectionProfile": "ORACLE_CONNECTION_PROFILE",
+            "Parameters": [
+                {
+                    "firstParamName": "firstParamValue"
+                },
+                {
+                    "secondParamName": "secondParamValue"
+                }
+            ]
+        },
+        "embeddedquery": {
+            "Type": "Job:Database:EmbeddedQuery",
+            "Host": "${agentName}",
+            "RunAs": "PostgressCP",
+            "ConnectionProfile": "POSTGRESQL_CONNECTION_PROFILE",
+            "Query": "SELECT %%firstParamName AS VAR1 n FROM DUMMY n ORDER BY  VAR1 DESC",
+            "Variables": [
+                {
+                    "firstParamName": "firstParamValue"
+                }
+            ],
+            "OutputExecutionLog": "Y",
+            "Autocommit": "N",
+            "OutputSQLOutput": "Y",
+            "SQLOutputFormat": "XML"
+        },
+        "agent": {
+            "Type": "Job:Database:MSSQL:AgentJob",
+            "Host": "agentHost",
+            "ConnectionProfile": "MSSQL-WE-EXAMPLE",
+            "JobName": "agent",
+            "Category": "Data Collector"
+        },
+        "ssis": {
+            "Type": "Job:Database:MSSQL:SSIS",
+            "Host": "agentHost",
+            "ConnectionProfile": "MSSQL-CP-NAME",
+            "PackageSource": "SSIS Package Store",
+            "PackageName": "\\Data Collector\\SqlTraceCollect",
+            "ConfigFiles": [
+                "C:\\Users\\dbauser\\Desktop\\test.dtsConfig",
+                "C:\\Users\\dbauser\\Desktop\\test2.dtsConfig"
+            ],
+            "Properties": [
+                {
+                    "PropertyName": "PropertyValue"
+                },
+                {
+                    "PropertyName2": "PropertyValue2"
+                }
+            ]
+        },
+        "delete": {
+            "Type": "Job:FileWatcher:Delete",
+            "RunAs": "controlm",
+            "Path": "C:/path.txt",
+            "SearchInterval": "45",
+            "TimeLimit": "22",
+            "StartTime": "201805041535",
+            "StopTime": "201905041535"
+        },
+        "r3create": {
+            "Type": "Job:SAP:R3:CREATE",
+            "ConnectionProfile": "SAPCP",
+            "SapJobName": "SAP_job2",
+            "StartCondition": "Immediate",
+            "RerunFromStep": "3",
+            "Target": "controlmserver",
+            "CreatedBy": "user1",
+            "Steps": [
+                {
+                    "StepType": "ABAP",
+                    "TimeToPrint": "PrintLater",
+                    "CoverPrintPage": true,
+                    "OutputDevice": "prt",
+                    "UserName": "user",
+                    "SpoolAuthorization": "Auth",
+                    "CoverDepartment": "dpt",
+                    "SpoolListName": "spoolname",
+                    "OutputNumberRows": "62",
+                    "NumberOfCopies": "5",
+                    "NewSpoolRequest": false,
+                    "PrintArchiveMode": "PrintAndArchive",
+                    "CoverPage": "Print",
+                    "ArchiveObjectType": "objtype",
+                    "SpoolListTitles": "titles",
+                    "OutputLayout": "layout",
+                    "CoverSheet": "Print",
+                    "ProgramName": "ABAP_PROGRAM",
+                    "Language": "e",
+                    "ArchiveInformationField": "inf",
+                    "DeleteAfterPrint": true,
+                    "PrintExpiration": "3",
+                    "OutputNumberColumns": "88",
+                    "ArchiveDocumentType": "doctype",
+                    "CoverRecipient": "recipient",
+                    "VariantName": "NameOfVariant",
+                    "VariantParameters": [
+                        {
+                            "Type": "Range",
+                            "High": "2",
+                            "Sign": "I",
+                            "Option": "BT",
+                            "Low": "1",
+                            "Name": "var1",
+                            "Modify": false
+                        },
+                        {
+                            "Low": "5",
+                            "Type": "Range",
+                            "Option": "BT",
+                            "Sign": "I",
+                            "Modify": true,
+                            "High": "6",
+                            "Name": "var3"
+                        }
+                    ]
+                },
+                {
+                    "StepType": "ABAP",
+                    "PrintArchiveMode": "Print",
+                    "ProgramName": "ABAP_PROGRAM2",
+                    "VariantName": "Myvar_with_temp",
+                    "TemporaryVariantParameters": [
+                        {
+                            "Type": "Simple",
+                            "Name": "var",
+                            "Value": "P11"
+                        },
+                        {
+                            "Type": "Simple",
+                            "Name": "var2",
+                            "Value": "P11"
+                        }
+                    ]
+                }
+            ],
+            "PostJobAction": {
+                "JobLog": "CopyToFile",
+                "JobCompletionStatusWillDependOnApplicationStatus": true,
+                "SpoolSaveToPDF": true,
+                "JobLogFile": "fileToCopy.txt"
+            },
+            "SpoolListRecipient": {
+                "ReciptNoForwarding": false
+            }
+        },
+        "copy": {
+            "Type": "Job:SAP:R3:COPY",
+            "ConnectionProfile": "SAP-CON",
+            "SapJobName": "CHILD_1",
+            "Exec": "Server",
+            "Target": "Server-name",
+            "JobCount": "SpecificJob",
+            "JobCountSpecificName": "sap-job-1234",
+            "NewJobName": "My-New-Sap-Job",
+            "StartCondition": "AfterEvent",
+            "AfterEvent": "HOLA",
+            "AfterEventParameters": "parm1 parm2",
+            "RerunFromPointOfFailure": true,
+            "CopyFromStep": "4",
+            "PostJobAction": {
+                "Spool": "CopyToFile",
+                "SpoolFile": "spoolfile.log",
+                "SpoolSaveToPDF": true,
+                "JobLog": "CopyToFile",
+                "JobLogFile": "Log.txt",
+                "JobCompletionStatusWillDependOnApplicationStatus": true
+            },
+            "DetectSpawnedJob": {
+                "DetectAndCreate": "SpecificJobDefinition",
+                "JobName": "Specific-Job-123",
+                "StartSpawnedJob": true,
+                "JobEndInControlMOnlyAftreChildJobsCompleteOnSap": true,
+                "JobCompletionStatusDependsOnChildJobsStatus": true
+            }
+        },
+        "batchaccount": {
+            "Type": "Job:Azure:BatchAccount",
+            "ConnectionProfile": "AZURE_CONNECTION",
+            "JobId": "AzureJob1",
+            "CommandLine": "echo Hello",
+            "AppendLog": false,
+            "Wallclock": {
+                "Time": "770",
+                "Unit": "Minutes"
+            },
+            "MaxTries": {
+                "Count": "6",
+                "Option": "Custom"
+            },
+            "Retention": {
+                "Time": "1",
+                "Unit": "Hours"
+            }
+        },
+        "logicapps": {
+            "Type": "Job:Azure:LogicApps",
+            "ConnectionProfile": "AZURE_CONNECTION",
+            "LogicAppName": "MyLogicApp",
+            "RequestBody": {
+                "name": "BMC"
+            },
+            "AppendLog": false
+        },
+        "function": {
+            "Type": "Job:Azure:Function",
+            "ConnectionProfile": "AZURE_CONNECTION",
+            "AppendLog": false,
+            "Function": "AzureFunction",
+            "FunctionApp": "AzureFunctionApp",
+            "Parameters": [
+                {
+                    "firstParamName": "firstParamValue"
+                },
+                {
+                    "secondParamName": "secondParamValue"
+                }
+            ]
+        },
+        "sqoop": {
+            "Type": "Job:Hadoop:Sqoop",
+            "Host": "edgenode",
+            "ConnectionProfile": "SQOOP_CONNECTION_PROFILE",
+            "SqoopCommand": "import --table foo",
+            "SqoopOptions": [
+                {
+                    "--warehouse-dir": "/shared"
+                },
+                {
+                    "--default-character-set": "latin1"
+                }
+            ],
+            "SqoopArchives": "",
+            "SqoopFiles": "",
+            "PreCommands": {
+                "FailJobOnCommandFailure": false,
+                "Commands": [
+                    {
+                        "get": "hdfs://nn.example.com/user/hadoop/file localfile"
+                    },
+                    {
+                        "rm": "hdfs://nn.example.com/file /user/hadoop/emptydir"
+                    }
+                ]
+            },
+            "PostCommands": {
+                "FailJobOnCommandFailure": true,
+                "Commands": [
+                    {
+                        "put": "localfile hdfs://nn.example.com/user/hadoop/file"
+                    }
+                ]
+            }
+        },
+        "hdfscommands": {
+            "Type": "Job:Hadoop:HDFSCommands",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "Commands": [
+                {
+                    "get": "hdfs://nn.example.com/user/hadoop/file localfile"
+                },
+                {
+                    "rm": "hdfs://nn.example.com/file /user/hadoop/emptydir"
+                }
+            ]
+        },
+        "hdfsfilewatcher": {
+            "Type": "Job:Hadoop:HDFSFileWatcher",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "HdfsFilePath": "/inputs/filename",
+            "MinDetecedSize": "1",
+            "MaxWaitTime": "2"
+        },
+        "mapredstreaming": {
+            "Type": "Job:Hadoop:MapredStreaming",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "InputPath": "/user/robot/input/*",
+            "OutputPath": "/tmp/output",
+            "MapperCommand": "mapper.py",
+            "ReducerCommand": "reducer.py",
+            "GeneralOptions": [
+                {
+                    "-D": "fs.permissions.umask-mode=000"
+                },
+                {
+                    "-files": "/home/user/hadoop-streaming/mapper.py,/home/user/hadoop-streaming/reducer.py"
+                }
+            ]
+        },
+        "distcp": {
+            "Type": "Job:Hadoop:DistCp",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "TargetPath": "hdfs://nns2:8020/foo/bar",
+            "SourcePaths": [
+                "hdfs://nn1:8020/foo/a"
+            ]
+        },
+        "hive": {
+            "Type": "Job:Hadoop:Hive",
+            "Host": "edgenode",
+            "ConnectionProfile": "HIVE_CONNECTION_PROFILE",
+            "HiveScript": "/home/user1/hive.script"
+        },
+        "oozie": {
+            "Type": "Job:Hadoop:Oozie",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "JobPropertiesFile": "/home/user/job.properties",
+            "OozieOptions": [
+                {
+                    "inputDir": "/usr/tucu/inputdir"
+                },
+                {
+                    "outputDir": "/usr/tucu/outputdir"
+                }
+            ]
+        },
+        "mapreduce": {
+            "Type": "Job:Hadoop:MapReduce",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "ProgramJar": "/home/user1/hadoop-jobs/hadoop-mapreduce-examples.jar",
+            "MainClass": "pi",
+            "Arguments": [
+                "1",
+                "2"
+            ],
+            "PreCommands": {
+                "FailJobOnCommandFailure": false,
+                "Commands": [
+                    {
+                        "get": "hdfs://nn.example.com/user/hadoop/file localfile"
+                    },
+                    {
+                        "rm": "hdfs://nn.example.com/file /user/hadoop/emptydir"
+                    }
+                ]
+            },
+            "PostCommands": {
+                "FailJobOnCommandFailure": true,
+                "Commands": [
+                    {
+                        "put": "localfile hdfs://nn.example.com/user/hadoop/file"
+                    }
+                ]
+            }
+        },
+        "pig": {
+            "Type": "Job:Hadoop:Pig",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "PigScript": "/home/user/script.pig",
+            "Parameters": [
+                {
+                    "amount": "1000"
+                },
+                {
+                    "volume": "120"
+                }
+            ],
+            "PreCommands": {
+                "FailJobOnCommandFailure": false,
+                "Commands": [
+                    {
+                        "get": "hdfs://nn.example.com/user/hadoop/file localfile"
+                    },
+                    {
+                        "rm": "hdfs://nn.example.com/file /user/hadoop/emptydir"
+                    }
+                ]
+            },
+            "PostCommands": {
+                "FailJobOnCommandFailure": true,
+                "Commands": [
+                    {
+                        "put": "localfile hdfs://nn.example.com/user/hadoop/file"
+                    }
+                ]
+            }
+        },
+        "tajoquery": {
+            "Type": "Job:Hadoop:Tajo:Query",
+            "Host": "edgenode",
+            "ConnectionProfile": "TAJO_CONNECTION_PROFILE",
+            "OpenQuery": "SELECT %%firstParamName AS VAR1 n FROM DUMMY n ORDER BY t VAR1 DESC"
+        },
+        "inputfile": {
+            "Type": "Job:Hadoop:Tajo:InputFile",
+            "Host": "edgenode",
+            "ConnectionProfile": "TAJO_CONNECTION_PROFILE",
+            "FullFilePath": "/home/user/tajo_command.sh",
+            "Parameters": [
+                {
+                    "amount": "1000"
+                },
+                {
+                    "volume": "120"
+                }
+            ]
+        },
+        "python": {
+            "Type": "Job:Hadoop:Spark:Python",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "SparkScript": "/home/user/processData.py"
+        },
+        "scalajava": {
+            "Type": "Job:Hadoop:Spark:ScalaJava",
+            "Host": "edgenode",
+            "ConnectionProfile": "DEV_CLUSTER",
+            "ProgramJar": "/home/user/ScalaProgram.jar",
+            "MainClass": "com.mycomp.sparkScalaProgramName.mainClassName",
+            "Arguments": [
+                "1000",
+                "120"
+            ],
+            "PreCommands": {
+                "FailJobOnCommandFailure": false,
+                "Commands": [
+                    {
+                        "get": "hdfs://nn.example.com/user/hadoop/file localfile"
+                    },
+                    {
+                        "rm": "hdfs://nn.example.com/file /user/hadoop/emptydir"
+                    }
+                ]
+            },
+            "PostCommands": {
+                "FailJobOnCommandFailure": true,
+                "Commands": [
+                    {
+                        "put": "localfile hdfs://nn.example.com/user/hadoop/file"
+                    }
+                ]
+            },
+            "SparkOptions": [
+                {
+                    "--master": "yarn"
+                },
+                {
+                    "--num": "-executors 50"
+                }
+            ]
+        },
+        "lambda": {
+            "Type": "Job:AWS:Lambda",
+            "ConnectionProfile": "AWS_CONNECTION",
+            "FunctionName": "LambdaFunction",
+            "Version": "1",
+            "Payload": {
+                "myVar": "value1",
+                "myOtherVar": "value2"
+            },
+            "AppendLogToOutput": true
+        },
+        "batch": {
+            "Type": "Job:AWS:Batch",
+            "ConnectionProfile": "AWS_CONNECTION",
+            "JobName": "batch",
+            "JobDefinition": "jobDef1",
+            "JobDefinitionRevision": "3",
+            "JobQueue": "queue1",
+            "AWSJobType": "Array",
+            "ArraySize": "100",
+            "DependsOn": {
+                "DependencyType": "Standard",
+                "JobDependsOn": "job5"
+            },
+            "Command": [
+                "ffmpeg",
+                "-i"
+            ],
+            "Memory": "10",
+            "vCPUs": "2",
+            "JobAttempts": "5",
+            "ExecutionTimeout": "60",
+            "AppendLogToOutput": false
+        },
+        "stepfunction": {
+            "Type": "Job:AWS:StepFunction",
+            "ConnectionProfile": "AWS_CONNECTION",
+            "StateMachine": "StateMachine1",
+            "ExecutionName": "Execution1",
+            "Input": {
+                "myVar": "value1",
+                "myOtherVar": "value2"
+            },
+            "AppendLogToOutput": true
+        }
+    }
+}

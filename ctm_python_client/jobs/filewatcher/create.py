@@ -1,7 +1,7 @@
 from ctm_python_client.core.base import BaseJob
 
 
-class CreateJob(BaseJob):
+class FWCreateJob(BaseJob):
     def __init__(
         self,
         folder,

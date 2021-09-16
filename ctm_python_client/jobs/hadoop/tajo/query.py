@@ -1,7 +1,7 @@
 from ctm_python_client.core.base import BaseJob
 
 
-class QueryJob(BaseJob):
+class TajoQueryJob(BaseJob):
     def __init__(
         self,
         folder,
