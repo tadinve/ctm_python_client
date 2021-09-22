@@ -1,3 +1,5 @@
+from ctm_python_client.jobs.ai_jobs.aimonitor_remote import AIMonitorRemoteJob
+
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
@@ -27,5 +29,4 @@ toTime = "2100"
 t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 
 # Create Folder
-fn = __file__.split('/')[-1][:-3]
-f1 = t1_flow.create_folder(name=fn)
+f1 = t1_flow.create_folder(name="TestAllJobs")

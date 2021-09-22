@@ -1,3 +1,5 @@
+from ctm_python_client.jobs.file_transfer import FileTransferJob
+
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
@@ -29,3 +31,27 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 fn = __file__.split('/')[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)
+j1 = FileTransferJob(
+      folder=f1,
+      job_name='filetransfer',
+      connection_profile_src="amazonConn",
+      connection_profile_dest="LocalConn",
+      number_of_retries="4",
+      s3_bucket_name="bucket1",
+      host="agentHost",
+      file_transfers=[{'Src': 'folder/sub_folder/file1', 'Dest': 'folder/sub_folder/file2'}],
+      )
+t1_flow.add_job(folder=f1, job=j1)
+
+import json
+
+x = t1_flow.deploy()
+s = str(x[0])
+s = s.replace("'", '"')
+s = s.replace("None", '"None"')
+s = s.replace("False", '"False"')
+s = s.replace("True", '"True"')
+s = s.replace("\n", "")
+j = json.loads(s)
+def test_output():
+    assert j["successful_smart_folders_count"] == 1

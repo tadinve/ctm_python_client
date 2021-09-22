@@ -1,3 +1,5 @@
+from ctm_python_client.jobs.hadoop.mapred_streaming import MapredStreamingJob
+
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
@@ -29,3 +31,28 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 fn = __file__.split('/')[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)
+j1 = MapredStreamingJob(
+      folder=f1,
+      job_name='mapredstreaming',
+      host="edgenode",
+      connection_profile="DEV_CLUSTER",
+      input_path="/user/robot/input/*",
+      output_path="/tmp/output",
+      mapper_command="mapper.py",
+      reducer_command="reducer.py",
+      general_options=[{'-D': 'fs.permissions.umask-mode=000'}, {'-files': '/home/user/hadoop-streaming/mapper.py,/home/user/hadoop-streaming/reducer.py'}],
+      )
+t1_flow.add_job(folder=f1, job=j1)
+
+import json
+
+x = t1_flow.deploy()
+s = str(x[0])
+s = s.replace("'", '"')
+s = s.replace("None", '"None"')
+s = s.replace("False", '"False"')
+s = s.replace("True", '"True"')
+s = s.replace("\n", "")
+j = json.loads(s)
+def test_output():
+    assert j["successful_smart_folders_count"] == 1

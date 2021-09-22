@@ -6,6 +6,7 @@ import os
 from glob import glob
 from gen_job_tests_old import gen_name
 
+
 def read_job_files():
 
     # root_dir needs a trailing slash (i.e. /root/dir/)
@@ -20,21 +21,20 @@ def read_job_files():
 
 def get_class_from_file(fn):
 
-
-    #since the dir name is same as lib path name, replace / with .
+    # since the dir name is same as lib path name, replace / with .
     lib = fn[:-3].replace("/", ".")
 
-    #init variables so, return does not fail on empty file
+    # init variables so, return does not fail on empty file
     start_collecting = False
     class_nm = ""
     params = []
 
     f = open(fn, "r")
     for line in f:
-        #remove trailing and leading spaces
+        # remove trailing and leading spaces
         line = line.strip()
 
-        #ignore empty lines
+        # ignore empty lines
         if len(line) == 0:
             continue
 
@@ -45,46 +45,47 @@ def get_class_from_file(fn):
         # start capturing params for class
         if line.strip() == "def __init__(":
             start_collecting = True
-        
-        #collect params
 
-        if start_collecting and line[-1]== ",":
+        # collect params
+
+        if start_collecting and line[-1] == ",":
             param = line[:-1]
-            #ignore default params for now
+            # ignore default params for now
             if "=" in param or param == "self":
                 continue
             rvalue = f"'{param}'"
             if param == "folder":
-                rvalue = 'f1'
+                rvalue = "f1"
             if param == "job_name":
                 rvalue = f"'{class_nm.lower()}_job'"
             params.append(f"{param} = {rvalue},")
 
-        
-        #reached end of class def, so break
+        # reached end of class def, so break
         if line == "):":
             break
 
-    return lib,class_nm,params
+    return lib, class_nm, params
 
 
-def write_flow_code(f,flow_code):
+def write_flow_code(f, flow_code):
     BASE_PATH = os.path.abspath(os.path.dirname(__file__))
-    fp = open(BASE_PATH + flow_code , "r")
+    fp = open(BASE_PATH + flow_code, "r")
     for line in fp:
         f.write(line)
 
+
 def get_json_fp(job_name):
     BASE_PATH = os.path.abspath(os.path.dirname(__file__))
-    files = os.listdir(BASE_PATH+"/jobs/")
+    files = os.listdir(BASE_PATH + "/jobs/")
     fp = None
     print(job_name)
     for file in files:
         if job_name.lower() in file.lower():
-            fp = open(BASE_PATH + "/jobs/"+file , "r")
+            fp = open(BASE_PATH + "/jobs/" + file, "r")
     return fp
 
-def gen_job_class(j,f):
+
+def gen_job_class(j, f):
     job_name = j[:-3]
 
     fp = get_json_fp(job_name)
@@ -93,20 +94,21 @@ def gen_job_class(j,f):
     f.write(f"      folder=f1,\n")
     f.write(f"      job_name='{job_name.lower()}',\n")
 
-    for k,v in jobs_json.items():
-        if k == "Type" or gen_name(k) == "job_name" :
+    for k, v in jobs_json.items():
+        if k == "Type" or gen_name(k) == "job_name":
             continue
         rvalue = v
         if isinstance(rvalue, str):
             rvalue = f'"{v}"'
-        f.write(f'      {gen_name(k)}={rvalue},\n')
+        f.write(f"      {gen_name(k)}={rvalue},\n")
     f.write("      )\n")
     f.write("t1_flow.add_job(folder=f1, job=j1)\n\n")
-    
+
     return job_name
 
+
 if __name__ == "__main__":
-    
+
     # get all python job files
     files = read_job_files()
     imports = []
@@ -115,21 +117,28 @@ if __name__ == "__main__":
     for f in files[:50]:
         print(f)
         imports.append(get_class_from_file(f))
-
-    with open("tests/test_all_jobs.py", "w") as f:
-        # dump all the job imports at the top
-        for i in imports:
+    for i in imports:
+        if i[1] in [
+            "InformaticaJob",
+            "AiGenericJob",
+            "ADFJob",
+            "AIBlobStorageJob",
+            "StoredProcedureJob",
+            "AIMonitorRemoteJob",
+            "FWCreateJob",
+            "ProcessChainJob",
+        ]:
+            continue
+        with open(f"tests/tests_indiv_jobs/test_{i[1].lower()}.py", "w") as f:
+            # dump all the job imports at the top
             f.write(f"from {i[0]} import {i[1]}\n")
-        f.write(f"\n")
+            f.write(f"\n")
 
-        # generate jobflow, create folder and session code here
-        write_flow_code(f,"/all_jobs_begin.py")
+            # generate jobflow, create folder and session code here
+            write_flow_code(f, "/all_jobs_begin.py")
 
-        # Generete the test function for each job
-        for i in imports:
-            if i[1] in ["InformaticaJob","AiGenericJob","ADFJob","AIBlobStorageJob",
-                    "StoredProcedureJob","AIMonitorRemoteJob","FWCreateJob","ProcessChainJob"]:
-                continue
-            gen_job_class(i[1],f)
+            # # Generete the test function for each job
 
-        write_flow_code(f,"/all_jobs_end.py")
+            gen_job_class(i[1], f)
+
+            write_flow_code(f, "/all_jobs_end.py")

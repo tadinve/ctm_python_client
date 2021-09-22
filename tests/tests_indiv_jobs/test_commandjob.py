@@ -1,3 +1,5 @@
+from ctm_python_client.jobs.command import CommandJob
+
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
@@ -29,3 +31,26 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 fn = __file__.split('/')[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)
+j1 = CommandJob(
+      folder=f1,
+      job_name='command',
+      command="echo hello",
+      pre_command="echo before running main command",
+      post_command="echo after running main command",
+      host="myhost.mycomp.com",
+      run_as="user1",
+      )
+t1_flow.add_job(folder=f1, job=j1)
+
+import json
+
+x = t1_flow.deploy()
+s = str(x[0])
+s = s.replace("'", '"')
+s = s.replace("None", '"None"')
+s = s.replace("False", '"False"')
+s = s.replace("True", '"True"')
+s = s.replace("\n", "")
+j = json.loads(s)
+def test_output():
+    assert j["successful_smart_folders_count"] == 1

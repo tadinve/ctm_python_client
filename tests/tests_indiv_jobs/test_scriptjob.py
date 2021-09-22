@@ -1,3 +1,5 @@
+from ctm_python_client.jobs.script import ScriptJob
+
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
@@ -29,3 +31,27 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 fn = __file__.split('/')[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)
+j1 = ScriptJob(
+      folder=f1,
+      job_name='script',
+      file_name="task1123.sh",
+      file_path="/home/user1/scripts",
+      pre_command="echo before running script",
+      post_command="echo after running script",
+      host="myhost.mycomp.com",
+      run_as="user1",
+      )
+t1_flow.add_job(folder=f1, job=j1)
+
+import json
+
+x = t1_flow.deploy()
+s = str(x[0])
+s = s.replace("'", '"')
+s = s.replace("None", '"None"')
+s = s.replace("False", '"False"')
+s = s.replace("True", '"True"')
+s = s.replace("\n", "")
+j = json.loads(s)
+def test_output():
+    assert j["successful_smart_folders_count"] == 1

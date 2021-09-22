@@ -1,3 +1,5 @@
+from ctm_python_client.jobs.aws.batch import BatchJob
+
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
@@ -29,3 +31,34 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 fn = __file__.split('/')[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)
+j1 = BatchJob(
+      folder=f1,
+      job_name='batch',
+      connection_profile="AWS_CONNECTION",
+      job_definition="jobDef1",
+      job_definition_revision="3",
+      job_queue="queue1",
+      aws_job_type="Array",
+      array_size="100",
+      depends_on={'DependencyType': 'Standard', 'JobDependsOn': 'job5'},
+      command=['ffmpeg', '-i'],
+      memory="10",
+      v_c_p_us="2",
+      job_attempts="5",
+      execution_timeout="60",
+      append_log_to_output=False,
+      )
+t1_flow.add_job(folder=f1, job=j1)
+
+import json
+
+x = t1_flow.deploy()
+s = str(x[0])
+s = s.replace("'", '"')
+s = s.replace("None", '"None"')
+s = s.replace("False", '"False"')
+s = s.replace("True", '"True"')
+s = s.replace("\n", "")
+j = json.loads(s)
+def test_output():
+    assert j["successful_smart_folders_count"] == 1
