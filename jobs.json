@@ -1,0 +1,41 @@
+{
+    "Defaults": {
+        "Application": "Naga0.3_Test",
+        "SubApplication": "TestAllJobs",
+        "RunAs": "ctmuser",
+        "Host": "acb-rhctmv20",
+        "When": {
+            "Months": [
+                "JAN",
+                "OCT",
+                "DEC"
+            ],
+            "MonthDays": [
+                "ALL"
+            ],
+            "WeekDays": [
+                "MON",
+                "TUE",
+                "WED",
+                "THU",
+                "FRI"
+            ],
+            "FromTime": "0300",
+            "ToTime": "2100"
+        }
+    },
+    "test_gluejob": {
+        "Type": "Folder",
+        "glue": {
+            "Type": "Job:AWS Glue",
+            "ConnectionProfile": "GLUECONNECTION",
+            "AI-Glue Job Name": "AwsGlueJobName",
+            "AI-Glue Job Arguments": "checked",
+            "AI-Arguments": {
+                "--myArg1": "myVal1",
+                "--myArg2": "myVal2"
+            },
+            "AI-Status Polling Frequency": "20"
+        }
+    }
+}

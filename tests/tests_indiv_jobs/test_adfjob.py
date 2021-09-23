@@ -31,15 +31,15 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 f1 = t1_flow.create_folder(name="TestAllJobs")
 j1 = ADFJob(
-      folder=f1,
-      job_name='adf',
-      connection_profile="DataFactoryConnection",
-      airesource_group_name="AzureResourceGroupName",
-      aidata_factory_name="AzureDataFactoryName",
-      aipipeline_name="AzureDataFactoryPipelineName",
-      aiparameters={'myVar': 'value1', 'myOtherVar': 'value2'},
-      aistatus_polling_frequency="20",
-      )
+    folder=f1,
+    job_name="adf",
+    connection_profile="DataFactoryConnection",
+    airesource_group_name="AzureResourceGroupName",
+    aidata_factory_name="AzureDataFactoryName",
+    aipipeline_name="AzureDataFactoryPipelineName",
+    aiparameters={"myVar": "value1", "myOtherVar": "value2"},
+    aistatus_polling_frequency="20",
+)
 t1_flow.add_job(folder=f1, job=j1)
 
 import json

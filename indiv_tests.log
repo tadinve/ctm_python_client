@@ -1,0 +1,195 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: /Users/vtadinad/Documents/PythonProjects/ctm_python_client
+plugins: requests-mock-1.9.3
+collected 41 items / 9 errors / 32 selected
+
+==================================== ERRORS ====================================
+____________ ERROR collecting tests/tests_indiv_jobs/test_adfjob.py ____________
+tests/tests_indiv_jobs/test_adfjob.py:48: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=A5F2A612443795B03BAF33340361CF39; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '125', 'Date': 'Thu, 23 Sep 2021 15:43:09 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "unknown type: Job:ADF",
+    "file" : "jobs.json",
+    "line" : 30,
+    "col" : 30
+  } ]
+}
+
+___________ ERROR collecting tests/tests_indiv_jobs/test_batchjob.py ___________
+tests/tests_indiv_jobs/test_batchjob.py:56: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=3976044A47E725E2BE8CB05CE52E2FA9; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '359', 'Date': 'Thu, 23 Sep 2021 15:43:15 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "Value of Command can be either a string or a function; found [",
+    "file" : "jobs.json",
+    "line" : 42,
+    "col" : 25
+  }, {
+    "message" : "AppendLogToOutput is an unknown keyword therefore it is assumed to be an object, but it has no object syntax",
+    "file" : "jobs.json",
+    "line" : 50,
+    "col" : 39
+  } ]
+}
+
+_______ ERROR collecting tests/tests_indiv_jobs/test_embeddedqueryjob.py _______
+tests/tests_indiv_jobs/test_embeddedqueryjob.py:52: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=B1E8C6BD0458973ED11D092074EDFF95; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '288', 'Date': 'Thu, 23 Sep 2021 15:43:24 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "Host Group can only contain characters A-Z, a-z, 0-9, and special characters - _ : .",
+    "id" : "Validation4223",
+    "item" : "Job: test_embeddedqueryjob/embeddedquery -> Host Group",
+    "file" : "jobs.json",
+    "line" : 31,
+    "col" : 35
+  } ]
+}
+
+___________ ERROR collecting tests/tests_indiv_jobs/test_gluejob.py ____________
+tests/tests_indiv_jobs/test_gluejob.py:48: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=5634FBA13B6223672D387CEABEF11BE7; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '126', 'Date': 'Thu, 23 Sep 2021 15:43:29 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "unknown type: Job:GLUE",
+    "file" : "jobs.json",
+    "line" : 30,
+    "col" : 31
+  } ]
+}
+
+________ ERROR collecting tests/tests_indiv_jobs/test_informaticajob.py ________
+tests/tests_indiv_jobs/test_informaticajob.py:33: in <module>
+    j1 = InformaticaJob(
+E   TypeError: __init__() got an unexpected keyword argument 'instance_name'
+_________ ERROR collecting tests/tests_indiv_jobs/test_inputfilejob.py _________
+tests/tests_indiv_jobs/test_inputfilejob.py:47: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=823F088893E2FEC0FA876010AEADCCA7; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '205', 'Date': 'Thu, 23 Sep 2021 15:43:35 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "Parameters is an unknown keyword therefore it is assumed to be an object, but it has no object syntax",
+    "file" : "jobs.json",
+    "line" : 34,
+    "col" : 28
+  } ]
+}
+
+__________ ERROR collecting tests/tests_indiv_jobs/test_lambdajob.py ___________
+tests/tests_indiv_jobs/test_lambdajob.py:48: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=23B86FD2E98654D203C96B38D9745E60; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '334', 'Date': 'Thu, 23 Sep 2021 15:43:37 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "Could not find a Function named myVar",
+    "file" : "jobs.json",
+    "line" : 35,
+    "col" : 27
+  }, {
+    "message" : "AppendLogToOutput is an unknown keyword therefore it is assumed to be an object, but it has no object syntax",
+    "file" : "jobs.json",
+    "line" : 38,
+    "col" : 38
+  } ]
+}
+
+_________ ERROR collecting tests/tests_indiv_jobs/test_logicappsjob.py _________
+tests/tests_indiv_jobs/test_logicappsjob.py:47: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=C49113D855DD3F6B87772809D0EE3626; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '325', 'Date': 'Thu, 23 Sep 2021 15:43:38 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "Could not find a Function named name",
+    "file" : "jobs.json",
+    "line" : 34,
+    "col" : 26
+  }, {
+    "message" : "AppendLog is an unknown keyword therefore it is assumed to be an object, but it has no object syntax",
+    "file" : "jobs.json",
+    "line" : 36,
+    "col" : 31
+  } ]
+}
+
+_______ ERROR collecting tests/tests_indiv_jobs/test_stepfunctionjob.py ________
+tests/tests_indiv_jobs/test_stepfunctionjob.py:48: in <module>
+    s = str(x[0])
+E   TypeError: 'NoneType' object is not subscriptable
+------------------------------- Captured stdout --------------------------------
+Error deploying job, look for more details below
+(400)
+Reason: 
+HTTP response headers: HTTPHeaderDict({'X-Content-Type-Options': 'nosniff', 'Pragma': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'no-referrer', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Cache-Control': 'no-cache, no-store, private, must-revalidate, max-age=0, no-transform', 'Content-Security-Policy': "object-src 'none'; base-uri 'self';plugin-types application/x-java-applet; sandbox allow-scripts allow-popups allow-forms allow-top-navigation allow-presentation allow-same-origin allow-downloads; report-uri /csp-violation-report-endpoint/; form-action 'self'; frame-ancestors 'none';", 'hstsMaxAgeSeconds': '31536000', 'Set-Cookie': 'SameSite=strict; Secure; HttpOnly, JSESSIONID=D5BB589A4221D7EFE97B8A57C8B5E356; Path=/automation-api; Secure; HttpOnly', 'X-XSS-Protection': '1; mode=block', 'Expect-CT': 'max-age=120, enforce', 'vary': 'Origin', 'Server': 'Web Server', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '334', 'Date': 'Thu, 23 Sep 2021 15:43:59 GMT', 'Connection': 'close'})
+HTTP response body: {
+  "errors" : [ {
+    "message" : "Could not find a Function named myVar",
+    "file" : "jobs.json",
+    "line" : 35,
+    "col" : 27
+  }, {
+    "message" : "AppendLogToOutput is an unknown keyword therefore it is assumed to be an object, but it has no object syntax",
+    "file" : "jobs.json",
+    "line" : 38,
+    "col" : 38
+  } ]
+}
+
+=============================== warnings summary ===============================
+tests/tests_indiv_jobs/test_ssisjob.py:40
+  /Users/vtadinad/Documents/PythonProjects/ctm_python_client/tests/tests_indiv_jobs/test_ssisjob.py:40: DeprecationWarning: invalid escape sequence \D
+    package_name="\Data Collector\SqlTraceCollect",
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+=========================== short test summary info ============================
+ERROR tests/tests_indiv_jobs/test_adfjob.py - TypeError: 'NoneType' object is...
+ERROR tests/tests_indiv_jobs/test_batchjob.py - TypeError: 'NoneType' object ...
+ERROR tests/tests_indiv_jobs/test_embeddedqueryjob.py - TypeError: 'NoneType'...
+ERROR tests/tests_indiv_jobs/test_gluejob.py - TypeError: 'NoneType' object i...
+ERROR tests/tests_indiv_jobs/test_informaticajob.py - TypeError: __init__() g...
+ERROR tests/tests_indiv_jobs/test_inputfilejob.py - TypeError: 'NoneType' obj...
+ERROR tests/tests_indiv_jobs/test_lambdajob.py - TypeError: 'NoneType' object...
+ERROR tests/tests_indiv_jobs/test_logicappsjob.py - TypeError: 'NoneType' obj...
+ERROR tests/tests_indiv_jobs/test_stepfunctionjob.py - TypeError: 'NoneType' ...
+!!!!!!!!!!!!!!!!!!! Interrupted: 9 errors during collection !!!!!!!!!!!!!!!!!!!!
+======================== 1 warning, 9 errors in 52.20s =========================

@@ -1,4 +1,4 @@
-from ctm_python_client.jobs.aws.batch import BatchJob
+from ctm_python_client.jobs.glue import GLUEJob
 
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
@@ -31,22 +31,14 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 fn = __file__.split("/")[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)
-j1 = BatchJob(
+j1 = GLUEJob(
       folder=f1,
-      job_name='batch',
-      connection_profile="AWS_CONNECTION",
-      job_definition="jobDef1",
-      job_definition_revision="3",
-      job_queue="queue1",
-      aws_job_type="Array",
-      array_size="100",
-      depends_on={'DependencyType': 'Standard', 'JobDependsOn': 'job5'},
-      command=['ffmpeg', '-i'],
-      memory="10",
-      v_c_p_us="2",
-      job_attempts="5",
-      execution_timeout="60",
-      append_log_to_output=False,
+      job_name='glue',
+      connection_profile="GLUECONNECTION",
+      aiglue_job_name="AwsGlueJobName",
+      aiglue_job_arguments="checked",
+      aiarguments={'--myArg1': 'myVal1', '--myArg2': 'myVal2'},
+      aistatus_polling_frequency="20",
       )
 t1_flow.add_job(folder=f1, job=j1)
 

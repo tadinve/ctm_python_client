@@ -27,7 +27,7 @@ class GLUEJob(BaseJob):
 
     def get_json(self):
         job_json = BaseJob.get_json(self)
-        job_json["Type"] = "Job:GLUE"
+        job_json["Type"] = "Job:AWS Glue"
         if self.connection_profile != None:
             job_json["ConnectionProfile"] = self.connection_profile
         if self.aiglue_job_name != None:

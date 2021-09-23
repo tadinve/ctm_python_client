@@ -31,19 +31,19 @@ t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 # Create Folder
 f1 = t1_flow.create_folder(name="TestAllJobs")
 j1 = InformaticaJob(
-      folder=f1,
-      job_name='informatica',
-      connection_profile="INFORMATICA_CONNECTION",
-      repository_folder="POC",
-      workflow="WF_Test",
-      instance_name="MyInstamce",
-      os_profile="MyOSProfile",
-      workflow_execution_mode="RunSingleTask",
-      run_single_task="s_MapTest_Success",
-      workflow_restart_mode="ForceRestartFromSpecificTask",
-      restart_from_task="s_MapTest_Success",
-      workflow_parameters_file="/opt/wf1.prop",
-      )
+    folder=f1,
+    job_name="informatica",
+    connection_profile="INFORMATICA_CONNECTION",
+    repository_folder="POC",
+    workflow="WF_Test",
+    instance_name="MyInstamce",
+    os_profile="MyOSProfile",
+    workflow_execution_mode="RunSingleTask",
+    run_single_task="s_MapTest_Success",
+    workflow_restart_mode="ForceRestartFromSpecificTask",
+    restart_from_task="s_MapTest_Success",
+    workflow_parameters_file="/opt/wf1.prop",
+)
 t1_flow.add_job(folder=f1, job=j1)
 
 import json

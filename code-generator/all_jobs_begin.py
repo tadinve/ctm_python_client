@@ -27,5 +27,5 @@ toTime = "2100"
 t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 
 # Create Folder
-fn = __file__.split('/')[-1][:-3]
+fn = __file__.split("/")[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)

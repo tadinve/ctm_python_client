@@ -29,7 +29,7 @@ toTime = "2100"
 t1_flow.set_schedule(months, monthDays, weekDays, fromTime, toTime)
 
 # Create Folder
-fn = __file__.split('/')[-1][:-3]
+fn = __file__.split("/")[-1][:-3]
 f1 = t1_flow.create_folder(name=fn)
 j1 = AgentJob(
       folder=f1,
@@ -50,5 +50,7 @@ s = s.replace("False", '"False"')
 s = s.replace("True", '"True"')
 s = s.replace("\n", "")
 j = json.loads(s)
+
+
 def test_output():
     assert j["successful_smart_folders_count"] == 1
