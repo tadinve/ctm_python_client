@@ -1,4 +1,4 @@
-from ctm_python_client.jobs.glue import GLUEJob
+from ctm_python_client.jobs.aws.glue import GLUEJob
 
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
