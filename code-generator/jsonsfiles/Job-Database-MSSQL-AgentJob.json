@@ -1,1 +1,0 @@
-{"MSSQLFolder": {"Type": "Folder", "ControlmServer": "LocalControlM", "MSSQLAgentJob": {"Type": "Job:Database:MSSQL:AgentJob", "ConnectionProfile": "MSSQL-WE-EXAMPLE", "Host": "agentHost", "JobName": "get_version", "Category": "Data Collector"}}}

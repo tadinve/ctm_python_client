@@ -1,8 +1,0 @@
-{
-    "Type" : "Job:Command",
-    "Command" : "echo hello",
-    "PreCommand": "echo before running main command",
-    "PostCommand": "echo after running main command",
-    "Host" : "myhost.mycomp.com",
-    "RunAs" : "user1"  
-}

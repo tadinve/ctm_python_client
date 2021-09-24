@@ -1,1 +1,0 @@
-{"testOracle": {"Type": "Job:Database:SQLScript", "Host": "app-redhat", "SQLScript": "/home/controlm/sqlscripts/selectOrclParm.sql", "ConnectionProfile": "ORACLE_CONNECTION_PROFILE"}}

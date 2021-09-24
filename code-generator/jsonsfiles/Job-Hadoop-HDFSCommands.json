@@ -1,1 +1,0 @@
-{"HdfsJob": {"Type": "Job:Hadoop:HDFSCommands", "Host": "edgenode", "ConnectionProfile": "DEV_CLUSTER", "Commands": [{"get": "hdfs://nn.example.com/user/hadoop/file localfile"}, {"rm": "hdfs://nn.example.com/file /user/hadoop/emptydir"}]}}

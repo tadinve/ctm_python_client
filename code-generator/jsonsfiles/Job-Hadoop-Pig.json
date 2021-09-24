@@ -1,1 +1,0 @@
-{"ProcessDataPig": {"Type": "Job:Hadoop:Pig", "Host": "edgenode", "ConnectionProfile": "DEV_CLUSTER", "PigScript": "/home/user/script.pig"}}

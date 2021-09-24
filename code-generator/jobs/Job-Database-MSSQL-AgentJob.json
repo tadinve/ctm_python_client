@@ -1,7 +1,0 @@
-{
-    "Type": "Job:Database:MSSQL:AgentJob",
-    "ConnectionProfile": "MSSQL-WE-EXAMPLE",
-    "Host": "agentHost",
-    "JobName": "get_version",
-    "Category": "Data Collector"
-}

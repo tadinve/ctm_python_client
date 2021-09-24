@@ -1,9 +1,0 @@
-{
-    "Type": "Job:Azure:LogicApps",
-    "ConnectionProfile": "AZURE_CONNECTION",
-    "LogicAppName": "MyLogicApp",
-    "RequestBody": {
-        "name": "BMC"
-    },
-    "AppendLog": false
-}

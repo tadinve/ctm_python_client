@@ -1,1 +1,0 @@
-{"DistCpJob": {"Type": "Job:Hadoop:DistCp", "Host": "edgenode", "ConnectionProfile": "HADOOP_CONNECTION_PROFILE", "TargetPath": "hdfs://nns2:8020/foo/bar", "SourcePaths": ["hdfs://nn1:8020/foo/a", "hdfs://nn1:8020/foo/b"], "DistcpOptions": [{"-m": "3"}, {"-filelimit ": "100"}]}}

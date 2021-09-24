@@ -1,1 +1,0 @@
-{"MyS3AftFolder": {"Type": "Folder", "Application": "aft", "TransferFromS3toLocal": {"Type": "Job:FileTransfer", "ConnectionProfileSrc": "amazonConn", "ConnectionProfileDest": "LocalConn", "NumberOfRetries": "4", "S3BucketName": "bucket1", "Host": "agentHost", "FileTransfers": [{"Src": "folder/sub_folder/file1", "Dest": "folder/sub_folder/file2"}]}}}

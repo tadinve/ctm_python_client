@@ -1,6 +1,0 @@
-{
-    "Type": "Job:Hadoop:Spark:Python",
-    "Host": "edgenode",
-    "ConnectionProfile": "DEV_CLUSTER",
-    "SparkScript": "/home/user/processData.py"
-}

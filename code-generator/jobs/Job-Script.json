@@ -1,9 +1,0 @@
-{
-    "Type": "Job:Script",
-    "FileName": "task1123.sh",
-    "FilePath": "/home/user1/scripts",
-    "PreCommand": "echo before running script",
-    "PostCommand": "echo after running script",
-    "Host": "myhost.mycomp.com",
-    "RunAs": "user1"
-}

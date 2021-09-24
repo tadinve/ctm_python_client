@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/vtadinad/Documents/PythonProjects/ctm_python_client/venv"
+VIRTUAL_ENV="/Users/vtadinad/Documents/PythonProjects/naga-1/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

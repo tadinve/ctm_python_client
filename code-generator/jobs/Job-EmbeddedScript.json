@@ -1,9 +1,0 @@
-{
-    "Type": "Job:EmbeddedScript",
-    "Script": "echo 'Hello world'",
-    "Host": "myhost.mycomp.com",
-    "RunAs": "user1",
-    "FileName": "myscript.sh",
-    "PreCommand": "echo before running script",
-    "PostCommand": "echo after running script"
-}

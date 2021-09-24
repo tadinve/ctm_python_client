@@ -1,4 +1,4 @@
-#!/Users/vtadinad/Documents/PythonProjects/ctm_python_client/venv/bin/python3.9
+#!/Users/vtadinad/Documents/PythonProjects/naga-1/venv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys

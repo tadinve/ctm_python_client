@@ -1,9 +1,0 @@
-{
-    "Type": "Job:Hadoop:DistCp",
-    "Host": "edgenode",
-    "ConnectionProfile": "DEV_CLUSTER",
-    "TargetPath": "hdfs://nns2:8020/foo/bar",
-    "SourcePaths": [
-        "hdfs://nn1:8020/foo/a"
-    ]
-}

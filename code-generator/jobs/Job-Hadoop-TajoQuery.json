@@ -1,6 +1,0 @@
-{
-    "Type": "Job:Hadoop:Tajo:Query",
-    "ConnectionProfile": "TAJO_CONNECTION_PROFILE",
-    "Host": "edgenode",
-    "OpenQuery": "SELECT %%firstParamName AS VAR1 n FROM DUMMY n ORDER BY t VAR1 DESC"
-}

@@ -1,1 +1,0 @@
-{"MapReduceJob": {"Type": "Job:Hadoop:MapReduce", "Host": "edgenode", "ConnectionProfile": "DEV_CLUSTER", "ProgramJar": "/home/user1/hadoop-jobs/hadoop-mapreduce-examples.jar", "MainClass": "pi", "Arguments": ["1", "2"]}}

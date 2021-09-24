@@ -1,1 +1,0 @@
-{"MyAs2AftFolder": {"Type": "Folder", "Application": "AFT", "MyAftJob_AS2": {"Type": "Job:FileTransfer", "ConnectionProfileSrc": "localAConn", "ConnectionProfileDest": "as2Conn", "NumberOfRetries": "Default", "Host": "agentHost", "FileTransfers": [{"Src": "/dev", "Dest": "/home/controlm/", "As2Subject": "Override subject", "As2Message": "Override conntent type"}]}}}

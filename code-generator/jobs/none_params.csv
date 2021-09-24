@@ -1,6 +1,0 @@
-job,col1,col2,col3,col4,col5
-CommandJob,PreCommand,PostCommand
-EmbeddedQueryJob,Variables,Autocommit,OutputExecutionLog,OutputSQLOutput,SQLOutputFormat
-FileWatcherJob,TimeLimit,Wildcard,MinimalAge,MaximalAge
-SQLScriptJob,Parameters
-EmbeddedScriptJob,PreCommand,PostCommand

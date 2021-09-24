@@ -1,1 +1,0 @@
-{"OozieJob": {"Type": "Job:Hadoop:Oozie", "Host": "edgenode", "ConnectionProfile": "DEV_CLUSTER", "JobPropertiesFile": "/home/user/job.properties", "OozieOptions": [{"inputDir": "/usr/tucu/inputdir"}, {"outputDir": "/usr/tucu/outputdir"}]}}
