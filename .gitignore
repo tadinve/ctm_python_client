@@ -4,3 +4,4 @@
 venv
 **jobs.json**
 .coverage
+**.ipynb_checkpoints
