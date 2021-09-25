@@ -89,33 +89,6 @@ class CmJobFlow:
         self.mail_to = None
         self.mail_subject = None
 
-    def ctm_login_saas(self, ctm_uri, ctm_token, https=True):
-        self.uri = ctm_uri
-        self.token = ctm_token
-        self.https = https
-
-    def ctm_login(self, ctm_uri, ctm_user, ctm_pwd, https=True):
-        self.uri = ctm_uri
-        self.username = ctm_user
-        self.password = ctm_pwd
-        self.https = https
-
-        # login
-        r_login = requests.post(
-            self.uri + "/automation-api/session/login",
-            json={"username": self.username, "password": self.password},
-            verify=self.https,
-        )
-
-        if r_login.status_code != requests.codes.ok:
-            print("Failure Logining into ", self.uri)
-            print(r_login.content)
-            return r_login.status_code
-
-        print("Successfully logged into ", self.uri)
-        self.token = r_login.json()["token"]
-        print("Token =", self.token)
-        return r_login.status_code
 
     # this is a private functions defined to create nodes in the graph
     def _create_node(self, name, job):
@@ -138,8 +111,8 @@ class CmJobFlow:
 
     # sets up the default user to run the jobs (can be overridden at the job level)
     def set_schedule(
-        self, months=None, month_days=None, week_days=None, from_time=None, to_time=None
-    ):
+                    self, months=None, month_days=None, week_days=None, 
+                    from_time=None, to_time=None ):
         self.schedule_set = True
         self.json["Defaults"]["When"] = {}
         if months is not None:
@@ -202,44 +175,15 @@ class CmJobFlow:
             result = self.runApi.run_jobs(JOBS_FILE)
             print(result)
         except Exception as e:
-            print("Error deploying job, look for more details below")
+            print("Error running job, look for more details below")
             print(e)
             return
 
-        print("Successfully Run job on Control-M")
+        print("Successfully Ran job on Control-M")
         print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
         return True
 
-    def submit_saas(self):
-        with open(JOBS_FILE, "w") as outfile:
-            json.dump(self.json, outfile, indent=4)
 
-        with open(JOBS_FILE, "rb") as fo_jobs:
-            uploaded_files = [
-                ("definitionsFile", (JOBS_FILE, fo_jobs, "application/json"))
-            ]
-            r_submit = requests.post(
-                self.uri + "/automation-api/deploy",
-                files=uploaded_files,
-                headers={"x-api-key": self.token},
-                verify=self.https,
-            )
-        # Remove temporary file
-        os.remove(JOBS_FILE)
-
-        print(r_submit.content)
-        print(r_submit.status_code)
-        j = json.loads(r_submit.content)
-        if "errors" in j:
-            for msg in j["errors"]:
-                print(msg)
-        if r_submit.status_code != requests.codes.ok:
-            print("Failure Submitting")
-            return r_submit.status_code
-
-        print("Successfully submitted to Control-M")
-        print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
-        return r_submit.status_code
 
     # This function displays the Jobflow
     def display(self):
@@ -266,14 +210,13 @@ class CmJobFlow:
 
         return True  # self.graph
 
-    def display_json(self):
+    def get_json(self):
         str = json.dumps(self.json, indent=4)
+        return str
+
+    def display_json(self):
+        str = get_json(self)
         print(str)
-
-    def get_json_for_folder(self, folder_name):
-
-        res = self.deployApi.get_deployed_folders_new(server="*", folder=folder_name)
-        return json.loads(res.replace("'", '"'))
 
     # Jobs can be grouped together as folders, this creates the folder
     def create_folder(self, name, server=None):

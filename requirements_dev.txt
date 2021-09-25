@@ -5,3 +5,5 @@ requests_mock
 git-pylint-commit-hook
 black[jupyter]
 coverage
+pytest-cov
+nbmake
