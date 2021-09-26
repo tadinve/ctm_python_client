@@ -55,7 +55,6 @@ class CmJobFlow:
             self.json["Defaults"]["OrderMethod"] = order_method
 
         # Attributes used in methods
-        self.uri = None
         self.token = None
         self.https = None
         self.username = None
