@@ -189,7 +189,7 @@ class CmJobFlow:
         return str
 
     def display_json(self):
-        str = self.get_json(self)
+        str = self.get_json()
         print(str)
 
     # Jobs can be grouped together as folders, this creates the folder
