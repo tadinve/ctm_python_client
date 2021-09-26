@@ -7,19 +7,25 @@
 # Make sure you have installed the library
 # pip install git+https://github.com/tadinve/ctm_python_client.git')
 
+import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.jobs.dummy import DummyJob
 
 
 
-# Please change the URfrI, and ctm_user and enter ctm_password 
+# Please change the URI, and ctm_user and enter ctm_password 
 # to match your environment
-ctm_uri = "https://acb-rhctmv20.centralus.cloudapp.azure.com:8443/automation-api"
-ctm_user = "vtadinad"
-
-import getpass
-if "ctm_pwd" not in locals():  # has not been enterd once, will skip next time
-    ctm_pwd = getpass.getpass("Enter your Control M Password ")
+# Create a file .secrets with the following three lines. One for uri, one for user and one for password.
+"""
+https://acb-rhctmv20.centralus.cloudapp.azure.com:8443/automation-api
+username
+password
+"""
+BASE_PATH = os.path.abspath("")
+with open(BASE_PATH + "/.secrets", "r") as fp:
+    ctm_uri = fp.readline().strip()
+    ctm_user = fp.readline().strip()
+    ctm_pwd = fp.readline().strip()
 
 
 ## Step 2B - Create the object
