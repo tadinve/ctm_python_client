@@ -1,29 +1,3 @@
-"""
-Copyright (c) 2012-2021 BMC, Inc. and others
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-# This class is based on https://docs.bmc.com/docs/automation-api/918/code-reference-783053198.html
-
-
-"""
 import os
 import json
 from ctm_python_client.session.session import Session
@@ -42,6 +16,7 @@ class CmJobFlow:
         self,
         application,
         sub_application,
+        ctm_uri = None,
         description=None,
         order_method=None,
         session=None,
@@ -53,6 +28,7 @@ class CmJobFlow:
         self.run_as_set = False
         self.schedule_set = False
         self.failure_notification = False
+        self.uri = ctm_uri
 
         # session variables
         self.session = session
@@ -83,7 +59,6 @@ class CmJobFlow:
         self.token = None
         self.https = None
         self.username = None
-        self.password = None
         self.host = None
         self.schedule = None
         self.mail_to = None
@@ -94,7 +69,6 @@ class CmJobFlow:
     def _create_node(self, name, job):
         self.jobs.append((name, job))
         node_id = str(len(self.jobs) - 1)
-        # self.graph.node(node_id, label=name, shape=shape)
         return node_id
 
     # sets up the default user to run the jobs (can be overridden at the job level)
@@ -156,7 +130,7 @@ class CmJobFlow:
         # Remove temporary file
         os.remove(JOBS_FILE)
 
-        print("Successfully submitted to Control-M")
+        print("Successfully deployed to Control-M")
         print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
         return result
 

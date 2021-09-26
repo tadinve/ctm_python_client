@@ -30,9 +30,8 @@ session = Session(endpoint=ctm_uri, username=ctm_user, password=ctm_pwd)
 session.get_token()
 
 
-t1_flow = CmJobFlow(
-    application="Naga0.2_Demo", sub_application="Demo-02", session=session
-)
+t1_flow = CmJobFlow( application="Naga0.2_Demo", sub_application="Demo-02", 
+                session=session, ctm_uri=ctm_uri)
 
 
 ## Step 2C - Define the Schedule
