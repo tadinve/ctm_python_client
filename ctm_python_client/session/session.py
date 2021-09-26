@@ -1,8 +1,4 @@
-from __future__ import print_function
 import ctm_api_client as ctm_api_client
-from ctm_api_client.rest import ApiException
-from pprint import pprint
-
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

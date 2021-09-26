@@ -2,6 +2,7 @@ import os
 import json
 from ctm_python_client.session.session import Session
 import ctm_api_client as ctm_api_client
+import logging
 
 # from graphviz import Digraph
 
@@ -20,6 +21,7 @@ class CmJobFlow:
         description=None,
         order_method=None,
         session=None,
+        debug = False,
     ):
         self.application = application
         self.sub_application = sub_application
@@ -29,6 +31,9 @@ class CmJobFlow:
         self.schedule_set = False
         self.failure_notification = False
         self.uri = ctm_uri
+
+        if debug:
+            logging.basicConfig(level=logging.DEBUG)
 
         # session variables
         self.session = session
@@ -120,7 +125,8 @@ class CmJobFlow:
 
         try:
             result = self.deployApi.deploy_file(JOBS_FILE)
-            print(result)
+            logging.debug(result)
+
         except Exception as e:
             print("Error deploying job, look for more details below")
             print(e)
@@ -129,8 +135,10 @@ class CmJobFlow:
         # Remove temporary file
         os.remove(JOBS_FILE)
 
-        print("Successfully deployed to Control-M")
-        print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
+        print("\n\nSuccessfully deployed to Control-M")
+        self.display()
+        if self.uri != None:
+            print("Login to {0}/ControlM/ and use your workflow".format(self.uri[:-len("/automation-api")]))
         return result
 
     def run(self):
@@ -146,42 +154,27 @@ class CmJobFlow:
 
         try:
             result = self.runApi.run_jobs(JOBS_FILE)
-            print(result)
+            logging.debug(result)
         except Exception as e:
             print("Error running job, look for more details below")
             print(e)
             return
 
-        print("Successfully Ran job on Control-M")
-        print("Login to {0}/ControlM/ and use your workflow".format(self.uri))
+        print("\n\nSuccessfully Ran job on Control-M")
+        self.display()
+        print("Login to {0}/ControlM/ and use your workflow".format(self.uri[:-len("/automation-api")]))
         return True
 
 
 
     # This function displays the Jobflow
     def display(self):
-        print("=========== Jobflow Details ===================")
-        print("Application: ", self.application)
-        print("Sub Application: ", self.sub_application)
-
-        if self.run_as_set:
-            print(
-                "\nRun as Username: {0} on Host: {1}".format(self.username, self.host)
-            )
-
+        print("\tApplication: ", self.application)
+        print("\tSub Application: ", self.sub_application)
         for folder in self.folders:
-            print(
-                "\nFolder Name {0} with Server {1}\n\n\n".format(folder[0], folder[1])
-            )
+            print( "\tFolder Name: ", folder[0])
 
-        if self.failure_notification:
-            print(
-                "\n On Failure notify {0} with Subject {1}".format(
-                    self.mail_to, self.mail_subject
-                )
-            )
-
-        return True  # self.graph
+        return 
 
     def get_json(self):
         str = json.dumps(self.json, indent=4)
@@ -226,8 +219,8 @@ class CmJobFlow:
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
     def chain_jobs(self, folder, links, style="solid"):
-        print(self.jobs)
-        print(links)
+        logging.debug(self.jobs)
+        logging.debug(links)
         self.flowcount += 1
 
         from_job = links[0]
