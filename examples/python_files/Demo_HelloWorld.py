@@ -22,7 +22,7 @@ username
 password
 """
 BASE_PATH = os.path.abspath("")
-with open(BASE_PATH + "/.secrets", "r") as fp:
+with open(os.path.join(BASE_PATH,  ".secrets"), "r") as fp:
     ctm_uri = fp.readline().strip()
     ctm_user = fp.readline().strip()
     ctm_pwd = fp.readline().strip()

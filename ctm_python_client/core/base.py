@@ -76,20 +76,4 @@ class BaseJob:
             {"Event": self.job_name + "-TO-" + job_to_name}
         )
 
-    def wait_for_jobs(self, job1, job2=None, condition="OR"):
-        jobs_json = self.job_json
-        if "eventsToWaitFor" not in jobs_json:
-            jobs_json["eventsToWaitFor"] = {"Type": "WaitForEvents", "Events": []}
 
-        if job2 == None:
-            jobs_json["eventsToWaitFor"]["Events"].append(
-                {"Event": job1 + "-TO-" + self.get_job_name()}
-            )
-        else:
-            event = {"Event": job1 + "-TO-" + self.get_job_name()}
-            jobs_json["eventsToWaitFor"]["Events"].append(event)
-
-            jobs_json["eventsToWaitFor"]["Events"].append(condition)
-
-            event = {"Event": job2 + "-TO-" + self.get_job_name()}
-            jobs_json["eventsToWaitFor"]["Events"].append(event)

@@ -123,7 +123,7 @@ class CmJobFlow:
         except Exception as e:
             print("Error deploying job, look for more details below")
             print(e)
-            return
+            return 400 #failure code
 
         # Remove temporary file
         os.remove(JOBS_FILE)
@@ -151,7 +151,7 @@ class CmJobFlow:
         except Exception as e:
             print("Error running job, look for more details below")
             print(e)
-            return
+            return 400
 
         print("\n\nSuccessfully Ran job on Control-M")
         self.display()
@@ -167,6 +167,7 @@ class CmJobFlow:
         for folder in self.folders:
             print( "\tFolder Name: ", folder[0])
 
+        return True
 
     def get_json(self):
         json_str = json.dumps(self.json, indent=4)
@@ -192,22 +193,7 @@ class CmJobFlow:
         self.json[folder][job_name] = job.get_json()
         return self._create_node(job_name, job)
 
-    def add_if_output(self, folder, job1, if_name, code, job2):
-        job1.job_json[if_name] = {
-            "Type": "If:Output",
-            "Code": code,
-            "Event:Add_0": {
-                "Type": "Event:Add",
-                "Event": job1.job_name + "-TO-" + job2.get_job_name(),
-            },
-        }
-        job2.wait_for_jobs(job1.job_name)
-        for i in range(len(self.jobs)):
-            if self.jobs[i][0] == job1.get_job_name():
-                job1_num = i
-            if self.jobs[i][0] == job2.get_job_name():
-                job2_num = i
-        self.chain_jobs(folder, [job1_num, job2_num], "dashed")
+
 
     # this function sets up dependencies of jobs, and used to define job execution sequence.
     def chain_jobs(self, folder, links, style="solid"):

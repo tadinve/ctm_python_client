@@ -9,12 +9,13 @@ from ctm_python_client.jobs.dummy import DummyJob
 
 class TestCmJobFlow(unittest.TestCase):
     @staticmethod
-    def get_default_job_flow():
+    def get_default_job_flow(debug=False):
         job = ctm_python_client.CmJobFlow(
             application="application",
             sub_application="sub_application",
             order_method="order_method",
             description="description",
+            debug=debug
         )
         return job
 
@@ -48,6 +49,9 @@ class TestCmJobFlow(unittest.TestCase):
             json.dumps(expected_json, sort_keys=True),
             json.dumps(job_flow.json, sort_keys=True),
         )
+
+    def test_constructor_with_logging(self):
+        job_flow = self.get_default_job_flow(debug=True)
 
     def test_set_run_as(self):
         job_flow = self.get_default_job_flow()

@@ -5,7 +5,7 @@ from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
-with open(BASE_PATH + "/.secrets", "r") as fp:
+with open(os.path.join(BASE_PATH,  ".secrets"), "r") as fp:
     ctm_uri = fp.readline().strip()
     ctm_user = fp.readline().strip()
     ctm_pwd = fp.readline().strip()
