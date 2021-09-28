@@ -1,8 +1,9 @@
 **.pyc
 **cache*
-**.secrets**
+**/.secrets
 venv
 **jobs.json**
 .coverage
 **.ipynb_checkpoints
 **.DS_Store
+**/.scannerwork
