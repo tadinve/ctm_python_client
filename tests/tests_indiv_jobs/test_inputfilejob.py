@@ -37,7 +37,7 @@ j1 = InputFileJob(
       connection_profile="TAJO_CONNECTION_PROFILE",
       host="edgenode",
       full_file_path="/home/user/tajo_command.sh",
-      parameters=[{'amount': '1000'}, {'volume': '120'}],
+      # parameters=[{'amount': '1000'}, {'volume': '120'}], 
       )
 t1_flow.add_job(folder=f1, job=j1)
 

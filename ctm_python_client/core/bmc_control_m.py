@@ -4,8 +4,6 @@ from ctm_python_client.session.session import Session
 import ctm_api_client as ctm_api_client
 import logging
 
-# from graphviz import Digraph
-
 
 JOBS_FILE = "jobs.json"
 
@@ -37,16 +35,11 @@ class CmJobFlow:
 
         # session variables
         self.session = session
-        # self.buildApi = ctm_api_client.BuildApi(ctm_api_client.ApiClient(self.session.configuration))
-        # self.runApi = ctm_api_client.RunApi(ctm_api_client.ApiClient(self.session.configuration))
+
 
         # network graph
         self.nodes = []
         self.edges = []
-
-        # self.graph = Digraph("G", filename=application + ".gv")
-        # self.g.attr(rankdir='LR', size='8,5',  shape='rectangle')
-        # self.graph.attr(shape="ellipse")
 
         self.flowcount = 0
         self.variables = []
@@ -115,7 +108,7 @@ class CmJobFlow:
 
     def deploy(self):
 
-        self.deployApi = ctm_api_client.DeployApi(
+        self.deploy_api = ctm_api_client.DeployApi(
             ctm_api_client.ApiClient(self.session.configuration)
         )
         self.token = self.session.get_token()
@@ -124,7 +117,7 @@ class CmJobFlow:
             json.dump(self.json, outfile, indent=4)
 
         try:
-            result = self.deployApi.deploy_file(JOBS_FILE)
+            result = self.deploy_api.deploy_file(JOBS_FILE)
             logging.debug(result)
 
         except Exception as e:
@@ -143,7 +136,7 @@ class CmJobFlow:
 
     def run(self):
 
-        self.runApi = ctm_api_client.RunApi(
+        self.run_api = ctm_api_client.RunApi(
             ctm_api_client.ApiClient(self.session.configuration)
         )
 
@@ -153,7 +146,7 @@ class CmJobFlow:
             json.dump(self.json, outfile, indent=4)
 
         try:
-            result = self.runApi.run_jobs(JOBS_FILE)
+            result = self.run_api.run_jobs(JOBS_FILE)
             logging.debug(result)
         except Exception as e:
             print("Error running job, look for more details below")
@@ -174,15 +167,14 @@ class CmJobFlow:
         for folder in self.folders:
             print( "\tFolder Name: ", folder[0])
 
-        return 
 
     def get_json(self):
-        str = json.dumps(self.json, indent=4)
-        return str
+        json_str = json.dumps(self.json, indent=4)
+        return json_str
 
     def display_json(self):
-        str = self.get_json()
-        print(str)
+        json_str = self.get_json()
+        print(json_str)
 
     # Jobs can be grouped together as folders, this creates the folder
     def create_folder(self, name, server=None):

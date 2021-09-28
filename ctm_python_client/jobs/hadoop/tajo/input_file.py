@@ -8,7 +8,7 @@ class InputFileJob(BaseJob):
         job_name,
         connection_profile,
         full_file_path,
-        parameters,
+        parameters=None,
         host=None,
         run_as=None,
         description=None,

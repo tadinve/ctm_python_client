@@ -5,11 +5,11 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 class Session:
-    def __init__(self, endpoint=None, username=None, password=None, apiKey=None):
+    def __init__(self, endpoint=None, username=None, password=None, api_key=None):
         self.endpoint = endpoint
         self.username = username
         self.password = password
-        self.apiKey = apiKey
+        self.api_key = api_key
 
         self.configuration = ctm_api_client.Configuration()
         self.configuration.host = endpoint
@@ -19,9 +19,7 @@ class Session:
             self.configuration.api_key_prefix["Authorization"] = "Bearer"
             self.configuration.api_key["Authorization"] = self.get_token()
         else:
-            # self.configuration.api_key_prefix['Authorization'] = 'Bearer'
-            # self.configuration.api_key['x-api-key'] = apiKey
-            self.configuration.api_key["Authorization"] = apiKey
+            self.configuration.api_key["Authorization"] = api_key
 
     def login(self):
         api_session = ctm_api_client.SessionApi(
