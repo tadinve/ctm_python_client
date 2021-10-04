@@ -1,0 +1,223 @@
+import os
+import json
+
+from ctm_python_client.core import bmc_control_m as ctm_python_client
+from ctm_python_client.jobs.dummy import DummyJob
+
+
+def get_default_job_flow(debug=False):
+    jf = ctm_python_client.CmJobFlow(
+        application="application",
+        sub_application="sub_application",
+        order_method="order_method",
+        description="description",
+        debug=debug
+    )
+    return jf
+
+def get_default_json() -> dict:
+    expected_json = {
+        "Defaults": {
+            "Application": "application",
+            "SubApplication": "sub_application",
+            "Description": "description",
+            "OrderMethod": "order_method",
+        },
+    }
+    return expected_json
+
+job_flow = get_default_job_flow()
+
+assert(job_flow.application ==  "application")
+assert(job_flow.sub_application == "sub_application")
+assert(job_flow.folders == [])
+assert(job_flow.jobs == [])
+assert(job_flow.run_as_set == False)
+assert(job_flow.schedule_set == False)
+assert(job_flow.failure_notification == False)
+assert(job_flow.flowcount == 0)
+assert(job_flow.variables == [])
+expected_json = get_default_json()
+assert(
+    json.dumps(expected_json, sort_keys=True) == json.dumps(job_flow.json, sort_keys=True),
+)
+
+def test_constructor_with_logging(self):
+    job_flow = self.get_default_job_flow(debug=True)
+
+def test_set_run_as():
+    job_flow = get_default_job_flow()
+    job_flow.set_run_as(
+        username="username",
+        host="host",
+        ctm_server="ctm_server",
+        site_standard="site_standard",
+    )
+    assert(job_flow.username ==  "username")
+    assert(job_flow.host == "host")
+
+    expected_json = get_default_json()
+    expected_json["Defaults"].update(
+        {
+            "RunAs": "username",
+            "Host": "host",
+            "ControlmServer": "ctm_server",
+            "SiteStandard": "site_standard",
+        }
+    )
+    assert(
+        json.dumps(expected_json, sort_keys=True) == 
+        json.dumps(job_flow.json, sort_keys=True)
+    )
+
+def test_set_schedule():
+    job_flow = get_default_job_flow()
+    job_flow.set_schedule(
+        months="months",
+        month_days="month_days",
+        week_days="week_days",
+        from_time="from_time",
+        to_time="to_time",
+    )
+
+    assert(job_flow.schedule_set == True)
+    expected_schedule = {
+        "Months": "months",
+        "MonthDays": "month_days",
+        "WeekDays": "week_days",
+        "FromTime": "from_time",
+        "ToTime": "to_time",
+    }
+    assert(
+        json.dumps(expected_schedule, sort_keys=True) ==
+        json.dumps(job_flow.json["Defaults"]["When"], sort_keys=True),
+    )
+
+def test_set_on_failure_notification():
+    job_flow = get_default_job_flow()
+    job_flow.set_on_failure_notification(
+        mail_to="mail_to", mail_subject="mail_subject"
+    )
+
+    assert(job_flow.failure_notification == True)
+    assert(job_flow.mail_to == "mail_to")
+    assert(job_flow.mail_subject == "mail_subject")
+
+def test_str():
+    job_flow = get_default_job_flow()
+    expected_str = """{
+                        "Defaults": {
+                            "Application": "application",
+                            "SubApplication": "sub_application",
+                            "Description": "description",
+                            "OrderMethod": "order_method"
+                            }
+                        }"""
+    assert(str(job_flow) == expected_str)
+
+def test_create_folder():
+    job_flow = get_default_job_flow()
+    job_flow.create_folder(name="name", server="server")
+
+    assert(job_flow.folders == [["name", "server"]])
+    assert(job_flow.json["name"] == {"Type": "Folder"})
+
+    job_flow.create_folder(name="name2", server="server2")
+    assert(job_flow.folders == [["name", "server"], ["name2", "server2"]])
+    assert(job_flow.json["name2"] == {"Type": "Folder"})
+    # Make sure the first folder is not overwritten
+    assert(job_flow.json["name"] == {"Type": "Folder"})
+
+def test_add_variables():
+    job_flow = get_default_job_flow()
+    job_flow.create_folder(name="folder", server="server")
+
+    job_flow.add_variables(folder="folder", list_of_variables=["var1", "var2"])
+    assert(job_flow.variables == ["var1", "var2"])
+
+    job_flow.add_variables(folder="folder", list_of_variables=["var3", "var4"])
+    assert(job_flow.variables == ["var1", "var2", "var3", "var4"])
+
+    expected_json = get_default_json()
+    expected_json.update(
+        {
+            "folder": {
+                "Type": "Folder",
+                "Variables": ["var1", "var2", "var3", "var4"],
+            }
+        }
+    )
+
+    assert(expected_json == job_flow.json)
+
+def test_add_job():
+    job_flow = get_default_job_flow()
+
+    job = DummyJob(folder="folder", job_name="job_name")
+
+    # Will throw error, since there is no folder
+    #with assertRaises(KeyError):
+    #    job_flow.add_job(folder="folder", job=job)
+
+    # Add Folder and then, add job
+    job_flow.create_folder(name="folder", server="server")
+
+    job_flow.add_job(folder="folder", job=job)
+
+    assert(job_flow.json["folder"]["job_name"] == job.get_json())
+    assert(job_flow.jobs[0][0] == "job_name")
+
+    job.set_job_schedule(
+        months="months",
+        month_days="month_days",
+        week_days="week_days",
+        from_time="from_time",
+        to_time="to_time",
+    )
+
+def test_chain_jobs():
+    job_flow = get_default_job_flow()
+    job1 = DummyJob(folder="folder", job_name="job1")
+    job2 = DummyJob(folder="folder", job_name="job2")
+
+    job_flow.create_folder(name="folder", server="server")
+
+    job_id1 = job_flow.add_job("folder", job1)
+    job_id2 = job_flow.add_job("folder", job2)
+
+    job_flow.chain_jobs("folder", [job_id1, job_id2])
+
+    assert(job_flow.flowcount, 1)
+
+    expected_json = {
+        "Defaults": {
+            "Application": "application",
+            "Description": "description",
+            "OrderMethod": "order_method",
+            "SubApplication": "sub_application",
+        },
+        "folder": {
+            "Flow1": {"Sequence": ["job1", "job2"], "Type": "Flow"},
+            "Type": "Folder",
+            "job1": {"Type": None},
+            "job2": {"Type": None},
+        },
+    }
+    assert(json.dumps(expected_json, sort_keys=True) == 
+                     json.dumps(job_flow.json, sort_keys=True))
+
+def test_display():
+    job_flow = get_default_job_flow()
+    job_flow.create_folder("folder", "server")
+    job_flow.set_run_as(
+        username="username",
+        host="host",
+        ctm_server="ctm_server",
+        site_standard="site_standard",
+    )
+    job_flow.set_on_failure_notification(
+        mail_to="mail_to", mail_subject="mail_subject"
+    )
+
+    g = job_flow.display()
+    assert(g != None)
