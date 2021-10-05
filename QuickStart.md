@@ -25,7 +25,7 @@ There are three ways you can try out the examples files
 3) **Docker based Jupyter Notebook**: In examples folder in the Jupter Notebook folder, you would find a Dockerfile. this file can be used to build a docker image and run the docker environment. Example notebooks are also copied to this docker instance and can be used. Look at StartDocker.txt for instructions on starting the docker.
 
 ## Installing ctm_python_client.
-As of now ctm_python_client is not availble for GA. Once ctm_python_client is available for GA, it will be available via pip install. Till then we install using **pip install git+https://github.com/tadinve/ctm_python_client.git**
+As of now ctm_python_client is not availble for GA. Once ctm_python_client is available for GA, it will be available via pip install. Till then we install using **pip install git+https://github.com/controlm/ctm_python_client.git**
 
 ## Setting up your connection profile
 
