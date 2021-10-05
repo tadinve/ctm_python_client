@@ -10,12 +10,13 @@ All examples and instructions given here are based on Unix based systems. Make s
 
 ## Clone the git repo and setup virtual env
 
-- cd working-directory # Go to a working directory.
-- git clone https://github.com/tadinve/ctm_python_client.git
-- cd ctm_python_client
-- python3 -m venv venv
-- source venv/bin/activate
-- pip install -r requirements.txt
+```
+git clone https://github.com/tadinve/ctm_python_client.git
+cd ctm_python_client
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 ## Try out the example file
 
