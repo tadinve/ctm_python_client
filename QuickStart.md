@@ -1,23 +1,42 @@
-## Quick Start Guide
+# Quick Start Guide
 
 This guide is a quick start guide for you to tru ControlM_Python_Client. ControlM_Python_Client is a python library that can be used to define and run worlkflows in Control-M.
 
-# Setup
+## Installing
+
+Installing via pip:
+```
+pip install git+https://github.com/tadinve/ctm_python_client.git
+```
+
+Installing from source:
+```
+$ git clone https://github.com/tadinve/ctm_python_client.git
+$ cd ctm_python_client
+$ pip install -r requirements.txt
+$ python setup.py install
+```
+
+We recommend to setup a virtual environment before installing:
+```
+$ python -m venv venv
+$ source venv/bin/activate
+```
 
 The github repository has tutorial/example section. We will use this to quickly setup our library, test our connection to ControlM, deploy a simple "Hello World" example, and will also run it. Once we have this working, we can have define some other examples, with diffreent job types.
 
 All examples and instructions given here are based on Unix based systems. Make suitable adjustments to run on Windows environment.
 
-## Clone the git repo and setup virtual env
-
+## Contributing
+ctm_python_client welcomes contribution, to do so, please open a pull request.
+To set up a development environment use the requirements_dev.txt :
 ```
-git clone https://github.com/tadinve/ctm_python_client.git
-cd ctm_python_client
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+$ git clone https://github.com/tadinve/ctm_python_client.git
+$ cd ctm_python_client
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements_dev.txt
 ```
-
 ## Try out the example file
 
 There are three ways you can try out the examples files
