@@ -1,4 +1,6 @@
 import ctm_api_client as ctm_api_client
+import ctm_saas_client
+
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -10,16 +12,37 @@ class Session:
         self.username = username
         self.password = password
         self.api_key = api_key
+        
 
-        self.configuration = ctm_api_client.Configuration()
-        self.configuration.host = endpoint
-        self.configuration.verify_ssl = False
+
 
         if password:
+            self.configuration = ctm_api_client.Configuration()
+            self.configuration.host = endpoint
+            self.configuration.verify_ssl = False
             self.configuration.api_key_prefix["Authorization"] = "Bearer"
             self.configuration.api_key["Authorization"] = self.get_token()
-        else:
-            self.configuration.api_key["Authorization"] = api_key
+
+            self.api_client = ctm_api_client.ApiClient(self.configuration)
+
+            self.deploy_api = ctm_api_client.DeployApi(self.api_client)
+            self.run_api = ctm_api_client.RunApi(self.api_client)
+
+            self.saas = False
+
+        else:         
+            self.configuration = ctm_saas_client.Configuration()
+            self.configuration.host = endpoint
+            self.configuration.verify_ssl = False
+            self.configuration.api_key['x-api-key'] = api_key
+
+
+            self.api_client = ctm_saas_client.ApiClient(self.configuration)
+
+            self.deploy_api = ctm_saas_client.DeployApi(self.api_client)
+            self.run_api = ctm_saas_client.RunApi(self.api_client)
+
+            self.saas = True
 
     def login(self):
         api_session = ctm_api_client.SessionApi(
@@ -33,3 +56,11 @@ class Session:
 
     def get_token(self):
         return self.login().token
+
+    def format_endpoint(self):
+        shorted = self.endpoint[:-len("/automation-api")]        
+
+        parts = shorted.split('.')
+        parts[0] = parts[0].replace('-aapi','')
+
+        return '.'.join(parts)
