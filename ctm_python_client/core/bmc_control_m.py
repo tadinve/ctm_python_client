@@ -28,7 +28,7 @@ class CmJobFlow:
         self.run_as_set = False
         self.schedule_set = False
         self.failure_notification = False
-        self.uri = ctm_uri
+        self.uri = session.endpoint
 
         if debug:
             logging.basicConfig(level=logging.DEBUG)
@@ -108,10 +108,8 @@ class CmJobFlow:
 
     def deploy(self):
 
-        self.deploy_api = ctm_api_client.DeployApi(
-            ctm_api_client.ApiClient(self.session.configuration)
-        )
-        self.token = self.session.get_token()
+        self.deploy_api = self.session.deploy_api
+        #self.token = self.session.get_token()
 
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
@@ -131,16 +129,14 @@ class CmJobFlow:
         print("\n\nSuccessfully deployed to Control-M")
         self.display()
         if self.uri != None:
-            print("Login to {0}/ControlM/ and use your workflow".format(self.uri[:-len("/automation-api")]))
+            print("Login to {0}/ControlM/ and use your workflow".format(self.session.format_endpoint()))
         return result
 
     def run(self):
 
-        self.run_api = ctm_api_client.RunApi(
-            ctm_api_client.ApiClient(self.session.configuration)
-        )
+        self.run_api = self.session.run_api
 
-        self.token = self.session.get_token()
+        #self.token = self.session.get_token()
 
         with open(JOBS_FILE, "w") as outfile:
             json.dump(self.json, outfile, indent=4)
