@@ -155,8 +155,9 @@ class CmJobFlow:
 
         print("\n\nSuccessfully Ran job on Control-M")
         self.display()
-        print("Login to {0}/ControlM/ and use your workflow".format(self.uri[:-len("/automation-api")]))
-        return True
+        if self.uri != None:
+            print("Login to {0}/ControlM/ and use your workflow".format(self.session.format_endpoint()))
+        return result
 
 
 
