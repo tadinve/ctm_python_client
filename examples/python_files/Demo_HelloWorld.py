@@ -5,7 +5,7 @@
 ## Step 1A - Install the library
 
 # Make sure you have installed the library
-# pip install git+https://github.com/tadinve/ctm_python_client.git')
+# pip install git+https://github.com/controlm/ctm_python_client.git')
 
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow

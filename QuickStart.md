@@ -6,12 +6,12 @@ This guide is a quick start guide for you to tru ControlM_Python_Client. Control
 
 Installing via pip:
 ```
-pip install git+https://github.com/tadinve/ctm_python_client.git
+pip install git+https://github.com/controlm/ctm_python_client.git
 ```
 
 Installing from source:
 ```
-$ git clone https://github.com/tadinve/ctm_python_client.git
+$ git clone https://github.com/controlm/ctm_python_client.git
 $ cd ctm_python_client
 $ pip install -r requirements.txt
 $ python setup.py install
@@ -40,7 +40,7 @@ All examples and instructions given here are based on Unix based systems. Make s
 ctm_python_client welcomes contribution, to do so, please open a pull request.
 To set up a development environment use the requirements_dev.txt :
 ```
-$ git clone https://github.com/tadinve/ctm_python_client.git
+$ git clone https://github.com/controlm/ctm_python_client.git
 $ cd ctm_python_client
 $ python -m venv venv
 $ source venv/bin/activate
