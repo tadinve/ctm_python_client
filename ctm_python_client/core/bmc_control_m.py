@@ -28,7 +28,10 @@ class CmJobFlow:
         self.run_as_set = False
         self.schedule_set = False
         self.failure_notification = False
-        self.uri = session.endpoint
+        if session != None:
+            self.uri = session.endpoint
+        else:
+            self.uri = None
 
         if debug:
             logging.basicConfig(level=logging.DEBUG)

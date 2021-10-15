@@ -1,4 +1,4 @@
-from ctm_python_client.jobs.people_soft import PeopleSoftJob
+from ctm_python_client.jobs.peoplesoft import PeopleSoftJob
 
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
