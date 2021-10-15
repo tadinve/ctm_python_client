@@ -186,15 +186,12 @@ This is an example code for  ScriptJob
 	 from ctm_python_client.jobs.dummy import DummyJob
 #### Parameters for the Job constructor 
     parameters having '=None' are optional
-	-     
-	-  BaseJob.__init__   
-	-  self, folder, job_name, description=description, host=host, run_as=run_a   
-	-     
-	-     
-	-  def get_json(self)   
-	-  job_json = BaseJob.get_json(self   
-	-  job_json["Type"] = "Job:Dummy   
-	-  return job_jso   
+	-  folder
+	-  job_name
+	-  description=None
+	-  host=None
+	-  run_as=None   
+ 
 #### Example Code
 This is an example code for  DummyJob
 [Link to code](https://github.com/controlm/ctm_python_client/blob/main/tests/tests_indiv_jobs/test_dummyjob.py)
