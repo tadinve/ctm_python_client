@@ -1,6 +1,6 @@
 **.pyc
 **cache*
-**/.secrets
+**/.secrets**
 venv
 **jobs.json**
 .coverage
