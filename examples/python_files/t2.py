@@ -17,18 +17,14 @@ from ctm_python_client.jobs.dummy import DummyJob
 # to match your environment
 # Create a file .secrets with the following three lines. One for uri, one for user and one for password.
 
-BASE_PATH = os.path.abspath("")
-with open(os.path.join(BASE_PATH,  ".secrets_saas"), "r") as fp:
-    ctm_uri = fp.readline().strip()
-    api_key = fp.readline().strip()
-
-
+ctm_uri = "https://cmoraes-38160-aapi.us1.ci.ctmsaas.com/automation-api"
+api_key="RENJUk9GOjA0ZmJmZTE1LWM4MzAtNDU4YS04YmZmLTEyZWE3ZjU2ZDIyNDpycENUVStKMERTSndaTS9TS0xHcXY4dGZ2amV3M2JObjFCTFRUMHhYMS9zPQ=="
 ## Step 2B - Create the object
 
 from ctm_python_client.session.session import Session
 
 session = Session(endpoint=ctm_uri, api_key=api_key)
-print(session)
+
 t1_flow = CmJobFlow( application="Naga0.2_Demo", sub_application="Demo-02", 
                 session=session, ctm_uri=ctm_uri)
 
