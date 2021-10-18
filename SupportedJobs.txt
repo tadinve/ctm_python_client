@@ -5,9 +5,7 @@ from ctm_python_client.jobs.sla_management import SLAManagementJob
 from ctm_python_client.jobs.informatica import InformaticaJob
 from ctm_python_client.jobs.embedded_script import EmbeddedScriptJob
 from ctm_python_client.jobs.script import ScriptJob
-from ctm_python_client.jobs.dummy import DummyJob
-from ctm_python_client.jobs.adf import ADFJob
-from ctm_python_client.jobs.ai_jobs.ai_generic import AiGenericJob
+from ctm_python_client.jobs.dummy import DummyJobfrom ctm_python_client.jobs.ai_jobs.ai_generic import AiGenericJob
 from ctm_python_client.jobs.ai_jobs.ai_blob_storage import AIBlobStorageJob
 from ctm_python_client.jobs.database.stored_procedure import StoredProcedureJob
 from ctm_python_client.jobs.database.sql_script import SQLScriptJob

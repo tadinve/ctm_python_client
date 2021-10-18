@@ -198,32 +198,6 @@ This is an example code for  DummyJob
 <br/>
 <br/>
 
-#  ADFJob
-#### API Version supported
-	 9.0.20.210 and above
-#### Control-M supported
-	 OnPrem & Helix(SaaS)
-#### Import instuctions
-	 from ctm_python_client.jobs.adf import ADFJob
-#### Parameters for the Job constructor 
-    parameters having '=None' are optional
-	-  folder   
-	-  job_name   
-	-  connection_profile   
-	-  airesource_group_name   
-	-  aidata_factory_name   
-	-  aipipeline_name   
-	-  aiparameters   
-	-  aistatus_polling_frequency   
-	-  host=None   
-	-  run_as=None   
-	-  description=None   
-#### Example Code
-This is an example code for  ADFJob
-[Link to code](https://github.com/controlm/ctm_python_client/blob/main/tests/tests_indiv_jobs/test_adfjob.py)
-<br/>
-<br/>
-
 #  AiGenericJob
 #### API Version supported
 	 9.0.20.210 and above
@@ -983,31 +957,6 @@ This is an example code for  LambdaJob
 #### Example Code
 This is an example code for  BatchJob
 [Link to code](https://github.com/controlm/ctm_python_client/blob/main/tests/tests_indiv_jobs/test_batchjob.py)
-<br/>
-<br/>
-
-#  GLUEJob
-#### API Version supported
-	 9.0.20.210 and above
-#### Control-M supported
-	 OnPrem & Helix(SaaS)
-#### Import instuctions
-	 from ctm_python_client.jobs.aws.glue import GLUEJob
-#### Parameters for the Job constructor 
-    parameters having '=None' are optional
-	-  folder   
-	-  job_name   
-	-  connection_profile   
-	-  aiglue_job_name   
-	-  aiglue_job_arguments   
-	-  aiarguments   
-	-  aistatus_polling_frequency   
-	-  host=None   
-	-  run_as=None   
-	-  description=None   
-#### Example Code
-This is an example code for  GLUEJob
-[Link to code](https://github.com/controlm/ctm_python_client/blob/main/tests/tests_indiv_jobs/test_gluejob.py)
 <br/>
 <br/>
 
