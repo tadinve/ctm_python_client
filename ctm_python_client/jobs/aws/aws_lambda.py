@@ -10,7 +10,7 @@ class LambdaJob(BaseJob):
         function_name,
         version,
         payload,
-        append_log_to_output,
+        append_log,
         host=None,
         run_as=None,
         description=None,
@@ -23,7 +23,7 @@ class LambdaJob(BaseJob):
         self.function_name = function_name
         self.version = version
         self.payload = payload
-        self.append_log_to_output = append_log_to_output
+        self.append_log = append_log
 
     def get_json(self):
         job_json = BaseJob.get_json(self)
@@ -36,6 +36,6 @@ class LambdaJob(BaseJob):
             job_json["Version"] = self.version
         if self.payload != None:
             job_json["Payload"] = self.payload
-        if self.append_log_to_output != None:
-            job_json["AppendLogToOutput"] = self.append_log_to_output
+        if self.append_log != None:
+            job_json["AppendLog"] = self.append_log
         return job_json

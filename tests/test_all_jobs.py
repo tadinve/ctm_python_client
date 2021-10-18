@@ -1,12 +1,16 @@
+import sys
+sys.path.insert(0, r'C:\git_repo\ctm_python_client')
+
+
 from ctm_python_client.jobs.command import CommandJob
-from ctm_python_client.jobs.people_soft import PeopleSoftJob
+from ctm_python_client.jobs.peoplesoft import PeopleSoftJob
 from ctm_python_client.jobs.file_transfer import FileTransferJob
 from ctm_python_client.jobs.sla_management import SLAManagementJob
 from ctm_python_client.jobs.informatica import InformaticaJob
 from ctm_python_client.jobs.embedded_script import EmbeddedScriptJob
 from ctm_python_client.jobs.script import ScriptJob
 from ctm_python_client.jobs.dummy import DummyJob
-from ctm_python_client.jobs.adf import ADFJob
+#from ctm_python_client.jobs.adf import ADFJob
 from ctm_python_client.jobs.ai_jobs.ai_generic import AiGenericJob
 from ctm_python_client.jobs.ai_jobs.ai_blob_storage import AIBlobStorageJob
 from ctm_python_client.jobs.database.stored_procedure import StoredProcedureJob
@@ -42,6 +46,9 @@ from ctm_python_client.jobs.aws.step_function import StepFunctionJob
 import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.session.session import Session
+
+
+
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(BASE_PATH,  ".secrets"), "r") as fp:
@@ -179,7 +186,7 @@ j1 = EmbeddedQueryJob(
     job_name="embeddedquery",
     connection_profile="POSTGRESQL_CONNECTION_PROFILE",
     query="SELECT %%firstParamName AS VAR1 n FROM DUMMY n ORDER BY  VAR1 DESC",
-    host="${agentName}",
+    host="agentHost",
     run_as="PostgressCP",
     variables=[{"firstParamName": "firstParamValue"}],
     autocommit="N",
@@ -355,7 +362,7 @@ j1 = LogicAppsJob(
     job_name="logicapps",
     connection_profile="AZURE_CONNECTION",
     logic_app_name="MyLogicApp",
-    request_body={"name": "BMC"},
+    request_body='{"name": "BMC"}',
     append_log=False,
 )
 t1_flow.add_job(folder=f1, job=j1)
@@ -530,8 +537,7 @@ j1 = InputFileJob(
     job_name="inputfile",
     connection_profile="TAJO_CONNECTION_PROFILE",
     host="edgenode",
-    full_file_path="/home/user/tajo_command.sh",
-    parameters=[{"amount": "1000"}, {"volume": "120"}],
+    full_file_path="/home/user/tajo_command.sh"    
 )
 t1_flow.add_job(folder=f1, job=j1)
 
@@ -573,8 +579,8 @@ j1 = LambdaJob(
     connection_profile="AWS_CONNECTION",
     function_name="LambdaFunction",
     version="1",
-    payload={"myVar": "value1", "myOtherVar": "value2"},
-    append_log_to_output=True,
+    payload='{"myVar": "value1", "myOtherVar": "value2"}',
+    append_log=True,
 )
 t1_flow.add_job(folder=f1, job=j1)
 
@@ -593,7 +599,7 @@ j1 = BatchJob(
     v_c_p_us="2",
     job_attempts="5",
     execution_timeout="60",
-    append_log_to_output=False,
+    append_log=False,
 )
 t1_flow.add_job(folder=f1, job=j1)
 
@@ -603,14 +609,14 @@ j1 = StepFunctionJob(
     connection_profile="AWS_CONNECTION",
     state_machine="StateMachine1",
     execution_name="Execution1",
-    input={"myVar": "value1", "myOtherVar": "value2"},
-    append_log_to_output=True,
+    input='{"myVar": "value1", "myOtherVar": "value2"}'
 )
 t1_flow.add_job(folder=f1, job=j1)
 
 import json
 
 x = t1_flow.deploy()
+print(x)
 s = str(x[0])
 s = s.replace("'", '"')
 s = s.replace("None", '"None"')

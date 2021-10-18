@@ -9,8 +9,7 @@ class StepFunctionJob(BaseJob):
         connection_profile,
         state_machine,
         execution_name,
-        input,
-        append_log_to_output,
+        input,        
         host=None,
         run_as=None,
         description=None,
@@ -22,8 +21,7 @@ class StepFunctionJob(BaseJob):
         self.connection_profile = connection_profile
         self.state_machine = state_machine
         self.execution_name = execution_name
-        self.input = input
-        self.append_log_to_output = append_log_to_output
+        self.input = input        
 
     def get_json(self):
         job_json = BaseJob.get_json(self)
@@ -36,6 +34,4 @@ class StepFunctionJob(BaseJob):
             job_json["ExecutionName"] = self.execution_name
         if self.input != None:
             job_json["Input"] = self.input
-        if self.append_log_to_output != None:
-            job_json["AppendLogToOutput"] = self.append_log_to_output
         return job_json

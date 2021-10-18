@@ -18,7 +18,7 @@ class BatchJob(BaseJob):
         v_c_p_us,
         job_attempts,
         execution_timeout,
-        append_log_to_output,
+        append_log,
         host=None,
         run_as=None,
         description=None,
@@ -40,7 +40,7 @@ class BatchJob(BaseJob):
         self.v_c_p_us = v_c_p_us
         self.job_attempts = job_attempts
         self.execution_timeout = execution_timeout
-        self.append_log_to_output = append_log_to_output
+        self.append_log = append_log
 
     def get_json(self):
         job_json = BaseJob.get_json(self)
@@ -71,6 +71,6 @@ class BatchJob(BaseJob):
             job_json["JobAttempts"] = self.job_attempts
         if self.execution_timeout != None:
             job_json["ExecutionTimeout"] = self.execution_timeout
-        if self.append_log_to_output != None:
-            job_json["AppendLogToOutput"] = self.append_log_to_output
+        if self.append_log != None:
+            job_json["AppendLog"] = self.append_log
         return job_json
