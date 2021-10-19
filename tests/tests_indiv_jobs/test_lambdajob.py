@@ -37,8 +37,8 @@ j1 = LambdaJob(
       connection_profile="AWS_CONNECTION",
       function_name="LambdaFunction",
       version="1",
-      payload={'myVar': 'value1', 'myOtherVar': 'value2'},
-      append_log_to_output=True,
+      payload='{"myVar": "value1", "myOtherVar": "value2"}',
+      append_log=True,
       )
 t1_flow.add_job(folder=f1, job=j1)
 

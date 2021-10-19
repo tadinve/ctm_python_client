@@ -46,7 +46,7 @@ j1 = BatchJob(
       v_c_p_us="2",
       job_attempts="5",
       execution_timeout="60",
-      append_log_to_output=False,
+      append_log=False,
       )
 t1_flow.add_job(folder=f1, job=j1)
 

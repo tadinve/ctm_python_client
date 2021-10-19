@@ -1,3 +1,4 @@
+export PYTHONPATH=$PWD:$PYTHONPATH
 pip uninstall ctm_python_client -y
 python -m pytest --cov=ctm_python_client
 coverage run -m --source=./ctm_python_client pytest -rA tests/*.py tests/tests_indiv_jobs/*.py   && coverage report -m

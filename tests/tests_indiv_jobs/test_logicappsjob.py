@@ -36,7 +36,7 @@ j1 = LogicAppsJob(
       job_name='logicapps',
       connection_profile="AZURE_CONNECTION",
       logic_app_name="MyLogicApp",
-      request_body={'name': 'BMC'},
+      request_body="{'name': 'BMC'}",
       append_log=False,
       )
 t1_flow.add_job(folder=f1, job=j1)

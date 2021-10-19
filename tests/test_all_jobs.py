@@ -1,7 +1,3 @@
-import sys
-sys.path.insert(0, r'C:\git_repo\ctm_python_client')
-
-
 from ctm_python_client.jobs.command import CommandJob
 from ctm_python_client.jobs.peoplesoft import PeopleSoftJob
 from ctm_python_client.jobs.file_transfer import FileTransferJob

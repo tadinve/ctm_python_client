@@ -3,7 +3,6 @@ import os
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.jobs.dummy import DummyJob
 from ctm_python_client.jobs.command import CommandJob
-from ctm_python_client.jobs.aws.glue import GLUEJob
 
 
 # Please change the URI, and ctm_user and enter ctm_password to match your environment
@@ -146,21 +145,21 @@ class TestCompleteFlow(unittest.TestCase):
         self.assertTrue(len(nodes) > 0)
 
 
-        ## Let's fail the deploy to check if exceptions are caught
-        j_fail = GLUEJob(
-                            folder=f1,
-                            job_name='glue',
-                            connection_profile="GLUECONNECTION",
-                            aiglue_job_name="AwsGlueJobName",
-                            aiglue_job_arguments="checked",
-                            aiarguments={'--myArg1': 'myVal1', '--myArg2': 'myVal2'},
-                            aistatus_polling_frequency="20",
-                        )
-        j_fail_id = t1_flow.add_job(folder=f1, job=j_fail)
-        deploy_return = t1_flow.deploy()
-        res = """{'deployed_calendars': None,\n 'deployed_connection_profiles': None,\n 'deployed_drivers': None,\n 'deployed_folders': ['WeatherForecast'],\n 'deployed_jobs': None,\n 'deployment_file': 'jobs.json',\n 'errors': None,\n 'is_deploy_descriptor_valid': False,\n 'successful_calendars_count': None,\n 'successful_connection_profiles_count': 0,\n 'successful_drivers_count': 0,\n 'successful_folders_count': 0,\n 'successful_jobs_count': 7,\n 'successful_smart_folders_count': 1,\n 'successful_sub_folders_count': 0,\n 'warnings': None}"""
+        # ## Let's fail the deploy to check if exceptions are caught
+        # j_fail = GLUEJob(
+        #                     folder=f1,
+        #                     job_name='glue',
+        #                     connection_profile="GLUECONNECTION",
+        #                     aiglue_job_name="AwsGlueJobName",
+        #                     aiglue_job_arguments="checked",
+        #                     aiarguments={'--myArg1': 'myVal1', '--myArg2': 'myVal2'},
+        #                     aistatus_polling_frequency="20",
+        #                 )
+        # j_fail_id = t1_flow.add_job(folder=f1, job=j_fail)
+        # deploy_return = t1_flow.deploy()
+        # res = """{'deployed_calendars': None,\n 'deployed_connection_profiles': None,\n 'deployed_drivers': None,\n 'deployed_folders': ['WeatherForecast'],\n 'deployed_jobs': None,\n 'deployment_file': 'jobs.json',\n 'errors': None,\n 'is_deploy_descriptor_valid': False,\n 'successful_calendars_count': None,\n 'successful_connection_profiles_count': 0,\n 'successful_drivers_count': 0,\n 'successful_folders_count': 0,\n 'successful_jobs_count': 7,\n 'successful_smart_folders_count': 1,\n 'successful_sub_folders_count': 0,\n 'warnings': None}"""
 
-        self.assertEqual(deploy_return,400)
+        # self.assertEqual(deploy_return,400)
 
 
 

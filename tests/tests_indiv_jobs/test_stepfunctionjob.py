@@ -37,8 +37,7 @@ j1 = StepFunctionJob(
       connection_profile="AWS_CONNECTION",
       state_machine="StateMachine1",
       execution_name="Execution1",
-      input={'myVar': 'value1', 'myOtherVar': 'value2'},
-      append_log_to_output=True,
+      input="{'myVar': 'value1', 'myOtherVar': 'value2'}",
       )
 t1_flow.add_job(folder=f1, job=j1)
 
