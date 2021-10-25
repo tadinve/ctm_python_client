@@ -10,5 +10,5 @@ RUN apt install -y graphviz
 RUN pip install --upgrade pip
 
 # this installs the controlm_python_client
-# RUN pip  install git+https://github.com/controlm/naga.git
+RUN pip  install git+https://github.com/tadinve/ctm_python_client.git
 CMD /bin/bash

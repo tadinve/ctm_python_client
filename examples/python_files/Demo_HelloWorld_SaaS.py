@@ -7,7 +7,18 @@
 # Make sure you have installed the library
 # pip install git+https://github.com/controlm/ctm_python_client.git')
 
-import os
+import os,sys
+print(os.sep)
+CURR_PATH = os.path.abspath("")
+ctm_path = []
+for p in CURR_PATH.split(os.sep):
+    ctm_path.append(p)
+    if p == "ctm_python_client":
+        break
+BASE_PATH = os.sep.join(ctm_path)
+sys.path.append(BASE_PATH)
+
+
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.jobs.dummy import DummyJob
 
@@ -17,7 +28,7 @@ from ctm_python_client.jobs.dummy import DummyJob
 # to match your environment
 # Create a file .secrets with the following three lines. One for uri, one for user and one for password.
 
-BASE_PATH = os.path.abspath("")
+
 with open(os.path.join(BASE_PATH,  ".secrets_saas"), "r") as fp:
     ctm_uri = fp.readline().strip()
     api_key = fp.readline().strip()
@@ -30,7 +41,7 @@ from ctm_python_client.session.session import Session
 session = Session(endpoint=ctm_uri, api_key=api_key)
 print(session)
 t1_flow = CmJobFlow( application="Naga0.2_Demo", sub_application="Demo-02", 
-                session=session, ctm_uri=ctm_uri)
+                session=session)
 
 
 ## Step 2C - Define the Schedule

@@ -7,7 +7,17 @@
 # Make sure you have installed the library
 # pip install git+https://github.com/controlm/ctm_python_client.git')
 
-import os
+import os,sys
+print(os.sep)
+CURR_PATH = os.path.abspath("")
+ctm_path = []
+for p in CURR_PATH.split(os.sep):
+    ctm_path.append(p)
+    if p == "ctm_python_client":
+        break
+BASE_PATH = os.sep.join(ctm_path)
+sys.path.append(BASE_PATH)
+
 from ctm_python_client.core.bmc_control_m import CmJobFlow
 from ctm_python_client.jobs.dummy import DummyJob
 
@@ -21,7 +31,7 @@ https://acb-rhctmv20.centralus.cloudapp.azure.com:8443/automation-api
 username
 password
 """
-BASE_PATH = os.path.abspath("")
+
 with open(os.path.join(BASE_PATH,  ".secrets"), "r") as fp:
     ctm_uri = fp.readline().strip()
     ctm_user = fp.readline().strip()

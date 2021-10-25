@@ -161,16 +161,23 @@ class TestCmJobFlow(unittest.TestCase):
     def test_add_job(self):
         job_flow = self.get_default_job_flow()
 
-        job = DummyJob(folder="folder", job_name="job_name")
+        job = DummyJob(folder="folder", job_name="job_name",description="dummy job")
 
         # Will throw error, since there is no folder
         with self.assertRaises(KeyError):
             job_flow.add_job(folder="folder", job=job)
 
+        months = ["JAN", "OCT", "DEC"]
+        monthDays = ["ALL"]
+        weekDays = ["MON", "TUE", "WED", "THU", "FRI"]
+        fromTime = "0300"
+        toTime = "2100"
+        job.set_job_schedule(months, monthDays, weekDays, fromTime, toTime)
+
         # Add Folder and then, add job
         job_flow.create_folder(name="folder", server="server")
 
-        job_flow.add_job(folder="folder", job=job)
+        job_flow.add_job(folder=job.get_folder(), job=job)
 
         self.assertEqual(job_flow.json["folder"]["job_name"], job.get_json())
         self.assertEqual(job_flow.jobs[0][0], "job_name")

@@ -131,8 +131,7 @@ class CmJobFlow:
 
         print("\n\nSuccessfully deployed to Control-M")
         self.display()
-        if self.uri != None:
-            print("Login to {0}/ControlM/ and use your workflow".format(self.session.format_endpoint()))
+        print("Login to {0}/ControlM/ and use your workflow".format(self.session.format_endpoint()))
         return result
 
     def run(self):
@@ -154,8 +153,7 @@ class CmJobFlow:
 
         print("\n\nSuccessfully Ran job on Control-M")
         self.display()
-        if self.uri != None:
-            print("Login to {0}/ControlM/ and use your workflow".format(self.session.format_endpoint()))
+        print("Login to {0}/ControlM/ and use your workflow".format(self.session.format_endpoint()))
         return result
 
 
