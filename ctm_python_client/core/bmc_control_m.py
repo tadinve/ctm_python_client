@@ -81,7 +81,7 @@ class CmJobFlow:
         if ctm_server is not None:
             self.json["Defaults"]["ControlmServer"] = ctm_server
         if site_standard is not None:
-            self.json["Defaults"]["SiteStandard"] = site_standard
+            self.json["Defaults"]["Folder"] = site_standard
 
     # sets up the default user to run the jobs (can be overridden at the job level)
     def set_schedule(
