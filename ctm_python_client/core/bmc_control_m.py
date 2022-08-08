@@ -81,7 +81,7 @@ class CmJobFlow:
         if ctm_server is not None:
             self.json["Defaults"]["ControlmServer"] = ctm_server
         if site_standard is not None:
-            self.json["Defaults"]["SiteStandard"] = site_standard
+            self.json["Defaults"]["Folder"] = site_standard
 
     # sets up the default user to run the jobs (can be overridden at the job level)
     def set_schedule(
@@ -176,9 +176,11 @@ class CmJobFlow:
         print(json_str)
 
     # Jobs can be grouped together as folders, this creates the folder
-    def create_folder(self, name, server=None):
+    def create_folder(self, name, server=None, site_standard=None):
         self.folders.append([name, server])
         self.json[name] = {"Type": "Folder"}
+        if site_standard is not None:
+            self.json[name]["SiteStandard"] = site_standard
         return name
 
     # sets up the default user to run the jobs (can be overridden at the job level)
